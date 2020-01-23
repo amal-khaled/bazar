@@ -14,9 +14,11 @@
 		0B11315E23D9C93C007FDC6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B11315C23D9C93C007FDC6D /* Main.storyboard */; };
 		0B11316023D9C93E007FDC6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B11315F23D9C93E007FDC6D /* Assets.xcassets */; };
 		0B11316323D9C93E007FDC6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B11316123D9C93E007FDC6D /* LaunchScreen.storyboard */; };
+		991F33636BC8D45A75358126 /* Pods_A3lanate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00CC25A8C1F7784797B14BE /* Pods_A3lanate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09DED0F7E927F837B44DD197 /* Pods-A3lanate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A3lanate.debug.xcconfig"; path = "Target Support Files/Pods-A3lanate/Pods-A3lanate.debug.xcconfig"; sourceTree = "<group>"; };
 		0B11315123D9C93C007FDC6D /* A3lanate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A3lanate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B11315423D9C93C007FDC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B11315623D9C93C007FDC6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		0B11315F23D9C93E007FDC6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B11316223D9C93E007FDC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B11316423D9C93E007FDC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8EBF2C0E5D915F2A5C4A20 /* Pods-A3lanate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A3lanate.release.xcconfig"; path = "Target Support Files/Pods-A3lanate/Pods-A3lanate.release.xcconfig"; sourceTree = "<group>"; };
+		B00CC25A8C1F7784797B14BE /* Pods_A3lanate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A3lanate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991F33636BC8D45A75358126 /* Pods_A3lanate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				0B11315323D9C93C007FDC6D /* A3lanate */,
 				0B11315223D9C93C007FDC6D /* Products */,
+				9E8613FF0D458BBB7B48B5DD /* Pods */,
+				942DF047278F2436F4E0E9EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,24 @@
 			path = A3lanate;
 			sourceTree = "<group>";
 		};
+		942DF047278F2436F4E0E9EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B00CC25A8C1F7784797B14BE /* Pods_A3lanate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E8613FF0D458BBB7B48B5DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09DED0F7E927F837B44DD197 /* Pods-A3lanate.debug.xcconfig */,
+				8A8EBF2C0E5D915F2A5C4A20 /* Pods-A3lanate.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B11316723D9C93E007FDC6D /* Build configuration list for PBXNativeTarget "A3lanate" */;
 			buildPhases = (
+				0CDA2339EA72155A5C47B209 /* [CP] Check Pods Manifest.lock */,
 				0B11314D23D9C93C007FDC6D /* Sources */,
 				0B11314E23D9C93C007FDC6D /* Frameworks */,
 				0B11314F23D9C93C007FDC6D /* Resources */,
+				42291EBC9DF74CEF3F19A445 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0CDA2339EA72155A5C47B209 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-A3lanate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42291EBC9DF74CEF3F19A445 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-A3lanate/Pods-A3lanate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-A3lanate/Pods-A3lanate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-A3lanate/Pods-A3lanate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B11314D23D9C93C007FDC6D /* Sources */ = {
@@ -286,6 +355,7 @@
 		};
 		0B11316823D9C93E007FDC6D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09DED0F7E927F837B44DD197 /* Pods-A3lanate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -305,6 +375,7 @@
 		};
 		0B11316923D9C93E007FDC6D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8EBF2C0E5D915F2A5C4A20 /* Pods-A3lanate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
