@@ -9,6 +9,7 @@
 import UIKit
 import ImageSlideshow
 import SideMenuSwift
+import MOLH
 
 class HomeVC: UIViewController {
     
@@ -24,6 +25,7 @@ class HomeVC: UIViewController {
     //Constants
     let MainAdsCellID = "MainAdsCell"
     let MainCategoriesCellID = "MainCategoriesCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         slideShowSetup()
@@ -38,6 +40,15 @@ class HomeVC: UIViewController {
         categoriesCollection.reloadData()
         featuredCollection.reloadData()
         recentCollection.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if MOLHLanguage.isArabic() {
+            SideMenuController.preferences.basic.direction = .right
+        } else {
+            SideMenuController.preferences.basic.direction = .left
+        }
     }
     
     func setupView() {

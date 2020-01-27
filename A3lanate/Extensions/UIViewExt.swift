@@ -36,14 +36,14 @@ extension UIView {
         layer.cornerRadius = cornerRadius
     }
     
-//    func addShadowWithCorner(cornerRadius: CGFloat, shadowColor: CGColor, shadowOpacity: Float, shadowOffset: CGSize, shadowRadius: CGFloat) {
-//        layer.cornerRadius = cornerRadius
-//        layer.shadowColor = shadowColor
-//        layer.shadowOpacity = shadowOpacity
-//        layer.shadowOffset = shadowOffset
-//        layer.shadowRadius = shadowRadius
-//        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-//        layer.shouldRasterize = true
-//        layer.rasterizationScale = UIScreen.main.scale
-//    }
+    func addShadowWithCorner(cornerRadius: CGFloat, shadowColor: CGColor, shadowOpacity: Float, shadowOffset: CGSize, shadowRadius: CGFloat) {
+        layer.cornerRadius = cornerRadius
+        layer.shadowColor = shadowColor
+        layer.shadowOpacity = shadowOpacity
+        layer.shadowOffset = shadowOffset
+        layer.shadowRadius = shadowRadius
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
+    }
 }
