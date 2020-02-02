@@ -15,6 +15,7 @@ class LanguageVC: UIViewController {
     @IBOutlet weak var englishBtn: UIButton!
     @IBOutlet weak var arabicBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var backBtn: UIButton!
     
 
     override func viewDidLoad() {
@@ -66,4 +67,9 @@ class LanguageVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toMain", sender: self)
+    }
+    
 }
