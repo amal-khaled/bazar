@@ -20,10 +20,37 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var supportBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var exitBtn: UIButton!
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var usernameLbl: UILabel!
+    @IBOutlet weak var countryLbl: UILabel!
+    @IBOutlet weak var notificationLbl: UILabel!
+    @IBOutlet weak var languageLbl: UILabel!
+    @IBOutlet weak var termsLbl: UILabel!
+    @IBOutlet weak var supportLbl: UILabel!
+    @IBOutlet weak var contactUsLbl: UILabel!
+    @IBOutlet weak var shareLbl: UILabel!
+    @IBOutlet weak var aboutUsLbl: UILabel!
+    @IBOutlet weak var loginLbl: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
+        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
+        profileImg.addCornerRadius(cornerRadius: 75)
+        countryLbl.addCornerRadius(cornerRadius: 15)
+        notificationLbl.addCornerRadius(cornerRadius: 15)
+        languageLbl.addCornerRadius(cornerRadius: 15)
+        termsLbl.addCornerRadius(cornerRadius: 15)
+        supportLbl.addCornerRadius(cornerRadius: 15)
+        contactUsLbl.addCornerRadius(cornerRadius: 15)
+        shareLbl.addCornerRadius(cornerRadius: 15)
+        aboutUsLbl.addCornerRadius(cornerRadius: 15)
+        loginLbl.addCornerRadius(cornerRadius: 15)
     }
     
     @IBAction func languageBtnPressed(_ sender: Any) {
@@ -60,4 +87,9 @@ class SideMenuVC: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toLoginVC", sender: self)
     }
+    
+    @IBAction func exitBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

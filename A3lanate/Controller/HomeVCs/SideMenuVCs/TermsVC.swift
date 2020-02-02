@@ -12,10 +12,21 @@ class TermsVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var backBtn: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var textView: UIView!
+    @IBOutlet weak var contentLbl: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
+        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
+        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+        scrollView.addBorder()
+        scrollView.addCornerRadius(cornerRadius: 20)
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

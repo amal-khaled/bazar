@@ -44,11 +44,11 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if MOLHLanguage.isArabic() {
-            SideMenuController.preferences.basic.direction = .right
-        } else {
-            SideMenuController.preferences.basic.direction = .left
-        }
+//        if MOLHLanguage.isArabic() {
+//            SideMenuController.preferences.basic.direction = .right
+//        } else {
+//            SideMenuController.preferences.basic.direction = .left
+//        }
     }
     
     func setupView() {
@@ -73,13 +73,12 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func menuBtnPressed(_ sender: Any) {
-        sideMenuController?.revealMenu()
+        performSegue(withIdentifier: "toMenuVC", sender: self)
     }
     
     @IBAction func searchBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toSearchVC", sender: self)
     }
-    
 }
 
 extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
