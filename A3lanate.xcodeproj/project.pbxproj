@@ -50,6 +50,11 @@
 		0B780FF423DF19E6004304DC /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B780FF323DF19E6004304DC /* LanguageVC.swift */; };
 		0B780FFA23DF298A004304DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B780FFC23DF298A004304DC /* Localizable.strings */; };
 		0B780FFF23DF2A06004304DC /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B780FFE23DF2A06004304DC /* StringExt.swift */; };
+		0BF4487323F03E760044B88B /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4487123F03E760044B88B /* AdCell.swift */; };
+		0BF4487423F03E760044B88B /* AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4487223F03E760044B88B /* AdCell.xib */; };
+		0BF4487623F04D840044B88B /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4487523F04D840044B88B /* FollowUpVC.swift */; };
+		0BF4487A23F04DF80044B88B /* FollowUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4487823F04DF80044B88B /* FollowUpCell.swift */; };
+		0BF4487B23F04DF80044B88B /* FollowUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4487923F04DF80044B88B /* FollowUpCell.xib */; };
 		0BFA81EC23F00B3900BC5A07 /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EB23F00B3900BC5A07 /* PayVC.swift */; };
 		0BFA81F023F00CAA00BC5A07 /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */; };
 		0BFA81F123F00CAA00BC5A07 /* PayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */; };
@@ -57,6 +62,9 @@
 		0BFA81F623F0107E00BC5A07 /* PayActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81F423F0107E00BC5A07 /* PayActionSheet.xib */; };
 		0BFA81FA23F0147E00BC5A07 /* OnlineActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81F823F0147E00BC5A07 /* OnlineActionSheet.swift */; };
 		0BFA81FB23F0147E00BC5A07 /* OnlineActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81F923F0147E00BC5A07 /* OnlineActionSheet.xib */; };
+		0BFA81FF23F01D5100BC5A07 /* MyAdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81FD23F01D5100BC5A07 /* MyAdsCell.swift */; };
+		0BFA820023F01D5100BC5A07 /* MyAdsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */; };
+		0BFA820323F021D600BC5A07 /* AdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA820223F021D600BC5A07 /* AdVC.swift */; };
 		0BFCA1DA23E22731004DE381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B11315F23D9C93E007FDC6D /* Assets.xcassets */; };
 		0BFDB5F723EC030000695A5A /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5F623EC030000695A5A /* EditProfileVC.swift */; };
 		0BFDB5F923EC032000695A5A /* MyAdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5F823EC032000695A5A /* MyAdsVC.swift */; };
@@ -121,6 +129,11 @@
 		0B780FFB23DF298A004304DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B780FFD23DF298D004304DC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B780FFE23DF2A06004304DC /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		0BF4487123F03E760044B88B /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
+		0BF4487223F03E760044B88B /* AdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCell.xib; sourceTree = "<group>"; };
+		0BF4487523F04D840044B88B /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
+		0BF4487823F04DF80044B88B /* FollowUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpCell.swift; sourceTree = "<group>"; };
+		0BF4487923F04DF80044B88B /* FollowUpCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowUpCell.xib; sourceTree = "<group>"; };
 		0BFA81EB23F00B3900BC5A07 /* PayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
 		0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
 		0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayCell.xib; sourceTree = "<group>"; };
@@ -128,6 +141,9 @@
 		0BFA81F423F0107E00BC5A07 /* PayActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayActionSheet.xib; sourceTree = "<group>"; };
 		0BFA81F823F0147E00BC5A07 /* OnlineActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineActionSheet.swift; sourceTree = "<group>"; };
 		0BFA81F923F0147E00BC5A07 /* OnlineActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineActionSheet.xib; sourceTree = "<group>"; };
+		0BFA81FD23F01D5100BC5A07 /* MyAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsCell.swift; sourceTree = "<group>"; };
+		0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdsCell.xib; sourceTree = "<group>"; };
+		0BFA820223F021D600BC5A07 /* AdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdVC.swift; sourceTree = "<group>"; };
 		0BFDB5F623EC030000695A5A /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		0BFDB5F823EC032000695A5A /* MyAdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsVC.swift; sourceTree = "<group>"; };
 		0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
@@ -156,6 +172,7 @@
 		0B02C4E823DCA13500766776 /* CategoriesVCs */ = {
 			isa = PBXGroup;
 			children = (
+				0BFA820123F021B600BC5A07 /* AdVCs */,
 				0B04832623DA1F87003C49C0 /* CategoriesVC.swift */,
 				0B0AA14923ED8609003971A2 /* CategoryVC.swift */,
 				0B0AA15023ED8A35003971A2 /* SubCategoryVC.swift */,
@@ -206,6 +223,7 @@
 		0B02C4F223DCA1EE00766776 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0BF4487023F03E5B0044B88B /* AdCell */,
 				0B0AA15223ED8CB3003971A2 /* SubSubCategoryCell */,
 				0B0AA14B23ED88A0003971A2 /* SubCategoryCell */,
 				0B0AA14423ED80D1003971A2 /* CategoriesCell */,
@@ -372,6 +390,8 @@
 		0B1F78A723E9DA20006BDFBA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0BF4487723F04DD50044B88B /* FollowUpCell */,
+				0BFA81FC23F01D3500BC5A07 /* MyAdsCell */,
 				0BFA81ED23F00C9100BC5A07 /* PayCell */,
 				0BFDB60823EC4ADF00695A5A /* FavoriteCell */,
 				0B1F78B423EA21F6006BDFBA /* CountryCell */,
@@ -432,6 +452,24 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		0BF4487023F03E5B0044B88B /* AdCell */ = {
+			isa = PBXGroup;
+			children = (
+				0BF4487123F03E760044B88B /* AdCell.swift */,
+				0BF4487223F03E760044B88B /* AdCell.xib */,
+			);
+			path = AdCell;
+			sourceTree = "<group>";
+		};
+		0BF4487723F04DD50044B88B /* FollowUpCell */ = {
+			isa = PBXGroup;
+			children = (
+				0BF4487823F04DF80044B88B /* FollowUpCell.swift */,
+				0BF4487923F04DF80044B88B /* FollowUpCell.xib */,
+			);
+			path = FollowUpCell;
+			sourceTree = "<group>";
+		};
 		0BFA81ED23F00C9100BC5A07 /* PayCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +495,24 @@
 				0BFA81F923F0147E00BC5A07 /* OnlineActionSheet.xib */,
 			);
 			path = OnlineActionSheet;
+			sourceTree = "<group>";
+		};
+		0BFA81FC23F01D3500BC5A07 /* MyAdsCell */ = {
+			isa = PBXGroup;
+			children = (
+				0BFA81FD23F01D5100BC5A07 /* MyAdsCell.swift */,
+				0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */,
+			);
+			path = MyAdsCell;
+			sourceTree = "<group>";
+		};
+		0BFA820123F021B600BC5A07 /* AdVCs */ = {
+			isa = PBXGroup;
+			children = (
+				0BFA820223F021D600BC5A07 /* AdVC.swift */,
+				0BF4487523F04D840044B88B /* FollowUpVC.swift */,
+			);
+			path = AdVCs;
 			sourceTree = "<group>";
 		};
 		0BFDB60023EC0F9A00695A5A /* EditProfileVCs */ = {
@@ -565,6 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BFA820023F01D5100BC5A07 /* MyAdsCell.xib in Resources */,
 				0B11316323D9C93E007FDC6D /* LaunchScreen.storyboard in Resources */,
 				0B1F78AE23E9DA8B006BDFBA /* QuestionCell.xib in Resources */,
 				0B0AA14F23ED88BE003971A2 /* SubCategoryCell.xib in Resources */,
@@ -576,10 +633,12 @@
 				0BFDB61023EC4C0F00695A5A /* FavoriteCell.xib in Resources */,
 				0BFA81FB23F0147E00BC5A07 /* OnlineActionSheet.xib in Resources */,
 				0B1F78B323E9E526006BDFBA /* NotificationCell.xib in Resources */,
+				0BF4487423F03E760044B88B /* AdCell.xib in Resources */,
 				0B02C50523DCBBC300766776 /* MainCategoriesCell.xib in Resources */,
 				0BFCA1DA23E22731004DE381 /* Assets.xcassets in Resources */,
 				0B11315E23D9C93C007FDC6D /* Main.storyboard in Resources */,
 				0BFDB60723EC3CB400695A5A /* ChangePassAlert.xib in Resources */,
+				0BF4487B23F04DF80044B88B /* FollowUpCell.xib in Resources */,
 				0BFA81F123F00CAA00BC5A07 /* PayCell.xib in Resources */,
 				0B0AA15623ED8CD3003971A2 /* SubSubCategoryCell.xib in Resources */,
 			);
@@ -634,6 +693,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF4487623F04D840044B88B /* FollowUpVC.swift in Sources */,
 				0B0AA14A23ED8609003971A2 /* CategoryVC.swift in Sources */,
 				0B04833123DA2DDC003C49C0 /* UIViewExt.swift in Sources */,
 				0B02C50423DCBBC300766776 /* MainCategoriesCell.swift in Sources */,
@@ -646,10 +706,13 @@
 				0B04832E23DA26B7003C49C0 /* SearchVC.swift in Sources */,
 				0B0BCEDC23E10D7F00AF709A /* LoginVC.swift in Sources */,
 				0BFA81F023F00CAA00BC5A07 /* PayCell.swift in Sources */,
+				0BFA81FF23F01D5100BC5A07 /* MyAdsCell.swift in Sources */,
 				0B0AA15523ED8CD3003971A2 /* SubSubCategoryCell.swift in Sources */,
 				0B08D41023DFBD2200079CA4 /* AboutUsVC.swift in Sources */,
+				0BFA820323F021D600BC5A07 /* AdVC.swift in Sources */,
 				0B0BCEE223E10E4800AF709A /* TermsVC.swift in Sources */,
 				0B11315B23D9C93C007FDC6D /* AdvertiseNowVC.swift in Sources */,
+				0BF4487323F03E760044B88B /* AdCell.swift in Sources */,
 				0BFA81F523F0107E00BC5A07 /* PayActionSheet.swift in Sources */,
 				0B11315923D9C93C007FDC6D /* HomeVC.swift in Sources */,
 				0B04832B23DA1FDB003C49C0 /* ProfileVC.swift in Sources */,
@@ -667,6 +730,7 @@
 				0B780FFF23DF2A06004304DC /* StringExt.swift in Sources */,
 				0B04832923DA1FC9003C49C0 /* FavoriteVC.swift in Sources */,
 				0B04832723DA1F87003C49C0 /* CategoriesVC.swift in Sources */,
+				0BF4487A23F04DF80044B88B /* FollowUpCell.swift in Sources */,
 				0B02C4FD23DCAC9700766776 /* MainAdsCell.swift in Sources */,
 				0B1F78AD23E9DA8B006BDFBA /* QuestionCell.swift in Sources */,
 				0BFDB5F723EC030000695A5A /* EditProfileVC.swift in Sources */,

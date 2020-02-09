@@ -86,27 +86,16 @@ extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLa
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if collectionView.tag == 1 {
-//            let cell = collectionView.cellForItem(at: indexPath) as! MainCategoriesCell
-//            cell.titleLbl.isHidden = false
 //        }
-//        if collectionView.tag == 2 {
-//        }
-//        if collectionView.tag == 3 {
-//        }
-//        if collectionView.tag == 4 {
-//        }
+        if collectionView.tag == 2 {
+            performSegue(withIdentifier: "toAdVC", sender: self)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        if collectionView.tag == 1 {
-//            let cell = collectionView.cellForItem(at: indexPath) as! MainCategoriesCell
-//            cell.titleLbl.isHidden = true
-//        }
+//      if collectionView.tag == 1 {
+//      }
 //      if collectionView.tag == 2 {
-//      }
-//      if collectionView.tag == 3 {
-//      }
-//      if collectionView.tag == 4 {
 //      }
     }
 }
