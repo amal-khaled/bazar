@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayActionSheet" customModule="A3lanate" customModuleProvider="target">
+            <connections>
+                <outlet property="actionSheetView" destination="bFF-ly-UdL" id="WPF-RR-82c"/>
+                <outlet property="balanceBtn" destination="F47-Im-5vG" id="2SP-nb-Bzz"/>
+                <outlet property="bgView" destination="rWa-qf-4fZ" id="2HI-Hn-9Ca"/>
+                <outlet property="cancelBtn" destination="Kmw-w1-VQr" id="Aiy-SH-2j8"/>
+                <outlet property="onlineBtn" destination="P3f-md-7yW" id="uzn-8L-xK4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWa-qf-4fZ">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFF-ly-UdL">
+                    <rect key="frame" x="0.0" y="512" width="414" height="384"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syd-a2-zXC">
+                            <rect key="frame" x="162.5" y="30" width="89.5" height="36"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                            <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="X54-YO-uxj">
+                            <rect key="frame" x="30" y="96" width="354" height="180"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3f-md-7yW">
+                                    <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
+                                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Zhx-mS-Lda"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                    <state key="normal" title="Online">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onlineBtnPressed:" destination="-1" eventType="touchUpInside" id="Q3O-f9-1mR"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F47-Im-5vG">
+                                    <rect key="frame" x="0.0" y="70" width="354" height="40"/>
+                                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="nAO-sC-FxQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                    <state key="normal" title="Your balance">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="balanceBtnPressed:" destination="-1" eventType="touchUpInside" id="VZ0-Cd-zhj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmw-w1-VQr">
+                                    <rect key="frame" x="0.0" y="140" width="354" height="40"/>
+                                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="zbY-Mg-kmt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelBtnPressed:" destination="-1" eventType="touchUpInside" id="84x-Q6-7n6"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="384" id="Cfg-yt-2zI"/>
+                        <constraint firstAttribute="trailing" secondItem="X54-YO-uxj" secondAttribute="trailing" constant="30" id="Dcv-iw-1Tz"/>
+                        <constraint firstItem="X54-YO-uxj" firstAttribute="top" secondItem="Syd-a2-zXC" secondAttribute="bottom" constant="30" id="I0B-hr-sUd"/>
+                        <constraint firstItem="Syd-a2-zXC" firstAttribute="centerX" secondItem="bFF-ly-UdL" secondAttribute="centerX" id="N0L-ta-m4q"/>
+                        <constraint firstItem="Syd-a2-zXC" firstAttribute="top" secondItem="bFF-ly-UdL" secondAttribute="top" constant="30" id="PJ7-sx-qRg"/>
+                        <constraint firstItem="X54-YO-uxj" firstAttribute="leading" secondItem="bFF-ly-UdL" secondAttribute="leading" constant="30" id="nhs-oe-ZCl"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bFF-ly-UdL" secondAttribute="trailing" id="0uT-GT-MQo"/>
+                <constraint firstItem="bFF-ly-UdL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ECZ-w7-baM"/>
+                <constraint firstAttribute="bottom" secondItem="rWa-qf-4fZ" secondAttribute="bottom" id="I4s-za-DYk"/>
+                <constraint firstItem="rWa-qf-4fZ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KvI-q8-kt8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bFF-ly-UdL" secondAttribute="bottom" constant="-34" id="UVh-Fc-Scw"/>
+                <constraint firstItem="rWa-qf-4fZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Z6e-Fk-eAZ"/>
+                <constraint firstItem="rWa-qf-4fZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aec-nV-Brk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </view>
+    </objects>
+</document>

@@ -21,6 +21,8 @@ class HomeVC: UIViewController {
     @IBOutlet weak var featuredCollection: UICollectionView!
     @IBOutlet weak var recentCollection: UICollectionView!
     @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var mostViewdCollection: UICollectionView!
+    @IBOutlet weak var allBtn: UIButton!
     
     //Constants
     let MainAdsCellID = "MainAdsCell"
@@ -30,25 +32,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         slideShowSetup()
         setupView()
-        setupTableView()
-        categoriesCollection.delegate = self
-        categoriesCollection.dataSource = self
-        featuredCollection.delegate = self
-        featuredCollection.dataSource = self
-        recentCollection.delegate = self
-        recentCollection.dataSource = self
-        categoriesCollection.reloadData()
-        featuredCollection.reloadData()
-        recentCollection.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-//        if MOLHLanguage.isArabic() {
-//            SideMenuController.preferences.basic.direction = .right
-//        } else {
-//            SideMenuController.preferences.basic.direction = .left
-//        }
+        setupCollectionView()
     }
     
     func setupView() {
@@ -66,10 +50,19 @@ class HomeVC: UIViewController {
         imageSlideshow.contentScaleMode = .scaleToFill
     }
     
-    func setupTableView() {
+    func setupCollectionView() {
+        categoriesCollection.delegate = self
+        categoriesCollection.dataSource = self
+        featuredCollection.delegate = self
+        featuredCollection.dataSource = self
+        recentCollection.delegate = self
+        recentCollection.dataSource = self
+        mostViewdCollection.delegate = self
+        mostViewdCollection.dataSource = self
         categoriesCollection.register(UINib(nibName: MainCategoriesCellID, bundle: nil), forCellWithReuseIdentifier: MainCategoriesCellID)
         featuredCollection.register(UINib(nibName: MainAdsCellID, bundle: nil), forCellWithReuseIdentifier: MainAdsCellID)
         recentCollection.register(UINib(nibName: MainAdsCellID, bundle: nil), forCellWithReuseIdentifier: MainAdsCellID)
+        mostViewdCollection.register(UINib(nibName: MainAdsCellID, bundle: nil), forCellWithReuseIdentifier: MainAdsCellID)
     }
     
     @IBAction func menuBtnPressed(_ sender: Any) {
@@ -79,6 +72,11 @@ class HomeVC: UIViewController {
     @IBAction func searchBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toSearchVC", sender: self)
     }
+    
+    @IBAction func allBtnPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toAllOffersVC", sender: self)
+    }
+    
 }
 
 extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -95,7 +93,11 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
         }
         if collectionView.tag == 3 {
             return 4
-        } else {
+        }
+        if collectionView.tag == 4 {
+            return 4
+        }
+        else {
             return 1
         }
     }
@@ -110,6 +112,10 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             return cell
         }
         if collectionView.tag == 3 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath)
+            return cell
+        }
+        if collectionView.tag == 4 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath)
             return cell
         }
@@ -129,17 +135,37 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
         if collectionView.tag == 3 {
             return CGSize(width: 160, height: 170)
         }
+        if collectionView.tag == 4 {
+            return CGSize(width: 160, height: 170)
+        }
         else {
             return CGSize(width: 160, height: 170)
         }
     }
 
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if collectionView.tag == 1 {
+//            let cell = collectionView.cellForItem(at: indexPath) as! MainCategoriesCell
+//            cell.titleLbl.isHidden = false
 //        }
 //        if collectionView.tag == 2 {
 //        }
 //        if collectionView.tag == 3 {
 //        }
-//    }
+//        if collectionView.tag == 4 {
+//        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        if collectionView.tag == 1 {
+//            let cell = collectionView.cellForItem(at: indexPath) as! MainCategoriesCell
+//            cell.titleLbl.isHidden = true
+//        }
+//      if collectionView.tag == 2 {
+//      }
+//      if collectionView.tag == 3 {
+//      }
+//      if collectionView.tag == 4 {
+//      }
+    }
 }

@@ -1,46 +1,25 @@
 //
-//  CategoriesVC.swift
+//  CategoryVC.swift
 //  A3lanate
 //
-//  Created by Mahmoud Elshakoushy on 1/23/20.
+//  Created by Mahmoud Elshakoushy on 2/7/20.
 //  Copyright © 2020 Mahmoud Elshakoushy. All rights reserved.
 //
 
 import UIKit
-import ImageSlideshow
 
-class CategoriesVC: UIViewController {
+class CategoryVC: UIViewController {
     
     //Outlets
-    @IBOutlet weak var slideshowView: UIView!
-    @IBOutlet weak var slideShow: ImageSlideshow!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var categoryNameLbl: UILabel!
     
     //Constants
     let CategoriesCellId = "CategoriesCell"
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        slideShowSetup()
         setupCollectionView()
-    }
-    
-    func setupView() {
-        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
-        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-        self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
-        self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        slideshowView.addCornerRadius(cornerRadius: 25)
-        collectionView.addCornerRadius(cornerRadius: 40)
-    }
-    
-    func slideShowSetup() {
-        slideShow.setImageInputs([ImageSource(image: UIImage(named: "0")!), ImageSource(image: UIImage(named: "1")!)])
-        slideShow.slideshowInterval = 3.0
-        slideShow.zoomEnabled = true
-        slideShow.contentScaleMode = .scaleAspectFill
     }
     
     func setupCollectionView() {
@@ -50,13 +29,13 @@ class CategoriesVC: UIViewController {
     }
 }
 
-extension CategoriesVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension CategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -70,6 +49,6 @@ extension CategoriesVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLay
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "toCategoryVC", sender: self)
+        performSegue(withIdentifier: "toSubCategoryVC", sender: self)
     }
 }

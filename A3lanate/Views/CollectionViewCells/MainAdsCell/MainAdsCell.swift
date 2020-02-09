@@ -29,7 +29,7 @@ class MainAdsCell: UICollectionViewCell {
     
     func setupView() {
         imgView.addCornerRadius(cornerRadius: 20)
-        moreDetailsBtn.addCornerRadius(cornerRadius: 10)
+        moreDetailsBtn.addCornerRadius(cornerRadius: 7)
     }
     
 }

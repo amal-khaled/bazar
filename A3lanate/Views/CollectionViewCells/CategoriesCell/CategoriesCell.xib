@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoriesCell" id="gTV-IL-0wX" customClass="CategoriesCell" customModule="A3lanate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdl-qO-3Pj">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="deg-Ua-2if">
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="Kfn-Xg-Dsj"/>
+                                    <constraint firstAttribute="height" constant="180" id="QA5-1i-fGI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOR-dt-hUw">
+                                <rect key="frame" x="30" y="150" width="110" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Q5W-Yf-R8D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="EOR-dt-hUw" firstAttribute="leading" secondItem="wdl-qO-3Pj" secondAttribute="leading" constant="30" id="2l2-iC-an7"/>
+                            <constraint firstAttribute="trailing" secondItem="deg-Ua-2if" secondAttribute="trailing" id="7fO-Hu-Fv0"/>
+                            <constraint firstAttribute="trailing" secondItem="EOR-dt-hUw" secondAttribute="trailing" constant="30" id="IRc-yQ-2t2"/>
+                            <constraint firstItem="deg-Ua-2if" firstAttribute="top" secondItem="wdl-qO-3Pj" secondAttribute="top" id="Twn-my-eCI"/>
+                            <constraint firstAttribute="bottom" secondItem="deg-Ua-2if" secondAttribute="bottom" id="ajo-Px-OPN"/>
+                            <constraint firstAttribute="bottom" secondItem="EOR-dt-hUw" secondAttribute="bottom" id="giB-BC-TVa"/>
+                            <constraint firstItem="deg-Ua-2if" firstAttribute="leading" secondItem="wdl-qO-3Pj" secondAttribute="leading" id="qsT-Y3-1dp"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="wdl-qO-3Pj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="71F-yG-i95"/>
+                <constraint firstAttribute="trailing" secondItem="wdl-qO-3Pj" secondAttribute="trailing" id="F4A-lB-Yhy"/>
+                <constraint firstItem="wdl-qO-3Pj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UdU-6R-1EY"/>
+                <constraint firstAttribute="bottom" secondItem="wdl-qO-3Pj" secondAttribute="bottom" id="sId-5t-C8w"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="bgImg" destination="deg-Ua-2if" id="tFh-37-gYF"/>
+                <outlet property="bgView" destination="wdl-qO-3Pj" id="8Mq-jY-sf3"/>
+                <outlet property="titleLbl" destination="EOR-dt-hUw" id="wvJ-9E-Mjm"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="131"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="1" width="678" height="452"/>
+    </resources>
+</document>
