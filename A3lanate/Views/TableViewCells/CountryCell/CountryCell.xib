@@ -28,10 +28,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plx-qM-cUt">
-                                <rect key="frame" x="30" y="23.5" width="354" height="22"/>
+                                <rect key="frame" x="30" y="20.5" width="354" height="28.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Egypt" image="first">
+                                <state key="normal" title="Egypt" image="unchecked_rectangle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -77,6 +77,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="first" width="16" height="16"/>
+        <image name="unchecked_rectangle" width="28.5" height="28.5"/>
     </resources>
 </document>

@@ -70,7 +70,7 @@
                                     <action selector="moreDetailsBtnPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JA1-to-0ml"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZOC-5Q-0fM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeG" translatesAutoresizingMaskIntoConstraints="NO" id="ZOC-5Q-0fM">
                                 <rect key="frame" x="139" y="136" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="e2G-Nq-Pvg"/>
@@ -113,5 +113,6 @@
     </objects>
     <resources>
         <image name="1" width="678" height="452"/>
+        <image name="likeG" width="28.5" height="25"/>
     </resources>
 </document>
