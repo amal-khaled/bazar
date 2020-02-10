@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+import SwiftyJSON
 
 class SideMenuVC: UIViewController {
     
@@ -37,6 +40,16 @@ class SideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        loadProfile()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if NetworkHelper.getToken() == nil {
+            loginLbl.text = "Log In".localized
+        } else {
+            loginLbl.text = "Log Out".localized
+        }
     }
     
     func setupView() {
@@ -51,6 +64,30 @@ class SideMenuVC: UIViewController {
         shareLbl.addCornerRadius(cornerRadius: 15)
         aboutUsLbl.addCornerRadius(cornerRadius: 15)
         loginLbl.addCornerRadius(cornerRadius: 15)
+    }
+    
+    func loadProfile() {
+        Alamofire.request(PROFILE_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_AUTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                if let name = json["Name"].string {
+                    self.usernameLbl.text = name
+                }
+                if let image = json["ImageURL"].string {
+                    Alamofire.request(image).responseImage { (response) in
+                        if let image = response.result.value {
+                            DispatchQueue.main.async {
+                                self.profileImg.image = image
+                                self.profileImg.contentMode = .scaleAspectFill
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func languageBtnPressed(_ sender: Any) {
@@ -85,7 +122,11 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toLoginVC", sender: self)
+        if NetworkHelper.getToken() == nil {
+            performSegue(withIdentifier: "toLoginVC", sender: self)
+        } else {
+            NetworkHelper.removeToken()
+        }
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {

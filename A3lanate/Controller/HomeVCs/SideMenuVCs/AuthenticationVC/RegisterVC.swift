@@ -47,13 +47,36 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toMain", sender: self)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func phoneBtnPressed(_ sender: Any) {
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        
+        guard let phoneNumber = phoneTxtField.text, phoneTxtField.text != "" else {return}
+        guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
+        guard let password = passTxtField.text, passTxtField.text != "" else {return}
+        guard let confirmpassword = confirmPassTxtField.text, confirmPassTxtField.text != "" else {return}
+
+        AuthService.instance.registerUser(email: email, password: password, confirmpassword: confirmpassword, PhoneNumber: phoneNumber) { (success) in
+            if success {
+                self.phoneBtn.isHidden = false
+                AuthService.instance.loginUser(username: email, password: password) { (success) in
+                    if success {
+                        if NetworkHelper.getToken() == nil {
+                            let alert = UIAlertController(title: "", message: "Please make sure that the user name and the password is correct".localized, preferredStyle: .alert)
+                            self.present(alert, animated: true, completion: nil)
+                            let when = DispatchTime.now() + 1
+                            DispatchQueue.main.asyncAfter(deadline: when){
+                                alert.dismiss(animated: true, completion: nil)
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
     }
 }

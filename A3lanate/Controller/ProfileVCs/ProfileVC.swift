@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import AlamofireImage
+import Alamofire
+import SwiftyJSON
 
 class ProfileVC: UIViewController {
     
@@ -22,6 +25,7 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        loadProfile()
     }
     
     func setupView() {
@@ -31,6 +35,30 @@ class ProfileVC: UIViewController {
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
         profileImg.addCornerRadius(cornerRadius: 65)
+    }
+    
+    func loadProfile() {
+        Alamofire.request(PROFILE_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_AUTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                if let name = json["Name"].string {
+                    self.nameBtn.setTitle(name, for: .normal)
+                }
+                if let image = json["ImageURL"].string {
+                    Alamofire.request(image).responseImage { (response) in
+                        if let image = response.result.value {
+                            DispatchQueue.main.async {
+                                self.profileImg.image = image
+                                self.profileImg.contentMode = .scaleAspectFill
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func nameBtnPressed(_ sender: Any) {

@@ -51,4 +51,30 @@ class AuthService {
             }
         }
     }
+    
+    func loginUser(username: String, password: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = username.lowercased()
+        
+        let body: [String : Any] = [
+            "username": lowerCaseEmail,
+            "password": password,
+            "grant_type": "password"
+        ]
+        
+        Alamofire.request(LOGIN_URL, method: .post, parameters: body, encoding: URLEncoding.default, headers: HEADER_TOKEN).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                if let token  = json["access_token"].string {
+                    NetworkHelper.saveToken(token: token)
+                }
+                self.isLoggedIN = true
+                completion(true)
+            case .failure(let error):
+                completion(false)
+                print(error)
+            }
+        }
+    }
 }

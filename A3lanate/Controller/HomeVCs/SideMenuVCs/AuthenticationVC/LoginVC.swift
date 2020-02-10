@@ -44,6 +44,21 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {
+        guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
+        guard let pass = passwordTxtField.text, passwordTxtField.text != "" else {return}
+        
+        AuthService.instance.loginUser(username: email, password: pass) { (success) in
+            if success {
+                if NetworkHelper.getToken() == nil {
+                    let alert = UIAlertController(title: "", message: "Please make sure that the email and the password is correct".localized, preferredStyle: .alert)
+                    self.present(alert, animated: true, completion: nil)
+                    let when = DispatchTime.now() + 1
+                    DispatchQueue.main.asyncAfter(deadline: when){
+                        alert.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func forgotPassBtnPressed(_ sender: Any) {

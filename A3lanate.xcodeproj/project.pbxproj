@@ -57,6 +57,7 @@
 		0BF4487B23F04DF80044B88B /* FollowUpCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4487923F04DF80044B88B /* FollowUpCell.xib */; };
 		0BF4487F23F173470044B88B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4487E23F173470044B88B /* Constants.swift */; };
 		0BF4488223F174100044B88B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4488123F174100044B88B /* AuthService.swift */; };
+		0BF4488423F1B2880044B88B /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4488323F1B2880044B88B /* NetworkHelper.swift */; };
 		0BFA81EC23F00B3900BC5A07 /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EB23F00B3900BC5A07 /* PayVC.swift */; };
 		0BFA81F023F00CAA00BC5A07 /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */; };
 		0BFA81F123F00CAA00BC5A07 /* PayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */; };
@@ -138,6 +139,7 @@
 		0BF4487923F04DF80044B88B /* FollowUpCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowUpCell.xib; sourceTree = "<group>"; };
 		0BF4487E23F173470044B88B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0BF4488123F174100044B88B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0BF4488323F1B2880044B88B /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		0BFA81EB23F00B3900BC5A07 /* PayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
 		0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
 		0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayCell.xib; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				0BF4487E23F173470044B88B /* Constants.swift */,
+				0BF4488323F1B2880044B88B /* NetworkHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				0BF4488223F174100044B88B /* AuthService.swift in Sources */,
 				0BFDB60623EC3CB400695A5A /* ChangePassAlert.swift in Sources */,
 				0B0BCEE023E10DCE00AF709A /* NotificationVC.swift in Sources */,
+				0BF4488423F1B2880044B88B /* NetworkHelper.swift in Sources */,
 				0B0AA14723ED8100003971A2 /* CategoriesCell.swift in Sources */,
 				0B04832E23DA26B7003C49C0 /* SearchVC.swift in Sources */,
 				0B0BCEDC23E10D7F00AF709A /* LoginVC.swift in Sources */,
