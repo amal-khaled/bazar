@@ -28,11 +28,23 @@ class HomeVC: UIViewController {
     let MainAdsCellID = "MainAdsCell"
     let MainCategoriesCellID = "MainCategoriesCell"
     
+    //Variables
+    var sliderAds = [SliderAd]()
+    var categoriesArr = [Category]()
+    var topArr = [Ad]()
+    var mostViewdArr = [Ad]()
+    var latestArr = [Ad]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         slideShowSetup()
         setupView()
         setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
     }
     
     func setupView() {
@@ -41,6 +53,30 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
         self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+    }
+    
+    func loadData() {
+        HomeService.instance.getHome { (error, sliderAds, categories, topAds, mostViewedAds, latestAds) in
+            if let sliderAds = sliderAds {
+                self.sliderAds = sliderAds
+            }
+            if let categories = categories {
+                self.categoriesArr = categories
+                self.categoriesCollection.reloadData()
+            }
+            if let topAds = topAds {
+                self.topArr = topAds
+                self.featuredCollection.reloadData()
+            }
+            if let mostAds = mostViewedAds {
+                self.mostViewdArr = mostAds
+                self.mostViewdCollection.reloadData()
+            }
+            if let latestAds = latestAds {
+                self.latestArr = latestAds
+                self.recentCollection.reloadData()
+            }
+        }
     }
     
     func slideShowSetup() {
@@ -86,16 +122,16 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
-            return 7
+            return categoriesArr.count
         }
         if collectionView.tag == 2 {
-            return 4
+            return topArr.count
         }
         if collectionView.tag == 3 {
-            return 4
+            return mostViewdArr.count
         }
         if collectionView.tag == 4 {
-            return 4
+            return latestArr.count
         }
         else {
             return 1

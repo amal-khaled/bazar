@@ -38,6 +38,10 @@
 		0B11315B23D9C93C007FDC6D /* AdvertiseNowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11315A23D9C93C007FDC6D /* AdvertiseNowVC.swift */; };
 		0B11315E23D9C93C007FDC6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B11315C23D9C93C007FDC6D /* Main.storyboard */; };
 		0B11316323D9C93E007FDC6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B11316123D9C93E007FDC6D /* LaunchScreen.storyboard */; };
+		0B19086623F70D220050AE73 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086523F70D220050AE73 /* HomeService.swift */; };
+		0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086723F70EAD0050AE73 /* SliderAd.swift */; };
+		0B19086A23F70EC80050AE73 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086923F70EC80050AE73 /* Category.swift */; };
+		0B19086C23F70EE80050AE73 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086B23F70EE80050AE73 /* Ad.swift */; };
 		0B1F78A423E70CDB006BDFBA /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F78A323E70CDB006BDFBA /* RegisterVC.swift */; };
 		0B1F78A623E725A5006BDFBA /* forgotPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F78A523E725A5006BDFBA /* forgotPassVC.swift */; };
 		0B1F78AD23E9DA8B006BDFBA /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F78AB23E9DA8B006BDFBA /* QuestionCell.swift */; };
@@ -117,6 +121,10 @@
 		0B11315F23D9C93E007FDC6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B11316223D9C93E007FDC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B11316423D9C93E007FDC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B19086523F70D220050AE73 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		0B19086723F70EAD0050AE73 /* SliderAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderAd.swift; sourceTree = "<group>"; };
+		0B19086923F70EC80050AE73 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		0B19086B23F70EE80050AE73 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		0B1F78A323E70CDB006BDFBA /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		0B1F78A523E725A5006BDFBA /* forgotPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPassVC.swift; sourceTree = "<group>"; };
 		0B1F78AB23E9DA8B006BDFBA /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
@@ -150,7 +158,7 @@
 		0BFA81FD23F01D5100BC5A07 /* MyAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsCell.swift; sourceTree = "<group>"; };
 		0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdsCell.xib; sourceTree = "<group>"; };
 		0BFA820223F021D600BC5A07 /* AdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdVC.swift; sourceTree = "<group>"; };
-		0BFDB5F623EC030000695A5A /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		0BFDB5F623EC030000695A5A /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		0BFDB5F823EC032000695A5A /* MyAdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsVC.swift; sourceTree = "<group>"; };
 		0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
 		0BFDB5FC23EC035700695A5A /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
@@ -482,6 +490,9 @@
 		0BF4487C23F168370044B88B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B19086723F70EAD0050AE73 /* SliderAd.swift */,
+				0B19086923F70EC80050AE73 /* Category.swift */,
+				0B19086B23F70EE80050AE73 /* Ad.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +510,7 @@
 			isa = PBXGroup;
 			children = (
 				0BF4488123F174100044B88B /* AuthService.swift */,
+				0B19086523F70D220050AE73 /* HomeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -749,17 +761,21 @@
 				0B11315B23D9C93C007FDC6D /* AdvertiseNowVC.swift in Sources */,
 				0BF4487323F03E760044B88B /* AdCell.swift in Sources */,
 				0BFA81F523F0107E00BC5A07 /* PayActionSheet.swift in Sources */,
+				0B19086C23F70EE80050AE73 /* Ad.swift in Sources */,
+				0B19086A23F70EC80050AE73 /* Category.swift in Sources */,
 				0B11315923D9C93C007FDC6D /* HomeVC.swift in Sources */,
 				0B04832B23DA1FDB003C49C0 /* ProfileVC.swift in Sources */,
 				0B0AA14E23ED88BE003971A2 /* SubCategoryCell.swift in Sources */,
 				0BFDB5FD23EC035700695A5A /* PaymentVC.swift in Sources */,
 				0B04ED5523EEA64000661F1A /* AllOffersVC.swift in Sources */,
+				0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */,
 				0B11315523D9C93C007FDC6D /* AppDelegate.swift in Sources */,
 				0B0CA06123E090C700BC25AC /* ContactUsVC.swift in Sources */,
 				0B0AA15123ED8A35003971A2 /* SubCategoryVC.swift in Sources */,
 				0B780FF423DF19E6004304DC /* LanguageVC.swift in Sources */,
 				0BFDB5F923EC032000695A5A /* MyAdsVC.swift in Sources */,
 				0BFA81FA23F0147E00BC5A07 /* OnlineActionSheet.swift in Sources */,
+				0B19086623F70D220050AE73 /* HomeService.swift in Sources */,
 				0B1F78A423E70CDB006BDFBA /* RegisterVC.swift in Sources */,
 				0B11315723D9C93C007FDC6D /* SceneDelegate.swift in Sources */,
 				0B780FFF23DF2A06004304DC /* StringExt.swift in Sources */,

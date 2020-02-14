@@ -25,10 +25,22 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var addressTxtField: UITextField!
     @IBOutlet weak var phoneTxtField: UITextField!
     
-
+    //Variables
+    var pickerImage: UIImage? {
+        didSet {
+            guard let image = pickerImage else {return}
+            self.profileImg.image = image
+            UPLOD()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         loadProfile()
     }
     
@@ -75,7 +87,45 @@ class EditProfileVC: UIViewController {
         }
     }
     
+    func UPLOD() {
+        //Parameter HERE
+        let parameters = ["file":"value"]
+        //Header HERE
+        let headers = HEADER_BOTH
+        let image = self.pickerImage
+        let imgData = image!.jpegData(compressionQuality: 0.7)!
+        
+        Alamofire.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imgData, withName: "file",fileName: "furkan.png" , mimeType: "image/png")
+            
+            for (key, value) in parameters
+            {
+                multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+            }
+        }, usingThreshold:UInt64.init(),
+           to: USER_IMAGE_URL,
+           method: .post,
+           headers: headers,
+           encodingCompletion: { (result) in
+            
+            switch result {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                }
+                break
+            case .failure(let encodingError):
+                print("the error is  : \(encodingError.localizedDescription)")
+                break
+            }
+        })
+    }
+    
     @IBAction func profileImgBtnPressed(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
     }
     
     @IBAction func editBtnPressed(_ sender: Any) {
@@ -83,5 +133,20 @@ class EditProfileVC: UIViewController {
     
     @IBAction func changePassBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toChangePassVC", sender: self)
+    }
+}
+
+extension EditProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.pickerImage = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.pickerImage = originalImage
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
 }

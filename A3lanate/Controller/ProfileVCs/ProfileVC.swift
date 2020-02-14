@@ -25,8 +25,14 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         loadProfile()
     }
+    
+    
     
     func setupView() {
         self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
