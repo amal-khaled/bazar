@@ -17,6 +17,7 @@ class MainAdsCell: UICollectionViewCell {
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var currencyLbl: UILabel!
+    @IBOutlet weak var likeImg: UIImageView!
     
 
     override func awakeFromNib() {

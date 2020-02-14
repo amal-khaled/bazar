@@ -104,6 +104,7 @@
                 <outlet property="bgView" destination="h1H-Bm-P37" id="T2M-4l-nzF"/>
                 <outlet property="currencyLbl" destination="PE5-cz-MKc" id="X13-AH-c40"/>
                 <outlet property="imgView" destination="3pH-fF-zjk" id="UFh-ma-vvz"/>
+                <outlet property="likeImg" destination="ZOC-5Q-0fM" id="pX0-ho-ztv"/>
                 <outlet property="moreDetailsBtn" destination="ku6-zr-4FN" id="UcX-iP-XN7"/>
                 <outlet property="priceLbl" destination="3cj-Ib-akx" id="AZp-5h-77d"/>
                 <outlet property="typeLbl" destination="8oB-d4-lGv" id="eXw-bM-vNo"/>

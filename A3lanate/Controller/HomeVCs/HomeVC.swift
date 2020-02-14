@@ -10,6 +10,8 @@ import UIKit
 import ImageSlideshow
 import SideMenuSwift
 import MOLH
+import Alamofire
+import AlamofireImage
 
 class HomeVC: UIViewController {
     
@@ -34,10 +36,9 @@ class HomeVC: UIViewController {
     var topArr = [Ad]()
     var mostViewdArr = [Ad]()
     var latestArr = [Ad]()
-    
+    var sliderAlamoSource = [AlamofireSource]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        slideShowSetup()
         setupView()
         setupCollectionView()
     }
@@ -59,6 +60,7 @@ class HomeVC: UIViewController {
         HomeService.instance.getHome { (error, sliderAds, categories, topAds, mostViewedAds, latestAds) in
             if let sliderAds = sliderAds {
                 self.sliderAds = sliderAds
+                self.slideShowSetup()
             }
             if let categories = categories {
                 self.categoriesArr = categories
@@ -80,10 +82,25 @@ class HomeVC: UIViewController {
     }
     
     func slideShowSetup() {
-    imageSlideshow.setImageInputs([ImageSource(image: UIImage(named: "0")!), ImageSource(image: UIImage(named: "1")!)])
+        for i in 0..<sliderAds.count {
+            self.sliderAlamoSource.append(AlamofireSource(urlString: String(describing: sliderAds[i].imgUrl))!)
+        }
+        imageSlideshow.setImageInputs(self.sliderAlamoSource)
         imageSlideshow.slideshowInterval = 3.0
         imageSlideshow.zoomEnabled = true
         imageSlideshow.contentScaleMode = .scaleToFill
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        imageSlideshow.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func didTap() {
+//        print("selected page \(slideShowView.currentPage)")
+//        if BannerService.instance.bannersId.count > 0 {
+//            if BannerService.instance.bannersId[slideShowView.currentPage] == 0 {return} else {
+//                self.offerId = BannerService.instance.bannersId[slideShowView.currentPage]
+//                self.performSegue(withIdentifier: "toOfferDetails", sender: self)
+//            }
+//        }
     }
     
     func setupCollectionView() {
@@ -140,23 +157,78 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCategoriesCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCategoriesCellID, for: indexPath) as! MainCategoriesCell
+            Alamofire.request(categoriesArr[indexPath.row].imgUrl).responseImage { (response) in
+                if let image = response.result.value {
+                    DispatchQueue.main.async {
+                        cell.imgView.image = image
+                    }
+                }
+            }
             return cell
         }
         if collectionView.tag == 2 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
+            Alamofire.request(topArr[indexPath.row].imgUrl).responseImage { (response) in
+                if let image = response.result.value {
+                    DispatchQueue.main.async {
+                        cell.imgView.image = image
+                    }
+                }
+            }
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                cell.typeLbl.text = topArr[indexPath.row].titleAr
+            } else {
+                cell.typeLbl.text = topArr[indexPath.row].titleEn
+            }
+            cell.priceLbl.text = "\(topArr[indexPath.row].price)"
+            if topArr[indexPath.row].isLoved == true {
+                cell.likeImg.image = UIImage(named: "likeR")
+            }
             return cell
         }
         if collectionView.tag == 3 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
+            Alamofire.request(latestArr[indexPath.row].imgUrl).responseImage { (response) in
+                if let image = response.result.value {
+                    DispatchQueue.main.async {
+                        cell.imgView.image = image
+                    }
+                }
+            }
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                cell.typeLbl.text = latestArr[indexPath.row].titleAr
+            } else {
+                cell.typeLbl.text = latestArr[indexPath.row].titleEn
+            }
+            cell.priceLbl.text = "\(latestArr[indexPath.row].price)"
+            if latestArr[indexPath.row].isLoved == true {
+                cell.likeImg.image = UIImage(named: "likeR")
+            }
             return cell
         }
         if collectionView.tag == 4 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
+            Alamofire.request(mostViewdArr[indexPath.row].imgUrl).responseImage { (response) in
+                if let image = response.result.value {
+                    DispatchQueue.main.async {
+                        cell.imgView.image = image
+                    }
+                }
+            }
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                cell.typeLbl.text = mostViewdArr[indexPath.row].titleAr
+            } else {
+                cell.typeLbl.text = mostViewdArr[indexPath.row].titleEn
+            }
+            cell.priceLbl.text = "\(mostViewdArr[indexPath.row].price)"
+            if mostViewdArr[indexPath.row].isLoved == true {
+                cell.likeImg.image = UIImage(named: "likeR")
+            }
             return cell
         }
         else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
             return cell
         }
     }
