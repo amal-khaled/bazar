@@ -8,11 +8,10 @@
 
 import UIKit
 
-class CategoryVC: UIViewController {
+class SubSubCategory: UIViewController {
     
     //Outlets
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var categoryNameLbl: UILabel!
     
     //Constants
     let CategoriesCellId = "CategoriesCell"
@@ -29,7 +28,7 @@ class CategoryVC: UIViewController {
     }
 }
 
-extension CategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension SubSubCategory: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

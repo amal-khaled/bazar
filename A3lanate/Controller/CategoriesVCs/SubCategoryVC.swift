@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MOLH
 
 class SubCategoryVC: UIViewController {
     
@@ -19,14 +20,25 @@ class SubCategoryVC: UIViewController {
     let SubSubCategoryCellId = "SubSubCategoryCell"
     let SubCategoryCellId = "SubCategoryCell"
     
+    //Variables
+    var selectedCatId: Int = 0
+    var subCategories = [SubCategory]()
+    var ads = [Ad]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print(selectedCatId)
+        loadData()
+    }
+    
     func setupView() {
-        subSubCategoryCollection.addCornerRadius(cornerRadius: 30)
+        
     }
     
     func setupCollectionView() {
@@ -36,6 +48,22 @@ class SubCategoryVC: UIViewController {
         subSubCategoryCollection.dataSource = self
         subSubCategoryCollection.register(UINib(nibName: SubSubCategoryCellId, bundle: nil), forCellWithReuseIdentifier: SubSubCategoryCellId)
         subCategoryCollection.register(UINib(nibName: SubCategoryCellId, bundle: nil), forCellWithReuseIdentifier: SubCategoryCellId)
+    }
+    
+    func loadData() {
+        CategoriesService.instance.getSubCategoriesAndAdsById(id: selectedCatId) { (error, catId, catNameAr, catNameEn, subcategories, ads) in
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                self.subCategoryNameLbl.text = catNameAr
+            } else {
+                self.subCategoryNameLbl.text = catNameEn
+            }
+            if let subcategories = subcategories {
+                self.subCategories = subcategories
+            }
+            if let ads = ads {
+                self.ads = ads
+            }
+        }
     }
 }
 
@@ -87,9 +115,9 @@ extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if collectionView.tag == 1 {
 //        }
-        if collectionView.tag == 2 {
-            performSegue(withIdentifier: "toAdVC", sender: self)
-        }
+//        if collectionView.tag == 2 {
+//            performSegue(withIdentifier: "toAdVC", sender: self)
+//        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

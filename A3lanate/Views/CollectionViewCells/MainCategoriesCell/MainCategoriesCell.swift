@@ -17,7 +17,5 @@ class MainCategoriesCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLbl.isHidden = true
     }
-
 }

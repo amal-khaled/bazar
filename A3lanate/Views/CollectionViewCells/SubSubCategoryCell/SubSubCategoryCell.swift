@@ -17,6 +17,10 @@ class SubSubCategoryCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupView()
     }
 
+    func setupView() {
+        mainView.addCornerRadius(cornerRadius: 30)
+    }
 }

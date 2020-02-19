@@ -37,6 +37,7 @@ class HomeVC: UIViewController {
     var mostViewdArr = [Ad]()
     var latestArr = [Ad]()
     var sliderAlamoSource = [AlamofireSource]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -158,6 +159,11 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCategoriesCellID, for: indexPath) as! MainCategoriesCell
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                cell.titleLbl.text = categoriesArr[indexPath.row].nameAr
+            } else {
+                cell.titleLbl.text = categoriesArr[indexPath.row].nameEn
+            }
             Alamofire.request(categoriesArr[indexPath.row].imgUrl).responseImage { (response) in
                 if let image = response.result.value {
                     DispatchQueue.main.async {
@@ -169,6 +175,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
         }
         if collectionView.tag == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
+            
             Alamofire.request(topArr[indexPath.row].imgUrl).responseImage { (response) in
                 if let image = response.result.value {
                     DispatchQueue.main.async {
@@ -235,7 +242,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 1 {
-            return CGSize(width: 80, height: 80)
+            return CGSize(width: 90, height: 90)
         }
         if collectionView.tag == 2 {
             return CGSize(width: 160, height: 170)

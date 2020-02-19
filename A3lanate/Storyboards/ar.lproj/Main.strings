@@ -1,15 +1,23 @@
-"6Nz-cZ-zPb.text" = "الفئات";
-"JfH-gw-oMc.text" = "نوع";
-"MaS-Z9-dM5.text" = "أحدث اعلانات";
-"S2B-wa-BFd.title" = "اعلن الان";
-"XfS-Ng-uT8.title" = "المفضلة";
-"XtD-p6-jHQ.title" = "الرئيسية";
+//HomeVC
 "acW-dT-cKf.title" = "الرئيسية";
+"XtD-p6-jHQ.title" = "الرئيسية";
+"5FU-9J-tNo.title" = "الرئيسية";
+"MaS-Z9-dM5.text" = "اعلانات سابقة";
+"dbW-DN-GnV.text" = "أحدث اعلانات";
+"uWj-ln-z93.text" = "الاكثر عرض";
+"6Nz-cZ-zPb.text" = "الفئات";
+"HEt-S5-B34.normalTitle" = "الكل";
+
+//FavoriteVC
+"XfS-Ng-uT8.title" = "المفضلة";
+
+//CategoriesVC
 "cPa-gy-q4n.title" = "الفئات";
-"dbW-DN-GnV.text" = "اعلانات سابقة";
-"hzw-vh-IlP.text" = "السعر";
+"9RJ-cU-7mz.title" = "الفئات";
+"Vjp-t5-sSd.text" = "الفئات";
 
 //LanguageVC
+"wr8-Ok-TFg.title" = "اللغة";
 "tOV-cz-aD1.normalTitle" = "العربية";
 "c01-ls-frP.normalTitle" = "English";
 "0hN-Q6-1Gv.normalTitle" = "إحفظ";
@@ -21,6 +29,35 @@
 "6yh-o6-5Al.normalTitle" = "إبحث";
 "uLT-WG-kDD.text" = "ماذا تريد؟";
 "utu-ZL-rvm.text" = "من |";
-"vAj-Ei-lUa.text" = "الموقع";
-"wr8-Ok-TFg.title" = "اللغة";
 "yfV-WJ-nTa.text" = "الى |";
+"vAj-Ei-lUa.text" = "الموقع";
+"hzw-vh-IlP.text" = "السعر";
+"JfH-gw-oMc.text" = "نوع";
+
+//AdvertiseNowVC
+"S2B-wa-BFd.title" = "اعلن الان";
+"FZD-CW-kjt.title" = "إعلن الان";
+"jPt-lN-0wh.text" = "اضف اعلان";
+"Muj-6x-mc0.text" = "اضف صورة";
+"UHt-AR-0nm.text" = "قم باضافة ٨ صور بحد اقصى";
+"r13-5Y-bc2.text" = "الوصف";
+"sSg-fb-P25.normalTitle" = "انجليزي";
+"sX8-L2-rt7.normalTitle" = "عربي";
+"17F-ww-xBp.text" = "العنوان بالعربي";
+"S8x-Ox-Yfp.text" = "العنوان بالانجليزي";
+"l4Q-y7-qck.text" = "السعر";
+"Gdg-LP-ttA.text" = "رقم الهاتف";
+"rVV-5R-LTJ.text" = "الموقع";
+"vQc-qx-k6h.text" = "الاعدادات";
+"m0a-1n-9B5.normalTitle" = "اسمح بالرسائل المباشرة";
+"T8I-nS-gOz.normalTitle" = "اسمح بالاتصال عبر الانترنت";
+"FuT-bf-eNG.normalTitle" = "قم باخفاد رقم الهاتف";
+"tIe-eI-nMC.normalTitle" = "اعد النشر تلقائي";
+"r8G-q5-iQs.normalTitle" = "التالي";
+
+//PayVC
+"V8a-Ps-yhc.text" = "قم بجعل اعلانك في المقدمة :";
+"xkO-4J-nTG.normalTitle" = "التالي";
+
+//AllOffersVC
+"LXZ-yR-NLO.text" = "الكل";

@@ -33,6 +33,9 @@ class AdVC: UIViewController {
     
     //Constants
     let AdCellId = "AdCell"
+    
+    //Variables
+    var selectedAdId: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

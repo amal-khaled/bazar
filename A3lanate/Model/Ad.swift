@@ -15,4 +15,5 @@ class Ad: NSObject {
     var isLoved: Bool = false
     var price: Double = 0.0
     var imgUrl: String = ""
+    var imgArr = [String]()
 }
