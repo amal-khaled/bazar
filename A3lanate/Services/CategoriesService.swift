@@ -130,4 +130,35 @@ class CategoriesService {
             }
         }
     }
+    
+    func getSubSubCategoriesAndAdsById(id: Int,completion: @escaping (_ error: Error?, _ CategoryId: Int, _ CategoryNameAR: String, _ CategoryNameEN: String, _ Ads: [Ad]?) -> Void) {
+        Alamofire.request("\(SUBSUBCATEGORY_ADS_BY_ID_URL)\(id)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, 0, "", "", nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                let categoryId = json["SubSubCategoryId"].int ?? 0
+                let categoryNameAr = json["SubSubCategoryNameAR"].string ?? ""
+                let categoryNameEn = json["SubSubCategoryNameEN"].string ?? ""
+    
+                var ads = [Ad]()
+                if let adsArr = json["Ads"].array {
+                    for item in adsArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ads.append(ad)
+                    }
+                }
+                completion(nil,categoryId,categoryNameAr,categoryNameEn,ads)
+            }
+        }
+    }
 }

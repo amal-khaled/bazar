@@ -23,6 +23,20 @@ class LanguageVC: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            arabicBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            arabicBtn.setTitleColor(.white, for: .normal)
+            englishBtn.backgroundColor = UIColor.white
+            englishBtn.setTitleColor(.black, for: .normal)
+        } else {
+            englishBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            englishBtn.setTitleColor(.white, for: .normal)
+            arabicBtn.backgroundColor = UIColor.white
+            arabicBtn.setTitleColor(.black, for: .normal)   }
+    }
+    
     func setupView() {
         self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]

@@ -25,15 +25,22 @@ class CategoryCell: UITableViewCell {
     
     //Variables
     var parent: CategoriesVC?
-    var categories = [Category]()
-    var cat = [Int]()
     var ads = [Ad]()
     var subCategories = [SubCategory]()
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
         setupCollectionView()
+    }
+    
+    override func prepareForReuse() {
+        //set your cell's state to default here
+        
+        self.ads = [Ad]()
+        self.subCategories = [SubCategory]()
+        self.subCategoryCollectionView.reloadData()
+        self.adsCollectionView.reloadData()
     }
     
     func setupView() {
@@ -49,6 +56,8 @@ class CategoryCell: UITableViewCell {
         adsCollectionView.dataSource = self
         adsCollectionView.register(UINib(nibName: AdCellId, bundle: nil), forCellWithReuseIdentifier: AdCellId)
     }
+    
+    
 }
 
 extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -57,20 +66,20 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
             if subCategories.count == 0 {
                 return 1
             } else {
-            return subCategories.count
+                return subCategories.count
             }
         }
         if collectionView.tag == 2 {
             if ads.count == 0 {
                 return 1
             } else {
-            return ads.count
+                return ads.count
             }
         } else {
             return 1
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
             if subCategories.count == 0 {
@@ -97,7 +106,7 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
             if ads.count == 0 {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdCellId, for: indexPath) as! AdCell
                 return cell
-
+                
             } else {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdCellId, for: indexPath) as! AdCell
                 let imgUrl = ads[indexPath.row].imgArr[0]
@@ -122,7 +131,7 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
         }
         if collectionView.tag == 2 {
             return CGSize(width: 180, height: 120)
-
+            
         } else {
             return CGSize(width: 90, height: 80)
         }
@@ -130,12 +139,24 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
-            parent?.selectedCatId = subCategories[indexPath.row].id
-            parent?.performSegue(withIdentifier: "toSubCategoryVC", sender: self)
+            let cell = collectionView.cellForItem(at: indexPath)
+            
+            UIView.animate(withDuration: 0.7,
+                           animations: {
+                            cell?.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            },
+                           completion: { _ in
+                            UIView.animate(withDuration: 0.7) {
+                                cell?.transform = CGAffineTransform.identity
+                            }
+                            self.parent?.selectedCatId = self.subCategories[indexPath.row].id
+                            self.parent?.performSegue(withIdentifier: "toSubCategoryVC", sender: self)
+            })
         }
         if collectionView.tag == 2 {
             parent?.selectedAdId = ads[indexPath.row].id
             parent?.performSegue(withIdentifier: "toAdVC", sender: self)
         }
     }
+    
 }
