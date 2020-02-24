@@ -48,6 +48,7 @@
 "l4Q-y7-qck.text" = "السعر";
 "Gdg-LP-ttA.text" = "رقم الهاتف";
 "rVV-5R-LTJ.text" = "الموقع";
+"r7t-ND-lRs.text" = "الكويت";
 "vQc-qx-k6h.text" = "الاعدادات";
 "m0a-1n-9B5.normalTitle" = "اسمح بالرسائل المباشرة";
 "T8I-nS-gOz.normalTitle" = "اسمح بالاتصال عبر الانترنت";
@@ -61,3 +62,6 @@
 
 //AllOffersVC
 "LXZ-yR-NLO.text" = "الكل";
+
+//LoginVC
+"Cb6-Bj-OaR.normalTitle" = "تسجيل";

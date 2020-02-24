@@ -26,6 +26,7 @@ class forgotPassVC: UIViewController {
         emailView.addBorder()
         emailView.addCornerRadius(cornerRadius: 35)
         sendBtn.addCornerRadius(cornerRadius: 20)
+        emailTxtField.delegate = self
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {
@@ -33,5 +34,12 @@ class forgotPassVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
+    }
+}
+
+extension forgotPassVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

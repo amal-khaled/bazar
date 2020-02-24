@@ -52,6 +52,10 @@ class EditProfileVC: UIViewController {
         mainView.addCornerRadius(cornerRadius: 30)
         editBtn.addCornerRadius(cornerRadius: 15)
         changePassBtn.addCornerRadius(cornerRadius: 15)
+        nameTxtField.delegate = self
+        emailTxtField.delegate = self
+        addressTxtField.delegate = self
+        phoneTxtField.delegate = self
     }
     
     func loadProfile() {
@@ -148,5 +152,12 @@ extension EditProfileVC: UIImagePickerControllerDelegate, UINavigationController
             self.pickerImage = originalImage
         }
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension EditProfileVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

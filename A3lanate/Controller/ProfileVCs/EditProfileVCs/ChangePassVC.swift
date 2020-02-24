@@ -28,6 +28,9 @@ class ChangePassVC: UIViewController {
         mainView.addCornerRadius(cornerRadius: 30)
         mainView.addBorder()
         changeBtn.addCornerRadius(cornerRadius: 15)
+        currentPassTxtField.delegate = self
+        newPassTxtField.delegate = self
+        confirmPassTxtField.delegate = self
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {
@@ -38,5 +41,12 @@ class ChangePassVC: UIViewController {
         let changePassAlert = ChangePassAlert()
         changePassAlert.modalPresentationStyle = .custom
         present(changePassAlert, animated: true, completion: nil)
+    }
+}
+
+extension ChangePassVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

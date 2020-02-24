@@ -44,6 +44,11 @@ class RegisterVC: UIViewController {
         loginView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
         loginView.addBorder(borderWidth: 1, borderColor: UIColor.gray.cgColor)
         phoneBtn.isHidden = true
+        emailTxtField.delegate = self
+        phoneTxtField.delegate = self
+        passTxtField.delegate = self
+        confirmPassTxtField.delegate = self
+        
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {
@@ -80,3 +85,11 @@ class RegisterVC: UIViewController {
         }
     }
 }
+
+extension RegisterVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+

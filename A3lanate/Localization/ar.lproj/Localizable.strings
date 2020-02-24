@@ -5,3 +5,8 @@
   Created by Mahmoud Elshakoushy on 1/27/20.
   Copyright © 2020 Mahmoud Elshakoushy. All rights reserved.
 */
+
+//AdvertiseNowVC
+"Main" = "الرئيسية";
+"Delete" = "احذف";
+"Dismiss" = "الغاء";

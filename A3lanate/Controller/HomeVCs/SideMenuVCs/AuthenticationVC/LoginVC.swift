@@ -37,6 +37,8 @@ class LoginVC: UIViewController {
         registerView.addCornerRadius(cornerRadius: 40)
         registerView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
         registerView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
+        emailTxtField.delegate = self
+        passwordTxtField.delegate = self
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {
@@ -65,5 +67,12 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func registerBtnPressed(_ sender: Any) {
+    }
+}
+
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

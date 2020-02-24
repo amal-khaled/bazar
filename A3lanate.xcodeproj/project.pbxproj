@@ -43,6 +43,11 @@
 		0B11AC0223F9A09500CA56D2 /* MainAdsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11AC0423F9A09500CA56D2 /* MainAdsCell.xib */; };
 		0B11AC0823F9A21B00CA56D2 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11AC0723F9A21B00CA56D2 /* CategoriesService.swift */; };
 		0B11AC0A23F9A40000CA56D2 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11AC0923F9A40000CA56D2 /* SubCategory.swift */; };
+		0B18782E24040131003B7C0B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18782C24040131003B7C0B /* ImageCell.swift */; };
+		0B18782F24040131003B7C0B /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B18782D24040131003B7C0B /* ImageCell.xib */; };
+		0B187831240444B3003B7C0B /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B187830240444B3003B7C0B /* LocalizedButton.swift */; };
+		0B187833240444E9003B7C0B /* LocalizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B187832240444E9003B7C0B /* LocalizedImage.swift */; };
+		0B187835240446DA003B7C0B /* LocalizedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B187834240446DA003B7C0B /* LocalizedView.swift */; };
 		0B19086623F70D220050AE73 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086523F70D220050AE73 /* HomeService.swift */; };
 		0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086723F70EAD0050AE73 /* SliderAd.swift */; };
 		0B19086A23F70EC80050AE73 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086923F70EC80050AE73 /* Category.swift */; };
@@ -133,6 +138,11 @@
 		0B11AC0623F9A09800CA56D2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/MainAdsCell.strings; sourceTree = "<group>"; };
 		0B11AC0723F9A21B00CA56D2 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		0B11AC0923F9A40000CA56D2 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
+		0B18782C24040131003B7C0B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		0B18782D24040131003B7C0B /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		0B187830240444B3003B7C0B /* LocalizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedButton.swift; sourceTree = "<group>"; };
+		0B187832240444E9003B7C0B /* LocalizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedImage.swift; sourceTree = "<group>"; };
+		0B187834240446DA003B7C0B /* LocalizedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedView.swift; sourceTree = "<group>"; };
 		0B19086523F70D220050AE73 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		0B19086723F70EAD0050AE73 /* SliderAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderAd.swift; sourceTree = "<group>"; };
 		0B19086923F70EC80050AE73 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -250,6 +260,7 @@
 		0B02C4F223DCA1EE00766776 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0B18782B24040104003B7C0B /* ImageCell */,
 				0BF4487023F03E5B0044B88B /* AdCell */,
 				0B0AA15223ED8CB3003971A2 /* SubSubCategoryCell */,
 				0B0AA14B23ED88A0003971A2 /* SubCategoryCell */,
@@ -339,6 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				0B04833023DA2DDC003C49C0 /* UIViewExt.swift */,
+				0B187834240446DA003B7C0B /* LocalizedView.swift */,
+				0B187830240444B3003B7C0B /* LocalizedButton.swift */,
+				0B187832240444E9003B7C0B /* LocalizedImage.swift */,
 				0B780FFE23DF2A06004304DC /* StringExt.swift */,
 				0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */,
 			);
@@ -415,6 +429,15 @@
 				0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */,
 			);
 			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		0B18782B24040104003B7C0B /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				0B18782C24040131003B7C0B /* ImageCell.swift */,
+				0B18782D24040131003B7C0B /* ImageCell.xib */,
+			);
+			path = ImageCell;
 			sourceTree = "<group>";
 		};
 		0B1F78A223E70CBE006BDFBA /* AuthenticationVC */ = {
@@ -710,6 +733,7 @@
 				0B02C50523DCBBC300766776 /* MainCategoriesCell.xib in Resources */,
 				0BFCA1DA23E22731004DE381 /* Assets.xcassets in Resources */,
 				0B11315E23D9C93C007FDC6D /* Main.storyboard in Resources */,
+				0B18782F24040131003B7C0B /* ImageCell.xib in Resources */,
 				0BFDB60723EC3CB400695A5A /* ChangePassAlert.xib in Resources */,
 				0BF4487B23F04DF80044B88B /* FollowUpCell.xib in Resources */,
 				0BFA81F123F00CAA00BC5A07 /* PayCell.xib in Resources */,
@@ -766,6 +790,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B18782E24040131003B7C0B /* ImageCell.swift in Sources */,
 				0BF4487623F04D840044B88B /* FollowUpVC.swift in Sources */,
 				0B0AA14A23ED8609003971A2 /* SubSubCategoryVC.swift in Sources */,
 				0B04833123DA2DDC003C49C0 /* UIViewExt.swift in Sources */,
@@ -797,6 +822,7 @@
 				0B04832B23DA1FDB003C49C0 /* ProfileVC.swift in Sources */,
 				0B0AA14E23ED88BE003971A2 /* SubCategoryCell.swift in Sources */,
 				0BFDB5FD23EC035700695A5A /* PaymentVC.swift in Sources */,
+				0B187835240446DA003B7C0B /* LocalizedView.swift in Sources */,
 				0B04ED5523EEA64000661F1A /* AllOffersVC.swift in Sources */,
 				0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */,
 				0B11315523D9C93C007FDC6D /* AppDelegate.swift in Sources */,
@@ -817,11 +843,13 @@
 				0B02C4FD23DCAC9700766776 /* MainAdsCell.swift in Sources */,
 				0B1F78AD23E9DA8B006BDFBA /* QuestionCell.swift in Sources */,
 				0BFDB5F723EC030000695A5A /* EditProfileVC.swift in Sources */,
+				0B187833240444E9003B7C0B /* LocalizedImage.swift in Sources */,
 				0BFA81EC23F00B3900BC5A07 /* PayVC.swift in Sources */,
 				0B11AC0A23F9A40000CA56D2 /* SubCategory.swift in Sources */,
 				0BFDB60F23EC4C0F00695A5A /* FavoriteCell.swift in Sources */,
 				0B1F78A623E725A5006BDFBA /* forgotPassVC.swift in Sources */,
 				0B1F78B223E9E526006BDFBA /* NotificationCell.swift in Sources */,
+				0B187831240444B3003B7C0B /* LocalizedButton.swift in Sources */,
 				0BFDB60223EC0FB800695A5A /* ChangePassVC.swift in Sources */,
 				0BF4487F23F173470044B88B /* Constants.swift in Sources */,
 				0B1F78B723EA220F006BDFBA /* CountryCell.swift in Sources */,

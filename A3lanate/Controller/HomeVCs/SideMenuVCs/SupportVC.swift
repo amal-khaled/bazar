@@ -43,6 +43,9 @@ class SupportVC: UIViewController {
         QETxtField.addBorder()
         QETxtField.addCornerRadius(cornerRadius: 16)
         sendBtn.addCornerRadius(cornerRadius: 16)
+        emailTxtField.delegate = self
+        QATxtField.delegate = self
+        QETxtField.delegate = self
     }
     
     func setupTableView() {
@@ -74,5 +77,12 @@ extension SupportVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 112
+    }
+}
+
+extension SupportVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

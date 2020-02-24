@@ -48,6 +48,10 @@ class ContactUsVC: UIViewController {
         messageTxtView.addBorder()
         messageTxtView.addCornerRadius(cornerRadius: 25)
         sendBtn.addCornerRadius(cornerRadius: 15)
+        emailTxtField.delegate = self
+        phoneTxtField.delegate = self
+        subjectTxtField.delegate = self
+        messageTxtView.delegate = self
     }
 
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -76,5 +80,22 @@ class ContactUsVC: UIViewController {
     }
     
     @IBAction func facebookBtnPressed(_ sender: Any) {
+    }
+}
+
+extension ContactUsVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension ContactUsVC: UITextViewDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if(text == "\n") {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
 }

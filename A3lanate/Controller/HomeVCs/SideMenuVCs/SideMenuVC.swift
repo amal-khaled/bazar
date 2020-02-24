@@ -40,7 +40,6 @@ class SideMenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        loadProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +47,7 @@ class SideMenuVC: UIViewController {
         if NetworkHelper.getToken() == nil {
             loginLbl.text = "Log In".localized
         } else {
+            loadProfile()
             loginLbl.text = "Log Out".localized
         }
     }

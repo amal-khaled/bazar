@@ -45,8 +45,20 @@ class SearchVC: UIViewController {
         thirdView.addBorder()
         FromView.addBorder()
         toView.addBorder()
+        searchTxtField.delegate = self
+        categoryTxtField.delegate = self
+        locationTxtField.delegate = self
+        fromTxtField.delegate = self
+        toTxtField.delegate = self
     }
     
     @IBAction func searchBtnPressed(_ sender: Any) {
+    }
+}
+
+extension SearchVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
