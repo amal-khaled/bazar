@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MOLH
 
 class RegisterVC: UIViewController {
     
@@ -32,23 +33,28 @@ class RegisterVC: UIViewController {
     
     func setupView() {
         emailView.addCornerRadius(cornerRadius: 45)
-        emailView.layer.maskedCorners = [.layerMaxXMinYCorner]
         emailView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
         confirmPassView.addCornerRadius(cornerRadius: 45)
-        confirmPassView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         confirmPassView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
         phoneView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
         passView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
         phoneBtn.addCornerRadius(cornerRadius: 35)
         loginView.addCornerRadius(cornerRadius: 40)
-        loginView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
         loginView.addBorder(borderWidth: 1, borderColor: UIColor.gray.cgColor)
         phoneBtn.isHidden = true
         emailTxtField.delegate = self
         phoneTxtField.delegate = self
         passTxtField.delegate = self
         confirmPassTxtField.delegate = self
-        
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            emailView.layer.maskedCorners = [.layerMinXMinYCorner]
+            confirmPassView.layer.maskedCorners = [.layerMinXMaxYCorner]
+            loginView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+        } else {
+            emailView.layer.maskedCorners = [.layerMaxXMinYCorner]
+            confirmPassView.layer.maskedCorners = [.layerMaxXMaxYCorner]
+            loginView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
+        }
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {

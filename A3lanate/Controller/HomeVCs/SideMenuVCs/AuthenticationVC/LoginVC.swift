@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MOLH
 
 class LoginVC: UIViewController {
     
@@ -28,17 +29,23 @@ class LoginVC: UIViewController {
     
     func setupView() {
         emailView.addCornerRadius(cornerRadius: 45)
-        emailView.layer.maskedCorners = [.layerMaxXMinYCorner]
         emailView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
         passwordView.addCornerRadius(cornerRadius: 45)
-        passwordView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         passwordView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
         loginBtn.addCornerRadius(cornerRadius: 40)
         registerView.addCornerRadius(cornerRadius: 40)
-        registerView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
         registerView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
         emailTxtField.delegate = self
         passwordTxtField.delegate = self
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            emailView.layer.maskedCorners = [.layerMinXMinYCorner]
+            passwordView.layer.maskedCorners = [.layerMinXMaxYCorner]
+            registerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+        } else {
+            emailView.layer.maskedCorners = [.layerMaxXMinYCorner]
+            passwordView.layer.maskedCorners = [.layerMaxXMaxYCorner]
+            registerView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
+        }
     }
     
     @IBAction func closeBtnPressed(_ sender: Any) {

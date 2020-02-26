@@ -14,11 +14,14 @@ class CountryCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var countryBtn: UIButton!
     
+    //Variables
+    var btnPressed: (() -> ())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     @IBAction func countryBtnPressed(_ sender: Any) {
+        btnPressed?()
     }
 }

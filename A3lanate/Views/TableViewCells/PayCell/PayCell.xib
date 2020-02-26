@@ -41,6 +41,9 @@
                                     <constraint firstAttribute="width" constant="20" id="rgd-vk-xX8"/>
                                 </constraints>
                                 <state key="normal" image="unchecked_rectangle"/>
+                                <connections>
+                                    <action selector="radioBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5Me-1K-bi3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-25-I7U">
                                 <rect key="frame" x="70" y="19" width="314" height="0.0"/>
@@ -102,6 +105,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="currencyLbl" destination="Vat-Lh-kFe" id="QfD-mN-cfb"/>
+                <outlet property="featureDescLbl" destination="mC9-z6-5k6" id="UHZ-FE-bac"/>
+                <outlet property="featurePriceLbl" destination="jcx-Yb-ynJ" id="3NW-qr-I6x"/>
+                <outlet property="featureTitleLbl" destination="eEb-25-I7U" id="4ro-ff-YGb"/>
+                <outlet property="radioBtn" destination="n5N-6G-X1B" id="5ew-oM-DIb"/>
+            </connections>
             <point key="canvasLocation" x="139" y="131"/>
         </tableViewCell>
     </objects>

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MOLH
 
-class PayVC: UIViewController {
+class FeaturesVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -17,10 +18,18 @@ class PayVC: UIViewController {
     //Constants
     let PayCellId = "PayCell"
     
+    //Variables
+    var features = [Feature]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        loadData()
     }
     
     func setupView() {
@@ -33,6 +42,15 @@ class PayVC: UIViewController {
         tableView.register(UINib(nibName: PayCellId, bundle: nil), forCellReuseIdentifier: PayCellId)
     }
     
+    func loadData() {
+        FeaturesService.instance.getFeatures { (error, features) in
+            if let features = features {
+                self.features = features
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     @IBAction func nextBtnPressed(_ sender: Any) {
         let payActionSheet = PayActionSheet()
         payActionSheet.modalPresentationStyle = .custom
@@ -40,13 +58,22 @@ class PayVC: UIViewController {
     }
 }
 
-extension PayVC: UITableViewDelegate, UITableViewDataSource {
+extension FeaturesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return features.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PayCellId, for: indexPath) as! PayCell
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            cell.featureTitleLbl.text = features[indexPath.row].FeatureNameAR
+            cell.featureDescLbl.text = features[indexPath.row].FeatureDescription
+        } else {
+            cell.featureTitleLbl.text = features[indexPath.row].FeatureNameEN
+            cell.featureDescLbl.text = features[indexPath.row].FeatureDescriptionEN
+        }
+        cell.currencyLbl.text = "KWD".localized
+        cell.featurePriceLbl.text = "\(features[indexPath.row].FeaturePrice)"
         return cell
     }
     

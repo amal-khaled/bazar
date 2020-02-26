@@ -6,6 +6,8 @@
   Copyright © 2020 Mahmoud Elshakoushy. All rights reserved.
 */
 
+"KWD" = "KWD";
+
 //AdvertiseNowVC
 "Main" = "Main";
 "Delete" = "Delete";

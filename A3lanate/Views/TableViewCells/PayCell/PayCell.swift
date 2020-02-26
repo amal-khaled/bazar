@@ -9,8 +9,20 @@
 import UIKit
 
 class PayCell: UITableViewCell {
+    
+    //Outlets
+    @IBOutlet weak var radioBtn: UIButton!
+    @IBOutlet weak var featureTitleLbl: UILabel!
+    @IBOutlet weak var featureDescLbl: UILabel!
+    @IBOutlet weak var featurePriceLbl: UILabel!
+    @IBOutlet weak var currencyLbl: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    @IBAction func radioBtnPressed(_ sender: Any) {
+    }
+    
 }

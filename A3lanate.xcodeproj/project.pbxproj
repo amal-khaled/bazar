@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B02B0B024068C6B00A17F02 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0AF24068C6B00A17F02 /* Feature.swift */; };
+		0B02B0B224068CE700A17F02 /* FeaturesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B124068CE700A17F02 /* FeaturesService.swift */; };
+		0B02B0B52406A43300A17F02 /* CategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B42406A43300A17F02 /* CategoryListVC.swift */; };
+		0B02B0B72406A44F00A17F02 /* SubCategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B62406A44F00A17F02 /* SubCategoryListVC.swift */; };
+		0B02B0B92406A46900A17F02 /* SubSubCategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B82406A46900A17F02 /* SubSubCategoryListVC.swift */; };
+		0B02B0BD2406B1F500A17F02 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0BB2406B1F500A17F02 /* CategoryList.swift */; };
+		0B02B0BE2406B1F500A17F02 /* CategoryList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B02B0BC2406B1F500A17F02 /* CategoryList.xib */; };
+		0B02B0C22406B3DF00A17F02 /* SubCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0C02406B3DF00A17F02 /* SubCategoryList.swift */; };
+		0B02B0C32406B3DF00A17F02 /* SubCategoryList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B02B0C12406B3DF00A17F02 /* SubCategoryList.xib */; };
+		0B02B0C72406D9B900A17F02 /* SubSubCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0C52406D9B900A17F02 /* SubSubCategoryList.swift */; };
+		0B02B0C82406D9B900A17F02 /* SubSubCategoryList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B02B0C62406D9B900A17F02 /* SubSubCategoryList.xib */; };
 		0B02C4FD23DCAC9700766776 /* MainAdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02C4FB23DCAC9700766776 /* MainAdsCell.swift */; };
 		0B02C50423DCBBC300766776 /* MainCategoriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02C50223DCBBC300766776 /* MainCategoriesCell.swift */; };
 		0B02C50523DCBBC300766776 /* MainCategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B02C50323DCBBC300766776 /* MainCategoriesCell.xib */; };
@@ -73,7 +84,7 @@
 		0BF4487F23F173470044B88B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4487E23F173470044B88B /* Constants.swift */; };
 		0BF4488223F174100044B88B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4488123F174100044B88B /* AuthService.swift */; };
 		0BF4488423F1B2880044B88B /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4488323F1B2880044B88B /* NetworkHelper.swift */; };
-		0BFA81EC23F00B3900BC5A07 /* PayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EB23F00B3900BC5A07 /* PayVC.swift */; };
+		0BFA81EC23F00B3900BC5A07 /* FeaturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EB23F00B3900BC5A07 /* FeaturesVC.swift */; };
 		0BFA81F023F00CAA00BC5A07 /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */; };
 		0BFA81F123F00CAA00BC5A07 /* PayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */; };
 		0BFA81F523F0107E00BC5A07 /* PayActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81F323F0107E00BC5A07 /* PayActionSheet.swift */; };
@@ -98,6 +109,17 @@
 
 /* Begin PBXFileReference section */
 		09DED0F7E927F837B44DD197 /* Pods-A3lanate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A3lanate.debug.xcconfig"; path = "Target Support Files/Pods-A3lanate/Pods-A3lanate.debug.xcconfig"; sourceTree = "<group>"; };
+		0B02B0AF24068C6B00A17F02 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		0B02B0B124068CE700A17F02 /* FeaturesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesService.swift; sourceTree = "<group>"; };
+		0B02B0B42406A43300A17F02 /* CategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListVC.swift; sourceTree = "<group>"; };
+		0B02B0B62406A44F00A17F02 /* SubCategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryListVC.swift; sourceTree = "<group>"; };
+		0B02B0B82406A46900A17F02 /* SubSubCategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSubCategoryListVC.swift; sourceTree = "<group>"; };
+		0B02B0BB2406B1F500A17F02 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		0B02B0BC2406B1F500A17F02 /* CategoryList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryList.xib; sourceTree = "<group>"; };
+		0B02B0C02406B3DF00A17F02 /* SubCategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryList.swift; sourceTree = "<group>"; };
+		0B02B0C12406B3DF00A17F02 /* SubCategoryList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCategoryList.xib; sourceTree = "<group>"; };
+		0B02B0C52406D9B900A17F02 /* SubSubCategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSubCategoryList.swift; sourceTree = "<group>"; };
+		0B02B0C62406D9B900A17F02 /* SubSubCategoryList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubSubCategoryList.xib; sourceTree = "<group>"; };
 		0B02C4FB23DCAC9700766776 /* MainAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAdsCell.swift; sourceTree = "<group>"; };
 		0B02C50223DCBBC300766776 /* MainCategoriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCategoriesCell.swift; sourceTree = "<group>"; };
 		0B02C50323DCBBC300766776 /* MainCategoriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCategoriesCell.xib; sourceTree = "<group>"; };
@@ -173,7 +195,7 @@
 		0BF4487E23F173470044B88B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0BF4488123F174100044B88B /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0BF4488323F1B2880044B88B /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		0BFA81EB23F00B3900BC5A07 /* PayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayVC.swift; sourceTree = "<group>"; };
+		0BFA81EB23F00B3900BC5A07 /* FeaturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesVC.swift; sourceTree = "<group>"; };
 		0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
 		0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayCell.xib; sourceTree = "<group>"; };
 		0BFA81F323F0107E00BC5A07 /* PayActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayActionSheet.swift; sourceTree = "<group>"; };
@@ -208,6 +230,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B02B0B32406A40800A17F02 /* CategoriesListVCs */ = {
+			isa = PBXGroup;
+			children = (
+				0B02B0BA2406B1DB00A17F02 /* CategoryList */,
+				0B02B0BF2406B3C500A17F02 /* SubCategoryList */,
+				0B02B0C42406D98A00A17F02 /* SubSubCategoryList */,
+				0B02B0B42406A43300A17F02 /* CategoryListVC.swift */,
+				0B02B0B62406A44F00A17F02 /* SubCategoryListVC.swift */,
+				0B02B0B82406A46900A17F02 /* SubSubCategoryListVC.swift */,
+			);
+			path = CategoriesListVCs;
+			sourceTree = "<group>";
+		};
+		0B02B0BA2406B1DB00A17F02 /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				0B02B0BB2406B1F500A17F02 /* CategoryList.swift */,
+				0B02B0BC2406B1F500A17F02 /* CategoryList.xib */,
+			);
+			path = CategoryList;
+			sourceTree = "<group>";
+		};
+		0B02B0BF2406B3C500A17F02 /* SubCategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				0B02B0C02406B3DF00A17F02 /* SubCategoryList.swift */,
+				0B02B0C12406B3DF00A17F02 /* SubCategoryList.xib */,
+			);
+			path = SubCategoryList;
+			sourceTree = "<group>";
+		};
+		0B02B0C42406D98A00A17F02 /* SubSubCategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				0B02B0C52406D9B900A17F02 /* SubSubCategoryList.swift */,
+				0B02B0C62406D9B900A17F02 /* SubSubCategoryList.xib */,
+			);
+			path = SubSubCategoryList;
+			sourceTree = "<group>";
+		};
 		0B02C4E823DCA13500766776 /* CategoriesVCs */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				0B11315A23D9C93C007FDC6D /* AdvertiseNowVC.swift */,
-				0BFA81EB23F00B3900BC5A07 /* PayVC.swift */,
+				0BFA81EB23F00B3900BC5A07 /* FeaturesVC.swift */,
+				0B02B0B32406A40800A17F02 /* CategoriesListVCs */,
 				0BFA81F723F0144800BC5A07 /* OnlineActionSheet */,
 				0BFA81F223F0106200BC5A07 /* PayActionSheet */,
 			);
@@ -540,6 +603,7 @@
 			isa = PBXGroup;
 			children = (
 				0B19086723F70EAD0050AE73 /* SliderAd.swift */,
+				0B02B0AF24068C6B00A17F02 /* Feature.swift */,
 				0B19086923F70EC80050AE73 /* Category.swift */,
 				0B11AC0923F9A40000CA56D2 /* SubCategory.swift */,
 				0B19086B23F70EE80050AE73 /* Ad.swift */,
@@ -563,6 +627,7 @@
 				0B19086523F70D220050AE73 /* HomeService.swift */,
 				0B19086D23F737230050AE73 /* AdsService.swift */,
 				0B11AC0723F9A21B00CA56D2 /* CategoriesService.swift */,
+				0B02B0B124068CE700A17F02 /* FeaturesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -723,6 +788,7 @@
 				0B11316323D9C93E007FDC6D /* LaunchScreen.storyboard in Resources */,
 				0B1F78AE23E9DA8B006BDFBA /* QuestionCell.xib in Resources */,
 				0B0AA14F23ED88BE003971A2 /* SubCategoryCell.xib in Resources */,
+				0B02B0C82406D9B900A17F02 /* SubSubCategoryList.xib in Resources */,
 				0B780FFA23DF298A004304DC /* Localizable.strings in Resources */,
 				0BFA81F623F0107E00BC5A07 /* PayActionSheet.xib in Resources */,
 				0B1F78B823EA220F006BDFBA /* CountryCell.xib in Resources */,
@@ -734,7 +800,9 @@
 				0BF4487423F03E760044B88B /* AdCell.xib in Resources */,
 				0B02C50523DCBBC300766776 /* MainCategoriesCell.xib in Resources */,
 				0BFCA1DA23E22731004DE381 /* Assets.xcassets in Resources */,
+				0B02B0C32406B3DF00A17F02 /* SubCategoryList.xib in Resources */,
 				0B11315E23D9C93C007FDC6D /* Main.storyboard in Resources */,
+				0B02B0BE2406B1F500A17F02 /* CategoryList.xib in Resources */,
 				0B18782F24040131003B7C0B /* ImageCell.xib in Resources */,
 				0BFDB60723EC3CB400695A5A /* ChangePassAlert.xib in Resources */,
 				0B08C16124051CF6007ED192 /* FollowUpCell.xib in Resources */,
@@ -794,6 +862,7 @@
 			files = (
 				0B18782E24040131003B7C0B /* ImageCell.swift in Sources */,
 				0BF4487623F04D840044B88B /* FollowUpVC.swift in Sources */,
+				0B02B0B224068CE700A17F02 /* FeaturesService.swift in Sources */,
 				0B0AA14A23ED8609003971A2 /* SubSubCategoryVC.swift in Sources */,
 				0B04833123DA2DDC003C49C0 /* UIViewExt.swift in Sources */,
 				0B02C50423DCBBC300766776 /* MainCategoriesCell.swift in Sources */,
@@ -829,7 +898,10 @@
 				0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */,
 				0B11315523D9C93C007FDC6D /* AppDelegate.swift in Sources */,
 				0B0CA06123E090C700BC25AC /* ContactUsVC.swift in Sources */,
+				0B02B0B52406A43300A17F02 /* CategoryListVC.swift in Sources */,
+				0B02B0B024068C6B00A17F02 /* Feature.swift in Sources */,
 				0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */,
+				0B02B0C72406D9B900A17F02 /* SubSubCategoryList.swift in Sources */,
 				0B0AA15123ED8A35003971A2 /* SubCategoryVC.swift in Sources */,
 				0B780FF423DF19E6004304DC /* LanguageVC.swift in Sources */,
 				0BFDB5F923EC032000695A5A /* MyAdsVC.swift in Sources */,
@@ -846,8 +918,11 @@
 				0B1F78AD23E9DA8B006BDFBA /* QuestionCell.swift in Sources */,
 				0BFDB5F723EC030000695A5A /* EditProfileVC.swift in Sources */,
 				0B187833240444E9003B7C0B /* LocalizedImage.swift in Sources */,
-				0BFA81EC23F00B3900BC5A07 /* PayVC.swift in Sources */,
+				0B02B0BD2406B1F500A17F02 /* CategoryList.swift in Sources */,
+				0BFA81EC23F00B3900BC5A07 /* FeaturesVC.swift in Sources */,
 				0B11AC0A23F9A40000CA56D2 /* SubCategory.swift in Sources */,
+				0B02B0B92406A46900A17F02 /* SubSubCategoryListVC.swift in Sources */,
+				0B02B0B72406A44F00A17F02 /* SubCategoryListVC.swift in Sources */,
 				0BFDB60F23EC4C0F00695A5A /* FavoriteCell.swift in Sources */,
 				0B1F78A623E725A5006BDFBA /* forgotPassVC.swift in Sources */,
 				0B1F78B223E9E526006BDFBA /* NotificationCell.swift in Sources */,
@@ -856,6 +931,7 @@
 				0BF4487F23F173470044B88B /* Constants.swift in Sources */,
 				0B1F78B723EA220F006BDFBA /* CountryCell.swift in Sources */,
 				0B0BCEE423E10E6E00AF709A /* SupportVC.swift in Sources */,
+				0B02B0C22406B3DF00A17F02 /* SubCategoryList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import MOLH
 
 class AdvertiseNowVC: UIViewController {
     
@@ -38,6 +39,7 @@ class AdvertiseNowVC: UIViewController {
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var arabicTxtViewHight: NSLayoutConstraint!
     @IBOutlet weak var englishTxtViewHight: NSLayoutConstraint!
+    @IBOutlet weak var catListBtn: UIButton!
     
     //Constants
     fileprivate let ImageCellId = "ImageCell"
@@ -48,6 +50,15 @@ class AdvertiseNowVC: UIViewController {
     var AllowCall: String = "false"
     var AdWithoutPhone: String = "false"
     var AutomaticRepublish: String = "false"
+    static var catId: Int = 0
+    static var catTitleAr: String = ""
+    static var catTitleEn: String = ""
+    static var subCatId: Int = 0
+    static var subCatTitleAr: String = ""
+    static var subCatTitleEn: String = ""
+    static var subSubCatId: Int = 0
+    static var subSubCatTitleAr: String = ""
+    static var subSubCatTitleEn: String = ""
     var picker_Image: UIImage? {
         didSet {
             guard let image = picker_Image else { return }
@@ -63,6 +74,15 @@ class AdvertiseNowVC: UIViewController {
         super.viewDidLoad()
         setupView()
         setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+        self.catListBtn.setTitle("\(AdvertiseNowVC.catTitleAr) - \(AdvertiseNowVC.subCatTitleAr) - \(AdvertiseNowVC.subSubCatTitleAr)", for: .normal)
+        } else {
+        self.catListBtn.setTitle("\(AdvertiseNowVC.catTitleEn) - \(AdvertiseNowVC.subCatTitleEn) - \(AdvertiseNowVC.subSubCatTitleEn)", for: .normal)
+        }
     }
     
     func setupView() {
@@ -100,6 +120,8 @@ class AdvertiseNowVC: UIViewController {
         locTxtField.delegate = self
         arabicTxtView.delegate = self
         englishTxtView.delegate = self
+        catListBtn.addCornerRadius(cornerRadius: 20)
+        catListBtn.addBorder()
     }
     
     func setupCollectionView() {
@@ -110,90 +132,99 @@ class AdvertiseNowVC: UIViewController {
     }
     
     func UPLOD(completion: @escaping CompletionHandler) {
-        guard let titleAr = titleArTextField.text, titleArTextField.text != "" else {
-            let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
-            return
-        }
-        guard let titleEn = titleEnTextField.text, titleEnTextField.text != "" else {
-            let alert = UIAlertController(title: "", message: "Please enter the english title".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
-            return}
-        guard let price = priceTxtField.text, priceTxtField.text != "" else {
-            let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
-            return}
-        guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {
-            let alert = UIAlertController(title: "", message: "Please enter the phone number".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
-            return}
-        guard let englishDesc = englishTxtView.text, englishTxtView.text != "" else {
-            let alert = UIAlertController(title: "", message: "Please enter the english description".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
-            return}
-        guard let arabicDesc = arabicTxtView.text, arabicTxtView.text != "" else {
-            let alert = UIAlertController(title: "", message: "Please enter the arabic description".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
-            return}
-        let parameters = [
-            "CategoryId" : "4",
-            "SubCategoryId": "50",
-            "SubSubCategoryId": "100",
-            "Title": titleAr,
-            "TitleEN": titleEn,
-            "DescriptionEN": englishDesc,
-            "Description": arabicDesc,
-            "PhoneNumber": phone,
-            "AllowMessage": AllowMessage,
-            "AllowCall": AllowCall,
-            "AdWithoutPhone": AdWithoutPhone,
-            "AutomaticRepublish": AutomaticRepublish,
-            "AdPrice": price,
-            "CityId": "1",
-        ]
-        Alamofire.upload(
-            multipartFormData: { MultipartFormData in
-                for (key, value) in parameters {
-                    MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+        if (phoneTxtField.text?.isPhoneNumber)! {
+            guard let titleAr = titleArTextField.text, titleArTextField.text != "" else {
+                let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
                 }
-                for i in 0..<self.images.count {
-                    MultipartFormData.append(self.images[i].jpegData(compressionQuality: 1)!, withName: "photo [\(i)]", fileName: "file\(i).jpeg", mimeType: "image/jpeg")
+                return
+            }
+            guard let titleEn = titleEnTextField.text, titleEnTextField.text != "" else {
+                let alert = UIAlertController(title: "", message: "Please enter the english title".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
                 }
-        }, to: UPLOAD_AD_URL, method: .post, headers: HEADER_BOTH) { (result) in
-            switch result {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    print(response.result.value as Any)
-                    completion(true)
+                return}
+            guard let price = priceTxtField.text, priceTxtField.text != "" else {
+                let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
                 }
-            case .failure(let encodingError):
-                print(encodingError.localizedDescription)
-                completion(false)
-                break
+                return}
+            guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {
+                let alert = UIAlertController(title: "", message: "Please enter the phone number".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
+                }
+                return}
+            guard let englishDesc = englishTxtView.text, englishTxtView.text != "" else {
+                let alert = UIAlertController(title: "", message: "Please enter the english description".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
+                }
+                return}
+            guard let arabicDesc = arabicTxtView.text, arabicTxtView.text != "" else {
+                let alert = UIAlertController(title: "", message: "Please enter the arabic description".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
+                }
+                return}
+            let parameters = [
+                "CategoryId" : "\(AdvertiseNowVC.catId)",
+                "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
+                "SubSubCategoryId": "\(AdvertiseNowVC.subSubCatId)",
+                "Title": titleAr,
+                "TitleEN": titleEn,
+                "DescriptionEN": englishDesc,
+                "Description": arabicDesc,
+                "PhoneNumber": phone,
+                "AllowMessage": AllowMessage,
+                "AllowCall": AllowCall,
+                "AdWithoutPhone": AdWithoutPhone,
+                "AutomaticRepublish": AutomaticRepublish,
+                "AdPrice": price,
+                "CityId": "1",
+            ]
+            Alamofire.upload(
+                multipartFormData: { MultipartFormData in
+                    for (key, value) in parameters {
+                        MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                    }
+                    for i in 0..<self.images.count {
+                        MultipartFormData.append(self.images[i].jpegData(compressionQuality: 1)!, withName: "photo [\(i)]", fileName: "file\(i).jpeg", mimeType: "image/jpeg")
+                    }
+            }, to: UPLOAD_AD_URL, method: .post, headers: HEADER_BOTH) { (result) in
+                switch result {
+                case .success(let upload, _, _):
+                    upload.responseJSON { response in
+                        print(response.result.value as Any)
+                        completion(true)
+                    }
+                case .failure(let encodingError):
+                    print(encodingError.localizedDescription)
+                    completion(false)
+                    break
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "", message: "Please enter a correct number".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 1
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -224,6 +255,13 @@ class AdvertiseNowVC: UIViewController {
         arabicTxtViewHight.constant = 190
         englishTxtViewHight.constant = 0
     }
+    
+    @IBAction func catListBtnPressed(_ sender: Any) {
+        let categoryList = CategoryList()
+        categoryList.modalPresentationStyle = .custom
+        present(categoryList, animated: true, completion: nil)
+    }
+    
     
     @IBAction func allowDMBtnPressed(_ sender: Any) {
         if allowDMBtn.image(for: .normal) == UIImage(named: "unchecked_rectangle") {
