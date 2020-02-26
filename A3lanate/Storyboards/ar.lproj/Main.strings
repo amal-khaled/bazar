@@ -10,6 +10,9 @@
 
 //FavoriteVC
 "XfS-Ng-uT8.title" = "المفضلة";
+"5R6-wc-JQL.title" = "المفضلة";
+"ciG-MU-X8m.text" = "المفضلة";
+
 
 //CategoriesVC
 "cPa-gy-q4n.title" = "الفئات";
@@ -24,6 +27,11 @@
 
 //ProfileVC
 "uH4-59-Yg0.title" = "الصفحة الشخصية";
+"oca-vb-Mm5.title" = "الصفحة الشخصية";
+"pnI-pV-fPR.text" = "اعلاناتي";
+"eV3-kF-qGI.text" = "الرصيد";
+"6Ka-H3-0GP.text" = "الدفع";
+"jCM-Ta-re0.text" = "الاشعارات";
 
 //SearchVC
 "6yh-o6-5Al.normalTitle" = "إبحث";
@@ -65,3 +73,104 @@
 
 //LoginVC
 "Cb6-Bj-OaR.normalTitle" = "تسجيل";
+"M2D-aT-MMz.text" = "تسجيل الدخول";
+"wQt-xA-SOA.placeholder" = "البريد الالكتروني";
+"hwG-Oa-99t.placeholder" = "الرقم السري";
+"Oje-go-8Ua.normalTitle" = "نسيت كلمة المرور؟";
+
+//RegisterVC
+"D9K-pT-Mi6.text" = "تسجيل";
+"IZM-FQ-8gv.placeholder" = "البريد الالكتروني";
+"7Tx-iz-PfM.placeholder" = "الهاتف";
+"tIf-or-RK1.placeholder" = "الرقم السري";
+"qYc-F9-Cdc.placeholder" = "تأكيد الرقم السري";
+"mGu-i6-PEm.text" = "اذا قمت بالتسجيل فانت موافق علي كل الشروط والاحكام";
+"IoO-tG-Q1W.normalTitle" = "تسجيل الدخول";
+
+//ForgetPassVC
+"jyLd-F7-nWy.text" = "نسيت كلمة المرور؟";
+"CMG-Su-zXd.placeholder" = "البريد الالكتروني";
+"wGT-K3-P1b.normalTitle" = "ارسل";
+"RsO-6Z-ZTF.text" = "ادخل البريد الالكتروني، وقم بانتظار رسالة التأكيد";
+
+//AdVC
+"Xmd-GO-p6L.text" = "المزيد من الصور";
+"xzV-gt-lfI.text" = "تم النشر بواسطة:";
+"Kyt-bU-T47.text" = "الوصف";
+"NvO-PX-fUs.text" = "اعلانات من نفس الشخص";
+"abA-RC-lq1.text" = "اعلانات مشابهة";
+
+//FollowUpVC
+"cGe-pM-OiA.title" = "متابعة الاعلان";
+
+//MyAdsVC
+"fcW-BT-KLh.title" = "اعلاناتي";
+"OCM-GG-fpY.normalTitle" = "مفتوحة";
+"q3e-Qq-JgW.normalTitle" = "مغلقة";
+"ph5-bw-wLw.normalTitle" = "لم تدفع";
+
+//BalanceVC
+"qcU-7N-FRA.title" = "الرصيد";
+
+//PaymentVC
+"4K7-IA-xmV.title" = "الدفع";
+"grP-fF-obq.normalTitle" = "قم بشراء المزيد";
+"dtD-Xu-zwq.normalTitle" = "المدفوعات السابقة";
+
+//EditProfileVC
+"Qwt-V1-hJy.title" = "تعديل الحساب";
+"72s-kd-fQW.text" = "الاسم";
+"oNR-8f-RiI.text" = "البريد الالكتروني";
+"yS0-gI-f29.text" = "العنوان";
+"8pt-Nx-sWd.text" = "الهاتف";
+"cZo-0q-Rf0.normalTitle" = "تعديل";
+"Xpz-th-SZX.normalTitle" = "تغيير كلمة المرور";
+
+//ChangePassVC
+"QlC-S9-qUl.text" = "تغيير كلمة المرور";
+"XJO-VH-D57.text" = "الرقم الحالي";
+"jvB-nX-vEW.text" = "الرقم الجديد";
+"6yB-pC-ej4.text" = "اعد كتابة الرقم الجديد";
+"WFJ-Mq-VWk.normalTitle" = "تغيير";
+
+//SideMenuVC
+"2ea-AV-hav.text" = "الدولة";
+"1lx-au-Qsk.text" = "الاشعارات";
+"VpI-bq-w0i.text" = "اللغة";
+"iYC-2s-6ms.text" = "الشروط";
+"IIP-9Y-Byw.text" = "الدعم";
+"hrU-g2-hTb.text" = "تواصل معنا";
+"ZEN-Kd-SlZ.text" = "المشاركة";
+"91u-pU-t2f.text" = "عن التطبيق";
+
+//CountryVC
+"R89-ai-bOU.title" = "االدولة";
+"bgc-Av-M3E.text" = "قم باختيار الدولة";
+
+//ContactUsVC
+"7SC-Hp-ma4.title" = "تواصل معنا";
+"Xnh-8h-UZh.text" = "تواصل معنا";
+"lUX-ti-jRe.text" = "البريد الالكتروني";
+"Kuw-nw-K2n.text" = "الهاتف";
+"kV1-nI-uRp.text" = "العنوان";
+"wT0-sA-z9d.text" = "الرسالة";
+"q34-aC-ALL.normalTitle" = "ارسل";
+"c9E-IC-0Xw.text" = "تواصل معنا على";
+
+//AboutUsVC
+"kJl-e2-hBP.title" = "معلومات عن التطبيق";
+
+//NotificationsVC
+"3aC-lb-JS9.title" = "الاشعارات";
+
+//TermsVC
+"FVH-Po-2N5.title" = "الشروط والاحكام";
+
+//SupportVC
+"erX-e1-ati.title" = "الدعم";
+"nEN-bX-qfR.text" = "اسئلة شائعة";
+"fe7-p6-hRC.text" = "اسأل";
+"1j2-yg-zEs.text" = "البريد الالكتروني";
+"qbo-g7-uE0.text" = "السؤال بالعربي";
+"RY6-M6-0Yf.text" = "السؤال بالانجليزي";
+"6tA-Fe-ZLq.normalTitle" = "ارسل";

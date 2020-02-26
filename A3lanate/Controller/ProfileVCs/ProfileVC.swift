@@ -20,6 +20,10 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var balanceBtn: UIButton!
     @IBOutlet weak var paymentBtn: UIButton!
     @IBOutlet weak var notificationBtn: UIButton!
+    @IBOutlet weak var myAdsImg: LocalizedImage!
+    @IBOutlet weak var balanceImg: LocalizedImage!
+    @IBOutlet weak var paymentImg: LocalizedImage!
+    @IBOutlet weak var notifImg: LocalizedImage!
     
 
     override func viewDidLoad() {
@@ -41,6 +45,10 @@ class ProfileVC: UIViewController {
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
         profileImg.addCornerRadius(cornerRadius: 65)
+        myAdsImg.addCornerRadius(cornerRadius: 35)
+        balanceImg.addCornerRadius(cornerRadius: 35)
+        paymentImg.addCornerRadius(cornerRadius: 35)
+        notifImg.addCornerRadius(cornerRadius: 35)
     }
     
     func loadProfile() {

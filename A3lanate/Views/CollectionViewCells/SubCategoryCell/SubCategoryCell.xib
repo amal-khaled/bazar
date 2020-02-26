@@ -26,25 +26,25 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Df1-E9-RfW">
-                        <rect key="frame" x="16" y="151" width="70.5" height="24"/>
+                        <rect key="frame" x="16" y="151" width="34.5" height="24"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car type name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-bK-Xy4">
-                                <rect key="frame" x="0.0" y="0.0" width="70.5" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="wvv-bK-Xy4">
+                                <rect key="frame" x="0.0" y="0.0" width="3.5" height="12"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="620-EO-KrO">
-                                <rect key="frame" x="0.0" y="12" width="45.5" height="12"/>
+                                <rect key="frame" x="0.0" y="12" width="34.5" height="12"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbe-Vm-lG4">
-                                        <rect key="frame" x="0.0" y="0.0" width="17.5" height="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbe-Vm-lG4">
+                                        <rect key="frame" x="0.0" y="0.0" width="6.5" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rj6-dd-CfQ">
-                                        <rect key="frame" x="21.5" y="0.0" width="24" height="12"/>
+                                        <rect key="frame" x="10.5" y="0.0" width="24" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                             </stackView>
                         </subviews>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="CWX-0w-nQT">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWX-0w-nQT">
                         <rect key="frame" x="13" y="10" width="144" height="135"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="135" id="Gje-vn-B5B"/>
@@ -96,7 +96,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="1" width="678" height="452"/>
         <image name="likeG" width="28.5" height="25"/>
     </resources>
 </document>
