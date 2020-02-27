@@ -12,6 +12,7 @@
 "Main" = "الرئيسية";
 "Delete" = "احذف";
 "Dismiss" = "الغاء";
+"Your Ad got uploaded successfully" = "لقد تم رفع اعلانك بنجاح";
 
 //SideMenuVC
 "Log In" = "تسجيل الدخول";

@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import MOLH
+import SwiftyJSON
 
 class AdvertiseNowVC: UIViewController {
     
@@ -50,6 +51,7 @@ class AdvertiseNowVC: UIViewController {
     var AllowCall: String = "false"
     var AdWithoutPhone: String = "false"
     var AutomaticRepublish: String = "false"
+    var adId: Int = 0
     static var catId: Int = 0
     static var catTitleAr: String = ""
     static var catTitleEn: String = ""
@@ -182,7 +184,44 @@ class AdvertiseNowVC: UIViewController {
                     alert.dismiss(animated: true, completion: nil)
                 }
                 return}
-            let parameters = [
+            var parameters = [String:String]()
+            if AdvertiseNowVC.subSubCatId == 0 {
+                 parameters = [
+                    "CategoryId" : "\(AdvertiseNowVC.catId)",
+                    "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
+                    "SubSubCategoryId": "",
+                    "Title": titleAr,
+                    "TitleEN": titleEn,
+                    "DescriptionEN": englishDesc,
+                    "Description": arabicDesc,
+                    "PhoneNumber": phone,
+                    "AllowMessage": AllowMessage,
+                    "AllowCall": AllowCall,
+                    "AdWithoutPhone": AdWithoutPhone,
+                    "AutomaticRepublish": AutomaticRepublish,
+                    "AdPrice": price,
+                    "CityId": "1",
+                    ]
+            } else if AdvertiseNowVC.subCatId == 0 {
+                parameters = [
+                   "CategoryId" : "\(AdvertiseNowVC.catId)",
+                   "SubCategoryId": "",
+                   "SubSubCategoryId": "",
+                   "Title": titleAr,
+                   "TitleEN": titleEn,
+                   "DescriptionEN": englishDesc,
+                   "Description": arabicDesc,
+                   "PhoneNumber": phone,
+                   "AllowMessage": AllowMessage,
+                   "AllowCall": AllowCall,
+                   "AdWithoutPhone": AdWithoutPhone,
+                   "AutomaticRepublish": AutomaticRepublish,
+                   "AdPrice": price,
+                   "CityId": "1",
+                   ]
+            }
+            else {
+             parameters = [
                 "CategoryId" : "\(AdvertiseNowVC.catId)",
                 "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
                 "SubSubCategoryId": "\(AdvertiseNowVC.subSubCatId)",
@@ -197,7 +236,7 @@ class AdvertiseNowVC: UIViewController {
                 "AutomaticRepublish": AutomaticRepublish,
                 "AdPrice": price,
                 "CityId": "1",
-            ]
+                ] }
             Alamofire.upload(
                 multipartFormData: { MultipartFormData in
                     for (key, value) in parameters {
@@ -210,7 +249,11 @@ class AdvertiseNowVC: UIViewController {
                 switch result {
                 case .success(let upload, _, _):
                     upload.responseJSON { response in
-                        print(response.result.value as Any)
+                        let value = response.result.value
+                        let json = JSON(value as Any)
+                        if let adId = json["AdId"].int {
+                            self.adId = adId
+                        }
                         completion(true)
                     }
                 case .failure(let encodingError):
@@ -307,11 +350,52 @@ class AdvertiseNowVC: UIViewController {
         if NetworkHelper.getToken() != nil {
             UPLOD { (success) in
                 if success {
-                    self.performSegue(withIdentifier: "toPayVC", sender: self)
+                    if AdvertiseNowVC.catId == 14 {
+                        let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
+                        self.present(alert, animated: true, completion: nil)
+                        let when = DispatchTime.now() + 1
+                        DispatchQueue.main.asyncAfter(deadline: when){
+                            alert.dismiss(animated: true, completion: nil)
+                        }
+                    } else {
+                        self.performSegue(withIdentifier: "toPayVC", sender: self)
+                    }
+                    self.mainImg.image = UIImage()
+                    self.images.removeAll()
+                    self.collectionView.reloadData()
+                    self.collectionView.isHidden = true
+                    self.collectionViewHight.constant = 0
+                    AdvertiseNowVC.catId = 0
+                    AdvertiseNowVC.catTitleAr = ""
+                    AdvertiseNowVC.catTitleEn = ""
+                    AdvertiseNowVC.subCatId = 0
+                    AdvertiseNowVC.subCatTitleAr = ""
+                    AdvertiseNowVC.subCatTitleEn = ""
+                    AdvertiseNowVC.subSubCatId = 0
+                    AdvertiseNowVC.subSubCatTitleAr = ""
+                    AdvertiseNowVC.subSubCatTitleEn = ""
+                    self.catListBtn.setTitle("", for: .normal)
+                    self.titleEnTextField.text = ""
+                    self.titleArTextField.text = ""
+                    self.arabicTxtView.text = ""
+                    self.englishTxtView.text = ""
+                    self.phoneTxtField.text = ""
+                    self.priceTxtField.text = ""
+                    self.allowDMBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                    self.allowCallsBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                    self.hidePhoneBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                    self.republishBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
                 }
             }
         } else {
             performSegue(withIdentifier: "toLoginVC", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toPayVC" {
+            let destVC = segue.destination as! FeaturesVC
+            destVC.adId = self.adId
         }
     }
 }

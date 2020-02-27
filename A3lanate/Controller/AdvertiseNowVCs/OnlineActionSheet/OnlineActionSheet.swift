@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import MOLH
+import Alamofire
+import SwiftyJSON
+import SafariServices
 
 class OnlineActionSheet: UIViewController {
     
@@ -15,6 +19,9 @@ class OnlineActionSheet: UIViewController {
     @IBOutlet weak var actionSheetView: UIView!
     @IBOutlet weak var yesBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
+    
+    //Variables
+    var adId: Int = 0
     
 
     override func viewDidLoad() {
@@ -31,11 +38,43 @@ class OnlineActionSheet: UIViewController {
         bgView.addGestureRecognizer(closeTouch)
     }
     
+    func pay() {
+        var parameters = [String: Any]()
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            parameters = [
+               "AdId" : adId,
+               "Lang": "ar",
+               ]
+        } else {
+            parameters = [
+               "AdId" : adId,
+               "Lang": "en",
+               ]
+        }
+        
+        Alamofire.request(PAY_ONLINE_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseString { (response) in
+            if response.result.error == nil {
+                let value = response.result.value
+                let json = JSON(value as Any)
+                if let url = json.string {
+                    var ur: String = ""
+                    ur = url
+                    ur.removeFirst()
+                    ur.removeLast()
+                    UIApplication.shared.open(URL(string: ur.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!, options: [:], completionHandler: nil)
+                }
+            } else {
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func yesBtnPressed(_ sender: Any) {
+        pay()
     }
     
     @IBAction func cancelBtnPressed(_ sender: Any) {

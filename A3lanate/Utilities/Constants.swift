@@ -33,6 +33,8 @@ let ADD_FEATURES_URL = "\(BASE_URL)api/Ads/PostFeaturesToAd"
 let ADD_LOVE_BY_ID_URL = "\(BASE_URL)api/Ads/PostUserAdLove/"
 let ADD_CALL_BY_ID_URL = "\(BASE_URL)api/Ads/PostCallAdPhone/"
 let ADD_WHATSAPP_BY_ID_URL = "\(BASE_URL)api/Ads/PostWhatsappCalls/"
+let PAY_URL = "\(BASE_URL)api/Ads/PostPayForAd"
+let PAY_ONLINE_URL = "\(BASE_URL)api/Ads/PostPayForAdOnline"
 let ABOUTUD_URL = "\(BASE_URL)api/AboutUs/AboutUsData"
 let ALLCATEGORIES_SUB_ADS_URL = "\(BASE_URL)api/Category/GetAllCategoriesWithSubCategoriesAndSomeAds"
 let CAT_SUBCATEGORY_ADS_BY_ID_URL = "\(BASE_URL)api/Category/GetCategorySubCategoriesAndAds/"
@@ -65,4 +67,8 @@ let HEADER_AUTH = [
 let HEADER_BOTH = [
     "Authorization" : "bearer \(String(describing: NetworkHelper.getToken()!))",
     "Content-Type" : "application/x-www-form-urlencoded; charset=utf-8"
+]
+let HEADER_JSON = [
+    "Authorization" : "bearer \(String(describing: NetworkHelper.getToken()!))",
+    "Content-Type" : "application/json; charset=utf-8"
 ]
