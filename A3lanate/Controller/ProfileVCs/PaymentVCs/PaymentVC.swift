@@ -20,6 +20,10 @@ class PaymentVC: UIViewController {
     }
     
     @IBAction func buyTokensBtnPressed(_ sender: Any) {
+        let buyPackageVC = BuyPackageVC()
+        buyPackageVC.modalPresentationStyle = .custom
+        buyPackageVC.modalTransitionStyle = .crossDissolve
+        present(buyPackageVC, animated: true, completion: nil)
     }
     
     @IBAction func paymentHistoryBtnPressed(_ sender: Any) {

@@ -17,12 +17,14 @@ class PayCell: UITableViewCell {
     @IBOutlet weak var featurePriceLbl: UILabel!
     @IBOutlet weak var currencyLbl: UILabel!
     
+    //Variables
+    var btnPressed: (() -> ())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     @IBAction func radioBtnPressed(_ sender: Any) {
+        btnPressed?()
     }
-    
 }

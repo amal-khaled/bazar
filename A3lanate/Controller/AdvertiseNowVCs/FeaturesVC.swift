@@ -103,6 +103,11 @@ extension FeaturesVC: UITableViewDelegate, UITableViewDataSource {
         }
         cell.currencyLbl.text = "KWD".localized
         cell.featurePriceLbl.text = "\(features[indexPath.row].FeaturePrice)"
+        cell.btnPressed = { [weak self] in
+            cell.radioBtn.setImage(UIImage(named: "checked_rectangle"), for: .normal)
+            self?.featuresIds.append(["FeatureId" : (self?.features[indexPath.row].FeatureId)!])
+        }
+
         return cell
     }
     

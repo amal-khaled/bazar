@@ -124,6 +124,8 @@ class AdvertiseNowVC: UIViewController {
         englishTxtView.delegate = self
         catListBtn.addCornerRadius(cornerRadius: 20)
         catListBtn.addBorder()
+        englishTxtView.text = " "
+        titleEnTextField.text = " "
     }
     
     func setupCollectionView() {
@@ -301,7 +303,8 @@ class AdvertiseNowVC: UIViewController {
     
     @IBAction func catListBtnPressed(_ sender: Any) {
         let categoryList = CategoryList()
-        categoryList.modalPresentationStyle = .custom
+        categoryList.modalPresentationStyle = .fullScreen
+        categoryList.modalTransitionStyle = .crossDissolve
         present(categoryList, animated: true, completion: nil)
     }
     

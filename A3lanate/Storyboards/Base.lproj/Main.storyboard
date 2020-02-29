@@ -499,108 +499,11 @@
                         <outlet property="upperDescView" destination="9Ky-1e-jz6" id="JXW-W5-mpg"/>
                         <segue destination="uQm-nF-wdM" kind="show" identifier="toPayVC" id="7dF-sr-XP4"/>
                         <segue destination="9eH-Mf-UR9" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RPk-10-C1Q"/>
-                        <segue destination="dZo-rE-ISC" kind="show" identifier="toCatList" id="mSX-hF-7fN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsV-2T-Msj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657.9710144927537" y="331.47321428571428"/>
-        </scene>
-        <!--Category ListVC-->
-        <scene sceneID="51v-a4-qbE">
-            <objects>
-                <viewController id="dZo-rE-ISC" customClass="CategoryListVC" customModule="A3lanate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Cz6-GX-oQq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DIm-Um-ghh">
-                                <rect key="frame" x="20" y="108" width="374" height="685"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="DIm-Um-ghh" firstAttribute="top" secondItem="APu-aT-K7s" secondAttribute="top" constant="20" id="3ZO-qw-HDF"/>
-                            <constraint firstItem="APu-aT-K7s" firstAttribute="bottom" secondItem="DIm-Um-ghh" secondAttribute="bottom" constant="20" id="9Uo-Ya-ZmJ"/>
-                            <constraint firstItem="DIm-Um-ghh" firstAttribute="leading" secondItem="APu-aT-K7s" secondAttribute="leading" constant="20" id="ogf-eh-wDM"/>
-                            <constraint firstItem="APu-aT-K7s" firstAttribute="trailing" secondItem="DIm-Um-ghh" secondAttribute="trailing" constant="20" id="rWJ-Ja-FIF"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="APu-aT-K7s"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="bLO-gv-Au1"/>
-                    <connections>
-                        <outlet property="tableView" destination="DIm-Um-ghh" id="ERE-Uh-f3e"/>
-                        <segue destination="ull-hz-N6P" kind="show" identifier="toSubCatList" id="Tpd-Fn-4Xq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TRO-1K-lsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2425" y="13"/>
-        </scene>
-        <!--Sub Category ListVC-->
-        <scene sceneID="30e-ab-kQx">
-            <objects>
-                <viewController id="ull-hz-N6P" customClass="SubCategoryListVC" customModule="A3lanate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="doS-f9-zKx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y7Q-f3-yGA">
-                                <rect key="frame" x="20" y="108" width="374" height="685"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="uIJ-ij-mvL" firstAttribute="bottom" secondItem="y7Q-f3-yGA" secondAttribute="bottom" constant="20" id="NJ6-aQ-btA"/>
-                            <constraint firstItem="y7Q-f3-yGA" firstAttribute="leading" secondItem="uIJ-ij-mvL" secondAttribute="leading" constant="20" id="hP3-YA-PKx"/>
-                            <constraint firstItem="uIJ-ij-mvL" firstAttribute="trailing" secondItem="y7Q-f3-yGA" secondAttribute="trailing" constant="20" id="pIv-ts-cQl"/>
-                            <constraint firstItem="y7Q-f3-yGA" firstAttribute="top" secondItem="uIJ-ij-mvL" secondAttribute="top" constant="20" id="yHF-cY-QvV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="uIJ-ij-mvL"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fRh-w6-Msd"/>
-                    <connections>
-                        <outlet property="tableView" destination="y7Q-f3-yGA" id="CE0-8Q-kDb"/>
-                        <segue destination="6dT-2f-bXs" kind="show" identifier="toSubSubCatList" id="H7Z-nf-wh6"/>
-                        <segue destination="5uD-HU-jeg" kind="presentation" identifier="toAdvertiseNowVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="xLJ-UP-tl3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="si5-fq-uQm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3212" y="13"/>
-        </scene>
-        <!--Sub Sub Category ListVC-->
-        <scene sceneID="Y8N-H4-pcb">
-            <objects>
-                <viewController id="6dT-2f-bXs" customClass="SubSubCategoryListVC" customModule="A3lanate" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="frU-lA-fLD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iit-bY-zUL">
-                                <rect key="frame" x="20" y="108" width="374" height="685"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="1DG-kY-udf" firstAttribute="bottom" secondItem="Iit-bY-zUL" secondAttribute="bottom" constant="20" id="4ob-f9-mD9"/>
-                            <constraint firstItem="Iit-bY-zUL" firstAttribute="top" secondItem="1DG-kY-udf" secondAttribute="top" constant="20" id="X2q-sj-qUv"/>
-                            <constraint firstItem="1DG-kY-udf" firstAttribute="trailing" secondItem="Iit-bY-zUL" secondAttribute="trailing" constant="20" id="el6-Ac-Bm6"/>
-                            <constraint firstItem="Iit-bY-zUL" firstAttribute="leading" secondItem="1DG-kY-udf" secondAttribute="leading" constant="20" id="osB-Np-QYQ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="1DG-kY-udf"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="VKp-f7-lxZ"/>
-                    <connections>
-                        <outlet property="tableView" destination="Iit-bY-zUL" id="m3l-nH-WBv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXR-Kg-pGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4104" y="331"/>
         </scene>
         <!--FeaturesVC-->
         <scene sceneID="goY-4z-0pr">
@@ -661,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IKg-Fe-eXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2425" y="659"/>
+            <point key="canvasLocation" x="2472" y="331"/>
         </scene>
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
@@ -4866,8 +4769,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="RPk-10-C1Q"/>
         <segue reference="ILo-qZ-IMa"/>
-        <segue reference="G80-CJ-09o"/>
         <segue reference="5tf-Yy-poH"/>
-        <segue reference="v3Z-lW-fSw"/>
+        <segue reference="XaJ-wq-vHR"/>
     </inferredMetricsTieBreakers>
 </document>

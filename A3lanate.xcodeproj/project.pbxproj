@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		0B02B0B024068C6B00A17F02 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0AF24068C6B00A17F02 /* Feature.swift */; };
 		0B02B0B224068CE700A17F02 /* FeaturesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B124068CE700A17F02 /* FeaturesService.swift */; };
-		0B02B0B52406A43300A17F02 /* CategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B42406A43300A17F02 /* CategoryListVC.swift */; };
-		0B02B0B72406A44F00A17F02 /* SubCategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B62406A44F00A17F02 /* SubCategoryListVC.swift */; };
-		0B02B0B92406A46900A17F02 /* SubSubCategoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0B82406A46900A17F02 /* SubSubCategoryListVC.swift */; };
 		0B02B0BD2406B1F500A17F02 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0BB2406B1F500A17F02 /* CategoryList.swift */; };
 		0B02B0BE2406B1F500A17F02 /* CategoryList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B02B0BC2406B1F500A17F02 /* CategoryList.xib */; };
 		0B02B0C22406B3DF00A17F02 /* SubCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02B0C02406B3DF00A17F02 /* SubCategoryList.swift */; };
@@ -95,6 +92,12 @@
 		0BFA820023F01D5100BC5A07 /* MyAdsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */; };
 		0BFA820323F021D600BC5A07 /* AdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA820223F021D600BC5A07 /* AdVC.swift */; };
 		0BFCA1DA23E22731004DE381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B11315F23D9C93E007FDC6D /* Assets.xcassets */; };
+		0BFD757D240A838A00800340 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD757C240A838A00800340 /* Package.swift */; };
+		0BFD757F240A83D800800340 /* PackagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD757E240A83D800800340 /* PackagesService.swift */; };
+		0BFD7586240A912A00800340 /* PackageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD7584240A912A00800340 /* PackageCell.swift */; };
+		0BFD7587240A912A00800340 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD7585240A912A00800340 /* PackageCell.xib */; };
+		0BFD758B240AA11100800340 /* BuyPackageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD7589240AA11100800340 /* BuyPackageVC.swift */; };
+		0BFD758D240AA6D400800340 /* BuyPackageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD758F240AA6D400800340 /* BuyPackageVC.xib */; };
 		0BFDB5F723EC030000695A5A /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5F623EC030000695A5A /* EditProfileVC.swift */; };
 		0BFDB5F923EC032000695A5A /* MyAdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5F823EC032000695A5A /* MyAdsVC.swift */; };
 		0BFDB5FB23EC033D00695A5A /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */; };
@@ -111,9 +114,6 @@
 		09DED0F7E927F837B44DD197 /* Pods-A3lanate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A3lanate.debug.xcconfig"; path = "Target Support Files/Pods-A3lanate/Pods-A3lanate.debug.xcconfig"; sourceTree = "<group>"; };
 		0B02B0AF24068C6B00A17F02 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		0B02B0B124068CE700A17F02 /* FeaturesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesService.swift; sourceTree = "<group>"; };
-		0B02B0B42406A43300A17F02 /* CategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListVC.swift; sourceTree = "<group>"; };
-		0B02B0B62406A44F00A17F02 /* SubCategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryListVC.swift; sourceTree = "<group>"; };
-		0B02B0B82406A46900A17F02 /* SubSubCategoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubSubCategoryListVC.swift; sourceTree = "<group>"; };
 		0B02B0BB2406B1F500A17F02 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
 		0B02B0BC2406B1F500A17F02 /* CategoryList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryList.xib; sourceTree = "<group>"; };
 		0B02B0C02406B3DF00A17F02 /* SubCategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryList.swift; sourceTree = "<group>"; };
@@ -205,6 +205,13 @@
 		0BFA81FD23F01D5100BC5A07 /* MyAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsCell.swift; sourceTree = "<group>"; };
 		0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdsCell.xib; sourceTree = "<group>"; };
 		0BFA820223F021D600BC5A07 /* AdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdVC.swift; sourceTree = "<group>"; };
+		0BFD757C240A838A00800340 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		0BFD757E240A83D800800340 /* PackagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagesService.swift; sourceTree = "<group>"; };
+		0BFD7584240A912A00800340 /* PackageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCell.swift; sourceTree = "<group>"; };
+		0BFD7585240A912A00800340 /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
+		0BFD7589240AA11100800340 /* BuyPackageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPackageVC.swift; sourceTree = "<group>"; };
+		0BFD758E240AA6D400800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BuyPackageVC.xib; sourceTree = "<group>"; };
+		0BFD7591240AA6D800800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BuyPackageVC.strings; sourceTree = "<group>"; };
 		0BFDB5F623EC030000695A5A /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		0BFDB5F823EC032000695A5A /* MyAdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsVC.swift; sourceTree = "<group>"; };
 		0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
@@ -236,9 +243,6 @@
 				0B02B0BA2406B1DB00A17F02 /* CategoryList */,
 				0B02B0BF2406B3C500A17F02 /* SubCategoryList */,
 				0B02B0C42406D98A00A17F02 /* SubSubCategoryList */,
-				0B02B0B42406A43300A17F02 /* CategoryListVC.swift */,
-				0B02B0B62406A44F00A17F02 /* SubCategoryListVC.swift */,
-				0B02B0B82406A46900A17F02 /* SubSubCategoryListVC.swift */,
 			);
 			path = CategoriesListVCs;
 			sourceTree = "<group>";
@@ -308,7 +312,7 @@
 				0BFDB60023EC0F9A00695A5A /* EditProfileVCs */,
 				0BFDB5F823EC032000695A5A /* MyAdsVC.swift */,
 				0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */,
-				0BFDB5FC23EC035700695A5A /* PaymentVC.swift */,
+				0BFD7580240A8F4500800340 /* PaymentVCs */,
 			);
 			path = ProfileVCs;
 			sourceTree = "<group>";
@@ -518,6 +522,7 @@
 		0B1F78A723E9DA20006BDFBA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				0BFD7583240A90D400800340 /* PackageCell */,
 				0B11ABFB23F9995400CA56D2 /* CategoryCell */,
 				0BF4487723F04DD50044B88B /* FollowUpCell */,
 				0BFA81FC23F01D3500BC5A07 /* MyAdsCell */,
@@ -607,6 +612,7 @@
 				0B19086923F70EC80050AE73 /* Category.swift */,
 				0B11AC0923F9A40000CA56D2 /* SubCategory.swift */,
 				0B19086B23F70EE80050AE73 /* Ad.swift */,
+				0BFD757C240A838A00800340 /* Package.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -628,6 +634,7 @@
 				0B19086D23F737230050AE73 /* AdsService.swift */,
 				0B11AC0723F9A21B00CA56D2 /* CategoriesService.swift */,
 				0B02B0B124068CE700A17F02 /* FeaturesService.swift */,
+				0BFD757E240A83D800800340 /* PackagesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -675,6 +682,33 @@
 				0BF4487523F04D840044B88B /* FollowUpVC.swift */,
 			);
 			path = AdVCs;
+			sourceTree = "<group>";
+		};
+		0BFD7580240A8F4500800340 /* PaymentVCs */ = {
+			isa = PBXGroup;
+			children = (
+				0BFDB5FC23EC035700695A5A /* PaymentVC.swift */,
+				0BFD7588240AA0EE00800340 /* BuyPackageVC */,
+			);
+			path = PaymentVCs;
+			sourceTree = "<group>";
+		};
+		0BFD7583240A90D400800340 /* PackageCell */ = {
+			isa = PBXGroup;
+			children = (
+				0BFD7584240A912A00800340 /* PackageCell.swift */,
+				0BFD7585240A912A00800340 /* PackageCell.xib */,
+			);
+			path = PackageCell;
+			sourceTree = "<group>";
+		};
+		0BFD7588240AA0EE00800340 /* BuyPackageVC */ = {
+			isa = PBXGroup;
+			children = (
+				0BFD7589240AA11100800340 /* BuyPackageVC.swift */,
+				0BFD758F240AA6D400800340 /* BuyPackageVC.xib */,
+			);
+			path = BuyPackageVC;
 			sourceTree = "<group>";
 		};
 		0BFDB60023EC0F9A00695A5A /* EditProfileVCs */ = {
@@ -790,6 +824,7 @@
 				0B0AA14F23ED88BE003971A2 /* SubCategoryCell.xib in Resources */,
 				0B02B0C82406D9B900A17F02 /* SubSubCategoryList.xib in Resources */,
 				0B780FFA23DF298A004304DC /* Localizable.strings in Resources */,
+				0BFD758D240AA6D400800340 /* BuyPackageVC.xib in Resources */,
 				0BFA81F623F0107E00BC5A07 /* PayActionSheet.xib in Resources */,
 				0B1F78B823EA220F006BDFBA /* CountryCell.xib in Resources */,
 				0B11AC0223F9A09500CA56D2 /* MainAdsCell.xib in Resources */,
@@ -797,6 +832,7 @@
 				0BFDB61023EC4C0F00695A5A /* FavoriteCell.xib in Resources */,
 				0BFA81FB23F0147E00BC5A07 /* OnlineActionSheet.xib in Resources */,
 				0B08C15C24051C4D007ED192 /* NotificationCell.xib in Resources */,
+				0BFD7587240A912A00800340 /* PackageCell.xib in Resources */,
 				0BF4487423F03E760044B88B /* AdCell.xib in Resources */,
 				0B02C50523DCBBC300766776 /* MainCategoriesCell.xib in Resources */,
 				0BFCA1DA23E22731004DE381 /* Assets.xcassets in Resources */,
@@ -898,7 +934,7 @@
 				0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */,
 				0B11315523D9C93C007FDC6D /* AppDelegate.swift in Sources */,
 				0B0CA06123E090C700BC25AC /* ContactUsVC.swift in Sources */,
-				0B02B0B52406A43300A17F02 /* CategoryListVC.swift in Sources */,
+				0BFD758B240AA11100800340 /* BuyPackageVC.swift in Sources */,
 				0B02B0B024068C6B00A17F02 /* Feature.swift in Sources */,
 				0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */,
 				0B02B0C72406D9B900A17F02 /* SubSubCategoryList.swift in Sources */,
@@ -906,11 +942,13 @@
 				0B780FF423DF19E6004304DC /* LanguageVC.swift in Sources */,
 				0BFDB5F923EC032000695A5A /* MyAdsVC.swift in Sources */,
 				0BFA81FA23F0147E00BC5A07 /* OnlineActionSheet.swift in Sources */,
+				0BFD757F240A83D800800340 /* PackagesService.swift in Sources */,
 				0B19086623F70D220050AE73 /* HomeService.swift in Sources */,
 				0B1F78A423E70CDB006BDFBA /* RegisterVC.swift in Sources */,
 				0B11315723D9C93C007FDC6D /* SceneDelegate.swift in Sources */,
 				0B780FFF23DF2A06004304DC /* StringExt.swift in Sources */,
 				0B04832923DA1FC9003C49C0 /* FavoriteVC.swift in Sources */,
+				0BFD7586240A912A00800340 /* PackageCell.swift in Sources */,
 				0B04832723DA1F87003C49C0 /* CategoriesVC.swift in Sources */,
 				0BF4487A23F04DF80044B88B /* FollowUpCell.swift in Sources */,
 				0B19086E23F737230050AE73 /* AdsService.swift in Sources */,
@@ -921,8 +959,6 @@
 				0B02B0BD2406B1F500A17F02 /* CategoryList.swift in Sources */,
 				0BFA81EC23F00B3900BC5A07 /* FeaturesVC.swift in Sources */,
 				0B11AC0A23F9A40000CA56D2 /* SubCategory.swift in Sources */,
-				0B02B0B92406A46900A17F02 /* SubSubCategoryListVC.swift in Sources */,
-				0B02B0B72406A44F00A17F02 /* SubCategoryListVC.swift in Sources */,
 				0BFDB60F23EC4C0F00695A5A /* FavoriteCell.swift in Sources */,
 				0B1F78A623E725A5006BDFBA /* forgotPassVC.swift in Sources */,
 				0B1F78B223E9E526006BDFBA /* NotificationCell.swift in Sources */,
@@ -930,6 +966,7 @@
 				0BFDB60223EC0FB800695A5A /* ChangePassVC.swift in Sources */,
 				0BF4487F23F173470044B88B /* Constants.swift in Sources */,
 				0B1F78B723EA220F006BDFBA /* CountryCell.swift in Sources */,
+				0BFD757D240A838A00800340 /* Package.swift in Sources */,
 				0B0BCEE423E10E6E00AF709A /* SupportVC.swift in Sources */,
 				0B02B0C22406B3DF00A17F02 /* SubCategoryList.swift in Sources */,
 			);
@@ -990,6 +1027,15 @@
 				0B780FFD23DF298D004304DC /* ar */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		0BFD758F240AA6D400800340 /* BuyPackageVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BFD758E240AA6D400800340 /* Base */,
+				0BFD7591240AA6D800800340 /* ar */,
+			);
+			name = BuyPackageVC.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

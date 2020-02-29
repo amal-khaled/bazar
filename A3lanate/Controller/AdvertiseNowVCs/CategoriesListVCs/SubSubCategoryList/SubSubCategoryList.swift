@@ -45,6 +45,9 @@ class SubSubCategoryList: UIViewController {
                 self.subcategories = subcategories
                 self.tableView.reloadData()
                 if subcategories.count == 0 {
+                    AdvertiseNowVC.subSubCatId = 0
+                    AdvertiseNowVC.subSubCatTitleAr = ""
+                    AdvertiseNowVC.subSubCatTitleEn = ""
                     self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
                 }
             }

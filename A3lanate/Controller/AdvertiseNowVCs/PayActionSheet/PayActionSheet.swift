@@ -23,6 +23,10 @@ class PayActionSheet: UIViewController {
     //Outlets
     var adId: Int = 0
     
+    //Variables
+    var featureVC = FeaturesVC()
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,46 +95,6 @@ class PayActionSheet: UIViewController {
         }
     }
                 
-                
-//            if response.result.error == nil {
-//                let value = response.result.value
-//                let json = JSON(value as Any)
-//                print(json)
-//                print(json["Status"].int)
-//                if let status = json["Status"].int {
-//                    if status == 1 {
-//                        let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
-//                        self.present(alert, animated: true, completion: nil)
-//                        let when = DispatchTime.now() + 1
-//                        DispatchQueue.main.asyncAfter(deadline: when){
-//                            alert.dismiss(animated: true, completion: nil)
-//                        }
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
-//                    else if status == 2 {
-//                        let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully, to activate features please pay".localized, preferredStyle: .alert)
-//                        self.present(alert, animated: true, completion: nil)
-//                        let when = DispatchTime.now() + 1
-//                        DispatchQueue.main.asyncAfter(deadline: when){
-//                            alert.dismiss(animated: true, completion: nil)
-//                        }
-//                    }
-//                    else if status == 3 {
-//                        let alert = UIAlertController(title: "", message: "You don't have enough balance so you need to pay to upload your ad".localized, preferredStyle: .alert)
-//                        self.present(alert, animated: true, completion: nil)
-//                        let when = DispatchTime.now() + 1
-//                        DispatchQueue.main.asyncAfter(deadline: when){
-//                            alert.dismiss(animated: true, completion: nil)
-//                        }
-//                    }
-//                }
-//            } else {
-//                debugPrint(response.result.error as Any)
-//            }
-//        }
-//    }
-    
-    
     @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         dismiss(animated: true, completion: nil)
     }
@@ -143,6 +107,52 @@ class PayActionSheet: UIViewController {
     }
     
     @IBAction func balanceBtnPressed(_ sender: Any) {
+        var parameters = [String: Any]()
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            parameters = [
+               "AdId" : adId,
+               "Lang": "ar",
+               ]
+        } else {
+            parameters = [
+               "AdId" : adId,
+               "Lang": "en",
+               ]
+        }
+        Alamofire.request(PAY_FROMPACKAGE_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            if response.result.error == nil {
+                if let json = response.result.value as? Dictionary<String,Any> {
+                    if let refrence = json["ReferenceNumber"] as? String {
+                            let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
+                            self.present(alert, animated: true, completion: nil)
+                            let when = DispatchTime.now() + 1
+                            DispatchQueue.main.asyncAfter(deadline: when){
+                                alert.dismiss(animated: true, completion: nil)
+                            }
+                            self.dismiss(animated: true, completion: nil)
+                    }
+                    if let message = json["Message"] as? String {
+                            let alertController = UIAlertController(title: message, message: "Dou you want to buy more?", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                                UIAlertAction in
+                            
+                            let buyPackageVC = BuyPackageVC()
+                            buyPackageVC.modalPresentationStyle = .custom
+                            buyPackageVC.modalTransitionStyle = .crossDissolve
+                            self.present(buyPackageVC, animated: true, completion: nil)
+                            }
+                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+                                UIAlertAction in
+                            }
+                            alertController.addAction(okAction)
+                            alertController.addAction(cancelAction)
+                            self.present(alertController, animated: true, completion: nil)
+                    }
+                } else {
+                    debugPrint(response.result.error as Any)
+                }
+            }
+        }
     }
     
     @IBAction func cancelBtnPressed(_ sender: Any) {

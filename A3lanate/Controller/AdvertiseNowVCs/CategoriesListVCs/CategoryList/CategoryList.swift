@@ -70,6 +70,7 @@ extension CategoryList: UITableViewDelegate, UITableViewDataSource {
             let subCategoryList = SubCategoryList()
             subCategoryList.selectedCatId = self?.categories[indexPath.row].id ?? 0
             subCategoryList.modalPresentationStyle = .custom
+            subCategoryList.modalTransitionStyle = .crossDissolve
             self?.present(subCategoryList, animated: true, completion: nil)
         }
         return cell
@@ -89,6 +90,7 @@ extension CategoryList: UITableViewDelegate, UITableViewDataSource {
         let subCategoryList = SubCategoryList()
         subCategoryList.selectedCatId = categories[indexPath.row].id
         subCategoryList.modalPresentationStyle = .custom
+        subCategoryList.modalTransitionStyle = .crossDissolve
         present(subCategoryList, animated: true, completion: nil)
     }
 }
