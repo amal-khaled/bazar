@@ -83,11 +83,8 @@
 		0BF4488423F1B2880044B88B /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4488323F1B2880044B88B /* NetworkHelper.swift */; };
 		0BFA81EC23F00B3900BC5A07 /* FeaturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EB23F00B3900BC5A07 /* FeaturesVC.swift */; };
 		0BFA81F023F00CAA00BC5A07 /* PayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */; };
-		0BFA81F123F00CAA00BC5A07 /* PayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */; };
 		0BFA81F523F0107E00BC5A07 /* PayActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81F323F0107E00BC5A07 /* PayActionSheet.swift */; };
-		0BFA81F623F0107E00BC5A07 /* PayActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81F423F0107E00BC5A07 /* PayActionSheet.xib */; };
 		0BFA81FA23F0147E00BC5A07 /* OnlineActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81F823F0147E00BC5A07 /* OnlineActionSheet.swift */; };
-		0BFA81FB23F0147E00BC5A07 /* OnlineActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81F923F0147E00BC5A07 /* OnlineActionSheet.xib */; };
 		0BFA81FF23F01D5100BC5A07 /* MyAdsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA81FD23F01D5100BC5A07 /* MyAdsCell.swift */; };
 		0BFA820023F01D5100BC5A07 /* MyAdsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */; };
 		0BFA820323F021D600BC5A07 /* AdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA820223F021D600BC5A07 /* AdVC.swift */; };
@@ -98,6 +95,9 @@
 		0BFD7587240A912A00800340 /* PackageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD7585240A912A00800340 /* PackageCell.xib */; };
 		0BFD758B240AA11100800340 /* BuyPackageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD7589240AA11100800340 /* BuyPackageVC.swift */; };
 		0BFD758D240AA6D400800340 /* BuyPackageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD758F240AA6D400800340 /* BuyPackageVC.xib */; };
+		0BFD7592240AC73400800340 /* PayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD7594240AC73400800340 /* PayCell.xib */; };
+		0BFD7597240AC76B00800340 /* PayActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD7599240AC76B00800340 /* PayActionSheet.xib */; };
+		0BFD759C240AC7A100800340 /* OnlineActionSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFD759E240AC7A100800340 /* OnlineActionSheet.xib */; };
 		0BFDB5F723EC030000695A5A /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5F623EC030000695A5A /* EditProfileVC.swift */; };
 		0BFDB5F923EC032000695A5A /* MyAdsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5F823EC032000695A5A /* MyAdsVC.swift */; };
 		0BFDB5FB23EC033D00695A5A /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */; };
@@ -197,11 +197,8 @@
 		0BF4488323F1B2880044B88B /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		0BFA81EB23F00B3900BC5A07 /* FeaturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesVC.swift; sourceTree = "<group>"; };
 		0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayCell.swift; sourceTree = "<group>"; };
-		0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayCell.xib; sourceTree = "<group>"; };
 		0BFA81F323F0107E00BC5A07 /* PayActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayActionSheet.swift; sourceTree = "<group>"; };
-		0BFA81F423F0107E00BC5A07 /* PayActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PayActionSheet.xib; sourceTree = "<group>"; };
 		0BFA81F823F0147E00BC5A07 /* OnlineActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineActionSheet.swift; sourceTree = "<group>"; };
-		0BFA81F923F0147E00BC5A07 /* OnlineActionSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnlineActionSheet.xib; sourceTree = "<group>"; };
 		0BFA81FD23F01D5100BC5A07 /* MyAdsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsCell.swift; sourceTree = "<group>"; };
 		0BFA81FE23F01D5100BC5A07 /* MyAdsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdsCell.xib; sourceTree = "<group>"; };
 		0BFA820223F021D600BC5A07 /* AdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdVC.swift; sourceTree = "<group>"; };
@@ -212,6 +209,13 @@
 		0BFD7589240AA11100800340 /* BuyPackageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPackageVC.swift; sourceTree = "<group>"; };
 		0BFD758E240AA6D400800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BuyPackageVC.xib; sourceTree = "<group>"; };
 		0BFD7591240AA6D800800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BuyPackageVC.strings; sourceTree = "<group>"; };
+		0BFD7593240AC73400800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PayCell.xib; sourceTree = "<group>"; };
+		0BFD7596240AC73900800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PayCell.strings; sourceTree = "<group>"; };
+		0BFD7598240AC76B00800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PayActionSheet.xib; sourceTree = "<group>"; };
+		0BFD759B240AC77100800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PayActionSheet.strings; sourceTree = "<group>"; };
+		0BFD759D240AC7A100800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OnlineActionSheet.xib; sourceTree = "<group>"; };
+		0BFD75A0240AC7A600800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/OnlineActionSheet.strings; sourceTree = "<group>"; };
+		0BFD75A3240AD49100800340 /* A3lanate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = A3lanate.entitlements; sourceTree = "<group>"; };
 		0BFDB5F623EC030000695A5A /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		0BFDB5F823EC032000695A5A /* MyAdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsVC.swift; sourceTree = "<group>"; };
 		0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
@@ -476,6 +480,7 @@
 		0B11315323D9C93C007FDC6D /* A3lanate */ = {
 			isa = PBXGroup;
 			children = (
+				0BFD75A3240AD49100800340 /* A3lanate.entitlements */,
 				0BF4487D23F173330044B88B /* Utilities */,
 				0BF4488023F173FC0044B88B /* Services */,
 				0B04832123DA19A5003C49C0 /* Core */,
@@ -643,7 +648,7 @@
 			isa = PBXGroup;
 			children = (
 				0BFA81EE23F00CAA00BC5A07 /* PayCell.swift */,
-				0BFA81EF23F00CAA00BC5A07 /* PayCell.xib */,
+				0BFD7594240AC73400800340 /* PayCell.xib */,
 			);
 			path = PayCell;
 			sourceTree = "<group>";
@@ -652,7 +657,7 @@
 			isa = PBXGroup;
 			children = (
 				0BFA81F323F0107E00BC5A07 /* PayActionSheet.swift */,
-				0BFA81F423F0107E00BC5A07 /* PayActionSheet.xib */,
+				0BFD7599240AC76B00800340 /* PayActionSheet.xib */,
 			);
 			path = PayActionSheet;
 			sourceTree = "<group>";
@@ -661,7 +666,7 @@
 			isa = PBXGroup;
 			children = (
 				0BFA81F823F0147E00BC5A07 /* OnlineActionSheet.swift */,
-				0BFA81F923F0147E00BC5A07 /* OnlineActionSheet.xib */,
+				0BFD759E240AC7A100800340 /* OnlineActionSheet.xib */,
 			);
 			path = OnlineActionSheet;
 			sourceTree = "<group>";
@@ -825,12 +830,12 @@
 				0B02B0C82406D9B900A17F02 /* SubSubCategoryList.xib in Resources */,
 				0B780FFA23DF298A004304DC /* Localizable.strings in Resources */,
 				0BFD758D240AA6D400800340 /* BuyPackageVC.xib in Resources */,
-				0BFA81F623F0107E00BC5A07 /* PayActionSheet.xib in Resources */,
+				0BFD7597240AC76B00800340 /* PayActionSheet.xib in Resources */,
 				0B1F78B823EA220F006BDFBA /* CountryCell.xib in Resources */,
 				0B11AC0223F9A09500CA56D2 /* MainAdsCell.xib in Resources */,
 				0B0AA14823ED8100003971A2 /* CategoriesCell.xib in Resources */,
 				0BFDB61023EC4C0F00695A5A /* FavoriteCell.xib in Resources */,
-				0BFA81FB23F0147E00BC5A07 /* OnlineActionSheet.xib in Resources */,
+				0BFD759C240AC7A100800340 /* OnlineActionSheet.xib in Resources */,
 				0B08C15C24051C4D007ED192 /* NotificationCell.xib in Resources */,
 				0BFD7587240A912A00800340 /* PackageCell.xib in Resources */,
 				0BF4487423F03E760044B88B /* AdCell.xib in Resources */,
@@ -842,7 +847,7 @@
 				0B18782F24040131003B7C0B /* ImageCell.xib in Resources */,
 				0BFDB60723EC3CB400695A5A /* ChangePassAlert.xib in Resources */,
 				0B08C16124051CF6007ED192 /* FollowUpCell.xib in Resources */,
-				0BFA81F123F00CAA00BC5A07 /* PayCell.xib in Resources */,
+				0BFD7592240AC73400800340 /* PayCell.xib in Resources */,
 				0B0AA15623ED8CD3003971A2 /* SubSubCategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1038,6 +1043,33 @@
 			name = BuyPackageVC.xib;
 			sourceTree = "<group>";
 		};
+		0BFD7594240AC73400800340 /* PayCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BFD7593240AC73400800340 /* Base */,
+				0BFD7596240AC73900800340 /* ar */,
+			);
+			name = PayCell.xib;
+			sourceTree = "<group>";
+		};
+		0BFD7599240AC76B00800340 /* PayActionSheet.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BFD7598240AC76B00800340 /* Base */,
+				0BFD759B240AC77100800340 /* ar */,
+			);
+			name = PayActionSheet.xib;
+			sourceTree = "<group>";
+		};
+		0BFD759E240AC7A100800340 /* OnlineActionSheet.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0BFD759D240AC7A100800340 /* Base */,
+				0BFD75A0240AC7A600800340 /* ar */,
+			);
+			name = OnlineActionSheet.xib;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -1162,6 +1194,7 @@
 			baseConfigurationReference = 09DED0F7E927F837B44DD197 /* Pods-A3lanate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = A3lanate/A3lanate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = A3lanate/Configurations/Info.plist;
@@ -1182,6 +1215,7 @@
 			baseConfigurationReference = 8A8EBF2C0E5D915F2A5C4A20 /* Pods-A3lanate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = A3lanate/A3lanate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = A3lanate/Configurations/Info.plist;

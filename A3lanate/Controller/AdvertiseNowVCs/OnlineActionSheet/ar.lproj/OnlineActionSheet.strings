@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "Are you sure you want to pay by"; ObjectID = "C0n-Ol-2Ba"; */
+"C0n-Ol-2Ba.text" = "هل انت متأكد انك تريد ان تدفع";
+
+/* Class = "UILabel"; text = "Online ?"; ObjectID = "Exk-8M-AD7"; */
+"Exk-8M-AD7.text" = "اونلاين؟";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "Rlc-lK-RPP"; */
+"Rlc-lK-RPP.normalTitle" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "duS-I0-FGb"; */
+"duS-I0-FGb.normalTitle" = "الغاء";

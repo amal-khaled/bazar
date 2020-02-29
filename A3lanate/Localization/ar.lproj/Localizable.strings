@@ -13,7 +13,27 @@
 "Delete" = "احذف";
 "Dismiss" = "الغاء";
 "Your Ad got uploaded successfully" = "لقد تم رفع اعلانك بنجاح";
+"Please enter the arabic title" = "برجاء ادخال العنوان العربي";
+"Please enter the english title" = "برجاء ادخال العنوان الانجليزي";
+"Please enter the price" = "برجاء ادخال السعر";
+"Please enter the phone number" = "برجاءادخال رقم الهاتف";
+"Please enter the english description" = "برجاء ادخال الوصف العربي";
+"Please enter the arabic description" = "برجاء ادخال الوصف الانجليزي";
+"Please enter a correct number" = "برجاء ادخال رقم هاتف صحيح";
 
 //SideMenuVC
 "Log In" = "تسجيل الدخول";
 "Log Out" = "تسجيل الخروج";
+
+//LoginVC
+"Please make sure that the email and the password is correct" = "برجاء ادخال بريد الكتروني ورقم هاتف صحيح";
+
+//RegisterVC
+"Please make sure that the user name and the password is correct" = "برجاء ادخال اسم مستخدم ورقم سري صحيح";
+
+//PayActionSheet
+"Your Ad got uploaded successfully, to activate features please pay" = "لقد تم رفع اعلانك بنجاح، ولكن يجب الدفع حتي يتم تمييز اعلانك";
+"You don't have enough balance so you need to pay to upload your ad" = "لا يوجد لديك رصيد كافي، يجب ان تدفع لكي تقوم برفع اعلانك";
+"Do you want to buy more?" = "هل تريد شراء المزيد من الرصيد؟";
+"OK" = "موافق";
+"Cancel" = "الغاء";

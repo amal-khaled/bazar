@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Your balance"; ObjectID = "F47-Im-5vG"; */
+"F47-Im-5vG.normalTitle" = "رصيدك";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Kmw-w1-VQr"; */
+"Kmw-w1-VQr.normalTitle" = "الغاء";
+
+/* Class = "UIButton"; normalTitle = "Online"; ObjectID = "P3f-md-7yW"; */
+"P3f-md-7yW.normalTitle" = "اونلاين";
+
+/* Class = "UILabel"; text = "Pay By"; ObjectID = "Syd-a2-zXC"; */
+"Syd-a2-zXC.text" = "ادفع بواسطة";

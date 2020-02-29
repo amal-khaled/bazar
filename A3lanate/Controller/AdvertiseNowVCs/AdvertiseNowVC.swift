@@ -155,7 +155,7 @@ class AdvertiseNowVC: UIViewController {
                 }
                 return}
             guard let price = priceTxtField.text, priceTxtField.text != "" else {
-                let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
+                let alert = UIAlertController(title: "", message: "Please enter the price".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
                 let when = DispatchTime.now() + 1
                 DispatchQueue.main.asyncAfter(deadline: when){

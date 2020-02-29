@@ -132,8 +132,8 @@ class PayActionSheet: UIViewController {
                             self.dismiss(animated: true, completion: nil)
                     }
                     if let message = json["Message"] as? String {
-                            let alertController = UIAlertController(title: message, message: "Dou you want to buy more?", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+                        let alertController = UIAlertController(title: message, message: "Do you want to buy more?".localized, preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK".localized, style: UIAlertAction.Style.default) {
                                 UIAlertAction in
                             
                             let buyPackageVC = BuyPackageVC()
@@ -141,7 +141,7 @@ class PayActionSheet: UIViewController {
                             buyPackageVC.modalTransitionStyle = .crossDissolve
                             self.present(buyPackageVC, animated: true, completion: nil)
                             }
-                        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) {
+                        let cancelAction = UIAlertAction(title: "Cancel".localized, style: UIAlertAction.Style.cancel) {
                                 UIAlertAction in
                             }
                             alertController.addAction(okAction)

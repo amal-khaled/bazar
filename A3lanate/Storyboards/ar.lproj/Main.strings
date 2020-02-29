@@ -63,8 +63,9 @@
 "FuT-bf-eNG.normalTitle" = "قم باخفاء رقم الهاتف";
 "tIe-eI-nMC.normalTitle" = "اعد النشر تلقائي";
 "r8G-q5-iQs.normalTitle" = "التالي";
+"MGl-Zn-IQl.text" = "الفئات";
 
-//PayVC
+//FeaturesVC
 "V8a-Ps-yhc.text" = "قم بتمييز اعلانك :";
 "xkO-4J-nTG.normalTitle" = "التالي";
 
@@ -174,3 +175,5 @@
 "qbo-g7-uE0.text" = "السؤال بالعربي";
 "RY6-M6-0Yf.text" = "السؤال بالانجليزي";
 "6tA-Fe-ZLq.normalTitle" = "ارسل";
+
+
