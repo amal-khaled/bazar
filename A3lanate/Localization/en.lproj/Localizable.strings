@@ -20,6 +20,7 @@
 "Please enter the english description" = "Please enter the english description";
 "Please enter the arabic description" = "Please enter the arabic description";
 "Please enter a correct number" = "Please enter a correct number";
+"You Should login first" = "You Should login first";
 
 //SideMenuVC
 "Log In" = "Log In";
@@ -44,3 +45,6 @@
 //ForgetPasswordVC
 "Please check your Email." = "Please check your Email.";
 "Email" = "Email";
+
+//AdVC
+"Views" = "Views";

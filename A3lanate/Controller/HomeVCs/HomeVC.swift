@@ -37,6 +37,8 @@ class HomeVC: UIViewController {
     var mostViewdArr = [Ad]()
     var latestArr = [Ad]()
     var sliderAlamoSource = [AlamofireSource]()
+    var selectedAdId: Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +121,13 @@ class HomeVC: UIViewController {
         mostViewdCollection.register(UINib(nibName: MainAdsCellID, bundle: nil), forCellWithReuseIdentifier: MainAdsCellID)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAdVC" {
+            let destVC = segue.destination as! AdVC
+            destVC.selectedAdId = self.selectedAdId
+        }
+    }
+    
     @IBAction func menuBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toMenuVC", sender: self)
     }
@@ -130,7 +139,6 @@ class HomeVC: UIViewController {
     @IBAction func allBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toAllOffersVC", sender: self)
     }
-    
 }
 
 extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -264,12 +272,15 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
 //            cell.titleLbl.isHidden = false
 //        }
         if collectionView.tag == 2 {
+            self.selectedAdId = topArr[indexPath.row].id
             performSegue(withIdentifier: "toAdVC", sender: self)
         }
         if collectionView.tag == 3 {
+            self.selectedAdId = latestArr[indexPath.row].id
             performSegue(withIdentifier: "toAdVC", sender: self)
         }
         if collectionView.tag == 4 {
+            self.selectedAdId = mostViewdArr[indexPath.row].id
             performSegue(withIdentifier: "toAdVC", sender: self)
         }
     }

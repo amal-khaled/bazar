@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import MOLH
 
 class AdVC: UIViewController {
     
@@ -32,15 +34,20 @@ class AdVC: UIViewController {
     
     
     //Constants
-    let AdCellId = "AdCell"
+    let ImageCellId = "ImageCell"
     
     //Variables
     var selectedAdId: Int = 0
-
+    var images = [String]()
+    var features = [Feature]()
+    var userAds = [Ad]()
+    var similarAds = [Ad]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupCollectionView()
+        loadData()
     }
     
     func setupView() {
@@ -50,13 +57,65 @@ class AdVC: UIViewController {
     func setupCollectionView() {
         imagesCollection.dataSource = self
         imagesCollection.delegate = self
-        imagesCollection.register(UINib(nibName: AdCellId, bundle: nil), forCellWithReuseIdentifier: AdCellId)
+        imagesCollection.register(UINib(nibName: ImageCellId, bundle: nil), forCellWithReuseIdentifier: ImageCellId)
         sameUserAdsCollection.dataSource = self
         sameUserAdsCollection.delegate = self
-        sameUserAdsCollection.register(UINib(nibName: AdCellId, bundle: nil), forCellWithReuseIdentifier: AdCellId)
+        sameUserAdsCollection.register(UINib(nibName: ImageCellId, bundle: nil), forCellWithReuseIdentifier: ImageCellId)
         similarAdsCollection.dataSource = self
         similarAdsCollection.delegate = self
-        similarAdsCollection.register(UINib(nibName: AdCellId, bundle: nil), forCellWithReuseIdentifier: AdCellId)
+        similarAdsCollection.register(UINib(nibName: ImageCellId, bundle: nil), forCellWithReuseIdentifier: ImageCellId)
+    }
+    
+    func loadData() {
+        AdsService.instance.getAdById(id: selectedAdId) { (error, ad, images, features, userAds, similarAds) in
+            if let ad = ad {
+                self.adPriceLbl.text = "\(ad.price)" + " " + "KWD".localized
+                self.adViewsLbl.text = "\(ad.AdViews)" + " " + "Views".localized
+                if MOLHLanguage.currentAppleLanguage() == "ar" {
+                    self.adTitleLbl.text = ad.titleAr
+                    self.addTreeLbl.text = ad.CategoryNameAR + "-" + ad.SubCategoryNameAR + "-" + ad.SubSubCategoryNameAR
+                    self.descLbl.text = ad.Description
+                } else {
+                    self.adTitleLbl.text = ad.titleEn
+                    self.addTreeLbl.text = ad.CategoryNameEN + "-" + ad.SubCategoryNameEN + "-" + ad.SubSubCategoryNameEN
+                    self.descLbl.text = ad.DescriptionEN
+
+                }
+                Alamofire.request(ad.CreatedByImageURL).responseImage { (response) in
+                    if let image = response.result.value {
+                        DispatchQueue.main.async {
+                            self.profileImg.image = image
+                            self.profileImg.contentMode = .scaleToFill
+                        }
+                    }
+                }
+                self.usernameLbl.text = ad.CreatedByName
+                self.dateLbl.text = ad.StartDate
+            }
+            if let images = images {
+                self.images = images
+                Alamofire.request(images[0]).responseImage { (response) in
+                    if let image = response.result.value {
+                        DispatchQueue.main.async {
+                            self.adImg.image = image
+                            self.adImg.contentMode = .scaleToFill
+                        }
+                    }
+                }
+                self.imagesCollection.reloadData()
+            }
+            if let features = features {
+                self.features = features
+            }
+            if let userAds = userAds {
+                self.userAds = userAds
+                self.sameUserAdsCollection.reloadData()
+            }
+            if let similarAds = similarAds {
+                self.similarAds = similarAds
+                self.similarAdsCollection.reloadData()
+            }
+        }
     }
     
     @IBAction func whatsAppBtnPressed(_ sender: Any) {
@@ -86,13 +145,13 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 0 {
-            return 4
+            return self.images.count
         }
         if collectionView.tag == 1 {
-            return 7
+            return self.userAds.count
         }
         if collectionView.tag == 2 {
-            return 7
+            return self.similarAds.count
         }
         else {
             return 1
@@ -101,19 +160,43 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdCellId, for: indexPath) as! AdCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
+            Alamofire.request(images[indexPath.row]).responseImage { (response) in
+                if let image = response.result.value {
+                    DispatchQueue.main.async {
+                        cell.adImg.image = image
+                        cell.adImg.contentMode = .scaleToFill
+                    }
+                }
+            }
             return cell
         }
         if collectionView.tag == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdCellId, for: indexPath) as! AdCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
+            Alamofire.request(userAds[indexPath.row].imgUrl).responseImage { (response) in
+                if let image = response.result.value {
+                    DispatchQueue.main.async {
+                        cell.adImg.image = image
+                        cell.adImg.contentMode = .scaleToFill
+                    }
+                }
+            }
             return cell
         }
         if collectionView.tag == 2 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdCellId, for: indexPath) as! AdCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
+            Alamofire.request(similarAds[indexPath.row].imgUrl).responseImage { (response) in
+                if let image = response.result.value {
+                    DispatchQueue.main.async {
+                        cell.adImg.image = image
+                        cell.adImg.contentMode = .scaleToFill
+                    }
+                }
+            }
             return cell
         }
         else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AdCellId, for: indexPath) as! AdCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
             return cell
         }
     }

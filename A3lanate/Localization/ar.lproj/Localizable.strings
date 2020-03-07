@@ -20,13 +20,14 @@
 "Please enter the english description" = "برجاء ادخال الوصف العربي";
 "Please enter the arabic description" = "برجاء ادخال الوصف الانجليزي";
 "Please enter a correct number" = "برجاء ادخال رقم هاتف صحيح";
+"You Should login first" = "يجب ان تقوم بتسجيل الدخول اولاً";
 
 //SideMenuVC
 "Log In" = "تسجيل الدخول";
 "Log Out" = "تسجيل الخروج";
 
 //LoginVC
-"Please make sure that the email and the password is correct" = "برجاء ادخال بريد الكتروني ورقم هاتف صحيح";
+"Please make sure that the email and the password is correct" = "برجاء ادخال بريد الكتروني ورقم سري صحيح";
 
 //RegisterVC
 "Please make sure that the user name and the password is correct" = "برجاء ادخال اسم مستخدم ورقم سري صحيح";
@@ -44,3 +45,6 @@
 //ForgetPasswordVC
 "Please check your Email." = "لقد تم ارسالة رسالة على البريد الالكتروني";
 "Email" = "البريد الالكتروني";
+
+//AdVC
+"Views" = "مشاهدة";
