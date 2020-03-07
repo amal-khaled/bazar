@@ -77,4 +77,43 @@ class AuthService {
             }
         }
     }
+    
+    func editUserInfo(name: String, address: String, phoneNumber: String, email: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String : Any] = [
+            "Name": name,
+            "Address": address,
+            "PhoneNumber": phoneNumber,
+            "Email": lowerCaseEmail
+        ]
+        
+        Alamofire.request("\(EDITPROFILE_URL)", method: .post, parameters: body, encoding: URLEncoding.default, headers: HEADER_BOTH).responseString { (response) in
+            if response.result.error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
+    func forgetPassword(email: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String : Any] = [
+            "Email": lowerCaseEmail
+        ]
+        
+        Alamofire.request("\(FORGETPASSWORD_URL)", method: .post, parameters: body, encoding: URLEncoding.default, headers: HEADER).responseString { (response) in
+            if response.result.error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
 }

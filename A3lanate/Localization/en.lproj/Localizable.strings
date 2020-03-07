@@ -38,3 +38,9 @@
 "OK" = "OK";
 "Cancel" = "Cancel";
 
+//EditProfileVC
+"Your profile info updated successfully" = "Your profile info updated successfully";
+
+//ForgetPasswordVC
+"Please check your Email." = "Please check your Email.";
+"Email" = "Email";

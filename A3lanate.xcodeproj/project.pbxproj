@@ -63,6 +63,7 @@
 		0B19086A23F70EC80050AE73 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086923F70EC80050AE73 /* Category.swift */; };
 		0B19086C23F70EE80050AE73 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086B23F70EE80050AE73 /* Ad.swift */; };
 		0B19086E23F737230050AE73 /* AdsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19086D23F737230050AE73 /* AdsService.swift */; };
+		0B1BEC352412CC7E00BD64D2 /* ChangePassAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B1BEC372412CC7E00BD64D2 /* ChangePassAlert.xib */; };
 		0B1F78A423E70CDB006BDFBA /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F78A323E70CDB006BDFBA /* RegisterVC.swift */; };
 		0B1F78A623E725A5006BDFBA /* forgotPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F78A523E725A5006BDFBA /* forgotPassVC.swift */; };
 		0B1F78AD23E9DA8B006BDFBA /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F78AB23E9DA8B006BDFBA /* QuestionCell.swift */; };
@@ -104,7 +105,6 @@
 		0BFDB5FD23EC035700695A5A /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB5FC23EC035700695A5A /* PaymentVC.swift */; };
 		0BFDB60223EC0FB800695A5A /* ChangePassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB60123EC0FB800695A5A /* ChangePassVC.swift */; };
 		0BFDB60623EC3CB400695A5A /* ChangePassAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB60423EC3CB400695A5A /* ChangePassAlert.swift */; };
-		0BFDB60723EC3CB400695A5A /* ChangePassAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFDB60523EC3CB400695A5A /* ChangePassAlert.xib */; };
 		0BFDB60F23EC4C0F00695A5A /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFDB60D23EC4C0F00695A5A /* FavoriteCell.swift */; };
 		0BFDB61023EC4C0F00695A5A /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BFDB60E23EC4C0F00695A5A /* FavoriteCell.xib */; };
 		991F33636BC8D45A75358126 /* Pods_A3lanate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00CC25A8C1F7784797B14BE /* Pods_A3lanate.framework */; };
@@ -174,6 +174,8 @@
 		0B19086923F70EC80050AE73 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0B19086B23F70EE80050AE73 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		0B19086D23F737230050AE73 /* AdsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsService.swift; sourceTree = "<group>"; };
+		0B1BEC362412CC7E00BD64D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChangePassAlert.xib; sourceTree = "<group>"; };
+		0B1BEC392412CC8300BD64D2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/ChangePassAlert.strings; sourceTree = "<group>"; };
 		0B1F78A323E70CDB006BDFBA /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		0B1F78A523E725A5006BDFBA /* forgotPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forgotPassVC.swift; sourceTree = "<group>"; };
 		0B1F78AB23E9DA8B006BDFBA /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
@@ -222,7 +224,6 @@
 		0BFDB5FC23EC035700695A5A /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		0BFDB60123EC0FB800695A5A /* ChangePassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassVC.swift; sourceTree = "<group>"; };
 		0BFDB60423EC3CB400695A5A /* ChangePassAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassAlert.swift; sourceTree = "<group>"; };
-		0BFDB60523EC3CB400695A5A /* ChangePassAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePassAlert.xib; sourceTree = "<group>"; };
 		0BFDB60D23EC4C0F00695A5A /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		0BFDB60E23EC4C0F00695A5A /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		8A8EBF2C0E5D915F2A5C4A20 /* Pods-A3lanate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A3lanate.release.xcconfig"; path = "Target Support Files/Pods-A3lanate/Pods-A3lanate.release.xcconfig"; sourceTree = "<group>"; };
@@ -730,7 +731,7 @@
 			isa = PBXGroup;
 			children = (
 				0BFDB60423EC3CB400695A5A /* ChangePassAlert.swift */,
-				0BFDB60523EC3CB400695A5A /* ChangePassAlert.xib */,
+				0B1BEC372412CC7E00BD64D2 /* ChangePassAlert.xib */,
 			);
 			path = ChangePassAlert;
 			sourceTree = "<group>";
@@ -845,7 +846,7 @@
 				0B11315E23D9C93C007FDC6D /* Main.storyboard in Resources */,
 				0B02B0BE2406B1F500A17F02 /* CategoryList.xib in Resources */,
 				0B18782F24040131003B7C0B /* ImageCell.xib in Resources */,
-				0BFDB60723EC3CB400695A5A /* ChangePassAlert.xib in Resources */,
+				0B1BEC352412CC7E00BD64D2 /* ChangePassAlert.xib in Resources */,
 				0B08C16124051CF6007ED192 /* FollowUpCell.xib in Resources */,
 				0BFD7592240AC73400800340 /* PayCell.xib in Resources */,
 				0B0AA15623ED8CD3003971A2 /* SubSubCategoryCell.xib in Resources */,
@@ -1023,6 +1024,15 @@
 				0B11AC0623F9A09800CA56D2 /* ar */,
 			);
 			name = MainAdsCell.xib;
+			sourceTree = "<group>";
+		};
+		0B1BEC372412CC7E00BD64D2 /* ChangePassAlert.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B1BEC362412CC7E00BD64D2 /* Base */,
+				0B1BEC392412CC8300BD64D2 /* ar */,
+			);
+			name = ChangePassAlert.xib;
 			sourceTree = "<group>";
 		};
 		0B780FFC23DF298A004304DC /* Localizable.strings */ = {

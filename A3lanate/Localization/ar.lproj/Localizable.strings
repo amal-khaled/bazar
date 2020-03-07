@@ -37,3 +37,10 @@
 "Do you want to buy more?" = "هل تريد شراء المزيد من الرصيد؟";
 "OK" = "موافق";
 "Cancel" = "الغاء";
+
+//EditProfileVC
+"Your profile info updated successfully" = "لقد تم تحديث بياناتك بنجاح";
+
+//ForgetPasswordVC
+"Please check your Email." = "لقد تم ارسالة رسالة على البريد الالكتروني";
+"Email" = "البريد الالكتروني";

@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Ok"; ObjectID = "4HD-0N-DcL"; */
+"4HD-0N-DcL.normalTitle" = "موافق";
+
+/* Class = "UILabel"; text = "You have successfully changed your password, now you can log into your account."; ObjectID = "9h1-dm-b0H"; */
+"9h1-dm-b0H.text" = "لقد تم تغيير الرقم السري بنجاح، يمكنك تسجيل الدخول الان.";
+
+/* Class = "UILabel"; text = "Success !"; ObjectID = "cCl-hU-QaF"; */
+"cCl-hU-QaF.text" = "نجاح !";

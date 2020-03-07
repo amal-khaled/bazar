@@ -133,6 +133,28 @@ class EditProfileVC: UIViewController {
     }
     
     @IBAction func editBtnPressed(_ sender: Any) {
+        guard let name = nameTxtField.text, nameTxtField.text != "" else {return}
+        guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
+        guard let address = addressTxtField.text, addressTxtField.text != "" else {return}
+        guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {return}
+        
+        AuthService.instance.editUserInfo(name: name, address: address, phoneNumber: phone, email: email) { (success) in
+            if success {
+                self.nameTxtField.text = name
+                self.addressTxtField.text = address
+                self.phoneTxtField.text = phone
+                self.emailTxtField.text = email
+                
+                let alert = UIAlertController(title: "", message: "Your profile info updated successfully".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
+                }
+
+            }
+        }
+
     }
     
     @IBAction func changePassBtnPressed(_ sender: Any) {

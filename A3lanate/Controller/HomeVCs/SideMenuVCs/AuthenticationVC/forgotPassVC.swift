@@ -34,6 +34,19 @@ class forgotPassVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
+        guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
+        AuthService.instance.forgetPassword(email: email) { (success) in
+            if success {
+                self.emailTxtField.text = ""
+                self.emailTxtField.placeholder = "Email".localized
+                let alert = UIAlertController(title: "", message: "Please check your Email.".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 1
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
 }
 
