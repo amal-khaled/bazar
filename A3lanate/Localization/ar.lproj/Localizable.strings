@@ -48,3 +48,12 @@
 
 //AdVC
 "Views" = "مشاهدة";
+
+//FollowUpAd
+"Views" = "مشاهدة";
+"Phone Calls" = "مكالمة";
+"Likes" = "اعجاب";
+"Whatsapp" = "واتس اب";
+
+//FavoriteVC
+"Items" = "أشياء";

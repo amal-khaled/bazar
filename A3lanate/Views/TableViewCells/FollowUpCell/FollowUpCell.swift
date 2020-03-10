@@ -9,7 +9,12 @@
 import UIKit
 
 class FollowUpCell: UITableViewCell {
-
+    
+    //Outlets
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var noLbl: UILabel!
+    @IBOutlet weak var iconImg: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

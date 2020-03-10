@@ -138,4 +138,44 @@ class AdsService {
             }
         }
     }
+    
+    func getLovedAds(completion: @escaping (_ error: Error?, _ lovedAds: [Ad]?) -> Void){
+        Alamofire.request(FAVORITE_ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ad.Description = item["Description"]?.string ?? ""
+                        ad.DescriptionEN = item["DescriptionEN"]?.string ?? ""
+                        all.append(ad)
+                    }
+                }
+                completion(nil,all)
+            }
+        }
+    }
+    
+    func favoriteAdById(Id: Int, completion: @escaping CompletionHandler) {
+        Alamofire.request("\(ADD_LOVE_BY_ID_URL)\(Id)", method: .post, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseString { (response) in
+            if response.result.error == nil {
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
 }

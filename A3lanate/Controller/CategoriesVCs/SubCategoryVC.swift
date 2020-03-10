@@ -129,6 +129,13 @@ extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLa
             if ads[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
             }
+            cell.btnPressed = { [weak self] in
+                AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
+                    if success {
+                        cell.likeImg.image = UIImage(named: "likeR")
+                    }
+                }
+            }
             return cell
         }
         else {

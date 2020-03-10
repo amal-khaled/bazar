@@ -97,13 +97,10 @@ class HomeVC: UIViewController {
     }
     
     @objc func didTap() {
-//        print("selected page \(slideShowView.currentPage)")
-//        if BannerService.instance.bannersId.count > 0 {
-//            if BannerService.instance.bannersId[slideShowView.currentPage] == 0 {return} else {
-//                self.offerId = BannerService.instance.bannersId[slideShowView.currentPage]
-//                self.performSegue(withIdentifier: "toOfferDetails", sender: self)
-//            }
-//        }
+        if sliderAds.count > 0 {
+            self.selectedAdId = sliderAds[imageSlideshow.currentPage].adId
+            self.performSegue(withIdentifier: "toAdVC", sender: self)
+        }
     }
     
     func setupCollectionView() {
@@ -200,6 +197,13 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             if topArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
             }
+            cell.btnPressed = { [weak self] in
+                AdsService.instance.favoriteAdById(Id: (self?.topArr[indexPath.row].id)!) { (success) in
+                    if success {
+                        cell.likeImg.image = UIImage(named: "likeR")
+                    }
+                }
+            }
             return cell
         }
         if collectionView.tag == 3 {
@@ -220,6 +224,13 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             if latestArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
             }
+            cell.btnPressed = { [weak self] in
+                AdsService.instance.favoriteAdById(Id: (self?.topArr[indexPath.row].id)!) { (success) in
+                    if success {
+                        cell.likeImg.image = UIImage(named: "likeR")
+                    }
+                }
+            }
             return cell
         }
         if collectionView.tag == 4 {
@@ -239,6 +250,13 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             cell.priceLbl.text = "\(mostViewdArr[indexPath.row].price)"
             if mostViewdArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
+            }
+            cell.btnPressed = { [weak self] in
+                AdsService.instance.favoriteAdById(Id: (self?.topArr[indexPath.row].id)!) { (success) in
+                    if success {
+                        cell.likeImg.image = UIImage(named: "likeR")
+                    }
+                }
             }
             return cell
         }
@@ -267,10 +285,9 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if collectionView.tag == 1 {
-//            let cell = collectionView.cellForItem(at: indexPath) as! MainCategoriesCell
-//            cell.titleLbl.isHidden = false
-//        }
+        if collectionView.tag == 1 {
+            self.tabBarController?.selectedIndex = 1
+        }
         if collectionView.tag == 2 {
             self.selectedAdId = topArr[indexPath.row].id
             performSegue(withIdentifier: "toAdVC", sender: self)
@@ -283,18 +300,5 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             self.selectedAdId = mostViewdArr[indexPath.row].id
             performSegue(withIdentifier: "toAdVC", sender: self)
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        if collectionView.tag == 1 {
-//            let cell = collectionView.cellForItem(at: indexPath) as! MainCategoriesCell
-//            cell.titleLbl.isHidden = true
-//        }
-//      if collectionView.tag == 2 {
-//      }
-//      if collectionView.tag == 3 {
-//      }
-//      if collectionView.tag == 4 {
-//      }
     }
 }

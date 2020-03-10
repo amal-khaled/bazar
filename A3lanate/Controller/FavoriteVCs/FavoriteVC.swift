@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MOLH
+import Alamofire
+import AlamofireImage
 
 class FavoriteVC: UIViewController {
     
@@ -17,11 +20,18 @@ class FavoriteVC: UIViewController {
     //Constants
     let FavoriteCellId = "FavoriteCell"
     
+    //Variables
+    var favAds = [Ad]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         setupView()
         setupTableView()
+        loadData()
     }
     
     func setupView() {
@@ -36,6 +46,16 @@ class FavoriteVC: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: FavoriteCellId, bundle: nil), forCellReuseIdentifier: FavoriteCellId)
     }
+    
+    func loadData() {
+        AdsService.instance.getLovedAds { (error, favAds) in
+            if let favAds = favAds {
+                self.favAds = favAds
+                self.itemsNoLbl.text = "( \(favAds.count)" + " " + "Items".localized + " )"
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
@@ -44,11 +64,26 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return favAds.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteCellId, for: indexPath) as! FavoriteCell
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            cell.titleLbl.text = favAds[indexPath.row].titleAr
+            cell.deskLbl.text = favAds[indexPath.row].Description
+        } else {
+            cell.titleLbl.text = favAds[indexPath.row].titleEn
+            cell.deskLbl.text = favAds[indexPath.row].DescriptionEN
+        }
+        cell.priceLbl.text = "\(favAds[indexPath.row].price)" + " " + "KWD".localized
+        Alamofire.request(favAds[indexPath.row].imgUrl).responseImage { (response) in
+            if let image = response.result.value {
+                DispatchQueue.main.async {
+                    cell.favoriteImg.image = image
+                }
+            }
+        }
         return cell
     }
     

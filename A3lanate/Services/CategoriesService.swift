@@ -16,7 +16,7 @@ class CategoriesService {
     static let instance = CategoriesService()
     
     func getAllCategoriesWithSubCategoriesAndSomeAds(completion: @escaping (_ error: Error?, _ allCategories: [Category]?) -> Void) {
-        Alamofire.request(ALLCATEGORIES_SUB_ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+        Alamofire.request(ALLCATEGORIES_SUB_ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 completion(error, nil)

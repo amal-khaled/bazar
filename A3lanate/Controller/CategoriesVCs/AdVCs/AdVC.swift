@@ -94,11 +94,13 @@ class AdVC: UIViewController {
             }
             if let images = images {
                 self.images = images
-                Alamofire.request(images[0]).responseImage { (response) in
-                    if let image = response.result.value {
-                        DispatchQueue.main.async {
-                            self.adImg.image = image
-                            self.adImg.contentMode = .scaleToFill
+                if images.count != 0 {
+                    Alamofire.request(images[0]).responseImage { (response) in
+                        if let image = response.result.value {
+                            DispatchQueue.main.async {
+                                self.adImg.image = image
+                                self.adImg.contentMode = .scaleToFill
+                            }
                         }
                     }
                 }
@@ -135,6 +137,13 @@ class AdVC: UIViewController {
     
     @IBAction func followUpBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toFollowUpVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFollowUpVC" {
+            let destVC = segue.destination as! FollowUpVC
+            destVC.selectedAdId = self.selectedAdId
+        }
     }
 }
 

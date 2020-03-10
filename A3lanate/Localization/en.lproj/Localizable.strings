@@ -48,3 +48,12 @@
 
 //AdVC
 "Views" = "Views";
+
+//FollowUpAd
+"Views" = "Views";
+"Phone Calls" = "Phone Calls";
+"Likes" = "Likes";
+"Whatsapp" = "Whatsapp";
+
+//FavoriteVC
+"Items" = "Items";

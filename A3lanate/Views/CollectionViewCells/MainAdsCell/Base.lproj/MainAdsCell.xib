@@ -77,12 +77,22 @@
                                     <constraint firstAttribute="height" constant="13" id="o8w-xx-AwT"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unw-CF-AtL">
+                                <rect key="frame" x="139" y="136" width="13" height="13"/>
+                                <connections>
+                                    <action selector="likeBtnPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="I7a-fD-JLj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Unw-CF-AtL" firstAttribute="leading" secondItem="ZOC-5Q-0fM" secondAttribute="leading" id="1Db-nr-v49"/>
+                            <constraint firstItem="Unw-CF-AtL" firstAttribute="centerY" secondItem="ZOC-5Q-0fM" secondAttribute="centerY" id="A9A-ff-UEY"/>
+                            <constraint firstItem="Unw-CF-AtL" firstAttribute="top" secondItem="ZOC-5Q-0fM" secondAttribute="top" id="G4W-qS-sK3"/>
                             <constraint firstItem="3pH-fF-zjk" firstAttribute="leading" secondItem="h1H-Bm-P37" secondAttribute="leading" constant="8" id="H6Y-k9-wFU"/>
                             <constraint firstAttribute="trailing" secondItem="ZOC-5Q-0fM" secondAttribute="trailing" constant="8" id="MnH-tI-3Bj"/>
                             <constraint firstItem="ZOC-5Q-0fM" firstAttribute="top" secondItem="3pH-fF-zjk" secondAttribute="bottom" constant="8" id="RQ3-Oi-FNp"/>
+                            <constraint firstItem="Unw-CF-AtL" firstAttribute="centerX" secondItem="ZOC-5Q-0fM" secondAttribute="centerX" id="YKH-po-Pac"/>
                             <constraint firstItem="3pH-fF-zjk" firstAttribute="top" secondItem="h1H-Bm-P37" secondAttribute="top" constant="8" id="ZFt-kz-IFX"/>
                             <constraint firstAttribute="trailing" secondItem="3pH-fF-zjk" secondAttribute="trailing" constant="8" id="e9f-J3-6WM"/>
                             <constraint firstAttribute="trailing" secondItem="ku6-zr-4FN" secondAttribute="trailing" constant="8" id="jkm-Fq-QKj"/>
@@ -104,6 +114,7 @@
                 <outlet property="bgView" destination="h1H-Bm-P37" id="T2M-4l-nzF"/>
                 <outlet property="currencyLbl" destination="PE5-cz-MKc" id="X13-AH-c40"/>
                 <outlet property="imgView" destination="3pH-fF-zjk" id="UFh-ma-vvz"/>
+                <outlet property="likeBtn" destination="Unw-CF-AtL" id="4KD-ry-mMM"/>
                 <outlet property="likeImg" destination="ZOC-5Q-0fM" id="pX0-ho-ztv"/>
                 <outlet property="moreDetailsBtn" destination="ku6-zr-4FN" id="UcX-iP-XN7"/>
                 <outlet property="priceLbl" destination="3cj-Ib-akx" id="AZp-5h-77d"/>

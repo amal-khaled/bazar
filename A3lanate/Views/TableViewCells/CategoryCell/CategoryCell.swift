@@ -117,6 +117,7 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
                         }
                     }
                 }
+                
                 return cell
             }
         } else {
@@ -141,12 +142,12 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
         if collectionView.tag == 1 {
             let cell = collectionView.cellForItem(at: indexPath)
             
-            UIView.animate(withDuration: 0.7,
+            UIView.animate(withDuration: 0.2,
                            animations: {
                             cell?.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
             },
                            completion: { _ in
-                            UIView.animate(withDuration: 0.7) {
+                            UIView.animate(withDuration: 0.2) {
                                 cell?.transform = CGAffineTransform.identity
                             }
                             self.parent?.selectedCatId = self.subCategories[indexPath.row].id

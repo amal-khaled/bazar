@@ -18,14 +18,14 @@ class MainAdsCell: UICollectionViewCell {
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var currencyLbl: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
+    @IBOutlet weak var likeBtn: UIButton!
     
+    //Variables
+    var btnPressed: (() -> ())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
-    }
-    
-    @IBAction func moreDetailsBtnPressed(_ sender: Any) {
     }
     
     func setupView() {
@@ -33,4 +33,10 @@ class MainAdsCell: UICollectionViewCell {
         moreDetailsBtn.addCornerRadius(cornerRadius: 7)
     }
     
+    @IBAction func moreDetailsBtnPressed(_ sender: Any) {
+    }
+
+    @IBAction func likeBtnPressed(_ sender: Any) {
+        btnPressed?()
+    }
 }

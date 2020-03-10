@@ -23,6 +23,7 @@ class SubSubCategoryVC: UIViewController {
     //Variables
     var selectedSubCatId: Int = 0
     var ads = [Ad]()
+    var selectedAdId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,13 @@ class SubSubCategoryVC: UIViewController {
                 self.ads = ads
                 self.collectionView.reloadData()
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAdVC" {
+            let destVC = segue.destination as! AdVC
+            destVC.selectedAdId = self.selectedAdId
         }
     }
 }
@@ -82,6 +90,13 @@ extension SubSubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlo
         if ads[indexPath.row].isLoved == true {
             cell.likeImg.image = UIImage(named: "likeR")
         }
+        cell.btnPressed = { [weak self] in
+            AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
+                if success {
+                    cell.likeImg.image = UIImage(named: "likeR")
+                }
+            }
+        }
         return cell
     }
     
@@ -91,6 +106,7 @@ extension SubSubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedAdId = ads[indexPath.row].id
         performSegue(withIdentifier: "toAdVC", sender: self)
     }
 }
