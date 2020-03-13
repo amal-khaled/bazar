@@ -84,6 +84,13 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
+        cell.btnPressed = { [weak self] in
+            AdsService.instance.favoriteAdById(Id: (self?.favAds[indexPath.row].id)!) { (success) in
+                if success {
+                    self?.loadData()
+                }
+            }
+        }
         return cell
     }
     

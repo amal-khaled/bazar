@@ -1989,8 +1989,8 @@
                                     <constraint firstItem="XOH-0b-aTy" firstAttribute="leading" secondItem="qcK-e7-KXY" secondAttribute="leading" id="SHJ-xB-yPY"/>
                                     <constraint firstAttribute="bottom" secondItem="XOH-0b-aTy" secondAttribute="bottom" id="Y53-2S-Pgc"/>
                                     <constraint firstAttribute="trailing" secondItem="wiP-pD-EAI" secondAttribute="trailing" id="dJM-z7-MLL"/>
-                                    <constraint firstItem="xbI-hK-sHL" firstAttribute="leading" secondItem="wiP-pD-EAI" secondAttribute="leading" id="e8P-kw-I0H"/>
                                     <constraint firstItem="xbI-hK-sHL" firstAttribute="bottom" secondItem="wiP-pD-EAI" secondAttribute="bottom" id="gkf-e3-laU"/>
+                                    <constraint firstItem="xbI-hK-sHL" firstAttribute="centerX" secondItem="OCM-GG-fpY" secondAttribute="centerX" id="nIM-CJ-aQ7"/>
                                     <constraint firstItem="wiP-pD-EAI" firstAttribute="leading" secondItem="qcK-e7-KXY" secondAttribute="leading" id="ogz-pk-iC8"/>
                                     <constraint firstAttribute="trailing" secondItem="XOH-0b-aTy" secondAttribute="trailing" id="vB1-8l-SRb"/>
                                 </constraints>
@@ -2010,6 +2010,7 @@
                         <outlet property="closedBtn" destination="q3e-Qq-JgW" id="BUV-0p-ZwZ"/>
                         <outlet property="containerView" destination="qcK-e7-KXY" id="94B-Wx-Hna"/>
                         <outlet property="lineView" destination="xbI-hK-sHL" id="hu5-6d-h1V"/>
+                        <outlet property="lineViewConstraint" destination="nIM-CJ-aQ7" id="X1C-jn-3Dh"/>
                         <outlet property="openedBtn" destination="OCM-GG-fpY" id="Kvf-bS-TPw"/>
                         <outlet property="tableView" destination="XOH-0b-aTy" id="nX4-Oi-lEm"/>
                         <outlet property="thirdBtn" destination="ph5-bw-wLw" id="TVM-6V-LZB"/>

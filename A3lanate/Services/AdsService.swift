@@ -178,4 +178,85 @@ class AdsService {
             }
         }
     }
+    
+    func getOpenedAds(completion: @escaping (_ error: Error?, _ openedAds: [Ad]?) -> Void){
+        Alamofire.request(OPENED_ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.StatusId = item["StatusId"]?.int ?? 0
+                        all.append(ad)
+                    }
+                }
+                completion(nil,all)
+            }
+        }
+    }
+    
+    func getClosedAds(completion: @escaping (_ error: Error?, _ closdAds: [Ad]?) -> Void){
+        Alamofire.request(CLOSED_ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.StatusId = item["StatusId"]?.int ?? 0
+                        all.append(ad)
+                    }
+                }
+                completion(nil,all)
+            }
+        }
+    }
+    
+    func getUnpaidAds(completion: @escaping (_ error: Error?, _ unpaidAds: [Ad]?) -> Void){
+        Alamofire.request(UNPAYED_ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.StatusId = item["StatusId"]?.int ?? 0
+                        all.append(ad)
+                    }
+                }
+                completion(nil,all)
+            }
+        }
+    }
 }

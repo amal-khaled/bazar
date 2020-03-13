@@ -18,7 +18,9 @@ class FavoriteCell: UITableViewCell {
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var likeBtn: UIButton!
     
-
+    //Variables
+    var btnPressed: (() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
@@ -29,5 +31,6 @@ class FavoriteCell: UITableViewCell {
     }
     
     @IBAction func likeBtnPressed(_ sender: Any) {
+        btnPressed?()
     }
 }
