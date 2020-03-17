@@ -952,12 +952,12 @@
                                                                     <constraint firstAttribute="width" constant="45" id="MYj-Rn-jCQ"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8H-wQ-7in">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPz-4D-dz9">
                                                                 <rect key="frame" x="45" y="0.0" width="295" height="45"/>
-                                                                <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                                <connections>
+                                                                    <action selector="categoryBtnPressed:" destination="HdO-60-xnc" eventType="touchUpInside" id="4T8-pI-1MZ"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -1121,7 +1121,7 @@
                     <navigationItem key="navigationItem" id="6wx-Cr-Qyo"/>
                     <connections>
                         <outlet property="FromView" destination="bXs-lM-wuW" id="LQp-b8-AaR"/>
-                        <outlet property="categoryTxtField" destination="r8H-wQ-7in" id="AfL-H8-GLd"/>
+                        <outlet property="categoryBtn" destination="XPz-4D-dz9" id="gUK-dd-8ER"/>
                         <outlet property="firstView" destination="tXV-BF-Ykn" id="jMC-JG-1g1"/>
                         <outlet property="fromTxtField" destination="v8v-IN-XPg" id="Y2B-Wk-GXC"/>
                         <outlet property="locationTxtField" destination="tIG-wJ-7QZ" id="AEw-Xk-wYV"/>
@@ -1131,6 +1131,7 @@
                         <outlet property="thirdView" destination="l15-4S-LYr" id="Rk5-C3-OEH"/>
                         <outlet property="toTxtField" destination="Dff-sj-YOK" id="HZq-97-fAf"/>
                         <outlet property="toView" destination="vuI-8n-xkg" id="46b-ei-lAp"/>
+                        <segue destination="QHc-Pi-nPK" kind="show" identifier="toSearchResultVC" id="mF1-Wb-ioF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lQV-Li-uyw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4719,6 +4720,45 @@
             </objects>
             <point key="canvasLocation" x="2424.6376811594205" y="-8988.6160714285706"/>
         </scene>
+        <!--Search ResultVC-->
+        <scene sceneID="lKw-sg-8Cw">
+            <objects>
+                <viewController id="QHc-Pi-nPK" customClass="SearchResultVC" customModule="A3lanate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VFh-ii-2BZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ADH-nA-3sx">
+                                <rect key="frame" x="20" y="108" width="374" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nJi-vJ-8hr" customClass="LocalizedCollectionView" customModule="A3lanate" customModuleProvider="target">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ADH-nA-3sx" firstAttribute="leading" secondItem="KgC-mW-MUx" secondAttribute="leading" constant="20" id="Cnb-pD-Z2N"/>
+                            <constraint firstItem="KgC-mW-MUx" firstAttribute="trailing" secondItem="ADH-nA-3sx" secondAttribute="trailing" constant="20" id="TVm-Wq-HcD"/>
+                            <constraint firstItem="ADH-nA-3sx" firstAttribute="top" secondItem="KgC-mW-MUx" secondAttribute="top" constant="20" id="gm5-vX-DZl"/>
+                            <constraint firstItem="KgC-mW-MUx" firstAttribute="bottom" secondItem="ADH-nA-3sx" secondAttribute="bottom" constant="20" id="wxe-Xz-4p3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KgC-mW-MUx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QL3-2z-0v4"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ADH-nA-3sx" id="0FD-sp-V8y"/>
+                        <segue destination="yQS-ay-c5G" kind="show" identifier="toAdVC" id="TA7-um-TzP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GOL-oM-EfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3212" y="-2223"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Ads" width="29" height="25.666666030883789"/>
@@ -4768,10 +4808,10 @@
         <image name="youtube" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qHc-gE-VOF"/>
+        <segue reference="RPk-10-C1Q"/>
         <segue reference="hgD-UT-LAS"/>
         <segue reference="O7L-LV-ctW"/>
-        <segue reference="XaJ-wq-vHR"/>
+        <segue reference="TA7-um-TzP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>

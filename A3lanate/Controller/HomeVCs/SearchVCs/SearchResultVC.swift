@@ -1,28 +1,34 @@
 //
-//  AllOffersVC.swift
+//  SearchResultVC.swift
 //  A3lanate
 //
-//  Created by Mahmoud Elshakoushy on 2/8/20.
+//  Created by Mahmoud Elshakoushy on 3/15/20.
 //  Copyright © 2020 Mahmoud Elshakoushy. All rights reserved.
 //
 
 import UIKit
-import AlamofireImage
 import Alamofire
+import AlamofireImage
+import SwiftyJSON
 import MOLH
 
-class AllOffersVC: UIViewController {
+class SearchResultVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
     //Variables
-    var allAdsArr = [Ad]()
+    var ads = [Ad]()
+    var sTitle: String = " "
+    static var categoryId: String = " "
+    var cityId: String = " "
+    var priceFrom: String = " "
+    var priceTo: String = " "
     var selectedAdId: Int = 0
+
     
     //Constants
     let MainAdsCellID = "MainAdsCell"
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,7 @@ class AllOffersVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadData()
+        
     }
     
     func setupCollectionView() {
@@ -41,9 +48,35 @@ class AllOffersVC: UIViewController {
     }
     
     func loadData() {
-        AdsService.instance.getAll { (error, allAds) in
-            if let allAds = allAds {
-                self.allAdsArr = allAds
+        let parameters: [String : Any] = [
+            "Title": sTitle,
+            "CategoryId": SearchResultVC.categoryId,
+            "CityId": cityId,
+            "PriceFrom": priceFrom,
+            "PriceTo": priceTo
+        ]
+        
+        Alamofire.request(SEARCH_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.StatusId = item["StatusId"]?.int ?? 0
+                        all.append(ad)
+                    }
+                }
+                self.ads = all
                 self.collectionView.reloadData()
             }
         }
@@ -57,19 +90,19 @@ class AllOffersVC: UIViewController {
     }
 }
 
-extension AllOffersVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension SearchResultVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allAdsArr.count
+        return ads.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
-        Alamofire.request(allAdsArr[indexPath.row].imgUrl).responseImage { (response) in
+        Alamofire.request(ads[indexPath.row].imgUrl).responseImage { (response) in
             if let image = response.result.value {
                 DispatchQueue.main.async {
                     cell.imgView.image = image
@@ -77,16 +110,16 @@ extension AllOffersVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayo
             }
         }
         if MOLHLanguage.currentAppleLanguage() == "ar" {
-            cell.typeLbl.text = allAdsArr[indexPath.row].titleAr
+            cell.typeLbl.text = ads[indexPath.row].titleAr
         } else {
-            cell.typeLbl.text = allAdsArr[indexPath.row].titleEn
+            cell.typeLbl.text = ads[indexPath.row].titleEn
         }
-        cell.priceLbl.text = "\(allAdsArr[indexPath.row].price)"
-        if allAdsArr[indexPath.row].isLoved == true {
+        cell.priceLbl.text = "\(ads[indexPath.row].price)"
+        if ads[indexPath.row].isLoved == true {
              cell.likeImg.image = UIImage(named: "likeR")
          }
         cell.btnPressed = { [weak self] in
-            AdsService.instance.favoriteAdById(Id: (self?.allAdsArr[indexPath.row].id)!) { (success) in
+            AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
                 if success {
                     if cell.likeImg.image == UIImage(named: "likeR") {
                         cell.likeImg.image = UIImage(named: "likeG")
@@ -105,7 +138,7 @@ extension AllOffersVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedAdId = allAdsArr[indexPath.row].id
+        self.selectedAdId = ads[indexPath.row].id
         performSegue(withIdentifier: "toAdVC", sender: self)
     }
 }

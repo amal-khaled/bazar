@@ -14,7 +14,6 @@ class SearchVC: UIViewController {
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var searchTxtField: UITextField!
     @IBOutlet weak var secondView: UIView!
-    @IBOutlet weak var categoryTxtField: UITextField!
     @IBOutlet weak var thirdView: UIView!
     @IBOutlet weak var locationTxtField: UITextField!
     @IBOutlet weak var FromView: UIView!
@@ -22,11 +21,24 @@ class SearchVC: UIViewController {
     @IBOutlet weak var toView: UIView!
     @IBOutlet weak var toTxtField: UITextField!
     @IBOutlet weak var searchBtn: UIButton!
+    @IBOutlet weak var categoryBtn: UIButton!
     
-
+    //Variables
+    var sTitle: String = " "
+    var categoryId: String = " "
+    var cityId: String = " "
+    var priceFrom: String = " "
+    var priceTo: String = " "
+    static var categoryName : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         setupView()
+        setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        categoryBtn.setTitle(SearchVC.categoryName, for: .normal)
     }
     
     func setupView() {
@@ -46,13 +58,38 @@ class SearchVC: UIViewController {
         FromView.addBorder()
         toView.addBorder()
         searchTxtField.delegate = self
-        categoryTxtField.delegate = self
         locationTxtField.delegate = self
         fromTxtField.delegate = self
         toTxtField.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSearchResultVC" {
+            let destVC = segue.destination as! SearchResultVC
+            destVC.sTitle = self.sTitle
+            destVC.cityId = self.cityId
+            destVC.priceFrom = self.priceFrom
+            destVC.priceTo = self.priceTo
+        }
+    }
+    
+    @IBAction func categoryBtnPressed(_ sender: Any) {
+        let searchCategoryList = SearchCategoryList()
+        searchCategoryList.modalPresentationStyle = .fullScreen
+        searchCategoryList.modalTransitionStyle = .crossDissolve
+        present(searchCategoryList, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func searchBtnPressed(_ sender: Any) {
+        if self.searchTxtField.text == "" && self.categoryBtn.titleLabel?.text == "" && self.locationTxtField.text == "" && self.fromTxtField.text == "" && self.toTxtField.text == "" { return }
+        else {
+            self.sTitle = searchTxtField.text ?? " "
+            self.cityId = locationTxtField.text ?? " "
+            self.priceFrom = fromTxtField.text ?? " "
+            self.priceTo = toTxtField.text ?? " "
+            self.performSegue(withIdentifier: "toSearchResultVC", sender: self)
+        }
     }
 }
 
