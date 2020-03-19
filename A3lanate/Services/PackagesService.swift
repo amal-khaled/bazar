@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import MOLH
 import Alamofire
 import SwiftyJSON

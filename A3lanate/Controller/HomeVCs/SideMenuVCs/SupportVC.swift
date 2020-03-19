@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import MOLH
 
 class SupportVC: UIViewController {
     
@@ -23,10 +26,14 @@ class SupportVC: UIViewController {
     //Constants
     let QuestionCellId = "QuestionCell"
     
+    //Variables
+    var questions = [Question]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupTableView()
+        loadData()
     }
     
     func setupView() {
@@ -52,6 +59,18 @@ class SupportVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: QuestionCellId, bundle: nil), forCellReuseIdentifier: QuestionCellId)
+
+    }
+    
+    func loadData() {
+        QuestionService.instance.getQuestions { (error, questions) in
+            if let questions = questions {
+                self.questions = questions
+                self.tableView.reloadData()
+//                self.tableView.rowHeight = UITableView.automaticDimension;
+//                self.tableView.estimatedRowHeight = 200;
+            }
+        }
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -59,6 +78,63 @@ class SupportVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
+        if NetworkHelper.getToken() != nil {
+            if QATxtField.text == "" && QETxtField.text == "" {return} else {
+                guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
+                let QA = QATxtField.text
+                let QE = QETxtField.text
+                
+                var parameters = [String:Any]()
+                
+                if QA == "" {
+                    parameters = [
+                        "Email" : email,
+                        "QuestionEN": QE as Any
+                    ]
+                }
+                if QE == "" {
+                    parameters = [
+                        "Email" : email,
+                        "QuestionAR": QA as Any
+                    ]
+                }
+                else  {
+                    parameters = [
+                        "Email" : email,
+                        "QuestionEN": QE as Any,
+                        "QuestionAR": QA as Any
+                    ]
+                }
+                
+                Alamofire.request(QUESTIONS_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+                    switch response.result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let value):
+                        _ = JSON(value)
+                        let alert = UIAlertController(title: "", message: "Your Messege have successfully sent".localized, preferredStyle: .alert)
+                        self.present(alert, animated: true, completion: nil)
+                        let when = DispatchTime.now() + 3
+                        DispatchQueue.main.asyncAfter(deadline: when){
+                            alert.dismiss(animated: true) {
+                                self.emailTxtField.text = ""
+                                self.QATxtField.text = ""
+                                self.QETxtField.text = ""
+                            }
+                        }
+                        
+                    }
+                }
+            }
+            
+        } else {
+            let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 }
 
@@ -68,11 +144,19 @@ extension SupportVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return questions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: QuestionCellId, for: indexPath) as! QuestionCell
+        cell.emailLbl.text = questions[indexPath.row].Email
+        if MOLHLanguage.isArabic() {
+            cell.questionLbl.text = questions[indexPath.row].QuestionAR
+            cell.answerLbl.text = questions[indexPath.row].AnswerAR
+        } else {
+            cell.questionLbl.text = questions[indexPath.row].QuestionEN
+            cell.answerLbl.text = questions[indexPath.row].AnswerEN
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

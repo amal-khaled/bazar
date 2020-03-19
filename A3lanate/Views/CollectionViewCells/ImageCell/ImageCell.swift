@@ -13,10 +13,21 @@ class ImageCell: UICollectionViewCell {
     //Outlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var adImg: UIImageView!
+    @IBOutlet weak var downloadBtn: UIButton!
+    
+    //Variables
+    var btnPressed: (() -> ())?
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        downloadBtn.backgroundColor = UIColor.white
+        downloadBtn.addCornerRadius(cornerRadius: 20)
     }
+    
+    @IBAction func downloadBtnPressed(_ sender: Any) {
+        btnPressed?()
+    }
+    
 
 }

@@ -26,8 +26,6 @@ class PayActionSheet: UIViewController {
     //Variables
     var featureVC = FeaturesVC()
 
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -67,9 +65,17 @@ class PayActionSheet: UIViewController {
                             self.present(alert, animated: true, completion: nil)
                             let when = DispatchTime.now() + 3
                             DispatchQueue.main.asyncAfter(deadline: when){
-                                alert.dismiss(animated: true, completion: nil)
+                                alert.dismiss(animated: true) {
+                                    self.presentingViewController?.dismiss(animated: true, completion: nil)
+                                    if #available(iOS 13.0, *) {
+                                            let delegate = UIApplication.shared.delegate as? AppDelegate
+                                            delegate!.swichRoot()
+                                    } else {
+                                           // Fallback on earlier versions
+                                           MOLH.reset()
+                                    }
+                                }
                             }
-                            self.dismiss(animated: true, completion: nil)
                         }
                         else if status == 2 {
                             let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully, to activate features please pay".localized, preferredStyle: .alert)

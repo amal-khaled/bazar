@@ -31,6 +31,7 @@ class AdVC: UIViewController {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var sameUserAdsCollection: UICollectionView!
     @IBOutlet weak var similarAdsCollection: UICollectionView!
+    @IBOutlet weak var downloadAdImg: UIButton!
     
     
     //Constants
@@ -51,7 +52,8 @@ class AdVC: UIViewController {
     }
     
     func setupView() {
-        
+        downloadAdImg.backgroundColor = UIColor.white
+        downloadAdImg.addCornerRadius(cornerRadius: 20)
     }
     
     func setupCollectionView() {
@@ -120,6 +122,20 @@ class AdVC: UIViewController {
         }
     }
     
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            // we got back an error!
+            let ac = UIAlertController(title: "Save error".localized, message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK".localized, style: .default))
+            present(ac, animated: true)
+        } else {
+       
+            let ac = UIAlertController(title: "Saved!".localized, message: "This picture has been saved to your photos.".localized, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK".localized, style: .default))
+            present(ac, animated: true)
+        }
+    }
+    
     @IBAction func whatsAppBtnPressed(_ sender: Any) {
     }
     
@@ -145,6 +161,12 @@ class AdVC: UIViewController {
             destVC.selectedAdId = self.selectedAdId
         }
     }
+    
+    @IBAction func downloadAdImageBtnPressed(_ sender: Any) {
+        let image = self.adImg.image
+        UIImageWriteToSavedPhotosAlbum(image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
 }
 
 extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -178,10 +200,15 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
                     }
                 }
             }
+            cell.btnPressed = { [weak self] in
+                let image = cell.adImg.image
+                UIImageWriteToSavedPhotosAlbum(image!, self, #selector(self?.image(_:didFinishSavingWithError:contextInfo:)), nil)
+            }
             return cell
         }
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
+            cell.downloadBtn.isHidden = true
             Alamofire.request(userAds[indexPath.row].imgUrl).responseImage { (response) in
                 if let image = response.result.value {
                     DispatchQueue.main.async {
@@ -194,6 +221,7 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
         }
         if collectionView.tag == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
+            cell.downloadBtn.isHidden = true
             Alamofire.request(similarAds[indexPath.row].imgUrl).responseImage { (response) in
                 if let image = response.result.value {
                     DispatchQueue.main.async {
@@ -227,29 +255,15 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        if collectionView.tag == 0 {
-
+//            let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
 //        }
-//        if collectionView.tag == 2 {
-//            performSegue(withIdentifier: "toAdVC", sender: self)
-//        }
-//        if collectionView.tag == 3 {
-//            performSegue(withIdentifier: "toAdVC", sender: self)
-//        }
-//        if collectionView.tag == 4 {
-//            performSegue(withIdentifier: "toAdVC", sender: self)
-//        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        if collectionView.tag == 1 {
-//            let cell = collectionView.cellForItem(at: indexPath) as! MainCategoriesCell
-//            cell.titleLbl.isHidden = true
-//        }
-//      if collectionView.tag == 2 {
-//      }
-//      if collectionView.tag == 3 {
-//      }
-//      if collectionView.tag == 4 {
-//      }
+        if collectionView.tag == 1 {
+            self.selectedAdId = userAds[indexPath.row].id
+            self.loadData()
+        }
+        if collectionView.tag == 2 {
+            self.selectedAdId = similarAds[indexPath.row].id
+            self.loadData()
+        }
     }
 }

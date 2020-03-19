@@ -48,6 +48,10 @@
 
 //AdVC
 "Views" = "Views";
+"Save error" = "Save error";
+"OK" = "OK";
+"Saved!" = "Saved!";
+"This picture has been saved to your photos." = "This picture has been saved to your photos.";
 
 //FollowUpAd
 "Views" = "Views";
@@ -60,3 +64,6 @@
 
 //ContactUSVC
 "Your Messege have successfully sent" = "Your Messege have successfully sent";
+
+//HomeVC
+"Featured Ad" = "Featured Ad";

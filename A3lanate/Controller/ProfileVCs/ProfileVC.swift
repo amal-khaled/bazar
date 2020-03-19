@@ -24,6 +24,8 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var balanceImg: LocalizedImage!
     @IBOutlet weak var paymentImg: LocalizedImage!
     @IBOutlet weak var notifImg: LocalizedImage!
+    @IBOutlet weak var FavoriteBtn: UIButton!
+    @IBOutlet weak var favoriteImg: LocalizedImage!
     
 
     override func viewDidLoad() {
@@ -61,6 +63,7 @@ class ProfileVC: UIViewController {
         balanceImg.addCornerRadius(cornerRadius: 35)
         paymentImg.addCornerRadius(cornerRadius: 35)
         notifImg.addCornerRadius(cornerRadius: 35)
+        favoriteImg.addCornerRadius(cornerRadius: 35)
     }
     
     func loadProfile() {
@@ -106,4 +109,9 @@ class ProfileVC: UIViewController {
     @IBAction func notificationBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toNotificationVC", sender: self)
     }
+    
+    @IBAction func favoriteBtnPressed(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 3
+    }
+    
 }

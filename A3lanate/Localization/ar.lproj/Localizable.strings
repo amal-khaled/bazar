@@ -48,6 +48,11 @@
 
 //AdVC
 "Views" = "مشاهدة";
+"Save error" = "خطاء في الحفظ";
+"OK" = "موافق";
+"Saved!" = "تم الحفظ!";
+"This picture has been saved to your photos." = "لقد تم حفظ الصورة بنجاح في هاتفك.";
+
 
 //FollowUpAd
 "Views" = "مشاهدة";
@@ -60,3 +65,6 @@
 
 //ContactUSVC
 "Your Messege have successfully sent" = "تم ارسال رسالتك بنجاح";
+
+//HomeVC
+"Featured Ad" = "اعلان مميز";

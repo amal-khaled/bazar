@@ -11,17 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainAdsCell" id="gTV-IL-0wX" customClass="MainAdsCell" customModule="A3lanate" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="160" height="170"/>
+            <rect key="frame" x="0.0" y="0.0" width="182" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="160" height="170"/>
+                <rect key="frame" x="0.0" y="0.0" width="182" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1H-Bm-P37">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="170"/>
+                        <rect key="frame" x="0.0" y="0.0" width="182" height="200"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="bve-fX-0ch">
-                                <rect key="frame" x="8" y="134" width="76" height="100"/>
+                                <rect key="frame" x="8" y="164" width="76" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="8oB-d4-lGv">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -49,14 +49,14 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3pH-fF-zjk">
-                                <rect key="frame" x="8" y="8" width="144" height="120"/>
+                                <rect key="frame" x="8" y="8" width="166" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="CXe-v2-FfZ"/>
-                                    <constraint firstAttribute="width" constant="144" id="YEh-pE-rfG"/>
+                                    <constraint firstAttribute="height" constant="150" id="CXe-v2-FfZ"/>
+                                    <constraint firstAttribute="width" constant="166" id="YEh-pE-rfG"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku6-zr-4FN">
-                                <rect key="frame" x="92" y="150" width="60" height="14"/>
+                                <rect key="frame" x="114" y="180" width="60" height="14"/>
                                 <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="JfS-6P-Lib"/>
@@ -71,14 +71,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeG" translatesAutoresizingMaskIntoConstraints="NO" id="ZOC-5Q-0fM">
-                                <rect key="frame" x="139" y="136" width="13" height="13"/>
+                                <rect key="frame" x="161" y="166" width="13" height="13"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="e2G-Nq-Pvg"/>
                                     <constraint firstAttribute="height" constant="13" id="o8w-xx-AwT"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unw-CF-AtL">
-                                <rect key="frame" x="139" y="136" width="13" height="13"/>
+                                <rect key="frame" x="161" y="166" width="13" height="13"/>
                                 <connections>
                                     <action selector="likeBtnPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="I7a-fD-JLj"/>
                                 </connections>
@@ -120,7 +120,7 @@
                 <outlet property="priceLbl" destination="3cj-Ib-akx" id="AZp-5h-77d"/>
                 <outlet property="typeLbl" destination="8oB-d4-lGv" id="eXw-bM-vNo"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
+            <point key="canvasLocation" x="136.95652173913044" y="91.741071428571431"/>
         </collectionViewCell>
     </objects>
     <resources>

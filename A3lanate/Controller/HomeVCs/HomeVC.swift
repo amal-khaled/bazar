@@ -193,7 +193,9 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             } else {
                 cell.typeLbl.text = topArr[indexPath.row].titleEn
             }
-            cell.priceLbl.text = "\(topArr[indexPath.row].price)"
+            cell.priceLbl.text = "Featured Ad".localized
+            cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            cell.currencyLbl.text = ""
             if topArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
             }
@@ -223,7 +225,9 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             } else {
                 cell.typeLbl.text = latestArr[indexPath.row].titleEn
             }
-            cell.priceLbl.text = "\(latestArr[indexPath.row].price)"
+            cell.priceLbl.text = "Featured Ad".localized
+            cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            cell.currencyLbl.text = ""
             if latestArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
             }
@@ -253,7 +257,10 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             } else {
                 cell.typeLbl.text = mostViewdArr[indexPath.row].titleEn
             }
-            cell.priceLbl.text = "\(mostViewdArr[indexPath.row].price)"
+            cell.priceLbl.text = "Featured Ad".localized
+            cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            cell.currencyLbl.text = ""
+
             if mostViewdArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
             }
@@ -281,16 +288,16 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             return CGSize(width: 90, height: 90)
         }
         if collectionView.tag == 2 {
-            return CGSize(width: 160, height: 170)
+            return CGSize(width: 185, height: 200)
         }
         if collectionView.tag == 3 {
-            return CGSize(width: 160, height: 170)
+            return CGSize(width: 185, height: 200)
         }
         if collectionView.tag == 4 {
-            return CGSize(width: 160, height: 170)
+            return CGSize(width: 185, height: 200)
         }
         else {
-            return CGSize(width: 160, height: 170)
+            return CGSize(width: 185, height: 200)
         }
     }
 

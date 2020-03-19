@@ -131,7 +131,7 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
             return CGSize(width: 90, height: 90)
         }
         if collectionView.tag == 2 {
-            return CGSize(width: 180, height: 120)
+            return CGSize(width: 170, height: 120)
             
         } else {
             return CGSize(width: 90, height: 80)

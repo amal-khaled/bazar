@@ -153,10 +153,10 @@ extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLa
             return CGSize(width: 170, height: 60)
         }
         if collectionView.tag == 2 {
-            return CGSize(width: 170, height: 180)
+            return CGSize(width: 185, height: 200)
         }
         else {
-            return CGSize(width: 160, height: 170)
+            return CGSize(width: 185, height: 200)
         }
     }
 

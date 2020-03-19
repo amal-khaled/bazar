@@ -42,6 +42,7 @@ class FavoriteVC: UIViewController {
             setupView()
             setupTableView()
             loadData()
+            badgeSetup()
         }
     }
     
@@ -64,7 +65,16 @@ class FavoriteVC: UIViewController {
                 self.favAds = favAds
                 self.itemsNoLbl.text = "( \(favAds.count)" + " " + "Items".localized + " )"
                 self.tableView.reloadData()
+                self.badgeSetup()
             }
+        }
+    }
+    
+    func badgeSetup() {
+        if let tabItems = tabBarController?.tabBar.items {
+            let tabItem = tabItems[3]
+            tabItem.badgeValue = "\(favAds.count)"
+            tabItem.badgeColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
         }
     }
 }

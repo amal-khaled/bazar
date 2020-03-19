@@ -41,6 +41,8 @@ class AdvertiseNowVC: UIViewController {
     @IBOutlet weak var arabicTxtViewHight: NSLayoutConstraint!
     @IBOutlet weak var englishTxtViewHight: NSLayoutConstraint!
     @IBOutlet weak var catListBtn: UIButton!
+    @IBOutlet weak var phoneView: UIView!
+    
     
     //Constants
     fileprivate let ImageCellId = "ImageCell"
@@ -105,15 +107,15 @@ class AdvertiseNowVC: UIViewController {
         titleEnTextField.addBorder()
         priceTxtField.addCornerRadius(cornerRadius: 20)
         priceTxtField.addBorder()
-        phoneTxtField.addCornerRadius(cornerRadius: 20)
-        phoneTxtField.addBorder()
+        phoneView.addCornerRadius(cornerRadius: 20)
+        phoneView.addBorder()
         locTxtField.addCornerRadius(cornerRadius: 20)
         locTxtField.addBorder()
         nextBtn.addCornerRadius(cornerRadius: 25)
         collectionView.isHidden = true
         collectionViewHight.constant = 0
         mainImg.addCornerRadius(cornerRadius: 25)
-        arabicTxtViewHight.constant = 190
+        arabicTxtViewHight.constant = 100
         englishTxtViewHight.constant = 0
         titleArTextField.delegate = self
         titleEnTextField.delegate = self
@@ -146,14 +148,7 @@ class AdvertiseNowVC: UIViewController {
                 }
                 return
             }
-            guard let titleEn = titleEnTextField.text, titleEnTextField.text != "" else {
-                let alert = UIAlertController(title: "", message: "Please enter the english title".localized, preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 3
-                DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
-                }
-                return}
+            let titleEn = titleEnTextField.text
             guard let price = priceTxtField.text, priceTxtField.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the price".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
@@ -170,14 +165,7 @@ class AdvertiseNowVC: UIViewController {
                     alert.dismiss(animated: true, completion: nil)
                 }
                 return}
-            guard let englishDesc = englishTxtView.text, englishTxtView.text != "" else {
-                let alert = UIAlertController(title: "", message: "Please enter the english description".localized, preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 3
-                DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
-                }
-                return}
+            let englishDesc = englishTxtView.text
             guard let arabicDesc = arabicTxtView.text, arabicTxtView.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the arabic description".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
@@ -193,8 +181,8 @@ class AdvertiseNowVC: UIViewController {
                     "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
                     "SubSubCategoryId": "",
                     "Title": titleAr,
-                    "TitleEN": titleEn,
-                    "DescriptionEN": englishDesc,
+                    "TitleEN": titleEn ?? " ",
+                    "DescriptionEN": englishDesc ?? " ",
                     "Description": arabicDesc,
                     "PhoneNumber": phone,
                     "AllowMessage": AllowMessage,
@@ -210,8 +198,8 @@ class AdvertiseNowVC: UIViewController {
                    "SubCategoryId": "",
                    "SubSubCategoryId": "",
                    "Title": titleAr,
-                   "TitleEN": titleEn,
-                   "DescriptionEN": englishDesc,
+                   "TitleEN": titleEn ?? " ",
+                   "DescriptionEN": englishDesc ?? " ",
                    "Description": arabicDesc,
                    "PhoneNumber": phone,
                    "AllowMessage": AllowMessage,
@@ -228,8 +216,8 @@ class AdvertiseNowVC: UIViewController {
                 "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
                 "SubSubCategoryId": "\(AdvertiseNowVC.subSubCatId)",
                 "Title": titleAr,
-                "TitleEN": titleEn,
-                "DescriptionEN": englishDesc,
+                "TitleEN": titleEn ?? " ",
+                "DescriptionEN": englishDesc ?? " ",
                 "Description": arabicDesc,
                 "PhoneNumber": phone,
                 "AllowMessage": AllowMessage,
@@ -293,30 +281,20 @@ class AdvertiseNowVC: UIViewController {
     
     @IBAction func englishBtnPressed(_ sender: Any) {
         arabicTxtViewHight.constant = 0
-        englishTxtViewHight.constant = 190
+        englishTxtViewHight.constant = 100
     }
     
     @IBAction func arabicBtnPressed(_ sender: Any) {
-        arabicTxtViewHight.constant = 190
+        arabicTxtViewHight.constant = 100
         englishTxtViewHight.constant = 0
     }
     
     @IBAction func catListBtnPressed(_ sender: Any) {
-        if NetworkHelper.getToken() != nil {
             let categoryList = CategoryList()
             categoryList.modalPresentationStyle = .fullScreen
             categoryList.modalTransitionStyle = .crossDissolve
             present(categoryList, animated: true, completion: nil)
-        } else {
-            let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 3
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
         }
-    }
-    
     
     @IBAction func allowDMBtnPressed(_ sender: Any) {
         if allowDMBtn.image(for: .normal) == UIImage(named: "unchecked_rectangle") {

@@ -74,6 +74,8 @@
 		0B33E55C241EAC2800A2E695 /* SearchResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B33E55B241EAC2800A2E695 /* SearchResultVC.swift */; };
 		0B33E560241EB52400A2E695 /* SearchCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B33E55E241EB52400A2E695 /* SearchCategoryList.swift */; };
 		0B33E561241EB52400A2E695 /* SearchCategoryList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B33E55F241EB52400A2E695 /* SearchCategoryList.xib */; };
+		0B554DE524237F5C002BD69D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B554DE424237F5C002BD69D /* Question.swift */; };
+		0B554DE7242380CF002BD69D /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B554DE6242380CF002BD69D /* QuestionService.swift */; };
 		0B780FF223DF1993004304DC /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B780FF123DF1993004304DC /* SideMenuVC.swift */; };
 		0B780FF423DF19E6004304DC /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B780FF323DF19E6004304DC /* LanguageVC.swift */; };
 		0B780FFA23DF298A004304DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B780FFC23DF298A004304DC /* Localizable.strings */; };
@@ -189,6 +191,8 @@
 		0B33E55B241EAC2800A2E695 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		0B33E55E241EB52400A2E695 /* SearchCategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryList.swift; sourceTree = "<group>"; };
 		0B33E55F241EB52400A2E695 /* SearchCategoryList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCategoryList.xib; sourceTree = "<group>"; };
+		0B554DE424237F5C002BD69D /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		0B554DE6242380CF002BD69D /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
 		0B780FF123DF1993004304DC /* SideMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		0B780FF323DF19E6004304DC /* LanguageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVC.swift; sourceTree = "<group>"; };
 		0B780FF523DF28DB004304DC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -645,6 +649,7 @@
 				0B11AC0923F9A40000CA56D2 /* SubCategory.swift */,
 				0B19086B23F70EE80050AE73 /* Ad.swift */,
 				0BFD757C240A838A00800340 /* Package.swift */,
+				0B554DE424237F5C002BD69D /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 				0B11AC0723F9A21B00CA56D2 /* CategoriesService.swift */,
 				0B02B0B124068CE700A17F02 /* FeaturesService.swift */,
 				0BFD757E240A83D800800340 /* PackagesService.swift */,
+				0B554DE6242380CF002BD69D /* QuestionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -942,6 +948,7 @@
 				0BFDB60623EC3CB400695A5A /* ChangePassAlert.swift in Sources */,
 				0B0BCEE023E10DCE00AF709A /* NotificationVC.swift in Sources */,
 				0BF4488423F1B2880044B88B /* NetworkHelper.swift in Sources */,
+				0B554DE524237F5C002BD69D /* Question.swift in Sources */,
 				0B0AA14723ED8100003971A2 /* CategoriesCell.swift in Sources */,
 				0B11AC0823F9A21B00CA56D2 /* CategoriesService.swift in Sources */,
 				0B04832E23DA26B7003C49C0 /* SearchVC.swift in Sources */,
@@ -1001,6 +1008,7 @@
 				0BFDB60223EC0FB800695A5A /* ChangePassVC.swift in Sources */,
 				0BF4487F23F173470044B88B /* Constants.swift in Sources */,
 				0B1F78B723EA220F006BDFBA /* CountryCell.swift in Sources */,
+				0B554DE7242380CF002BD69D /* QuestionService.swift in Sources */,
 				0BFD757D240A838A00800340 /* Package.swift in Sources */,
 				0B0BCEE423E10E6E00AF709A /* SupportVC.swift in Sources */,
 				0B02B0C22406B3DF00A17F02 /* SubCategoryList.swift in Sources */,

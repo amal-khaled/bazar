@@ -27,13 +27,26 @@
                                     <constraint firstAttribute="width" constant="150" id="fkW-C4-ScK"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK4-RX-TIi">
+                                <rect key="frame" x="115" y="115" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="SeC-dL-hGZ"/>
+                                    <constraint firstAttribute="width" constant="35" id="lJV-fe-1U0"/>
+                                </constraints>
+                                <state key="normal" image="download"/>
+                                <connections>
+                                    <action selector="downloadBtnPressed:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JQK-EI-yRu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="xWt-a9-eRc" firstAttribute="top" secondItem="Qbd-Uy-0CC" secondAttribute="top" id="GDh-6V-iHr"/>
+                            <constraint firstAttribute="trailing" secondItem="BK4-RX-TIi" secondAttribute="trailing" id="J5r-I1-q94"/>
                             <constraint firstItem="xWt-a9-eRc" firstAttribute="leading" secondItem="Qbd-Uy-0CC" secondAttribute="leading" id="KaO-es-t1Q"/>
                             <constraint firstAttribute="bottom" secondItem="xWt-a9-eRc" secondAttribute="bottom" id="Wew-in-xNq"/>
                             <constraint firstAttribute="trailing" secondItem="xWt-a9-eRc" secondAttribute="trailing" id="kbc-Lv-g84"/>
+                            <constraint firstAttribute="bottom" secondItem="BK4-RX-TIi" secondAttribute="bottom" id="mCa-7s-HDf"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -49,8 +62,12 @@
             <connections>
                 <outlet property="adImg" destination="xWt-a9-eRc" id="SMh-df-hTL"/>
                 <outlet property="containerView" destination="Qbd-Uy-0CC" id="9RC-gD-CSP"/>
+                <outlet property="downloadBtn" destination="BK4-RX-TIi" id="xvN-CC-gP6"/>
             </connections>
             <point key="canvasLocation" x="193.47826086956522" y="142.96875"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="download" width="28.5" height="28.5"/>
+    </resources>
 </document>

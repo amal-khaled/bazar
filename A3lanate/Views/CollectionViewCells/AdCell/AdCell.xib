@@ -11,17 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AdCell" id="gTV-IL-0wX" customClass="AdCell" customModule="A3lanate" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="170" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="170" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQB-Vy-RaS">
-                        <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="120"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sDk-RG-a8E">
-                                <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                                <rect key="frame" x="0.0" y="0.0" width="170" height="120"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -30,7 +30,7 @@
                             <constraint firstItem="sDk-RG-a8E" firstAttribute="leading" secondItem="UQB-Vy-RaS" secondAttribute="leading" id="Kmd-Kq-lAc"/>
                             <constraint firstItem="sDk-RG-a8E" firstAttribute="top" secondItem="UQB-Vy-RaS" secondAttribute="top" id="PbM-Zq-1QP"/>
                             <constraint firstAttribute="bottom" secondItem="sDk-RG-a8E" secondAttribute="bottom" id="Xd4-9b-UBB"/>
-                            <constraint firstAttribute="width" constant="180" id="dd7-Yl-6BF"/>
+                            <constraint firstAttribute="width" constant="170" id="dd7-Yl-6BF"/>
                             <constraint firstAttribute="trailing" secondItem="sDk-RG-a8E" secondAttribute="trailing" id="qv7-0q-3ug"/>
                         </constraints>
                     </view>

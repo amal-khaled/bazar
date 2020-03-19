@@ -94,7 +94,14 @@ class ContactUsVC: UIViewController {
 
                 }
             }
-        } else {return}
+        } else {
+        let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        let when = DispatchTime.now() + 3
+        DispatchQueue.main.asyncAfter(deadline: when){
+            alert.dismiss(animated: true, completion: nil)
+        }
+        }
     }
     
     @IBAction func locationBtnPressed(_ sender: Any) {
