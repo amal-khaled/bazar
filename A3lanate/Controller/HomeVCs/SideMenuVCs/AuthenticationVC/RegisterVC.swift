@@ -79,7 +79,7 @@ class RegisterVC: UIViewController {
                         if NetworkHelper.getToken() == nil {
                             let alert = UIAlertController(title: "", message: "Please make sure that the user name and the password is correct".localized, preferredStyle: .alert)
                             self.present(alert, animated: true, completion: nil)
-                            let when = DispatchTime.now() + 1
+                            let when = DispatchTime.now() + 3
                             DispatchQueue.main.asyncAfter(deadline: when){
                                 alert.dismiss(animated: true, completion: nil)
                             }

@@ -51,7 +51,7 @@ class SearchResultVC: UIViewController {
         let parameters: [String : Any] = [
             "Title": sTitle,
             "CategoryId": SearchResultVC.categoryId,
-            "CityId": cityId,
+            "CityId": 1,
             "PriceFrom": priceFrom,
             "PriceTo": priceTo
         ]

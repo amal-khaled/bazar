@@ -1704,6 +1704,7 @@
                     <connections>
                         <outlet property="itemsNoLbl" destination="J5p-70-X31" id="gi4-RB-4d4"/>
                         <outlet property="tableView" destination="4PY-0n-oAf" id="8gi-BV-ZST"/>
+                        <segue destination="9eH-Mf-UR9" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="wEq-yt-UBN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUs-Qw-aDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1915,6 +1916,7 @@
                         <segue destination="8cA-I3-8My" kind="show" identifier="toMyAdsVC" id="P8a-9a-XLZ"/>
                         <segue destination="0EM-Cs-oHj" kind="show" identifier="toBalanceVC" id="DY0-Mt-tzP"/>
                         <segue destination="QHy-YD-zxc" kind="show" identifier="toPaymentVC" id="7Fp-Ts-BOq"/>
+                        <segue destination="9eH-Mf-UR9" kind="presentation" identifier="toLoginVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="cbJ-ki-YH6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZ0-1k-Rxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2955,7 +2957,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-7w-ujc">
-                                <rect key="frame" x="192.66666666666666" y="654" width="29" height="29"/>
+                                <rect key="frame" x="178" y="654" width="58" height="58"/>
                                 <state key="normal" image="close">
                                     <color key="titleColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -3087,7 +3089,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Country" id="R89-ai-bOU">
                         <barButtonItem key="leftBarButtonItem" style="done" id="Otj-Ub-dVc">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JMW-hd-amI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="JMW-hd-amI" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backW"/>
@@ -3359,7 +3361,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Contact Us" id="7SC-Hp-ma4">
                         <barButtonItem key="leftBarButtonItem" style="done" id="MsI-qT-H8k">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PKe-rQ-xVR">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PKe-rQ-xVR" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backW"/>
@@ -3460,7 +3462,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Language" id="wr8-Ok-TFg">
                         <barButtonItem key="leftBarButtonItem" style="done" id="LE8-uv-bxl">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hUC-wm-fQf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hUC-wm-fQf" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3535,7 +3537,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="About Us" id="kJl-e2-hBP">
                         <barButtonItem key="leftBarButtonItem" style="done" id="JaE-D0-Nnh">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aYE-sg-Zm0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aYE-sg-Zm0" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backW"/>
@@ -3796,7 +3798,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Notification" id="3aC-lb-JS9">
                         <barButtonItem key="leftBarButtonItem" style="done" id="lIj-aw-zrt">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="z9d-eJ-4Jz">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="z9d-eJ-4Jz" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backW"/>
@@ -3894,7 +3896,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Terms &amp; Conditions" id="FVH-Po-2N5">
                         <barButtonItem key="leftBarButtonItem" style="done" id="6Kc-cj-YfU">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VeQ-so-d2H">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VeQ-so-d2H" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backW"/>
@@ -4082,7 +4084,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Support" id="erX-e1-ati">
                         <barButtonItem key="leftBarButtonItem" style="done" id="5DX-ba-V34">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xvP-gI-3A5">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="xvP-gI-3A5" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
                                 <rect key="frame" x="20" y="0.0" width="58" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="backW"/>
@@ -4309,6 +4311,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C1a-qN-E3F"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hs2-PC-WvU"/>
                     <connections>
                         <outlet property="closeBtn" destination="eOC-6K-IEf" id="ELF-Sr-nZz"/>
                         <outlet property="emailTxtField" destination="wQt-xA-SOA" id="m8P-8n-pNs"/>
@@ -4808,9 +4811,9 @@
         <image name="youtube" width="29" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RPk-10-C1Q"/>
+        <segue reference="qHc-gE-VOF"/>
         <segue reference="hgD-UT-LAS"/>
-        <segue reference="O7L-LV-ctW"/>
+        <segue reference="5tf-Yy-poH"/>
         <segue reference="TA7-um-TzP"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

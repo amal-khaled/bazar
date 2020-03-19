@@ -57,3 +57,6 @@
 
 //FavoriteVC
 "Items" = "أشياء";
+
+//ContactUSVC
+"Your Messege have successfully sent" = "تم ارسال رسالتك بنجاح";

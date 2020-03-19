@@ -28,12 +28,24 @@ class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        loadProfile()
+        if NetworkHelper.getToken() == nil {
+            let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true) {
+                    self.performSegue(withIdentifier: "toLoginVC", sender: self)
+                }
+            }
+        } else {
+            loadProfile()
+            setupView()
+        }
     }
     
     

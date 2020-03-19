@@ -65,7 +65,7 @@ class PayActionSheet: UIViewController {
                         if status == 1 {
                             let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
                             self.present(alert, animated: true, completion: nil)
-                            let when = DispatchTime.now() + 1
+                            let when = DispatchTime.now() + 3
                             DispatchQueue.main.asyncAfter(deadline: when){
                                 alert.dismiss(animated: true, completion: nil)
                             }
@@ -74,7 +74,7 @@ class PayActionSheet: UIViewController {
                         else if status == 2 {
                             let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully, to activate features please pay".localized, preferredStyle: .alert)
                             self.present(alert, animated: true, completion: nil)
-                            let when = DispatchTime.now() + 1
+                            let when = DispatchTime.now() + 3
                             DispatchQueue.main.asyncAfter(deadline: when){
                                 alert.dismiss(animated: true, completion: nil)
                             }
@@ -82,7 +82,7 @@ class PayActionSheet: UIViewController {
                         else if status == 3 {
                             let alert = UIAlertController(title: "", message: "You don't have enough balance so you need to pay to upload your ad".localized, preferredStyle: .alert)
                             self.present(alert, animated: true, completion: nil)
-                            let when = DispatchTime.now() + 1
+                            let when = DispatchTime.now() + 3
                             DispatchQueue.main.asyncAfter(deadline: when){
                                 alert.dismiss(animated: true, completion: nil)
                             }
@@ -125,7 +125,7 @@ class PayActionSheet: UIViewController {
                     if let refrence = json["ReferenceNumber"] as? String {
                             let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
                             self.present(alert, animated: true, completion: nil)
-                            let when = DispatchTime.now() + 1
+                            let when = DispatchTime.now() + 3
                             DispatchQueue.main.asyncAfter(deadline: when){
                                 alert.dismiss(animated: true, completion: nil)
                             }

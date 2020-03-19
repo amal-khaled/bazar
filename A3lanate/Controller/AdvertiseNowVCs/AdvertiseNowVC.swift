@@ -140,7 +140,7 @@ class AdvertiseNowVC: UIViewController {
             guard let titleAr = titleArTextField.text, titleArTextField.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 1
+                let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }
@@ -149,7 +149,7 @@ class AdvertiseNowVC: UIViewController {
             guard let titleEn = titleEnTextField.text, titleEnTextField.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the english title".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 1
+                let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }
@@ -157,7 +157,7 @@ class AdvertiseNowVC: UIViewController {
             guard let price = priceTxtField.text, priceTxtField.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the price".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 1
+                let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }
@@ -165,7 +165,7 @@ class AdvertiseNowVC: UIViewController {
             guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the phone number".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 1
+                let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }
@@ -173,7 +173,7 @@ class AdvertiseNowVC: UIViewController {
             guard let englishDesc = englishTxtView.text, englishTxtView.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the english description".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 1
+                let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }
@@ -181,7 +181,7 @@ class AdvertiseNowVC: UIViewController {
             guard let arabicDesc = arabicTxtView.text, arabicTxtView.text != "" else {
                 let alert = UIAlertController(title: "", message: "Please enter the arabic description".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 1
+                let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }
@@ -267,7 +267,7 @@ class AdvertiseNowVC: UIViewController {
         } else {
             let alert = UIAlertController(title: "", message: "Please enter a correct number".localized, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
+            let when = DispatchTime.now() + 3
             DispatchQueue.main.asyncAfter(deadline: when){
                 alert.dismiss(animated: true, completion: nil)
             }
@@ -310,7 +310,7 @@ class AdvertiseNowVC: UIViewController {
         } else {
             let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 1
+            let when = DispatchTime.now() + 3
             DispatchQueue.main.asyncAfter(deadline: when){
                 alert.dismiss(animated: true, completion: nil)
             }
@@ -365,7 +365,7 @@ class AdvertiseNowVC: UIViewController {
                     if AdvertiseNowVC.catId == 14 {
                         let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
                         self.present(alert, animated: true, completion: nil)
-                        let when = DispatchTime.now() + 1
+                        let when = DispatchTime.now() + 3
                         DispatchQueue.main.asyncAfter(deadline: when){
                             alert.dismiss(animated: true, completion: nil)
                         }

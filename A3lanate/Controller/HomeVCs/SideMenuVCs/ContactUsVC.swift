@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ContactUsVC: UIViewController {
     
@@ -59,6 +61,40 @@ class ContactUsVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
+        if NetworkHelper.getToken() != nil {
+            guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
+            guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {return}
+            guard let subject = subjectTxtField.text, subjectTxtField.text != "" else {return}
+            guard let message = messageTxtView.text, messageTxtView.text != "" else {return}
+            
+            let parameters = [
+               "Email" : email,
+               "PhoneNumber": phone,
+               "Subject": subject,
+               "Message": message
+               ]
+            
+            Alamofire.request(CONTACTUS_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+                switch response.result {
+                case .failure(let error):
+                    print(error)
+                case .success(let value):
+                    _ = JSON(value)
+                    let alert = UIAlertController(title: "", message: "Your Messege have successfully sent".localized, preferredStyle: .alert)
+                    self.present(alert, animated: true, completion: nil)
+                    let when = DispatchTime.now() + 3
+                    DispatchQueue.main.asyncAfter(deadline: when){
+                        alert.dismiss(animated: true) {
+                            self.emailTxtField.text = ""
+                            self.phoneTxtField.text = ""
+                            self.subjectTxtField.text = ""
+                            self.messageTxtView.text = ""
+                        }
+                    }
+
+                }
+            }
+        } else {return}
     }
     
     @IBAction func locationBtnPressed(_ sender: Any) {

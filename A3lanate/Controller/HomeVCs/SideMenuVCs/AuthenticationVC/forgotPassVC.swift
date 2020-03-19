@@ -41,7 +41,7 @@ class forgotPassVC: UIViewController {
                 self.emailTxtField.placeholder = "Email".localized
                 let alert = UIAlertController(title: "", message: "Please check your Email.".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 1
+                let when = DispatchTime.now() + 3
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }

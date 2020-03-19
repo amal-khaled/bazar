@@ -1235,6 +1235,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = A3lanate/A3lanate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = A3lanate/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1256,6 +1257,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = A3lanate/A3lanate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = A3lanate/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
