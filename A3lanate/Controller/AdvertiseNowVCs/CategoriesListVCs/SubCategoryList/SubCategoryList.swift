@@ -13,6 +13,8 @@ class SubCategoryList: UIViewController {
     
     //Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var subCategoryLbl: UILabel!
     
     //Variables
     var selectedCatId: Int = 0
@@ -32,11 +34,18 @@ class SubCategoryList: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: CountryCellId, bundle: nil), forCellReuseIdentifier: CountryCellId)
+        self.upperView.addCornerRadius(cornerRadius: 25)
+        self.upperView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
     }
     
     func setupView() {
         tableView.addBorder()
         tableView.addCornerRadius(cornerRadius: 30)
+        if MOLHLanguage.isArabic() {
+            subCategoryLbl.text = AdvertiseNowVC.catTitleAr
+        } else {
+            subCategoryLbl.text = AdvertiseNowVC.catTitleEn
+        }
     }
     
     func loadData() {

@@ -37,6 +37,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>App need to access your camera to choose an Image</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>App need to access your galary to save the image into it</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App need to access your galary to choose an Image</string>
 	<key>UIApplicationSceneManifest</key>
@@ -87,7 +89,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>App need to access your galary to save the image into it</string>
 </dict>
 </plist>

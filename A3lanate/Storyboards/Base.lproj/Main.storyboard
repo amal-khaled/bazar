@@ -218,6 +218,7 @@
                                                                     <constraint firstAttribute="height" constant="40" id="ly6-z3-swn"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                                                 <state key="normal">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
@@ -299,17 +300,17 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiN-ZI-4HB">
                                                                 <rect key="frame" x="0.0" y="32" width="354" height="40"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZg-zw-POC">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YZg-zw-POC">
+                                                                        <rect key="frame" x="5" y="0.0" width="349" height="40"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" +965" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLU-6I-Xqm">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="38.666666666666664" height="40"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+965" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLU-6I-Xqm">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="35.333333333333336" height="40"/>
                                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                                                 <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mde-k2-Nft">
-                                                                                <rect key="frame" x="38.666666666666657" y="0.0" width="315.33333333333337" height="40"/>
+                                                                                <rect key="frame" x="40.333333333333343" y="0.0" width="308.66666666666663" height="40"/>
                                                                                 <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="40" id="DvO-A0-bnX"/>
@@ -318,6 +319,9 @@
                                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                                             </textField>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="mde-k2-Nft" firstAttribute="leading" secondItem="dLU-6I-Xqm" secondAttribute="trailing" constant="5" id="9ll-pu-z8a"/>
+                                                                        </constraints>
                                                                     </stackView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -325,7 +329,7 @@
                                                                     <constraint firstAttribute="bottom" secondItem="YZg-zw-POC" secondAttribute="bottom" id="GYj-iH-hZf"/>
                                                                     <constraint firstAttribute="trailing" secondItem="YZg-zw-POC" secondAttribute="trailing" id="RUM-Zg-4Oc"/>
                                                                     <constraint firstItem="YZg-zw-POC" firstAttribute="top" secondItem="XiN-ZI-4HB" secondAttribute="top" id="bKP-YY-C8H"/>
-                                                                    <constraint firstItem="YZg-zw-POC" firstAttribute="leading" secondItem="XiN-ZI-4HB" secondAttribute="leading" id="zYp-Di-lXc"/>
+                                                                    <constraint firstItem="YZg-zw-POC" firstAttribute="leading" secondItem="XiN-ZI-4HB" secondAttribute="leading" constant="5" id="zYp-Di-lXc"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -339,15 +343,20 @@
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Kuwait" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r7t-ND-lRs">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VP-Av-WdL">
                                                                 <rect key="frame" x="0.0" y="32" width="354" height="40"/>
-                                                                <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="FcL-Td-eCc"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="I9m-iM-JHI"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
+                                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                                                <state key="normal">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="countryListBtnPressed:" destination="eyx-PU-0pn" eventType="touchUpInside" id="Pcj-6F-JtP"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -503,13 +512,13 @@
                         <outlet property="catListBtn" destination="tzM-wg-CNv" id="wAg-Rr-cDh"/>
                         <outlet property="collectionView" destination="Sg8-ni-FKv" id="YrF-vU-4fb"/>
                         <outlet property="collectionViewHight" destination="nKv-fE-xru" id="N4d-zH-Pka"/>
+                        <outlet property="countryListBtn" destination="4VP-Av-WdL" id="dJr-dO-USk"/>
                         <outlet property="descView" destination="hL9-FX-Vh1" id="YJV-10-H1w"/>
                         <outlet property="desklineView" destination="IHP-XG-4yk" id="nWN-PT-2ON"/>
                         <outlet property="englishBtn" destination="sSg-fb-P25" id="4ZU-QT-Rq2"/>
                         <outlet property="englishTxtView" destination="UUh-UQ-acp" id="4IQ-CU-Mek"/>
                         <outlet property="englishTxtViewHight" destination="mYl-fw-g5H" id="3Up-YJ-fTU"/>
                         <outlet property="hidePhoneBtn" destination="FuT-bf-eNG" id="lcM-md-Egw"/>
-                        <outlet property="locTxtField" destination="r7t-ND-lRs" id="g5R-U6-9Hl"/>
                         <outlet property="mainImg" destination="sCI-EU-aAa" id="hhV-ky-t2Q"/>
                         <outlet property="nextBtn" destination="r8G-q5-iQs" id="QjD-Br-3TY"/>
                         <outlet property="phoneTxtField" destination="mde-k2-Nft" id="EUZ-6x-dwN"/>
@@ -3031,7 +3040,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-7w-ujc">
-                                <rect key="frame" x="178" y="654" width="58" height="58"/>
+                                <rect key="frame" x="192.66666666666666" y="654" width="29" height="29"/>
                                 <state key="normal" image="close">
                                     <color key="titleColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -3317,9 +3326,10 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdn-UT-qOT">
                                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="41"/>
-                                                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="Locationmm" image="location">
+                                                                <state key="normal" title="Al-Shawafat Building, Omar Ben Al Khattab St" image="location">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
@@ -3328,9 +3338,9 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1l-Ub-hKK">
                                                                 <rect key="frame" x="0.0" y="71" width="314" height="29.333333333333329"/>
-                                                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="Phone" image="call">
+                                                                <state key="normal" title="56575197" image="call">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
@@ -3339,9 +3349,9 @@
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNp-BR-k7P">
                                                                 <rect key="frame" x="0.0" y="130.33333333333337" width="314" height="22.333333333333343"/>
-                                                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="Email" image="email">
+                                                                <state key="normal" title="Info@a3lanate.com" image="email">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
@@ -3353,28 +3363,28 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-Q3-Bdd">
                                                         <rect key="frame" x="106.66666666666669" y="202.66666666666674" width="161" height="29"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD4-MQ-soe" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AD4-MQ-soe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="29" height="29"/>
                                                                 <state key="normal" image="youtube"/>
                                                                 <connections>
                                                                     <action selector="youtubeBtnPressed:" destination="sqJ-TP-Yn9" eventType="touchUpInside" id="SjA-Dh-38S"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePZ-tG-3ab" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePZ-tG-3ab">
                                                                 <rect key="frame" x="43.999999999999986" y="0.0" width="29" height="29"/>
                                                                 <state key="normal" image="twitter"/>
                                                                 <connections>
                                                                     <action selector="twitterBtnPressed:" destination="sqJ-TP-Yn9" eventType="touchUpInside" id="Hcg-is-fcu"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obR-iw-NyH" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obR-iw-NyH">
                                                                 <rect key="frame" x="87.999999999999986" y="0.0" width="29" height="29"/>
                                                                 <state key="normal" image="instagram"/>
                                                                 <connections>
                                                                     <action selector="instagramBtnPressed:" destination="sqJ-TP-Yn9" eventType="touchUpInside" id="i9d-Yi-Fj3"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFz-QF-BkR" customClass="LocalizedButton" customModule="A3lanate" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFz-QF-BkR">
                                                                 <rect key="frame" x="132" y="0.0" width="29" height="29"/>
                                                                 <state key="normal" image="fb"/>
                                                                 <connections>
@@ -4698,7 +4708,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLj-Wz-cgb">
-                                <rect key="frame" x="335" y="84" width="29" height="29"/>
+                                <rect key="frame" x="306" y="84" width="58" height="58"/>
                                 <state key="normal" image="close">
                                     <color key="titleColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -4888,7 +4898,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="RPk-10-C1Q"/>
         <segue reference="ILo-qZ-IMa"/>
-        <segue reference="5tf-Yy-poH"/>
+        <segue reference="C1Y-ZP-eKj"/>
         <segue reference="dfD-78-enH"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

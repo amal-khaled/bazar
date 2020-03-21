@@ -21,6 +21,8 @@
 "Please enter the arabic description" = "برجاء ادخال الوصف الانجليزي";
 "Please enter a correct number" = "برجاء ادخال رقم هاتف صحيح";
 "You Should login first" = "يجب ان تقوم بتسجيل الدخول اولاً";
+"You can only select 8 images!" = "يمكنك اختيار ٨ صور فقط!";
+"Kuwait" = "الكويت";
 
 //SideMenuVC
 "Log In" = "تسجيل الدخول";

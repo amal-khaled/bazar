@@ -11,6 +11,9 @@ import Alamofire
 import AlamofireImage
 import MOLH
 import SwiftyJSON
+import OpalImagePicker
+import Photos
+
 
 class AdvertiseNowVC: UIViewController {
     
@@ -27,7 +30,6 @@ class AdvertiseNowVC: UIViewController {
     @IBOutlet weak var titleEnTextField: UITextField!
     @IBOutlet weak var priceTxtField: UITextField!
     @IBOutlet weak var phoneTxtField: UITextField!
-    @IBOutlet weak var locTxtField: UITextField!
     @IBOutlet weak var allowDMBtn: UIButton!
     @IBOutlet weak var allowCallsBtn: UIButton!
     @IBOutlet weak var hidePhoneBtn: UIButton!
@@ -42,6 +44,7 @@ class AdvertiseNowVC: UIViewController {
     @IBOutlet weak var englishTxtViewHight: NSLayoutConstraint!
     @IBOutlet weak var catListBtn: UIButton!
     @IBOutlet weak var phoneView: UIView!
+    @IBOutlet weak var countryListBtn: UIButton!
     
     
     //Constants
@@ -63,16 +66,17 @@ class AdvertiseNowVC: UIViewController {
     static var subSubCatId: Int = 0
     static var subSubCatTitleAr: String = ""
     static var subSubCatTitleEn: String = ""
-    var picker_Image: UIImage? {
-        didSet {
-            guard let image = picker_Image else { return }
-            self.images.append(image)
-            self.mainImg.image = images.first
-            self.collectionView.reloadData()
-            self.collectionViewHight.constant = 150
-            self.collectionView.isHidden = false
-        }
-    }
+    static var selectedCountry : String = ""
+//    var picker_Image: UIImage? {
+//        didSet {
+//            guard let image = picker_Image else { return }
+//            self.images.append(image)
+//            self.mainImg.image = images.first
+//            self.collectionView.reloadData()
+//            self.collectionViewHight.constant = 150
+//            self.collectionView.isHidden = false
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +91,7 @@ class AdvertiseNowVC: UIViewController {
         } else {
         self.catListBtn.setTitle("\(AdvertiseNowVC.catTitleEn) - \(AdvertiseNowVC.subCatTitleEn) - \(AdvertiseNowVC.subSubCatTitleEn)", for: .normal)
         }
+        self.countryListBtn.setTitle("\(AdvertiseNowVC.selectedCountry)", for: .normal)
     }
     
     func setupView() {
@@ -109,8 +114,6 @@ class AdvertiseNowVC: UIViewController {
         priceTxtField.addBorder()
         phoneView.addCornerRadius(cornerRadius: 20)
         phoneView.addBorder()
-        locTxtField.addCornerRadius(cornerRadius: 20)
-        locTxtField.addBorder()
         nextBtn.addCornerRadius(cornerRadius: 25)
         collectionView.isHidden = true
         collectionViewHight.constant = 0
@@ -121,13 +124,14 @@ class AdvertiseNowVC: UIViewController {
         titleEnTextField.delegate = self
         priceTxtField.delegate = self
         phoneTxtField.delegate = self
-        locTxtField.delegate = self
         arabicTxtView.delegate = self
         englishTxtView.delegate = self
         catListBtn.addCornerRadius(cornerRadius: 20)
         catListBtn.addBorder()
         englishTxtView.text = " "
         titleEnTextField.text = " "
+        countryListBtn.addCornerRadius(cornerRadius: 20)
+        countryListBtn.addBorder()
     }
     
     func setupCollectionView() {
@@ -264,19 +268,57 @@ class AdvertiseNowVC: UIViewController {
     
     
     @IBAction func uploadBtnPressed(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        self.present(picker, animated: true, completion: nil)
+        opalPicker()
+    }
+    
+    func getAsset(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.default()
+        let option = PHImageRequestOptions()
+        var image = UIImage()
+        option.isSynchronous = true
+        manager.requestImage(for: asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
+            image = result!
+        })
+        return image
     }
     
     @IBAction func addImageBtnPressed(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        self.present(picker, animated: true, completion: nil)
+        opalPicker()
+    }
+    
+    func opalPicker() {
+        let imagePicker = OpalImagePickerController()
+         imagePicker.selectionTintColor = UIColor.white.withAlphaComponent(0.7)
+         imagePicker.selectionImageTintColor = UIColor.black
+         imagePicker.maximumSelectionsAllowed = 8
+         imagePicker.allowedMediaTypes = Set([.image])
+         let configuration = OpalImagePickerConfiguration()
+         configuration.maximumSelectionsAllowedMessage = NSLocalizedString("You can only select 8 images!".localized, comment: "")
+         imagePicker.configuration = configuration
+         presentOpalImagePickerController(imagePicker, animated: true,
+             select: { (assets) in
+                 //Select Assets
+                 for i in 0..<assets.count {
+                     if self.images.count < 8 {
+                         self.images.append(self.getAsset(asset: assets[i]))
+                     } else {
+                         imagePicker.dismiss(animated: true, completion: nil)
+                         let alert = UIAlertController(title: "", message: "You can only select 8 images!".localized, preferredStyle: .alert)
+                         self.present(alert, animated: true, completion: nil)
+                         let when = DispatchTime.now() + 3
+                         DispatchQueue.main.asyncAfter(deadline: when){
+                             alert.dismiss(animated: true, completion: nil)
+                         }
+                     }
+                 }
+                 self.mainImg.image = self.images.first
+                 self.collectionView.reloadData()
+                 self.collectionViewHight.constant = 150
+                 self.collectionView.isHidden = false
+                 imagePicker.dismiss(animated: true, completion: nil)
+             }, cancel: {
+                 imagePicker.dismiss(animated: true, completion: nil)
+             })
     }
     
     @IBAction func englishBtnPressed(_ sender: Any) {
@@ -295,6 +337,14 @@ class AdvertiseNowVC: UIViewController {
             categoryList.modalTransitionStyle = .crossDissolve
             present(categoryList, animated: true, completion: nil)
         }
+    
+    @IBAction func countryListBtnPressed(_ sender: Any) {
+        let countryList = CountryListVC()
+        countryList.modalPresentationStyle = .fullScreen
+        countryList.modalTransitionStyle = .crossDissolve
+        present(countryList, animated: true, completion: nil)
+    }
+    
     
     @IBAction func allowDMBtnPressed(_ sender: Any) {
         if allowDMBtn.image(for: .normal) == UIImage(named: "unchecked_rectangle") {
@@ -397,6 +447,7 @@ extension AdvertiseNowVC: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as? ImageCell else {return UICollectionViewCell()}
         cell.adImg.image = images[indexPath.row]
+        cell.downloadBtn.isHidden = true
         return cell
     }
     
@@ -429,20 +480,20 @@ extension AdvertiseNowVC: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     }
 }
 
-extension AdvertiseNowVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            self.picker_Image = editedImage
-        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.picker_Image = originalImage
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-}
+//extension AdvertiseNowVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+//            self.picker_Image = editedImage
+//        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            self.picker_Image = originalImage
+//        }
+//        picker.dismiss(animated: true, completion: nil)
+//    }
+//
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        picker.dismiss(animated: true, completion: nil)
+//    }
+//}
 
 extension AdvertiseNowVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

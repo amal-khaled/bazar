@@ -103,7 +103,10 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func countryBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toCountryVC", sender: self)
+        let countryList = CountryListVC()
+        countryList.modalPresentationStyle = .fullScreen
+        countryList.modalTransitionStyle = .crossDissolve
+        present(countryList, animated: true, completion: nil)
     }
    
     @IBAction func notificationBtnPressed(_ sender: Any) {

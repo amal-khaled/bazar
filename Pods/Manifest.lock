@@ -92,6 +92,7 @@ PODS:
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
+  - OpalImagePicker (2.1.2)
   - Protobuf (3.11.2)
   - SideMenuSwift (2.0.3)
   - SwiftyJSON (5.0.0)
@@ -108,6 +109,7 @@ DEPENDENCIES:
   - MOLH
   - MyFatoorah
   - NVActivityIndicatorView
+  - OpalImagePicker
   - SideMenuSwift
   - SwiftyJSON
 
@@ -133,6 +135,7 @@ SPEC REPOS:
     - MyFatoorah
     - nanopb
     - NVActivityIndicatorView
+    - OpalImagePicker
     - Protobuf
     - SideMenuSwift
     - SwiftyJSON
@@ -158,10 +161,11 @@ SPEC CHECKSUMS:
   MyFatoorah: b356cc0b33d53f633e1b3d5f13b4a74967331514
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  OpalImagePicker: 51cbf714f337a93c2631219f1a90389ba936077f
   Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
   SideMenuSwift: 5c2b1496544ce3f1f08f4dddf4810eaac49f543d
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 77b686d85a6189776928ea4c2e00b0d6155ac668
+PODFILE CHECKSUM: cc97611fdc0e4636b9f3f09d4940278418a369e6
 
 COCOAPODS: 1.8.4

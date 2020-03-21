@@ -19,5 +19,6 @@ pod 'MyFatoorah'
 pod 'Firebase/Analytics'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
+pod 'OpalImagePicker'
 
 end

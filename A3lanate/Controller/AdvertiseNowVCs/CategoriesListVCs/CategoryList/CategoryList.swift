@@ -13,6 +13,8 @@ class CategoryList: UIViewController {
     
     //Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var categoriesLbl: UILabel!
     
     //Variables
     var categories = [Category]()
@@ -32,6 +34,8 @@ class CategoryList: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: CountryCellId, bundle: nil), forCellReuseIdentifier: CountryCellId)
+        self.upperView.addCornerRadius(cornerRadius: 25)
+        self.upperView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
     }
     
     func setupView() {

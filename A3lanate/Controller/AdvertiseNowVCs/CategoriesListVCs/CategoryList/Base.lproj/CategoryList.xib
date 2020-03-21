@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryList" customModule="A3lanate" customModuleProvider="target">
             <connections>
+                <outlet property="categoriesLbl" destination="dzI-TS-vAR" id="QpD-cQ-SCy"/>
                 <outlet property="tableView" destination="irp-lw-Hnj" id="y89-CQ-wWj"/>
+                <outlet property="upperView" destination="c9b-CC-3qx" id="059-Vd-J53"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,19 +22,39 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="irp-lw-Hnj">
-                    <rect key="frame" x="20" y="64" width="374" height="778"/>
+                    <rect key="frame" x="20" y="104" width="374" height="738"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9b-CC-3qx">
+                    <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzI-TS-vAR">
+                            <rect key="frame" x="157" y="8" width="100.5" height="24"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="74H-br-jDt"/>
+                        <constraint firstItem="dzI-TS-vAR" firstAttribute="centerY" secondItem="c9b-CC-3qx" secondAttribute="centerY" id="i1i-78-Aff"/>
+                        <constraint firstItem="dzI-TS-vAR" firstAttribute="centerX" secondItem="c9b-CC-3qx" secondAttribute="centerX" id="uAT-Tn-RBD"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="c9b-CC-3qx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Cv9-nk-dKS"/>
+                <constraint firstItem="c9b-CC-3qx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TtY-Gq-oVZ"/>
+                <constraint firstItem="irp-lw-Hnj" firstAttribute="top" secondItem="c9b-CC-3qx" secondAttribute="bottom" constant="20" id="WdD-q2-Vb5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="irp-lw-Hnj" secondAttribute="bottom" constant="20" id="ZR5-ar-osU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c9b-CC-3qx" secondAttribute="trailing" id="dMr-6o-sUi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="irp-lw-Hnj" secondAttribute="trailing" constant="20" id="ibA-Mh-wCL"/>
-                <constraint firstItem="irp-lw-Hnj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="j2z-8J-MgX"/>
                 <constraint firstItem="irp-lw-Hnj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pyM-CP-0Q4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="133"/>
+            <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
         </view>
     </objects>
 </document>

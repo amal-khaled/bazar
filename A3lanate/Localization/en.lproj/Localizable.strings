@@ -21,6 +21,8 @@
 "Please enter the arabic description" = "Please enter the arabic description";
 "Please enter a correct number" = "Please enter a correct number";
 "You Should login first" = "You Should login first";
+"You can only select 8 images!" = "You can only select 8 images!";
+"Kuwait" = "Kuwait";
 
 //SideMenuVC
 "Log In" = "Log In";

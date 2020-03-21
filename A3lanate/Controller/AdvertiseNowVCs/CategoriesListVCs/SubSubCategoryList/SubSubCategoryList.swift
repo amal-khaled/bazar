@@ -13,6 +13,9 @@ class SubSubCategoryList: UIViewController {
     
     //Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var subsubCategoryLbl: UILabel!
+    
     
     //Variables
     var selectedSubCatId: Int = 0
@@ -32,11 +35,18 @@ class SubSubCategoryList: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: CountryCellId, bundle: nil), forCellReuseIdentifier: CountryCellId)
+        self.upperView.addCornerRadius(cornerRadius: 25)
+        self.upperView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
     }
     
     func setupView() {
         tableView.addBorder()
         tableView.addCornerRadius(cornerRadius: 30)
+        if MOLHLanguage.isArabic() {
+            subsubCategoryLbl.text = AdvertiseNowVC.subCatTitleAr
+        } else {
+            subsubCategoryLbl.text = AdvertiseNowVC.subCatTitleEn
+        }
     }
     
     func loadData() {
