@@ -16,6 +16,17 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.617142674451-asq0p2gccufs5ikukrj6scicrd83bedk</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -38,9 +49,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>App need to access your camera to choose an Image</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>App need to access your galary to save the image into it</string>
+	<string>App need to access your gallery to save an image into it</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App need to access your galary to choose an Image</string>
+	<string>App need to access your gallery to let you choose an image so you can upload it to the ad</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -60,6 +71,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -49,6 +49,7 @@
 		0B1199492426499800932931 /* CountryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1199472426499800932931 /* CountryListVC.swift */; };
 		0B11994B2426530700932931 /* CountryListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11994D2426530700932931 /* CountryListVC.xib */; };
 		0B119950242657EA00932931 /* CategoryList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B119952242657EA00932931 /* CategoryList.xib */; };
+		0B11995624278D4800932931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B11995524278D4800932931 /* GoogleService-Info.plist */; };
 		0B11ABFE23F9997600CA56D2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11ABFC23F9997600CA56D2 /* CategoryCell.swift */; };
 		0B11ABFF23F9997600CA56D2 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */; };
 		0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */; };
@@ -168,6 +169,7 @@
 		0B11994F2426530D00932931 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CountryListVC.strings; sourceTree = "<group>"; };
 		0B119951242657EA00932931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CategoryList.xib; sourceTree = "<group>"; };
 		0B119954242657F000932931 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CategoryList.strings; sourceTree = "<group>"; };
+		0B11995524278D4800932931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B11ABFC23F9997600CA56D2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedCollectionView.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				0B11316423D9C93E007FDC6D /* Info.plist */,
+				0B11995524278D4800932931 /* GoogleService-Info.plist */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -888,6 +891,7 @@
 				0B08C15C24051C4D007ED192 /* NotificationCell.xib in Resources */,
 				0BFD7587240A912A00800340 /* PackageCell.xib in Resources */,
 				0BF4487423F03E760044B88B /* AdCell.xib in Resources */,
+				0B11995624278D4800932931 /* GoogleService-Info.plist in Resources */,
 				0B02C50523DCBBC300766776 /* MainCategoriesCell.xib in Resources */,
 				0BFCA1DA23E22731004DE381 /* Assets.xcassets in Resources */,
 				0B33E561241EB52400A2E695 /* SearchCategoryList.xib in Resources */,
@@ -1279,7 +1283,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = A3lanate/A3lanate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = A3lanate/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1301,7 +1305,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = A3lanate/A3lanate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = A3lanate/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

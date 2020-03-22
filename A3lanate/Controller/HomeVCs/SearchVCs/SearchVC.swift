@@ -15,13 +15,13 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchTxtField: UITextField!
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var thirdView: UIView!
-    @IBOutlet weak var locationTxtField: UITextField!
     @IBOutlet weak var FromView: UIView!
     @IBOutlet weak var fromTxtField: UITextField!
     @IBOutlet weak var toView: UIView!
     @IBOutlet weak var toTxtField: UITextField!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var categoryBtn: UIButton!
+    @IBOutlet weak var cityBtn: UIButton!
     
     //Variables
     var sTitle: String = " "
@@ -39,6 +39,7 @@ class SearchVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         categoryBtn.setTitle(SearchVC.categoryName, for: .normal)
+        cityBtn.setTitle(AdvertiseNowVC.selectedCountry, for: .normal)
     }
     
     func setupView() {
@@ -58,7 +59,6 @@ class SearchVC: UIViewController {
         FromView.addBorder()
         toView.addBorder()
         searchTxtField.delegate = self
-        locationTxtField.delegate = self
         fromTxtField.delegate = self
         toTxtField.delegate = self
     }
@@ -80,12 +80,19 @@ class SearchVC: UIViewController {
         present(searchCategoryList, animated: true, completion: nil)
     }
     
+    @IBAction func cityBtnPressed(_ sender: Any) {
+        let countryList = CountryListVC()
+        countryList.modalPresentationStyle = .fullScreen
+        countryList.modalTransitionStyle = .crossDissolve
+        present(countryList, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func searchBtnPressed(_ sender: Any) {
-        if self.searchTxtField.text == "" && self.categoryBtn.titleLabel?.text == "" && self.locationTxtField.text == "" && self.fromTxtField.text == "" && self.toTxtField.text == "" { return }
+        if self.searchTxtField.text == "" && self.categoryBtn.titleLabel?.text == "" && self.cityBtn.titleLabel?.text == "" && self.fromTxtField.text == "" && self.toTxtField.text == "" { return }
         else {
             self.sTitle = searchTxtField.text ?? " "
-            self.cityId = locationTxtField.text ?? " "
             self.priceFrom = fromTxtField.text ?? " "
             self.priceTo = toTxtField.text ?? " "
             self.performSegue(withIdentifier: "toSearchResultVC", sender: self)

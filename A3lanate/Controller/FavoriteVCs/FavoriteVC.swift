@@ -22,6 +22,7 @@ class FavoriteVC: UIViewController {
     
     //Variables
     var favAds = [Ad]()
+    var selectedAdId: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,13 @@ class FavoriteVC: UIViewController {
             tabItem.badgeColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAdVC" {
+            let destVC = segue.destination as! AdVC
+            destVC.selectedAdId = self.selectedAdId
+        }
+    }
 }
 
 extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
@@ -113,6 +121,11 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedAdId = self.favAds[indexPath.row].id
+        self.performSegue(withIdentifier: "toAdVC", sender: self)
     }
     
     
