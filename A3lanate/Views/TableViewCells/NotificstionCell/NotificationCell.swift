@@ -25,5 +25,6 @@ class NotificationCell: UITableViewCell {
     
     func setupView() {
         notifImg.addCornerRadius(cornerRadius: 28)
+        actionLbl.isHidden = true
     }
 }

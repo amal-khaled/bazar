@@ -50,6 +50,8 @@
 		0B11994B2426530700932931 /* CountryListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11994D2426530700932931 /* CountryListVC.xib */; };
 		0B119950242657EA00932931 /* CategoryList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B119952242657EA00932931 /* CategoryList.xib */; };
 		0B11995624278D4800932931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B11995524278D4800932931 /* GoogleService-Info.plist */; };
+		0B1199592427CC2000932931 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1199582427CC2000932931 /* NotificationService.swift */; };
+		0B11995B2427CCA200932931 /* NotificationN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11995A2427CCA200932931 /* NotificationN.swift */; };
 		0B11ABFE23F9997600CA56D2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11ABFC23F9997600CA56D2 /* CategoryCell.swift */; };
 		0B11ABFF23F9997600CA56D2 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */; };
 		0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */; };
@@ -170,6 +172,8 @@
 		0B119951242657EA00932931 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CategoryList.xib; sourceTree = "<group>"; };
 		0B119954242657F000932931 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/CategoryList.strings; sourceTree = "<group>"; };
 		0B11995524278D4800932931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B1199582427CC2000932931 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		0B11995A2427CCA200932931 /* NotificationN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationN.swift; sourceTree = "<group>"; };
 		0B11ABFC23F9997600CA56D2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedCollectionView.swift; sourceTree = "<group>"; };
@@ -669,6 +673,7 @@
 				0B19086B23F70EE80050AE73 /* Ad.swift */,
 				0BFD757C240A838A00800340 /* Package.swift */,
 				0B554DE424237F5C002BD69D /* Question.swift */,
+				0B11995A2427CCA200932931 /* NotificationN.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -692,6 +697,7 @@
 				0B02B0B124068CE700A17F02 /* FeaturesService.swift */,
 				0BFD757E240A83D800800340 /* PackagesService.swift */,
 				0B554DE6242380CF002BD69D /* QuestionService.swift */,
+				0B1199582427CC2000932931 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -957,6 +963,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B18782E24040131003B7C0B /* ImageCell.swift in Sources */,
+				0B1199592427CC2000932931 /* NotificationService.swift in Sources */,
 				0B1199492426499800932931 /* CountryListVC.swift in Sources */,
 				0BF4487623F04D840044B88B /* FollowUpVC.swift in Sources */,
 				0B02B0B224068CE700A17F02 /* FeaturesService.swift in Sources */,
@@ -991,6 +998,7 @@
 				0B04832B23DA1FDB003C49C0 /* ProfileVC.swift in Sources */,
 				0B0AA14E23ED88BE003971A2 /* SubCategoryCell.swift in Sources */,
 				0BFDB5FD23EC035700695A5A /* PaymentVC.swift in Sources */,
+				0B11995B2427CCA200932931 /* NotificationN.swift in Sources */,
 				0B187835240446DA003B7C0B /* LocalizedView.swift in Sources */,
 				0B04ED5523EEA64000661F1A /* AllOffersVC.swift in Sources */,
 				0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */,

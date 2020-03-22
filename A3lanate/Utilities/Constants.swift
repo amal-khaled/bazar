@@ -56,6 +56,7 @@ let AD_REPORT = "\(BASE_URL)api/UserAdReports"
 let PACKEGES_HISTORY_URL = "\(BASE_URL)api/UserPackagesPaymentHistories"
 let PAYMENT_HISTORY_URL = "\(BASE_URL)api/UserAdsPaymentHistories"
 let ADD_PACKAGE_URL = "\(BASE_URL)api/Packages/PostUserPackage"
+let NOTIFICATION_URL = "\(BASE_URL)api/Notifications/GetMyNotifications"
 
 
 // Headers
