@@ -35,8 +35,9 @@ class SideMenuVC: UIViewController {
     @IBOutlet weak var shareLbl: UILabel!
     @IBOutlet weak var aboutUsLbl: UILabel!
     @IBOutlet weak var loginLbl: UILabel!
+    @IBOutlet weak var notifCountLbl: UILabel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -50,6 +51,7 @@ class SideMenuVC: UIViewController {
             loadProfile()
             loginLbl.text = "Log Out".localized
         }
+        
     }
     
     func setupView() {
@@ -88,6 +90,12 @@ class SideMenuVC: UIViewController {
                 }
             }
         }
+        
+        NotificationService.instance.getNotifications { (error, notifications) in
+            if let notifications = notifications {
+                self.notifCountLbl.text = "\(notifications.count)"
+            }
+        }
     }
     
     @IBAction func languageBtnPressed(_ sender: Any) {
@@ -108,7 +116,7 @@ class SideMenuVC: UIViewController {
         countryList.modalTransitionStyle = .crossDissolve
         present(countryList, animated: true, completion: nil)
     }
-   
+    
     @IBAction func notificationBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toNotificationVC", sender: self)
     }
@@ -122,6 +130,11 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
+        let text = "Download the app from this link: ".localized + "https://apple.co/3beivtw"
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {

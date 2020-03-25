@@ -31,7 +31,9 @@ class AdVC: UIViewController {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var sameUserAdsCollection: UICollectionView!
     @IBOutlet weak var similarAdsCollection: UICollectionView!
-    @IBOutlet weak var downloadAdImg: UIButton!
+    @IBOutlet weak var featuredAdLbl: UILabel!
+    @IBOutlet weak var mainImgBtn: UIButton!
+    @IBOutlet weak var reportBtn: LocalizedButton!
     
     
     //Constants
@@ -43,17 +45,14 @@ class AdVC: UIViewController {
     var features = [Feature]()
     var userAds = [Ad]()
     var similarAds = [Ad]()
+    var adPhone: String = ""
+    var shareLink: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         setupCollectionView()
+        setupView()
         loadData()
-    }
-    
-    func setupView() {
-        downloadAdImg.backgroundColor = UIColor.white
-        downloadAdImg.addCornerRadius(cornerRadius: 20)
     }
     
     func setupCollectionView() {
@@ -66,6 +65,10 @@ class AdVC: UIViewController {
         similarAdsCollection.dataSource = self
         similarAdsCollection.delegate = self
         similarAdsCollection.register(UINib(nibName: ImageCellId, bundle: nil), forCellWithReuseIdentifier: ImageCellId)
+    }
+    
+    func setupView() {
+        featuredAdLbl.isHidden = true
     }
     
     func loadData() {
@@ -93,6 +96,13 @@ class AdVC: UIViewController {
                 }
                 self.usernameLbl.text = ad.CreatedByName
                 self.dateLbl.text = ad.StartDate
+                if ad.AdWithoutPhone == false {
+                    self.adPhone = ad.PhoneNumber
+                }
+                self.shareLink = ad.ShareLink
+                if ad.Featured == true {
+                    self.featuredAdLbl.isHidden = false
+                }
             }
             if let images = images {
                 self.images = images
@@ -122,37 +132,102 @@ class AdVC: UIViewController {
         }
     }
     
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            // we got back an error!
-            let ac = UIAlertController(title: "Save error".localized, message: error.localizedDescription, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK".localized, style: .default))
-            present(ac, animated: true)
-        } else {
-       
-            let ac = UIAlertController(title: "Saved!".localized, message: "This picture has been saved to your photos.".localized, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK".localized, style: .default))
-            present(ac, animated: true)
+    @IBAction func whatsAppBtnPressed(_ sender: Any) {
+        if adPhone == "" {
+            let alert = UIAlertController(title: "", message: "There is no whatsapp for this ad".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
+        else {
+            let urlWhats = "https://wa.me/\(adPhone)"
+            if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
+                if let whatsappURL = URL(string: urlString) {
+                    if UIApplication.shared.canOpenURL(whatsappURL){
+                        if #available(iOS 10.0, *) {
+                            UIApplication.shared.open(whatsappURL, options: [:], completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(whatsappURL)
+                        }
+                    }
+                    else {
+                        
+                    }
+                }
+            }
+            
         }
     }
     
-    @IBAction func whatsAppBtnPressed(_ sender: Any) {
-    }
-    
     @IBAction func likeBtnPressed(_ sender: Any) {
+        if NetworkHelper.getToken() != nil {
+            AdsService.instance.favoriteAdById(Id: self.selectedAdId) { (success) in
+                if success {
+                    if self.likeBtn.imageView?.image == UIImage(named: "likeR") {
+                        self.likeBtn.setImage(UIImage(named: "likeG"), for: .normal)
+                    } else {
+                        self.likeBtn.setImage(UIImage(named: "likeR"), for: .normal)
+                    }
+
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func callBtnPressed(_ sender: Any) {
+        if adPhone == "" {
+            let alert = UIAlertController(title: "", message: "There is no number for this ad".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 3
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
+        else {
+            if let url = NSURL(string: "tel://\(adPhone)"), UIApplication.shared.canOpenURL(url as URL) {
+              UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+            }
+        }
     }
     
     @IBAction func locationBtnPressed(_ sender: Any) {
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
+        let text = "Check this ad: ".localized + "\(shareLink)\n" + "Download the app from this link: ".localized + "https://apple.co/3beivtw"
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func followUpBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toFollowUpVC", sender: self)
+    }
+    
+    @IBAction func mainImgBtnPressed(_ sender: Any) {
+        let imageDisplayVC = ImageDisplayVC()
+        imageDisplayVC.imgUrl = images[0]
+        imageDisplayVC.modalPresentationStyle = .custom
+        imageDisplayVC.modalTransitionStyle = .crossDissolve
+        present(imageDisplayVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func reportBtnPressed(_ sender: Any) {
+        let adReportVC = AdReportVC()
+        adReportVC.adId = self.selectedAdId
+        adReportVC.modalPresentationStyle = .custom
+        adReportVC.modalTransitionStyle = .crossDissolve
+        present(adReportVC, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -160,11 +235,6 @@ class AdVC: UIViewController {
             let destVC = segue.destination as! FollowUpVC
             destVC.selectedAdId = self.selectedAdId
         }
-    }
-    
-    @IBAction func downloadAdImageBtnPressed(_ sender: Any) {
-        let image = self.adImg.image
-        UIImageWriteToSavedPhotosAlbum(image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     
 }
@@ -200,15 +270,10 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
                     }
                 }
             }
-            cell.btnPressed = { [weak self] in
-                let image = cell.adImg.image
-                UIImageWriteToSavedPhotosAlbum(image!, self, #selector(self?.image(_:didFinishSavingWithError:contextInfo:)), nil)
-            }
             return cell
         }
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
-            cell.downloadBtn.isHidden = true
             Alamofire.request(userAds[indexPath.row].imgUrl).responseImage { (response) in
                 if let image = response.result.value {
                     DispatchQueue.main.async {
@@ -221,7 +286,6 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
         }
         if collectionView.tag == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as! ImageCell
-            cell.downloadBtn.isHidden = true
             Alamofire.request(similarAds[indexPath.row].imgUrl).responseImage { (response) in
                 if let image = response.result.value {
                     DispatchQueue.main.async {
@@ -254,9 +318,13 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if collectionView.tag == 0 {
-//            let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
-//        }
+        if collectionView.tag == 0 {
+            let imageDisplayVC = ImageDisplayVC()
+            imageDisplayVC.imgUrl = images[indexPath.row]
+            imageDisplayVC.modalPresentationStyle = .custom
+            imageDisplayVC.modalTransitionStyle = .crossDissolve
+            present(imageDisplayVC, animated: true, completion: nil)
+        }
         if collectionView.tag == 1 {
             self.selectedAdId = userAds[indexPath.row].id
             self.loadData()

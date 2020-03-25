@@ -3,7 +3,7 @@
 "XtD-p6-jHQ.title" = "الرئيسية";
 "5FU-9J-tNo.title" = "الرئيسية";
 "MaS-Z9-dM5.text" = "اعلانات سابقة";
-"dbW-DN-GnV.text" = "أحدث اعلانات";
+"dbW-DN-GnV.text" = "اعلانات مميزة";
 "uWj-ln-z93.text" = "الاكثر عرض";
 "6Nz-cZ-zPb.text" = "الفئات";
 "HEt-S5-B34.normalTitle" = "الكل";
@@ -101,6 +101,7 @@
 "Kyt-bU-T47.text" = "الوصف";
 "NvO-PX-fUs.text" = "اعلانات من نفس الشخص";
 "abA-RC-lq1.text" = "اعلانات مشابهة";
+"RF6-Qo-WOt.text" = "اعلان مميز";
 
 //FollowUpVC
 "cGe-pM-OiA.title" = "متابعة الاعلان";

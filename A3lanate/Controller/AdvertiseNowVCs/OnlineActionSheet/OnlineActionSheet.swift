@@ -17,25 +17,43 @@ class OnlineActionSheet: UIViewController {
     //Outlets
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var actionSheetView: UIView!
-    @IBOutlet weak var yesBtn: UIButton!
-    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var payBtn: UIButton!
+    @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var featureLbl: UILabel!
+    @IBOutlet weak var balanceLbl: UILabel!
+    @IBOutlet weak var totalLbl: UILabel!
+    @IBOutlet weak var unpayedLbl: UILabel!
     
     //Variables
     var adId: Int = 0
-    
+    var adPrice: Double = 0.0
+    var AdFeatures: Double = 0.0
+    var Total: Double = 0.0
+    var PayedTotal: Double = 0.0
+    var UnPayedTotal: Double = 0.0
+    var FreeBalance: Double = 0.0
+    var UserBlance: Double = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        loadRecipt()
     }
     
     func setupView() {
         actionSheetView.addCornerRadius(cornerRadius: 50)
         actionSheetView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        yesBtn.addCornerRadius(cornerRadius: 20)
-        cancelBtn.addCornerRadius(cornerRadius: 20)
+        payBtn.addCornerRadius(cornerRadius: 20)
         let closeTouch = UITapGestureRecognizer(target: self, action: #selector(PayActionSheet.closeTap(_:)))
         bgView.addGestureRecognizer(closeTouch)
+    }
+    
+    func loadRecipt() {
+        self.priceLbl.text = "\(adPrice)"
+        self.featureLbl.text = "\(Total - adPrice)"
+        self.balanceLbl.text = "\(UserBlance)"
+        self.totalLbl.text = "\(Total)"
+        self.unpayedLbl.text = "\(UnPayedTotal)"
     }
     
     func pay() {
@@ -73,7 +91,7 @@ class OnlineActionSheet: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func yesBtnPressed(_ sender: Any) {
+    @IBAction func payBtnPressed(_ sender: Any) {
         pay()
     }
     

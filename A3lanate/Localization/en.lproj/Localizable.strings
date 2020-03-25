@@ -27,6 +27,7 @@
 //SideMenuVC
 "Log In" = "Log In";
 "Log Out" = "Log Out";
+"Download the app from this link: " = "Download the app from this link: ";
 
 //LoginVC
 "Please make sure that the email and the password is correct" = "Please make sure that the email and the password is correct";
@@ -54,6 +55,9 @@
 "OK" = "OK";
 "Saved!" = "Saved!";
 "This picture has been saved to your photos." = "This picture has been saved to your photos.";
+"Check this ad: " = "Check this ad: ";
+"There is no whatsapp for this ad" = "There is no whatsapp for this ad";
+"There is no number for this ad" = "There is no number for this ad";
 
 //FollowUpAd
 "Views" = "Views";

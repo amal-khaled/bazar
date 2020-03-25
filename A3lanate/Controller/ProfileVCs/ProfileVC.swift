@@ -26,6 +26,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var notifImg: LocalizedImage!
     @IBOutlet weak var FavoriteBtn: UIButton!
     @IBOutlet weak var favoriteImg: LocalizedImage!
+    @IBOutlet weak var notifCountLbl: UILabel!
     
 
     override func viewDidLoad() {
@@ -86,6 +87,12 @@ class ProfileVC: UIViewController {
                         }
                     }
                 }
+            }
+        }
+        
+        NotificationService.instance.getNotifications { (error, notifications) in
+            if let notifications = notifications {
+                self.notifCountLbl.text = "\(notifications.count)"
             }
         }
     }

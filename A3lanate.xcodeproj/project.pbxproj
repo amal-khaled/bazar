@@ -52,12 +52,17 @@
 		0B11995624278D4800932931 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B11995524278D4800932931 /* GoogleService-Info.plist */; };
 		0B1199592427CC2000932931 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1199582427CC2000932931 /* NotificationService.swift */; };
 		0B11995B2427CCA200932931 /* NotificationN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11995A2427CCA200932931 /* NotificationN.swift */; };
+		0B1199872428EB8700932931 /* MainCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1199862428EB8700932931 /* MainCatVC.swift */; };
+		0B11998B242A31CD00932931 /* ImageDisplayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B119989242A31CC00932931 /* ImageDisplayVC.swift */; };
+		0B11998C242A31CD00932931 /* ImageDisplayVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11998A242A31CC00932931 /* ImageDisplayVC.xib */; };
 		0B11ABFE23F9997600CA56D2 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11ABFC23F9997600CA56D2 /* CategoryCell.swift */; };
 		0B11ABFF23F9997600CA56D2 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */; };
 		0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */; };
 		0B11AC0223F9A09500CA56D2 /* MainAdsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B11AC0423F9A09500CA56D2 /* MainAdsCell.xib */; };
 		0B11AC0823F9A21B00CA56D2 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11AC0723F9A21B00CA56D2 /* CategoriesService.swift */; };
 		0B11AC0A23F9A40000CA56D2 /* SubCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B11AC0923F9A40000CA56D2 /* SubCategory.swift */; };
+		0B160343242B96C300DAF2BA /* AdReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B160341242B96C300DAF2BA /* AdReportVC.swift */; };
+		0B160345242B98FE00DAF2BA /* AdReportVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B160347242B98FE00DAF2BA /* AdReportVC.xib */; };
 		0B18782E24040131003B7C0B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B18782C24040131003B7C0B /* ImageCell.swift */; };
 		0B18782F24040131003B7C0B /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B18782D24040131003B7C0B /* ImageCell.xib */; };
 		0B187831240444B3003B7C0B /* LocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B187830240444B3003B7C0B /* LocalizedButton.swift */; };
@@ -174,6 +179,10 @@
 		0B11995524278D4800932931 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B1199582427CC2000932931 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		0B11995A2427CCA200932931 /* NotificationN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationN.swift; sourceTree = "<group>"; };
+		0B1199862428EB8700932931 /* MainCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCatVC.swift; sourceTree = "<group>"; };
+		0B119989242A31CC00932931 /* ImageDisplayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayVC.swift; sourceTree = "<group>"; };
+		0B11998A242A31CC00932931 /* ImageDisplayVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDisplayVC.xib; sourceTree = "<group>"; };
+		0B11998E242A8E8900932931 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/OnlineActionSheet.strings; sourceTree = "<group>"; };
 		0B11ABFC23F9997600CA56D2 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedCollectionView.swift; sourceTree = "<group>"; };
@@ -181,6 +190,9 @@
 		0B11AC0623F9A09800CA56D2 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/MainAdsCell.strings; sourceTree = "<group>"; };
 		0B11AC0723F9A21B00CA56D2 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		0B11AC0923F9A40000CA56D2 /* SubCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategory.swift; sourceTree = "<group>"; };
+		0B160341242B96C300DAF2BA /* AdReportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdReportVC.swift; sourceTree = "<group>"; };
+		0B160346242B98FE00DAF2BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AdReportVC.xib; sourceTree = "<group>"; };
+		0B16034B242B991A00DAF2BA /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/AdReportVC.strings; sourceTree = "<group>"; };
 		0B18782C24040131003B7C0B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		0B18782D24040131003B7C0B /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		0B187830240444B3003B7C0B /* LocalizedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedButton.swift; sourceTree = "<group>"; };
@@ -238,7 +250,6 @@
 		0BFD7598240AC76B00800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PayActionSheet.xib; sourceTree = "<group>"; };
 		0BFD759B240AC77100800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PayActionSheet.strings; sourceTree = "<group>"; };
 		0BFD759D240AC7A100800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/OnlineActionSheet.xib; sourceTree = "<group>"; };
-		0BFD75A0240AC7A600800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/OnlineActionSheet.strings; sourceTree = "<group>"; };
 		0BFD75A3240AD49100800340 /* A3lanate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = A3lanate.entitlements; sourceTree = "<group>"; };
 		0BFDB5F623EC030000695A5A /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		0BFDB5F823EC032000695A5A /* MyAdsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdsVC.swift; sourceTree = "<group>"; };
@@ -308,6 +319,7 @@
 				0B04832623DA1F87003C49C0 /* CategoriesVC.swift */,
 				0B0AA15023ED8A35003971A2 /* SubCategoryVC.swift */,
 				0B0AA14923ED8609003971A2 /* SubSubCategoryVC.swift */,
+				0B1199862428EB8700932931 /* MainCatVC.swift */,
 			);
 			path = CategoriesVCs;
 			sourceTree = "<group>";
@@ -530,6 +542,15 @@
 			path = CountryListVC;
 			sourceTree = "<group>";
 		};
+		0B119988242A31A400932931 /* ImageDisplayVC */ = {
+			isa = PBXGroup;
+			children = (
+				0B119989242A31CC00932931 /* ImageDisplayVC.swift */,
+				0B11998A242A31CC00932931 /* ImageDisplayVC.xib */,
+			);
+			path = ImageDisplayVC;
+			sourceTree = "<group>";
+		};
 		0B11ABFB23F9995400CA56D2 /* CategoryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +558,15 @@
 				0B11ABFD23F9997600CA56D2 /* CategoryCell.xib */,
 			);
 			path = CategoryCell;
+			sourceTree = "<group>";
+		};
+		0B160340242B96A500DAF2BA /* AdReportVC */ = {
+			isa = PBXGroup;
+			children = (
+				0B160341242B96C300DAF2BA /* AdReportVC.swift */,
+				0B160347242B98FE00DAF2BA /* AdReportVC.xib */,
+			);
+			path = AdReportVC;
 			sourceTree = "<group>";
 		};
 		0B18782B24040104003B7C0B /* ImageCell */ = {
@@ -743,6 +773,8 @@
 			children = (
 				0BFA820223F021D600BC5A07 /* AdVC.swift */,
 				0BF4487523F04D840044B88B /* FollowUpVC.swift */,
+				0B160340242B96A500DAF2BA /* AdReportVC */,
+				0B119988242A31A400932931 /* ImageDisplayVC */,
 			);
 			path = AdVCs;
 			sourceTree = "<group>";
@@ -884,6 +916,7 @@
 				0B11ABFF23F9997600CA56D2 /* CategoryCell.xib in Resources */,
 				0B11316323D9C93E007FDC6D /* LaunchScreen.storyboard in Resources */,
 				0B1F78AE23E9DA8B006BDFBA /* QuestionCell.xib in Resources */,
+				0B11998C242A31CD00932931 /* ImageDisplayVC.xib in Resources */,
 				0B0AA14F23ED88BE003971A2 /* SubCategoryCell.xib in Resources */,
 				0B02B0C82406D9B900A17F02 /* SubSubCategoryList.xib in Resources */,
 				0B780FFA23DF298A004304DC /* Localizable.strings in Resources */,
@@ -904,6 +937,7 @@
 				0B02B0C32406B3DF00A17F02 /* SubCategoryList.xib in Resources */,
 				0B11315E23D9C93C007FDC6D /* Main.storyboard in Resources */,
 				0B119950242657EA00932931 /* CategoryList.xib in Resources */,
+				0B160345242B98FE00DAF2BA /* AdReportVC.xib in Resources */,
 				0B18782F24040131003B7C0B /* ImageCell.xib in Resources */,
 				0B1BEC352412CC7E00BD64D2 /* ChangePassAlert.xib in Resources */,
 				0B08C16124051CF6007ED192 /* FollowUpCell.xib in Resources */,
@@ -972,6 +1006,7 @@
 				0B02C50423DCBBC300766776 /* MainCategoriesCell.swift in Sources */,
 				0B780FF223DF1993004304DC /* SideMenuVC.swift in Sources */,
 				0B0BCEDE23E10D9E00AF709A /* CountryVC.swift in Sources */,
+				0B1199872428EB8700932931 /* MainCatVC.swift in Sources */,
 				0BFDB5FB23EC033D00695A5A /* BalanceVC.swift in Sources */,
 				0BF4488223F174100044B88B /* AuthService.swift in Sources */,
 				0BFDB60623EC3CB400695A5A /* ChangePassAlert.swift in Sources */,
@@ -1002,6 +1037,7 @@
 				0B187835240446DA003B7C0B /* LocalizedView.swift in Sources */,
 				0B04ED5523EEA64000661F1A /* AllOffersVC.swift in Sources */,
 				0B19086823F70EAD0050AE73 /* SliderAd.swift in Sources */,
+				0B160343242B96C300DAF2BA /* AdReportVC.swift in Sources */,
 				0B11315523D9C93C007FDC6D /* AppDelegate.swift in Sources */,
 				0B0CA06123E090C700BC25AC /* ContactUsVC.swift in Sources */,
 				0BFD758B240AA11100800340 /* BuyPackageVC.swift in Sources */,
@@ -1040,6 +1076,7 @@
 				0B1F78B723EA220F006BDFBA /* CountryCell.swift in Sources */,
 				0B554DE7242380CF002BD69D /* QuestionService.swift in Sources */,
 				0BFD757D240A838A00800340 /* Package.swift in Sources */,
+				0B11998B242A31CD00932931 /* ImageDisplayVC.swift in Sources */,
 				0B0BCEE423E10E6E00AF709A /* SupportVC.swift in Sources */,
 				0B02B0C22406B3DF00A17F02 /* SubCategoryList.swift in Sources */,
 			);
@@ -1111,6 +1148,15 @@
 			name = MainAdsCell.xib;
 			sourceTree = "<group>";
 		};
+		0B160347242B98FE00DAF2BA /* AdReportVC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B160346242B98FE00DAF2BA /* Base */,
+				0B16034B242B991A00DAF2BA /* ar */,
+			);
+			name = AdReportVC.xib;
+			sourceTree = "<group>";
+		};
 		0B1BEC372412CC7E00BD64D2 /* ChangePassAlert.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1160,7 +1206,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0BFD759D240AC7A100800340 /* Base */,
-				0BFD75A0240AC7A600800340 /* ar */,
+				0B11998E242A8E8900932931 /* ar */,
 			);
 			name = OnlineActionSheet.xib;
 			sourceTree = "<group>";

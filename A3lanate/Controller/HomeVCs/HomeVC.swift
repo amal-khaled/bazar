@@ -25,6 +25,10 @@ class HomeVC: UIViewController {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var mostViewdCollection: UICollectionView!
     @IBOutlet weak var allBtn: UIButton!
+    @IBOutlet weak var featuredCollectionHight: NSLayoutConstraint!
+    @IBOutlet weak var recentCollectionHight: NSLayoutConstraint!
+    @IBOutlet weak var mostViewdCollectionHight: NSLayoutConstraint!
+    
     
     //Constants
     let MainAdsCellID = "MainAdsCell"
@@ -38,17 +42,45 @@ class HomeVC: UIViewController {
     var latestArr = [Ad]()
     var sliderAlamoSource = [AlamofireSource]()
     var selectedAdId: Int = 0
+    var selectedMainCatId: Int = 0
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupCollectionView()
+//        changeLanguage()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadData()
+    }
+    
+    func changeLanguage() {
+        if MOLHLanguage.isArabic() {
+            return
+        } else {
+            let alert = UIAlertController(title: "Default Language", message: "Do you want to change the app language to Arabic?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes", style: .default , handler:{ (UIAlertAction)in
+                MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "ar")
+                        if #available(iOS 13.0, *) {
+                        let delegate = UIApplication.shared.delegate as? AppDelegate
+                        delegate!.swichRoot()
+                } else {
+                       // Fallback on earlier versions
+                       MOLH.reset()
+                }
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            
+            self.present(alert, animated: true, completion: {
+            })
+        }
     }
     
     func setupView() {
@@ -72,14 +104,35 @@ class HomeVC: UIViewController {
             if let topAds = topAds {
                 self.topArr = topAds
                 self.featuredCollection.reloadData()
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    let hight = (self.topArr.count / 4) * 185
+                    self.featuredCollectionHight.constant = CGFloat(hight)
+                } else {
+                    let hight = (self.topArr.count / 2) * 185 + 50
+                    self.featuredCollectionHight.constant = CGFloat(hight)
+                }
             }
             if let mostAds = mostViewedAds {
                 self.mostViewdArr = mostAds
                 self.mostViewdCollection.reloadData()
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    let hight = (self.mostViewdArr.count / 4) * 185
+                    self.mostViewdCollectionHight.constant = CGFloat(hight)
+                } else {
+                let hight = (self.mostViewdArr.count / 2) * 185 + 50
+                self.mostViewdCollectionHight.constant = CGFloat(hight)
+                }
             }
             if let latestAds = latestAds {
                 self.latestArr = latestAds
                 self.recentCollection.reloadData()
+                if UIDevice.current.userInterfaceIdiom == .pad {
+                    let hight = (self.latestArr.count / 4) * 185
+                    self.recentCollectionHight.constant = CGFloat(hight)
+                } else {
+                let hight = (self.latestArr.count / 2) * 185 + 50
+                self.recentCollectionHight.constant = CGFloat(hight)
+            }
             }
         }
     }
@@ -122,6 +175,10 @@ class HomeVC: UIViewController {
         if segue.identifier == "toAdVC" {
             let destVC = segue.destination as! AdVC
             destVC.selectedAdId = self.selectedAdId
+        }
+        if segue.identifier == "toMainCatVC" {
+            let destVC = segue.destination as! MainCatVC
+            destVC.selectedMainCatId = self.selectedMainCatId
         }
     }
     
@@ -200,13 +257,23 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 cell.likeImg.image = UIImage(named: "likeR")
             }
             cell.btnPressed = { [weak self] in
+                if NetworkHelper.getToken() != nil {
                 AdsService.instance.favoriteAdById(Id: (self?.topArr[indexPath.row].id)!) { (success) in
                     if success {
                         if cell.likeImg.image == UIImage(named: "likeR") {
                             cell.likeImg.image = UIImage(named: "likeG")
                         } else {
                         cell.likeImg.image = UIImage(named: "likeR")
-                        }                    }
+                        }
+                    }
+                }
+                } else {
+                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+                    self?.present(alert, animated: true, completion: nil)
+                    let when = DispatchTime.now() + 3
+                    DispatchQueue.main.asyncAfter(deadline: when){
+                        alert.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
             return cell
@@ -225,13 +292,14 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             } else {
                 cell.typeLbl.text = latestArr[indexPath.row].titleEn
             }
-            cell.priceLbl.text = "Featured Ad".localized
+            cell.priceLbl.text = "\(latestArr[indexPath.row].price)" + "KWD".localized
             cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
             cell.currencyLbl.text = ""
             if latestArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
             }
             cell.btnPressed = { [weak self] in
+                if NetworkHelper.getToken() != nil {
                 AdsService.instance.favoriteAdById(Id: (self?.topArr[indexPath.row].id)!) { (success) in
                     if success {
                         if cell.likeImg.image == UIImage(named: "likeR") {
@@ -239,6 +307,14 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                         } else {
                         cell.likeImg.image = UIImage(named: "likeR")
                         }                    }
+                }
+                } else {
+                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+                    self?.present(alert, animated: true, completion: nil)
+                    let when = DispatchTime.now() + 3
+                    DispatchQueue.main.asyncAfter(deadline: when){
+                        alert.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
             return cell
@@ -257,7 +333,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             } else {
                 cell.typeLbl.text = mostViewdArr[indexPath.row].titleEn
             }
-            cell.priceLbl.text = "Featured Ad".localized
+            cell.priceLbl.text = "\(mostViewdArr[indexPath.row].price)" + "KWD".localized
             cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
             cell.currencyLbl.text = ""
 
@@ -265,6 +341,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 cell.likeImg.image = UIImage(named: "likeR")
             }
             cell.btnPressed = { [weak self] in
+                if NetworkHelper.getToken() != nil {
                 AdsService.instance.favoriteAdById(Id: (self?.topArr[indexPath.row].id)!) { (success) in
                     if success {
                         if cell.likeImg.image == UIImage(named: "likeR") {
@@ -274,6 +351,14 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                         }
                     }
                 }
+                    } else {
+                        let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+                        self?.present(alert, animated: true, completion: nil)
+                        let when = DispatchTime.now() + 3
+                        DispatchQueue.main.asyncAfter(deadline: when){
+                            alert.dismiss(animated: true, completion: nil)
+                        }
+                    }
             }
             return cell
         }
@@ -303,7 +388,19 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
-            self.tabBarController?.selectedIndex = 1
+            let cell = collectionView.cellForItem(at: indexPath)
+            UIView.animate(withDuration: 0.2,
+                           animations: {
+                            cell?.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            },
+                           completion: { _ in
+                            UIView.animate(withDuration: 0.2) {
+                                cell?.transform = CGAffineTransform.identity
+                            }
+                            self.selectedMainCatId = self.categoriesArr[indexPath.row].id
+                            self.performSegue(withIdentifier: "toMainCatVC", sender: self)
+            })
+
         }
         if collectionView.tag == 2 {
             self.selectedAdId = topArr[indexPath.row].id

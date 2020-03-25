@@ -24,8 +24,13 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var phoneBtn: UIButton!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var passwordEyeBtn: UIButton!
+    @IBOutlet weak var confirmPassEyeBtn: UIButton!
     
-    
+    //Variable
+    var passeyeClick = true
+    var confpasseyeClick = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -62,6 +67,23 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func phoneBtnPressed(_ sender: Any) {
+    }
+    @IBAction func passwordEyeBtnPressed(_ sender: Any) {
+        if(passeyeClick == true) {
+            passTxtField.isSecureTextEntry = false
+        } else {
+            passTxtField.isSecureTextEntry = true
+        }
+        passeyeClick = !passeyeClick
+    }
+    
+    @IBAction func confirmPassEyeBtnPressed(_ sender: Any) {
+        if(confpasseyeClick == true) {
+            confirmPassTxtField.isSecureTextEntry = false
+        } else {
+            confirmPassTxtField.isSecureTextEntry = true
+        }
+        confpasseyeClick = !confpasseyeClick
     }
     
     @IBAction func loginBtnPressed(_ sender: Any) {

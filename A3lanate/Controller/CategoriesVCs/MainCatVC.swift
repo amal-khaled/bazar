@@ -1,8 +1,8 @@
 //
-//  SubCategoryVC.swift
+//  MainCatVC.swift
 //  A3lanate
 //
-//  Created by Mahmoud Elshakoushy on 2/7/20.
+//  Created by Mahmoud Elshakoushy on 3/23/20.
 //  Copyright © 2020 Mahmoud Elshakoushy. All rights reserved.
 //
 
@@ -11,7 +11,7 @@ import MOLH
 import Alamofire
 import AlamofireImage
 
-class SubCategoryVC: UIViewController {
+class MainCatVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var subSubCategoryCollection: UICollectionView!
@@ -22,11 +22,11 @@ class SubCategoryVC: UIViewController {
     let MainAdsCelId = "MainAdsCell"
     
     //Variables
-    var selectedCatId: Int = 0
     var subCategories = [SubCategory]()
     var ads = [Ad]()
     var selectedSubCatId: Int = 0
     var selectedAdId: Int = 0
+    var selectedMainCatId: Int = 0
 
     
     override func viewDidLoad() {
@@ -54,28 +54,28 @@ class SubCategoryVC: UIViewController {
     }
     
     func loadData() {
-            CategoriesService.instance.getSubCategoriesAndAdsById(id: selectedCatId) { (error, catId, catNameAr, catNameEn, subcategories, ads) in
+            CategoriesService.instance.getCategoriesSubAndAdsById(id: selectedMainCatId) { (error, catId, catNameAr, catNameEn, subcategories, ads) in
                 if MOLHLanguage.currentAppleLanguage() == "ar" {
-                    self.title = catNameAr
-                } else {
-                    self.title = catNameEn
+                        self.title = catNameAr
+                    } else {
+                        self.title = catNameEn
+                    }
+                    if let subcategories = subcategories {
+                        print(subcategories)
+                        self.subCategories = subcategories
+                        self.subSubCategoryCollection.reloadData()
+                    }
+                    if let ads = ads {
+                        self.ads = ads
+                        self.subCategoryCollection.reloadData()
+                    }
                 }
-                if let subcategories = subcategories {
-                    print(subcategories)
-                    self.subCategories = subcategories
-                    self.subCategoryCollection.reloadData()
-                }
-                if let ads = ads {
-                    self.ads = ads
-                    self.subSubCategoryCollection.reloadData()
-                }
-            }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toSubSubCatVC" {
-            let destVC = segue.destination as! SubSubCategoryVC
-            destVC.selectedSubCatId = self.selectedSubCatId
+        if segue.identifier == "toSubCategoryVC" {
+            let destVC = segue.destination as! SubCategoryVC
+            destVC.selectedCatId = self.selectedSubCatId
         }
         
         if segue.identifier == "toAdVC" {
@@ -86,7 +86,7 @@ class SubCategoryVC: UIViewController {
 }
 
 
-extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension MainCatVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -174,7 +174,7 @@ extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
             self.selectedSubCatId = subCategories[indexPath.row].id
-            performSegue(withIdentifier: "toSubSubCatVC", sender: self)
+            performSegue(withIdentifier: "toSubCategoryVC", sender: self)
         }
         if collectionView.tag == 2 {
             self.selectedAdId = ads[indexPath.row].id

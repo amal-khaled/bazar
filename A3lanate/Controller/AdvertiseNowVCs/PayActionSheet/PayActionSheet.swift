@@ -22,6 +22,14 @@ class PayActionSheet: UIViewController {
     
     //Outlets
     var adId: Int = 0
+    var adPrice: Double = 0.0
+    var AdFeatures: Double = 0.0
+    var Total: Double = 0.0
+    var PayedTotal: Double = 0.0
+    var UnPayedTotal: Double = 0.0
+    var FreeBalance: Double = 0.0
+    var UserBlance: Double = 0.0
+        
     
     //Variables
     var featureVC = FeaturesVC()
@@ -94,6 +102,27 @@ class PayActionSheet: UIViewController {
                             }
                         }
                     }
+                    if let adPrice = json["AdPrice"] as? Double {
+                        self.adPrice = adPrice
+                    }
+                    if let AdFeatures = json["AdFeatures"] as? Double {
+                        self.AdFeatures = AdFeatures
+                    }
+                    if let Total = json["Total"] as? Double {
+                        self.Total = Total
+                    }
+                    if let PayedTotal = json["PayedTotal"] as? Double {
+                        self.PayedTotal = PayedTotal
+                    }
+                    if let UnPayedTotal = json["UnPayedTotal"] as? Double {
+                        self.UnPayedTotal = UnPayedTotal
+                    }
+                    if let FreeBalance = json["FreeBalance"] as? Double {
+                        self.FreeBalance = FreeBalance
+                    }
+                    if let UserBlance = json["UserBlance"] as? Double {
+                        self.UserBlance = UserBlance
+                    }
                 } else {
                     debugPrint(response.result.error as Any)
                 }
@@ -108,6 +137,13 @@ class PayActionSheet: UIViewController {
     @IBAction func onlineBtnPressed(_ sender: Any) {
         let onlineActionSheet = OnlineActionSheet()
         onlineActionSheet.adId = self.adId
+        onlineActionSheet.adPrice = self.adPrice
+        onlineActionSheet.AdFeatures = self.AdFeatures
+        onlineActionSheet.Total = self.Total
+        onlineActionSheet.PayedTotal = self.PayedTotal
+        onlineActionSheet.UnPayedTotal = self.UnPayedTotal
+        onlineActionSheet.FreeBalance = self.FreeBalance
+        onlineActionSheet.UserBlance = self.UserBlance
         onlineActionSheet.modalPresentationStyle = .custom
         present(onlineActionSheet, animated: true, completion: nil)
     }

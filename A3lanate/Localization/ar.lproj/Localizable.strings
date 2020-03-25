@@ -27,6 +27,7 @@
 //SideMenuVC
 "Log In" = "تسجيل الدخول";
 "Log Out" = "تسجيل الخروج";
+"Download the app from this link: " = "قم بتحميل التطبيق من خلال هذا الرابط: ";
 
 //LoginVC
 "Please make sure that the email and the password is correct" = "برجاء ادخال بريد الكتروني ورقم سري صحيح";
@@ -54,7 +55,9 @@
 "OK" = "موافق";
 "Saved!" = "تم الحفظ!";
 "This picture has been saved to your photos." = "لقد تم حفظ الصورة بنجاح في هاتفك.";
-
+"Check this ad: " = "شاهد هذا الإعلان: ";
+"There is no whatsapp for this ad" = "لا يوجد واتساب لهذا الاعلان";
+"There is no number for this ad" = "لا يوجذ هاتف لهذا الرقم";
 
 //FollowUpAd
 "Views" = "مشاهدة";

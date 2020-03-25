@@ -400,31 +400,31 @@ class AdvertiseNowVC: UIViewController {
                     } else {
                         self.performSegue(withIdentifier: "toPayVC", sender: self)
                     }
-                    self.mainImg.image = UIImage()
-                    self.images.removeAll()
-                    self.collectionView.reloadData()
-                    self.collectionView.isHidden = true
-                    self.collectionViewHight.constant = 0
-                    AdvertiseNowVC.catId = 0
-                    AdvertiseNowVC.catTitleAr = ""
-                    AdvertiseNowVC.catTitleEn = ""
-                    AdvertiseNowVC.subCatId = 0
-                    AdvertiseNowVC.subCatTitleAr = ""
-                    AdvertiseNowVC.subCatTitleEn = ""
-                    AdvertiseNowVC.subSubCatId = 0
-                    AdvertiseNowVC.subSubCatTitleAr = ""
-                    AdvertiseNowVC.subSubCatTitleEn = ""
-                    self.catListBtn.setTitle("", for: .normal)
-                    self.titleEnTextField.text = ""
-                    self.titleArTextField.text = ""
-                    self.arabicTxtView.text = ""
-                    self.englishTxtView.text = ""
-                    self.phoneTxtField.text = ""
-                    self.priceTxtField.text = ""
-                    self.allowDMBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
-                    self.allowCallsBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
-                    self.hidePhoneBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
-                    self.republishBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+//                    self.mainImg.image = UIImage()
+//                    self.images.removeAll()
+//                    self.collectionView.reloadData()
+//                    self.collectionView.isHidden = true
+//                    self.collectionViewHight.constant = 0
+//                    AdvertiseNowVC.catId = 0
+//                    AdvertiseNowVC.catTitleAr = ""
+//                    AdvertiseNowVC.catTitleEn = ""
+//                    AdvertiseNowVC.subCatId = 0
+//                    AdvertiseNowVC.subCatTitleAr = ""
+//                    AdvertiseNowVC.subCatTitleEn = ""
+//                    AdvertiseNowVC.subSubCatId = 0
+//                    AdvertiseNowVC.subSubCatTitleAr = ""
+//                    AdvertiseNowVC.subSubCatTitleEn = ""
+//                    self.catListBtn.setTitle("", for: .normal)
+//                    self.titleEnTextField.text = ""
+//                    self.titleArTextField.text = ""
+//                    self.arabicTxtView.text = ""
+//                    self.englishTxtView.text = ""
+//                    self.phoneTxtField.text = ""
+//                    self.priceTxtField.text = ""
+//                    self.allowDMBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+//                    self.allowCallsBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+//                    self.hidePhoneBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+//                    self.republishBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
                 }
             }
         } else {
@@ -447,7 +447,6 @@ extension AdvertiseNowVC: UICollectionViewDelegateFlowLayout, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCellId, for: indexPath) as? ImageCell else {return UICollectionViewCell()}
         cell.adImg.image = images[indexPath.row]
-        cell.downloadBtn.isHidden = true
         return cell
     }
     

@@ -1,12 +1,19 @@
 
-/* Class = "UILabel"; text = "Are you sure you want to pay by"; ObjectID = "C0n-Ol-2Ba"; */
-"C0n-Ol-2Ba.text" = "هل انت متأكد انك تريد ان تدفع";
+/* Class = "UIButton"; normalTitle = "Pay"; ObjectID = "2pO-0U-s7U"; */
+"2pO-0U-s7U.normalTitle" = "الدفع";
 
-/* Class = "UILabel"; text = "Online ?"; ObjectID = "Exk-8M-AD7"; */
-"Exk-8M-AD7.text" = "اونلاين؟";
+/* Class = "UILabel"; text = "Total"; ObjectID = "APA-AZ-6Xp"; */
+"APA-AZ-6Xp.text" = "اجمالي التكلفة";
 
-/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "Rlc-lK-RPP"; */
-"Rlc-lK-RPP.normalTitle" = "نعم";
+/* Class = "UILabel"; text = "Label"; ObjectID = "fOI-yO-2SJ"; */
+"fOI-yO-2SJ.text" = "المبلغ الغير مدفوع";
 
-/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "duS-I0-FGb"; */
-"duS-I0-FGb.normalTitle" = "الغاء";
+
+/* Class = "UILabel"; text = "Features Price"; ObjectID = "xk1-mM-ARF"; */
+"xk1-mM-ARF.text" = "تكلفة التمييزات";
+
+/* Class = "UILabel"; text = "Your Balance"; ObjectID = "ybZ-aq-9I0"; */
+"ybZ-aq-9I0.text" = "رصيدك";
+
+/* Class = "UILabel"; text = "Ad Price"; ObjectID = "zNk-bU-xSU"; */
+"zNk-bU-xSU.text" = "تكلفة الاعلان";

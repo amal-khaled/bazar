@@ -119,6 +119,7 @@ extension SearchResultVC: UICollectionViewDelegate,UICollectionViewDelegateFlowL
              cell.likeImg.image = UIImage(named: "likeR")
          }
         cell.btnPressed = { [weak self] in
+            if NetworkHelper.getToken() != nil {
             AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
                 if success {
                     if cell.likeImg.image == UIImage(named: "likeR") {
@@ -127,6 +128,14 @@ extension SearchResultVC: UICollectionViewDelegate,UICollectionViewDelegateFlowL
                     cell.likeImg.image = UIImage(named: "likeR")
                     }
 
+                }
+            }
+            } else {
+                let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+                self?.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 3
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
                 }
             }
         }

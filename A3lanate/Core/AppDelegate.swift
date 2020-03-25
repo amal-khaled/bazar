@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         Messaging.messaging().delegate = self
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
+        MOLH.setLanguageTo("ar")
         return true
     }
     

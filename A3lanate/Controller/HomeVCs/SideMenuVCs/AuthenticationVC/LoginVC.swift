@@ -21,6 +21,10 @@ class LoginVC: UIViewController {
     @IBOutlet weak var forgotPassBtn: UIButton!
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var passwordEyeBtn: UIButton!
+    
+    //Variable
+    var eyeClick = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +79,17 @@ class LoginVC: UIViewController {
     
     @IBAction func registerBtnPressed(_ sender: Any) {
     }
+    
+    @IBAction func passwordEyeBtnPressed(_ sender: Any) {
+        if(eyeClick == true) {
+            passwordTxtField.isSecureTextEntry = false
+        } else {
+            passwordTxtField.isSecureTextEntry = true
+        }
+
+        eyeClick = !eyeClick
+    }
+    
 }
 
 extension LoginVC: UITextFieldDelegate {
