@@ -10,12 +10,14 @@ import UIKit
 import MOLH
 import Alamofire
 import AlamofireImage
+import NVActivityIndicatorView
 
 class MainCatVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var subSubCategoryCollection: UICollectionView!
     @IBOutlet weak var subCategoryCollection: UICollectionView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let SubSubCategoryCellId = "SubSubCategoryCell"
@@ -37,6 +39,7 @@ class MainCatVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        indicator.startAnimating()
         loadData()
     }
     
@@ -70,6 +73,8 @@ class MainCatVC: UIViewController {
                         self.subCategoryCollection.reloadData()
                     }
                 }
+        indicator.stopAnimating()
+        indicator.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

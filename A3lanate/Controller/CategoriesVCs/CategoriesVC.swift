@@ -8,11 +8,13 @@
 
 import UIKit
 import MOLH
+import NVActivityIndicatorView
 
 class CategoriesVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     
     //Constants
@@ -30,6 +32,7 @@ class CategoriesVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        indicator.startAnimating()
         loadData()
         setupTableView()
     }
@@ -52,6 +55,8 @@ class CategoriesVC: UIViewController {
             if let categories = categories {
                 self.categories = categories
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

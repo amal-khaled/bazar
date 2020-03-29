@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class ChangePassVC: UIViewController {
     
@@ -17,10 +18,12 @@ class ChangePassVC: UIViewController {
     @IBOutlet weak var newPassTxtField: UITextField!
     @IBOutlet weak var confirmPassTxtField: UITextField!
     @IBOutlet weak var changeBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = true
         setupView()
     }
     

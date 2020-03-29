@@ -10,6 +10,7 @@ import UIKit
 import MOLH
 import Alamofire
 import AlamofireImage
+import NVActivityIndicatorView
 
 class MyAdsVC: UIViewController {
     
@@ -21,6 +22,7 @@ class MyAdsVC: UIViewController {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lineViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let MyAdsCellId = "MyAdsCell"
@@ -30,6 +32,7 @@ class MyAdsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         setupView()
         setubTableView()
         loadData()
@@ -50,16 +53,22 @@ class MyAdsVC: UIViewController {
             if let openedAds = openedAds {
                 self.ads = openedAds
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }
     
     @IBAction func openedBtnPressed(_ sender: Any) {
         lineViewConstraint.constant = 0
+        indicator.isHidden = false
+        indicator.startAnimating()
         AdsService.instance.getOpenedAds { (error, openedAds) in
             if let openedAds = openedAds {
                 self.ads = openedAds
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }
@@ -70,10 +79,14 @@ class MyAdsVC: UIViewController {
         } else {
             lineViewConstraint.constant = lineView.frame.width
         }
+        indicator.isHidden = false
+        indicator.startAnimating()
         AdsService.instance.getClosedAds { (error, closedAds) in
             if let closedAds = closedAds {
                 self.ads = closedAds
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }
@@ -84,10 +97,14 @@ class MyAdsVC: UIViewController {
         } else {
             lineViewConstraint.constant = lineView.frame.width * 2
         }
+        indicator.isHidden = false
+        indicator.startAnimating()
         AdsService.instance.getUnpaidAds { (error, unpaidAds) in
             if let unpaidAds = unpaidAds {
                 self.ads = unpaidAds
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

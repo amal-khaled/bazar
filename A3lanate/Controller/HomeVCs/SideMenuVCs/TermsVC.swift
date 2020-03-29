@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MOLH
+import NVActivityIndicatorView
 
 class TermsVC: UIViewController {
     
@@ -18,10 +19,12 @@ class TermsVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UIView!
     @IBOutlet weak var contentLbl: UILabel!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         setupView()
         loadData()
     }
@@ -49,6 +52,8 @@ class TermsVC: UIViewController {
                         self.contentLbl.text = text
                     }
                 }
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

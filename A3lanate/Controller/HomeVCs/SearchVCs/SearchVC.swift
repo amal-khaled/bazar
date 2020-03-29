@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class SearchVC: UIViewController {
     
@@ -22,6 +23,7 @@ class SearchVC: UIViewController {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var categoryBtn: UIButton!
     @IBOutlet weak var cityBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Variables
     var sTitle: String = " "
@@ -38,6 +40,7 @@ class SearchVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.indicator.isHidden = true
         categoryBtn.setTitle(SearchVC.categoryName, for: .normal)
         cityBtn.setTitle(AdvertiseNowVC.selectedCountry, for: .normal)
     }

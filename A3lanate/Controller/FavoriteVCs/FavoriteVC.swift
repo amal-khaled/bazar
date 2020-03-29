@@ -10,12 +10,14 @@ import UIKit
 import MOLH
 import Alamofire
 import AlamofireImage
+import NVActivityIndicatorView
 
 class FavoriteVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var itemsNoLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let FavoriteCellId = "FavoriteCell"
@@ -40,6 +42,7 @@ class FavoriteVC: UIViewController {
                 }
             }
         } else {
+            indicator.startAnimating()
             setupView()
             setupTableView()
             loadData()
@@ -67,6 +70,8 @@ class FavoriteVC: UIViewController {
                 self.itemsNoLbl.text = "( \(favAds.count)" + " " + "Items".localized + " )"
                 self.tableView.reloadData()
                 self.badgeSetup()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

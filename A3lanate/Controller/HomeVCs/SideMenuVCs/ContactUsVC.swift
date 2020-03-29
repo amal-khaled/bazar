@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class ContactUsVC: UIViewController {
     
@@ -28,9 +29,11 @@ class ContactUsVC: UIViewController {
     @IBOutlet weak var twitterBtn: UIButton!
     @IBOutlet weak var instagramBtn: UIButton!
     @IBOutlet weak var facebookBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = true
         setupView()
     }
     
@@ -61,12 +64,14 @@ class ContactUsVC: UIViewController {
     }
     
     @IBAction func sendBtnPressed(_ sender: Any) {
+
         if NetworkHelper.getToken() != nil {
             guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
             guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {return}
             guard let subject = subjectTxtField.text, subjectTxtField.text != "" else {return}
             guard let message = messageTxtView.text, messageTxtView.text != "" else {return}
-            
+            self.indicator.isHidden = false
+            self.indicator.startAnimating()
             let parameters = [
                "Email" : email,
                "PhoneNumber": phone,
@@ -89,6 +94,8 @@ class ContactUsVC: UIViewController {
                             self.phoneTxtField.text = ""
                             self.subjectTxtField.text = ""
                             self.messageTxtView.text = ""
+                            self.indicator.stopAnimating()
+                            self.indicator.isHidden = true
                         }
                     }
 

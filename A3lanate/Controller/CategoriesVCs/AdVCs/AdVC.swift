@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import MOLH
+import NVActivityIndicatorView
 
 class AdVC: UIViewController {
     
@@ -34,6 +35,7 @@ class AdVC: UIViewController {
     @IBOutlet weak var featuredAdLbl: UILabel!
     @IBOutlet weak var mainImgBtn: UIButton!
     @IBOutlet weak var reportBtn: LocalizedButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     
     //Constants
@@ -50,6 +52,7 @@ class AdVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         setupCollectionView()
         setupView()
         loadData()
@@ -130,6 +133,8 @@ class AdVC: UIViewController {
                 self.similarAdsCollection.reloadData()
             }
         }
+        indicator.stopAnimating()
+        indicator.isHidden = true
     }
     
     @IBAction func whatsAppBtnPressed(_ sender: Any) {

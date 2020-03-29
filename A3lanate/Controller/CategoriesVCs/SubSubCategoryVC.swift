@@ -10,12 +10,14 @@ import UIKit
 import MOLH
 import AlamofireImage
 import Alamofire
+import NVActivityIndicatorView
 
 
 class SubSubCategoryVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let MainAdsCelId = "MainAdsCell"
@@ -32,6 +34,7 @@ class SubSubCategoryVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.indicator.startAnimating()
         loadData()
     }
     
@@ -52,6 +55,8 @@ class SubSubCategoryVC: UIViewController {
                 self.ads = ads
                 self.collectionView.reloadData()
             }
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
         }
     }
     

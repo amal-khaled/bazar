@@ -11,11 +11,13 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 import MOLH
+import NVActivityIndicatorView
 
 class SearchResultVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Variables
     var ads = [Ad]()
@@ -37,8 +39,8 @@ class SearchResultVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        indicator.startAnimating()
         loadData()
-        
     }
     
     func setupCollectionView() {
@@ -78,6 +80,8 @@ class SearchResultVC: UIViewController {
                 }
                 self.ads = all
                 self.collectionView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

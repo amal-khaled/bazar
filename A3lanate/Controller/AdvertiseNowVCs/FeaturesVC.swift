@@ -11,12 +11,14 @@ import MOLH
 import Alamofire
 import AlamofireImage
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class FeaturesVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let PayCellId = "PayCell"
@@ -34,6 +36,7 @@ class FeaturesVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        indicator.startAnimating()
         loadData()
     }
     
@@ -52,6 +55,8 @@ class FeaturesVC: UIViewController {
             if let features = features {
                 self.features = features
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }
@@ -76,10 +81,14 @@ class FeaturesVC: UIViewController {
     }
     
     @IBAction func nextBtnPressed(_ sender: Any) {
+        indicator.isHidden = false
+        indicator.startAnimating()
         addFeatures { (success) in
             if success {
             }
         }
+        indicator.stopAnimating()
+        indicator.isHidden = true
         let payActionSheet = PayActionSheet()
         payActionSheet.adId = self.adId
         payActionSheet.modalPresentationStyle = .custom

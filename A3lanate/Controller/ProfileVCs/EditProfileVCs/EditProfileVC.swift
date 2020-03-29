@@ -10,6 +10,7 @@ import UIKit
 import AlamofireImage
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class EditProfileVC: UIViewController {
     
@@ -24,6 +25,7 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var addressTxtField: UITextField!
     @IBOutlet weak var phoneTxtField: UITextField!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Variables
     var pickerImage: UIImage? {
@@ -41,6 +43,7 @@ class EditProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        indicator.startAnimating()
         loadProfile()
     }
     
@@ -87,6 +90,8 @@ class EditProfileVC: UIViewController {
                         }
                     }
                 }
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }
@@ -137,14 +142,16 @@ class EditProfileVC: UIViewController {
         guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
         guard let address = addressTxtField.text, addressTxtField.text != "" else {return}
         guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {return}
-        
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
         AuthService.instance.editUserInfo(name: name, address: address, phoneNumber: phone, email: email) { (success) in
             if success {
                 self.nameTxtField.text = name
                 self.addressTxtField.text = address
                 self.phoneTxtField.text = phone
                 self.emailTxtField.text = email
-                
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
                 let alert = UIAlertController(title: "", message: "Your profile info updated successfully".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
                 let when = DispatchTime.now() + 3

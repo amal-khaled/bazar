@@ -12,6 +12,7 @@ import SideMenuSwift
 import MOLH
 import Alamofire
 import AlamofireImage
+import NVActivityIndicatorView
 
 class HomeVC: UIViewController {
     
@@ -28,6 +29,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var featuredCollectionHight: NSLayoutConstraint!
     @IBOutlet weak var recentCollectionHight: NSLayoutConstraint!
     @IBOutlet weak var mostViewdCollectionHight: NSLayoutConstraint!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     
     //Constants
@@ -54,6 +56,7 @@ class HomeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        indicator.startAnimating()
         loadData()
     }
     
@@ -132,8 +135,11 @@ class HomeVC: UIViewController {
                 } else {
                 let hight = (self.latestArr.count / 2) * 185 + 50
                 self.recentCollectionHight.constant = CGFloat(hight)
+
             }
             }
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
         }
     }
     

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class CountryVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let CountryCellId = "CountryCell"
@@ -20,6 +22,7 @@ class CountryVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = true
         setupView()
         setupTableView()
     }

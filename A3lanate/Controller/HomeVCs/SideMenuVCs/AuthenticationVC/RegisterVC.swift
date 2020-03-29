@@ -8,6 +8,7 @@
 
 import UIKit
 import MOLH
+import NVActivityIndicatorView
 
 class RegisterVC: UIViewController {
     
@@ -26,6 +27,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var passwordEyeBtn: UIButton!
     @IBOutlet weak var confirmPassEyeBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Variable
     var passeyeClick = true
@@ -33,6 +35,7 @@ class RegisterVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = true
         setupView()
     }
     
@@ -92,7 +95,8 @@ class RegisterVC: UIViewController {
         guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
         guard let password = passTxtField.text, passTxtField.text != "" else {return}
         guard let confirmpassword = confirmPassTxtField.text, confirmPassTxtField.text != "" else {return}
-
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
         AuthService.instance.registerUser(email: email, password: password, confirmpassword: confirmpassword, PhoneNumber: phoneNumber) { (success) in
             if success {
                 self.phoneBtn.isHidden = false
@@ -106,7 +110,8 @@ class RegisterVC: UIViewController {
                                 alert.dismiss(animated: true, completion: nil)
                             }
                         }
-
+                        self.indicator.stopAnimating()
+                        self.indicator.isHidden = true
                     }
                 }
             }

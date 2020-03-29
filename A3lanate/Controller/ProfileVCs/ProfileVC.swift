@@ -10,6 +10,7 @@ import UIKit
 import AlamofireImage
 import Alamofire
 import SwiftyJSON
+import NVActivityIndicatorView
 
 class ProfileVC: UIViewController {
     
@@ -27,6 +28,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var FavoriteBtn: UIButton!
     @IBOutlet weak var favoriteImg: LocalizedImage!
     @IBOutlet weak var notifCountLbl: UILabel!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
 
     override func viewDidLoad() {
@@ -46,6 +48,7 @@ class ProfileVC: UIViewController {
                 }
             }
         } else {
+            indicator.startAnimating()
             loadProfile()
             setupView()
         }
@@ -83,6 +86,8 @@ class ProfileVC: UIViewController {
                             DispatchQueue.main.async {
                                 self.profileImg.image = image
                                 self.profileImg.contentMode = .scaleAspectFill
+                                self.indicator.stopAnimating()
+                                self.indicator.isHidden = true
                             }
                         }
                     }

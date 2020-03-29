@@ -8,6 +8,7 @@
 
 import UIKit
 import MOLH
+import NVActivityIndicatorView
 
 class LoginVC: UIViewController {
     
@@ -22,12 +23,14 @@ class LoginVC: UIViewController {
     @IBOutlet weak var registerView: UIView!
     @IBOutlet weak var registerBtn: UIButton!
     @IBOutlet weak var passwordEyeBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Variable
     var eyeClick = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = true
         setupView()
     }
     
@@ -59,10 +62,13 @@ class LoginVC: UIViewController {
     @IBAction func loginBtnPressed(_ sender: Any) {
         guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
         guard let pass = passwordTxtField.text, passwordTxtField.text != "" else {return}
-        
+        indicator.isHidden = false
+        indicator.startAnimating()
         AuthService.instance.loginUser(username: email, password: pass) { (success) in
             if success {
                 if NetworkHelper.getToken() == nil {
+                    self.indicator.stopAnimating()
+                    self.indicator.isHidden = true
                     let alert = UIAlertController(title: "", message: "Please make sure that the email and the password is correct".localized, preferredStyle: .alert)
                     self.present(alert, animated: true, completion: nil)
                     let when = DispatchTime.now() + 3
@@ -70,6 +76,8 @@ class LoginVC: UIViewController {
                         alert.dismiss(animated: true, completion: nil)
                     }
                 }
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

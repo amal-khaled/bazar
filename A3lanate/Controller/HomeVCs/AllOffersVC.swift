@@ -10,11 +10,13 @@ import UIKit
 import AlamofireImage
 import Alamofire
 import MOLH
+import NVActivityIndicatorView
 
 class AllOffersVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Variables
     var allAdsArr = [Ad]()
@@ -31,6 +33,7 @@ class AllOffersVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        indicator.startAnimating()
         loadData()
     }
     
@@ -45,6 +48,8 @@ class AllOffersVC: UIViewController {
             if let allAds = allAds {
                 self.allAdsArr = allAds
                 self.collectionView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

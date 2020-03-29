@@ -8,12 +8,14 @@
 
 import UIKit
 import MOLH
+import NVActivityIndicatorView
 
 class NotificationVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let NotificationCellId = "NotificationCell"
@@ -24,6 +26,7 @@ class NotificationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.startAnimating()
         setupView()
         setupTableView()
     }
@@ -50,6 +53,8 @@ class NotificationVC: UIViewController {
                 self.notifications = notifications
                 print(notifications)
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
     }

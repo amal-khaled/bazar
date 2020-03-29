@@ -13,7 +13,7 @@ import MOLH
 import SwiftyJSON
 import OpalImagePicker
 import Photos
-
+import NVActivityIndicatorView
 
 class AdvertiseNowVC: UIViewController {
     
@@ -45,6 +45,7 @@ class AdvertiseNowVC: UIViewController {
     @IBOutlet weak var catListBtn: UIButton!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var countryListBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     
     //Constants
@@ -80,6 +81,7 @@ class AdvertiseNowVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        indicator.isHidden = true
         setupView()
         setupCollectionView()
     }
@@ -387,17 +389,23 @@ class AdvertiseNowVC: UIViewController {
     }
     
     @IBAction func nextBtnPressed(_ sender: Any) {
+        indicator.isHidden = false
+        indicator.startAnimating()
         if NetworkHelper.getToken() != nil {
             UPLOD { (success) in
                 if success {
                     if AdvertiseNowVC.catId == 14 {
                         let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
+                        self.indicator.stopAnimating()
+                        self.indicator.isHidden = true
                         self.present(alert, animated: true, completion: nil)
                         let when = DispatchTime.now() + 3
                         DispatchQueue.main.asyncAfter(deadline: when){
                             alert.dismiss(animated: true, completion: nil)
                         }
                     } else {
+                        self.indicator.stopAnimating()
+                        self.indicator.isHidden = true
                         self.performSegue(withIdentifier: "toPayVC", sender: self)
                     }
 //                    self.mainImg.image = UIImage()
@@ -428,6 +436,8 @@ class AdvertiseNowVC: UIViewController {
                 }
             }
         } else {
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
             performSegue(withIdentifier: "toLoginVC", sender: self)
         }
     }

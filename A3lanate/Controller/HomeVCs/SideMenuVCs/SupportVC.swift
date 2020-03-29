@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import MOLH
+import NVActivityIndicatorView
 
 class SupportVC: UIViewController {
     
@@ -22,6 +23,7 @@ class SupportVC: UIViewController {
     @IBOutlet weak var QATxtField: UITextField!
     @IBOutlet weak var QETxtField: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
     let QuestionCellId = "QuestionCell"
@@ -31,6 +33,7 @@ class SupportVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.indicator.startAnimating()
         setupView()
         setupTableView()
         loadData()
@@ -67,6 +70,8 @@ class SupportVC: UIViewController {
             if let questions = questions {
                 self.questions = questions
                 self.tableView.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
 //                self.tableView.rowHeight = UITableView.automaticDimension;
 //                self.tableView.estimatedRowHeight = 200;
             }
@@ -81,6 +86,8 @@ class SupportVC: UIViewController {
         if NetworkHelper.getToken() != nil {
             if QATxtField.text == "" && QETxtField.text == "" {return} else {
                 guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
+                self.indicator.isHidden = false
+                self.indicator.startAnimating()
                 let QA = QATxtField.text
                 let QE = QETxtField.text
                 
@@ -120,6 +127,8 @@ class SupportVC: UIViewController {
                                 self.emailTxtField.text = ""
                                 self.QATxtField.text = ""
                                 self.QETxtField.text = ""
+                                self.indicator.stopAnimating()
+                                self.indicator.isHidden = true
                             }
                         }
                         
