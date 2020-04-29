@@ -7,11 +7,11 @@ target 'A3lanate' do
 
   # Pods for A3lanate
 pod 'MOLH'
-pod 'ImageSlideshow', '~> 1.8.1'
 pod 'SideMenuSwift'
 pod 'Alamofire'
 pod 'AlamofireImage'
 pod 'SwiftyJSON'
+pod 'ImageSlideshow', '~> 1.8.1'
 pod "ImageSlideshow/Alamofire"
 pod 'iOSDropDown'
 pod 'NVActivityIndicatorView'

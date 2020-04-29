@@ -14,7 +14,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let LOGGED_IN_KEY = "loggedIn"
 
 //URL Constants
-let BASE_URL = "http://a3lanate.com/"
+let BASE_URL = "https://a3lanate.com/"
 let REGISTER_URL = "\(BASE_URL)api/Account/Register"
 let LOGIN_URL = "\(BASE_URL)/Token"
 let PROFILE_URL = "\(BASE_URL)api/Account/GetUserProfile"

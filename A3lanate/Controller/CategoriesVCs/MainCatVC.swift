@@ -169,10 +169,10 @@ extension MainCatVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
             return CGSize(width: 170, height: 60)
         }
         if collectionView.tag == 2 {
-            return CGSize(width: 185, height: 200)
+            return CGSize(width: 180, height: 220)
         }
         else {
-            return CGSize(width: 185, height: 200)
+            return CGSize(width: 180, height: 220)
         }
     }
 

@@ -3310,7 +3310,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ad-7w-ujc">
-                                <rect key="frame" x="192.66666666666666" y="654" width="29" height="29"/>
+                                <rect key="frame" x="178" y="654" width="58" height="58"/>
                                 <state key="normal" image="close">
                                     <color key="titleColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -5449,7 +5449,7 @@
         <segue reference="RPk-10-C1Q"/>
         <segue reference="hgD-UT-LAS"/>
         <segue reference="O7L-LV-ctW"/>
-        <segue reference="v3Z-lW-fSw"/>
+        <segue reference="dfD-78-enH"/>
         <segue reference="Dta-Dd-sjG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

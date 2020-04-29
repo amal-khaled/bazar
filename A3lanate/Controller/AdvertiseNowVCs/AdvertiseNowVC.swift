@@ -394,7 +394,7 @@ class AdvertiseNowVC: UIViewController {
         if NetworkHelper.getToken() != nil {
             UPLOD { (success) in
                 if success {
-                    if AdvertiseNowVC.catId == 14 {
+                    if AdvertiseNowVC.catId == 1 {
                         let alert = UIAlertController(title: "", message: "Your Ad got uploaded successfully".localized, preferredStyle: .alert)
                         self.indicator.stopAnimating()
                         self.indicator.isHidden = true

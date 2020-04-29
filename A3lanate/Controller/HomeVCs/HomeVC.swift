@@ -95,6 +95,9 @@ class HomeVC: UIViewController {
     }
     
     func loadData() {
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let width = Int(screenWidth) / 180
         HomeService.instance.getHome { (error, sliderAds, categories, topAds, mostViewedAds, latestAds) in
             if let sliderAds = sliderAds {
                 self.sliderAds = sliderAds
@@ -107,36 +110,47 @@ class HomeVC: UIViewController {
             if let topAds = topAds {
                 self.topArr = topAds
                 self.featuredCollection.reloadData()
-                if UIDevice.current.userInterfaceIdiom == .pad {
-                    let hight = (self.topArr.count / 4) * 185
-                    self.featuredCollectionHight.constant = CGFloat(hight)
-                } else {
-                    let hight = (self.topArr.count / 2) * 185 + 50
-                    self.featuredCollectionHight.constant = CGFloat(hight)
-                }
+//                let screenSize = UIScreen.main.bounds
+//                let screenWidth = screenSize.width
+//                let width = Int(screenWidth) / 180
+                let hight = (self.topArr.count / width) * 230
+                self.featuredCollectionHight.constant = CGFloat(hight)
+//                if UIDevice.current.userInterfaceIdiom == .pad {
+//                    let hight = (self.topArr.count / width) * 230
+//                    self.featuredCollectionHight.constant = CGFloat(hight)
+//                } else {
+//                    let hight = (self.topArr.count / width) * 230
+//                    self.featuredCollectionHight.constant = CGFloat(hight)
+//                }
             }
             if let mostAds = mostViewedAds {
                 self.mostViewdArr = mostAds
                 self.mostViewdCollection.reloadData()
-                if UIDevice.current.userInterfaceIdiom == .pad {
-                    let hight = (self.mostViewdArr.count / 4) * 185
-                    self.mostViewdCollectionHight.constant = CGFloat(hight)
-                } else {
-                let hight = (self.mostViewdArr.count / 2) * 185 + 50
+//                let screenSize = UIScreen.main.bounds
+//                let screenWidth = screenSize.width
+//                let width = Int(screenWidth) / 180
+                let hight = (self.mostViewdArr.count / width) * 230
                 self.mostViewdCollectionHight.constant = CGFloat(hight)
-                }
+//                if UIDevice.current.userInterfaceIdiom == .pad {
+//                    let hight = (self.mostViewdArr.count / 4) * 185
+//                    self.mostViewdCollectionHight.constant = CGFloat(hight)
+//                } else {
+//                let hight = (self.mostViewdArr.count / 2) * 185 + 70
+//                self.mostViewdCollectionHight.constant = CGFloat(hight)
+//                }
             }
             if let latestAds = latestAds {
                 self.latestArr = latestAds
                 self.recentCollection.reloadData()
-                if UIDevice.current.userInterfaceIdiom == .pad {
-                    let hight = (self.latestArr.count / 4) * 185
-                    self.recentCollectionHight.constant = CGFloat(hight)
-                } else {
-                let hight = (self.latestArr.count / 2) * 185 + 50
+                let hight = (self.latestArr.count / width) * 230
                 self.recentCollectionHight.constant = CGFloat(hight)
-
-            }
+//                if UIDevice.current.userInterfaceIdiom == .pad {
+//                    let hight = (self.latestArr.count / 4) * 185
+//                    self.recentCollectionHight.constant = CGFloat(hight)
+//                } else {
+//                let hight = (self.latestArr.count / 2) * 185 + 70
+//                self.recentCollectionHight.constant = CGFloat(hight)
+//            }
             }
             self.indicator.stopAnimating()
             self.indicator.isHidden = true
@@ -379,16 +393,16 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             return CGSize(width: 90, height: 90)
         }
         if collectionView.tag == 2 {
-            return CGSize(width: 185, height: 200)
+            return CGSize(width: 180, height: 220)
         }
         if collectionView.tag == 3 {
-            return CGSize(width: 185, height: 200)
+            return CGSize(width: 180, height: 220)
         }
         if collectionView.tag == 4 {
-            return CGSize(width: 185, height: 200)
+            return CGSize(width: 180, height: 220)
         }
         else {
-            return CGSize(width: 185, height: 200)
+            return CGSize(width: 180, height: 220)
         }
     }
 
