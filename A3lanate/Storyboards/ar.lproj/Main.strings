@@ -114,6 +114,12 @@
 
 //BalanceVC
 "qcU-7N-FRA.title" = "الرصيد";
+"z9t-8M-qzB.text" = "الرصيد المجاني :";
+"Chm-qu-m9N.text" = "KWD";
+"r6X-mV-PFA.text" = "رصيدك :";
+"lQk-tA-555.text" = "الرصيد المجاني مخصص للاعلانات دون تمييز";
+"QmI-lC-o2x.text" = "KWD";
+
 
 //PaymentVC
 "4K7-IA-xmV.title" = "الدفع";
@@ -177,5 +183,3 @@
 "qbo-g7-uE0.text" = "السؤال بالعربي";
 "RY6-M6-0Yf.text" = "السؤال بالانجليزي";
 "6tA-Fe-ZLq.normalTitle" = "ارسل";
-
-

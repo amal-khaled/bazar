@@ -17,6 +17,8 @@ class BuyPackageVC: UIViewController {
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var creditLbl: UILabel!
+    @IBOutlet weak var freeCreditLbl: UILabel!
     
     //Constants
     let PackageCellId = "PackageCell"
@@ -48,6 +50,20 @@ class BuyPackageVC: UIViewController {
             if let packages = packages {
                 self.packages = packages
                 self.tableView.reloadData()
+            }
+        }
+        Alamofire.request(PROFILE_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_AUTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                if let userBalance = json["UserBalance"].double {
+                    self.creditLbl.text = "\(userBalance)"
+                }
+                if let freePackageBalance = json["FreePackageBalance"].double {
+                    self.freeCreditLbl.text = "\(freePackageBalance)"
+                }
             }
         }
     }

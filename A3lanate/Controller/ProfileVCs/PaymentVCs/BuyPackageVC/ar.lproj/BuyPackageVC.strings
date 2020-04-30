@@ -1,3 +1,18 @@
 
+/* Class = "UILabel"; text = "Free Credit :"; ObjectID = "7Dm-eC-7K7"; */
+"7Dm-eC-7K7.text" = "الرصيد المجاني :";
+
+/* Class = "UILabel"; text = "KWD"; ObjectID = "H7r-bt-oje"; */
+"H7r-bt-oje.text" = "KWD";
+
 /* Class = "UILabel"; text = "Buy Package"; ObjectID = "Q6e-kR-AeL"; */
 "Q6e-kR-AeL.text" = "زيادة الرصيد";
+
+/* Class = "UILabel"; text = "Your credit :"; ObjectID = "b7c-QB-fAO"; */
+"b7c-QB-fAO.text" = "رصيدك :";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bxF-f5-rHV"; */
+"bxF-f5-rHV.text" = "الرصيد المجاني مخصص للاعلانات دون تمييز";
+
+/* Class = "UILabel"; text = "KWD"; ObjectID = "wEJ-xq-geD"; */
+"wEJ-xq-geD.text" = "KWD";

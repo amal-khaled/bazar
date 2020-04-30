@@ -29,7 +29,8 @@ class MyAdsVC: UIViewController {
     
     //Variables
     var ads = [Ad]()
-    
+    var selectedAdId: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator.startAnimating()
@@ -56,6 +57,13 @@ class MyAdsVC: UIViewController {
                 self.indicator.stopAnimating()
                 self.indicator.isHidden = true
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAdVC" {
+            let destVC = segue.destination as! AdVC
+            destVC.selectedAdId = self.selectedAdId
         }
     }
     
@@ -135,5 +143,10 @@ extension MyAdsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 201
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedAdId = ads[indexPath.row].id
+        performSegue(withIdentifier: "toAdVC", sender: self)
     }
 }

@@ -39,13 +39,23 @@
                                     <constraint firstAttribute="width" constant="50" id="Y34-fp-qhM"/>
                                 </constraints>
                             </imageView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06e-jq-d5m">
+                                <rect key="frame" x="0.0" y="59" width="374" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="B3w-9a-djy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="8rc-J9-Vjf" secondAttribute="trailing" constant="20" id="2E1-3N-Kh4"/>
                             <constraint firstItem="H4I-eC-xaN" firstAttribute="centerY" secondItem="qVa-n0-fwo" secondAttribute="centerY" id="AkD-Z3-rcX"/>
+                            <constraint firstAttribute="trailing" secondItem="06e-jq-d5m" secondAttribute="trailing" id="Lqm-Kg-fyG"/>
                             <constraint firstItem="H4I-eC-xaN" firstAttribute="leading" secondItem="qVa-n0-fwo" secondAttribute="leading" constant="20" id="OZA-li-6QP"/>
+                            <constraint firstAttribute="bottom" secondItem="06e-jq-d5m" secondAttribute="bottom" id="Wa8-b7-c5r"/>
                             <constraint firstItem="Xl1-EM-6qg" firstAttribute="centerY" secondItem="qVa-n0-fwo" secondAttribute="centerY" id="cwR-n1-8as"/>
+                            <constraint firstItem="06e-jq-d5m" firstAttribute="leading" secondItem="qVa-n0-fwo" secondAttribute="leading" id="fqR-ib-nT9"/>
                             <constraint firstItem="8rc-J9-Vjf" firstAttribute="centerY" secondItem="qVa-n0-fwo" secondAttribute="centerY" id="q2y-bO-oxo"/>
                             <constraint firstItem="Xl1-EM-6qg" firstAttribute="leading" secondItem="H4I-eC-xaN" secondAttribute="trailing" constant="20" id="wCU-IF-vRY"/>
                         </constraints>
@@ -64,7 +74,7 @@
                 <outlet property="priceLbl" destination="H4I-eC-xaN" id="BtW-WN-rsw"/>
                 <outlet property="titleLbl" destination="Xl1-EM-6qg" id="XMQ-wf-ufv"/>
             </connections>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </tableViewCell>
     </objects>
     <resources>

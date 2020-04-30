@@ -212,6 +212,7 @@
 		0B1F78B023E9E526006BDFBA /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		0B1F78B523EA220F006BDFBA /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		0B1F78B623EA220F006BDFBA /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		0B31166B245AF10F00D5E3C7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BuyPackageVC.strings; sourceTree = "<group>"; };
 		0B33E55B241EAC2800A2E695 /* SearchResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultVC.swift; sourceTree = "<group>"; };
 		0B33E55E241EB52400A2E695 /* SearchCategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCategoryList.swift; sourceTree = "<group>"; };
 		0B33E55F241EB52400A2E695 /* SearchCategoryList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCategoryList.xib; sourceTree = "<group>"; };
@@ -244,7 +245,6 @@
 		0BFD7585240A912A00800340 /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
 		0BFD7589240AA11100800340 /* BuyPackageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyPackageVC.swift; sourceTree = "<group>"; };
 		0BFD758E240AA6D400800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BuyPackageVC.xib; sourceTree = "<group>"; };
-		0BFD7591240AA6D800800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/BuyPackageVC.strings; sourceTree = "<group>"; };
 		0BFD7593240AC73400800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PayCell.xib; sourceTree = "<group>"; };
 		0BFD7596240AC73900800340 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/PayCell.strings; sourceTree = "<group>"; };
 		0BFD7598240AC76B00800340 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PayActionSheet.xib; sourceTree = "<group>"; };
@@ -1179,7 +1179,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0BFD758E240AA6D400800340 /* Base */,
-				0BFD7591240AA6D800800340 /* ar */,
+				0B31166B245AF10F00D5E3C7 /* ar */,
 			);
 			name = BuyPackageVC.xib;
 			sourceTree = "<group>";
