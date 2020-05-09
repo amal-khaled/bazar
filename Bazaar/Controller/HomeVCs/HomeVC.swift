@@ -271,7 +271,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 cell.typeLbl.text = topArr[indexPath.row].titleEn
             }
             cell.priceLbl.text = "Featured Ad".localized
-            cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            cell.priceLbl.textColor = #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1)
             cell.currencyLbl.text = ""
             if topArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
@@ -313,7 +313,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 cell.typeLbl.text = latestArr[indexPath.row].titleEn
             }
             cell.priceLbl.text = "\(latestArr[indexPath.row].price)" + "KWD".localized
-            cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            cell.priceLbl.textColor = #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1)
             cell.currencyLbl.text = ""
             if latestArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")
@@ -354,7 +354,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 cell.typeLbl.text = mostViewdArr[indexPath.row].titleEn
             }
             cell.priceLbl.text = "\(mostViewdArr[indexPath.row].price)" + "KWD".localized
-            cell.priceLbl.textColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            cell.priceLbl.textColor = #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1)
             cell.currencyLbl.text = ""
 
             if mostViewdArr[indexPath.row].isLoved == true {

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayActionSheet" customModule="A3lanate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayActionSheet" customModule="Bazaar" customModuleProvider="target">
             <connections>
                 <outlet property="actionSheetView" destination="bFF-ly-UdL" id="WPF-RR-82c"/>
                 <outlet property="balanceBtn" destination="F47-Im-5vG" id="2SP-nb-Bzz"/>
@@ -33,7 +33,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syd-a2-zXC">
                             <rect key="frame" x="162.5" y="30" width="89.5" height="36"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                            <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="X54-YO-uxj">
@@ -41,7 +41,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3f-md-7yW">
                                     <rect key="frame" x="0.0" y="0.0" width="354" height="40"/>
-                                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="Zhx-mS-Lda"/>
                                     </constraints>
@@ -55,7 +55,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F47-Im-5vG">
                                     <rect key="frame" x="0.0" y="70" width="354" height="40"/>
-                                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="nAO-sC-FxQ"/>
                                     </constraints>
@@ -69,7 +69,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmw-w1-VQr">
                                     <rect key="frame" x="0.0" y="140" width="354" height="40"/>
-                                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="zbY-Mg-kmt"/>
                                     </constraints>

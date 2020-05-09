@@ -80,7 +80,7 @@ class FavoriteVC: UIViewController {
         if let tabItems = tabBarController?.tabBar.items {
             let tabItem = tabItems[3]
             tabItem.badgeValue = "\(favAds.count)"
-            tabItem.badgeColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+            tabItem.badgeColor = #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1)
         }
     }
     

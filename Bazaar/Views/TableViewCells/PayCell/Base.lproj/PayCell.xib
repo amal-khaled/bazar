@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayCell" id="KGk-i7-Jjw" customClass="PayCell" customModule="A3lanate" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayCell" id="KGk-i7-Jjw" customClass="PayCell" customModule="Bazaar" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -22,14 +22,14 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cq3-Mj-ndT">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
-                                <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ZbF-P3-CXw"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwg-Cp-YYC">
                                 <rect key="frame" x="0.0" y="89" width="414" height="1"/>
-                                <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="oET-hc-9te"/>
                                 </constraints>
@@ -63,13 +63,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcx-Yb-ynJ">
                                         <rect key="frame" x="0.0" y="0.0" width="9.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vat-Lh-kFe">
                                         <rect key="frame" x="13.5" y="0.0" width="35" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>

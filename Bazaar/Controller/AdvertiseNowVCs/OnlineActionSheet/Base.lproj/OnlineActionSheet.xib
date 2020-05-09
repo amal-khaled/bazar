@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnlineActionSheet" customModule="A3lanate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnlineActionSheet" customModule="Bazaar" customModuleProvider="target">
             <connections>
                 <outlet property="actionSheetView" destination="tEN-zV-H2l" id="1rD-j5-rof"/>
                 <outlet property="balanceLbl" destination="mwd-tz-umu" id="ef1-Tw-Sse"/>
@@ -59,7 +59,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqj-a3-Z4g">
                                             <rect key="frame" x="350" y="0.0" width="24" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -79,7 +79,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRz-RO-528">
                                             <rect key="frame" x="350" y="0.0" width="24" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -96,7 +96,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwd-tz-umu">
                                             <rect key="frame" x="350" y="0.0" width="24" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -105,7 +105,7 @@
                         </stackView>
                         <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGz-o2-xkr">
                             <rect key="frame" x="20" y="210" width="374" height="1"/>
-                            <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="QDc-Pc-ZW5"/>
                             </constraints>
@@ -125,7 +125,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee0-3w-QSg">
                                             <rect key="frame" x="350" y="0.0" width="24" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -145,7 +145,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7D-Zq-Q6o">
                                             <rect key="frame" x="350" y="0.0" width="24" height="40"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -154,7 +154,7 @@
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pO-0U-s7U">
                             <rect key="frame" x="20" y="360" width="374" height="40"/>
-                            <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="7D9-QY-sca"/>
                             </constraints>
@@ -167,7 +167,7 @@
                         </button>
                         <view alpha="0.20000000298023224" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRI-yH-svg">
                             <rect key="frame" x="20" y="321" width="374" height="1"/>
-                            <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="DUm-gm-PgS"/>
                             </constraints>

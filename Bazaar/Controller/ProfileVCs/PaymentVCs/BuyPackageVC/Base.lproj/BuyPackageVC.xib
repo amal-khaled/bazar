@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyPackageVC" customModule="A3lanate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyPackageVC" customModule="Bazaar" customModuleProvider="target">
             <connections>
                 <outlet property="closeBtn" destination="Fln-hs-z60" id="8qw-9P-TyG"/>
                 <outlet property="creditLbl" destination="nN6-AA-cFR" id="LsB-MH-tsh"/>
@@ -46,7 +46,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Fln-hs-z60" firstAttribute="centerY" secondItem="Q6e-kR-AeL" secondAttribute="centerY" id="Ema-Hv-0ae"/>
                         <constraint firstAttribute="bottom" secondItem="Q6e-kR-AeL" secondAttribute="bottom" constant="16" id="eit-WI-fV4"/>
@@ -68,19 +68,19 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credit :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="b7c-QB-fAO">
                                     <rect key="frame" x="0.0" y="0.0" width="91.5" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="textColor" red="0.018126152455806732" green="0.50386220216751099" blue="0.35684561729431152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="nN6-AA-cFR">
                                     <rect key="frame" x="97.5" y="0.0" width="34.5" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="textColor" red="0.018126152455806732" green="0.50386220216751099" blue="0.35684561729431152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="wEJ-xq-geD">
                                     <rect key="frame" x="138" y="0.0" width="38" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="textColor" red="0.018126152455806732" green="0.50386220216751099" blue="0.35684561729431152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -91,19 +91,19 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Credit :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="7Dm-eC-7K7">
                                     <rect key="frame" x="0.0" y="0.0" width="93" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="textColor" red="0.018126152455806732" green="0.50386220216751099" blue="0.35684561729431152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="gcT-mB-8dh">
                                     <rect key="frame" x="99" y="0.0" width="34.5" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="textColor" red="0.018126152455806732" green="0.50386220216751099" blue="0.35684561729431152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KWD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="H7r-bt-oje">
                                     <rect key="frame" x="139.5" y="0.0" width="38" height="19.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                    <color key="textColor" red="0.018126152455806732" green="0.50386220216751099" blue="0.35684561729431152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -111,7 +111,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The free credit is for the ads without features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="bxF-f5-rHV">
                             <rect key="frame" x="6.5" y="59" width="341.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                            <color key="textColor" red="0.018126152455806732" green="0.50386220216751099" blue="0.35684561729431152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>

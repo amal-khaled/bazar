@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubCategoryList" customModule="A3lanate" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubCategoryList" customModule="Bazaar" customModuleProvider="target">
             <connections>
                 <outlet property="subCategoryLbl" destination="6n7-Fb-AJj" id="ddL-Kv-AX4"/>
                 <outlet property="tableView" destination="MiJ-5a-CSO" id="jRd-Bc-kq2"/>
@@ -31,7 +31,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ldk-yT-aBR"/>
                         <constraint firstItem="6n7-Fb-AJj" firstAttribute="centerY" secondItem="a4w-i4-ZuJ" secondAttribute="centerY" id="MBa-U6-9n9"/>

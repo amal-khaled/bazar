@@ -41,11 +41,11 @@ class RegisterVC: UIViewController {
     
     func setupView() {
         emailView.addCornerRadius(cornerRadius: 45)
-        emailView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
+        emailView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
         confirmPassView.addCornerRadius(cornerRadius: 45)
-        confirmPassView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
-        phoneView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
-        passView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
+        confirmPassView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
+        phoneView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
+        passView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
         phoneBtn.addCornerRadius(cornerRadius: 35)
         loginView.addCornerRadius(cornerRadius: 40)
         loginView.addBorder(borderWidth: 1, borderColor: UIColor.gray.cgColor)

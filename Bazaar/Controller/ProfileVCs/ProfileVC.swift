@@ -61,7 +61,7 @@ class ProfileVC: UIViewController {
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
         self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
+        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
         profileImg.addCornerRadius(cornerRadius: 65)
         myAdsImg.addCornerRadius(cornerRadius: 35)
         balanceImg.addCornerRadius(cornerRadius: 35)

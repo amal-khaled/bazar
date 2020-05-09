@@ -55,7 +55,7 @@ class SideMenuVC: UIViewController {
     }
     
     func setupView() {
-        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1))
+        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
         profileImg.addCornerRadius(cornerRadius: 75)
         countryLbl.addCornerRadius(cornerRadius: 15)
         notificationLbl.addCornerRadius(cornerRadius: 15)
