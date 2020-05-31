@@ -5,7 +5,7 @@ target 'Bazaar' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for A3lanate
+  # Pods for Bazar
 pod 'MOLH'
 pod 'SideMenuSwift'
 pod 'Alamofire'

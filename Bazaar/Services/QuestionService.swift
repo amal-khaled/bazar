@@ -1,8 +1,8 @@
 //
 //  QuestionService.swift
-//  A3lanate
+//  Bazar
 //
-//  Created by Mahmoud Elshakoushy on 3/19/20.
+//  Created by Mahmoud Elshakoushy.
 //  Copyright © 2020 Mahmoud Elshakoushy. All rights reserved.
 //
 

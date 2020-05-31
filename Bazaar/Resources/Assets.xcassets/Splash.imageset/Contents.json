@@ -1,23 +1,23 @@
 {
   "images" : [
     {
+      "filename" : "screen-bazar.png",
       "idiom" : "universal",
-      "filename" : "Icon-256.png",
       "scale" : "1x"
     },
     {
+      "filename" : "screen-bazar-1.png",
       "idiom" : "universal",
-      "filename" : "Icon-512.png",
       "scale" : "2x"
     },
     {
+      "filename" : "screen-bazar-2.png",
       "idiom" : "universal",
-      "filename" : "Icon-1024.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

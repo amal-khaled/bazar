@@ -1,8 +1,8 @@
 //
 //  ProfileVC.swift
-//  A3lanate
+//  Bazar
 //
-//  Created by Mahmoud Elshakoushy on 1/23/20.
+//  Created by Mahmoud Elshakoushy.
 //  Copyright © 2020 Mahmoud Elshakoushy. All rights reserved.
 //
 
