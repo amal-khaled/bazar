@@ -271,7 +271,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 cell.typeLbl.text = topArr[indexPath.row].titleEn
             }
             cell.priceLbl.text = "Featured Ad".localized
-            cell.priceLbl.textColor = #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1)
+            cell.priceLbl.textColor = #colorLiteral(red: 1, green: 0.8392156863, blue: 0.03921568627, alpha: 1)
             cell.currencyLbl.text = ""
             if topArr[indexPath.row].isLoved == true {
                 cell.likeImg.image = UIImage(named: "likeR")

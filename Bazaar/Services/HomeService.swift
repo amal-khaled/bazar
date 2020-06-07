@@ -60,7 +60,7 @@ class HomeService {
                     }
                 }
                 var mostViewdAds = [Ad]()
-                if let mostViewArr = json["TopAds"].array {
+                if let mostViewArr = json["MostViewedAds"].array {
                     for item in mostViewArr {
                         guard let item = item.dictionary else {return}
                         let ad = Ad()
@@ -74,7 +74,7 @@ class HomeService {
                     }
                 }
                 var latestAds = [Ad]()
-                if let latestArr = json["TopAds"].array {
+                if let latestArr = json["LatestAds"].array {
                     for item in latestArr {
                         guard let item = item.dictionary else {return}
                         let ad = Ad()

@@ -46,21 +46,21 @@ class LanguageVC: UIViewController {
     }
     
     @IBAction func englishBtnPressed(_ sender: Any) {
-        englishBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+        englishBtn.backgroundColor = #colorLiteral(red: 1, green: 0.8392156863, blue: 0.03921568627, alpha: 1)
         englishBtn.setTitleColor(.white, for: .normal)
         arabicBtn.backgroundColor = UIColor.white
         arabicBtn.setTitleColor(.black, for: .normal)
     }
     
     @IBAction func arabicBtnPressed(_ sender: Any) {
-        arabicBtn.backgroundColor = #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1)
+        arabicBtn.backgroundColor = #colorLiteral(red: 1, green: 0.8392156863, blue: 0.03921568627, alpha: 1)
         arabicBtn.setTitleColor(.white, for: .normal)
         englishBtn.backgroundColor = UIColor.white
         englishBtn.setTitleColor(.black, for: .normal)
     }
     
     @IBAction func saveBtnPressed(_ sender: Any) {
-        if englishBtn.backgroundColor == #colorLiteral(red: 0, green: 0.5594217181, blue: 0.3978024721, alpha: 1) {
+        if englishBtn.backgroundColor == #colorLiteral(red: 1, green: 0.8392156863, blue: 0.03921568627, alpha: 1) {
             MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
             if #available(iOS 13.0, *) {
                     let delegate = UIApplication.shared.delegate as? AppDelegate

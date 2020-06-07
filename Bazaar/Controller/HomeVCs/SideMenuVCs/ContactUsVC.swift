@@ -127,8 +127,8 @@ class ContactUsVC: UIViewController {
     }
     
     @IBAction func instagramBtnPressed(_ sender: Any) {
-        let url = URL(string: "https://instagram.com/a3lanate.kw?igshid=1fgm528hsgly2")
-        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+//        let url = URL(string: "https://instagram.com/a3lanate.kw?igshid=1fgm528hsgly2")
+//        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
     }
     
     @IBAction func facebookBtnPressed(_ sender: Any) {
