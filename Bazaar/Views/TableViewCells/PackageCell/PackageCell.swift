@@ -14,7 +14,8 @@ class PackageCell: UITableViewCell {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var titleLbl: UILabel!
-
+    @IBOutlet weak var iconImg: LocalizedImage!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

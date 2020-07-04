@@ -35,8 +35,6 @@ class CategoryCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        //set your cell's state to default here
-        
         self.ads = [Ad]()
         self.subCategories = [SubCategory]()
         self.subCategoryCollectionView.reloadData()

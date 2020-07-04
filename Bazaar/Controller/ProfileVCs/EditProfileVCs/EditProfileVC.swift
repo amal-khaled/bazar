@@ -154,7 +154,7 @@ class EditProfileVC: UIViewController {
                 self.indicator.isHidden = true
                 let alert = UIAlertController(title: "", message: "Your profile info updated successfully".localized, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 3
+                let when = DispatchTime.now() + 2
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }

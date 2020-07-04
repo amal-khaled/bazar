@@ -57,7 +57,10 @@ let PACKEGES_HISTORY_URL = "\(BASE_URL)api/UserPackagesPaymentHistories"
 let PAYMENT_HISTORY_URL = "\(BASE_URL)api/UserAdsPaymentHistories"
 let ADD_PACKAGE_URL = "\(BASE_URL)api/Packages/PostUserPackage"
 let NOTIFICATION_URL = "\(BASE_URL)api/Notifications/GetMyNotifications"
-
+let PAYMENTMETHODFORAD_URL = "\(BASE_URL)api/Ads/PostPayForAdOnline"
+let EXECUTEPAYMENTMETHODFORAD_URL = "\(BASE_URL)api/Ads/PostExcutePayForAdOnline"
+let PAYMENTMETHODFORPACKAGE_URL = "\(BASE_URL)api/Packages/PostUserPackage"
+let EXECUTEPAYMENTMETHODFORPACKAGE_URL = "\(BASE_URL)api/Packages/PostExcuteUserPackage"
 
 // Headers
 let HEADER = [

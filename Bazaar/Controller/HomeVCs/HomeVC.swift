@@ -80,7 +80,7 @@ class HomeVC: UIViewController {
             alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler:{ (UIAlertAction)in
                 self.dismiss(animated: true, completion: nil)
             }))
-            
+            addActionSheetForiPad(actionSheet: alert)
             self.present(alert, animated: true, completion: {
             })
         }
@@ -290,7 +290,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 } else {
                     let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
                     self?.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 3
+                    let when = DispatchTime.now() + 2
                     DispatchQueue.main.asyncAfter(deadline: when){
                         alert.dismiss(animated: true, completion: nil)
                     }
@@ -331,7 +331,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                 } else {
                     let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
                     self?.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 3
+                    let when = DispatchTime.now() + 2
                     DispatchQueue.main.asyncAfter(deadline: when){
                         alert.dismiss(animated: true, completion: nil)
                     }
@@ -374,7 +374,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
                     } else {
                         let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
                         self?.present(alert, animated: true, completion: nil)
-                        let when = DispatchTime.now() + 3
+                        let when = DispatchTime.now() + 2
                         DispatchQueue.main.asyncAfter(deadline: when){
                             alert.dismiss(animated: true, completion: nil)
                         }

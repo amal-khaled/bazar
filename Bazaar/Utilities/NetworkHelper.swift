@@ -12,6 +12,38 @@ import SwiftyJSON
 
 class NetworkHelper: NSObject {
     
+    class func saveEmail(email: String) {
+        let def = UserDefaults.standard
+        def.setValue(email, forKey: "email")
+        def.synchronize()
+    }
+    
+    class func getEmail() -> String! {
+        let def = UserDefaults.standard
+        return def.object(forKey: "email") as? String
+    }
+    
+    class func removeEmail() {
+        let def = UserDefaults.standard
+        def.removeObject(forKey: "email")
+    }
+    
+    class func saveMessage(message: String) {
+        let def = UserDefaults.standard
+        def.setValue(message, forKey: "message")
+        def.synchronize()
+    }
+    
+    class func getMessage() -> String! {
+        let def = UserDefaults.standard
+        return def.object(forKey: "message") as? String
+    }
+    
+    class func removeMessage() {
+        let def = UserDefaults.standard
+        def.removeObject(forKey: "message")
+    }
+    
     class func saveToken(token: String) {
         let def = UserDefaults.standard
         def.setValue(token, forKey: "token")

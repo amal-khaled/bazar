@@ -22,7 +22,6 @@ class AdVC: UIViewController {
     @IBOutlet weak var whatsAppBtn: UIButton!
     @IBOutlet weak var likeBtn: UIButton!
     @IBOutlet weak var callBtn: UIButton!
-    @IBOutlet weak var locationBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var followUpBtn: UIButton!
     @IBOutlet weak var imagesCollection: UICollectionView!
@@ -36,7 +35,9 @@ class AdVC: UIViewController {
     @IBOutlet weak var mainImgBtn: UIButton!
     @IBOutlet weak var reportBtn: LocalizedButton!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
-    
+    @IBOutlet weak var adByUserViewHight: NSLayoutConstraint!
+    @IBOutlet weak var adByUserTitleHight: NSLayoutConstraint!
+    @IBOutlet weak var adByUserCollectionHight: NSLayoutConstraint!
     
     //Constants
     let ImageCellId = "ImageCell"
@@ -72,6 +73,7 @@ class AdVC: UIViewController {
     
     func setupView() {
         featuredAdLbl.isHidden = true
+        followUpBtn.isHidden = true
     }
     
     func loadData() {
@@ -106,6 +108,9 @@ class AdVC: UIViewController {
                 if ad.Featured == true {
                     self.featuredAdLbl.isHidden = false
                 }
+                if ad.CreatedByEmail == NetworkHelper.getEmail() {
+                    self.followUpBtn.isHidden = false
+                }
             }
             if let images = images {
                 self.images = images
@@ -127,6 +132,11 @@ class AdVC: UIViewController {
             if let userAds = userAds {
                 self.userAds = userAds
                 self.sameUserAdsCollection.reloadData()
+                if userAds.count == 0 {
+                    self.adByUserViewHight.constant = 0
+                    self.adByUserTitleHight.constant = 0
+                    self.adByUserCollectionHight.constant = 0
+                }
             }
             if let similarAds = similarAds {
                 self.similarAds = similarAds
@@ -141,13 +151,13 @@ class AdVC: UIViewController {
         if adPhone == "" {
             let alert = UIAlertController(title: "", message: "There is no whatsapp for this ad".localized, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 3
+            let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
                 alert.dismiss(animated: true, completion: nil)
             }
         }
         else {
-            let urlWhats = "https://wa.me/\(adPhone)"
+            let urlWhats = "https://wa.me/\("+965" + adPhone)"
             if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
                 if let whatsappURL = URL(string: urlString) {
                     if UIApplication.shared.canOpenURL(whatsappURL){
@@ -181,7 +191,7 @@ class AdVC: UIViewController {
         } else {
             let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 3
+            let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
                 alert.dismiss(animated: true, completion: nil)
             }
@@ -192,7 +202,7 @@ class AdVC: UIViewController {
         if adPhone == "" {
             let alert = UIAlertController(title: "", message: "There is no number for this ad".localized, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 3
+            let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
                 alert.dismiss(animated: true, completion: nil)
             }
@@ -202,9 +212,6 @@ class AdVC: UIViewController {
               UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
             }
         }
-    }
-    
-    @IBAction func locationBtnPressed(_ sender: Any) {
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
@@ -331,12 +338,16 @@ extension AdVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UIC
             present(imageDisplayVC, animated: true, completion: nil)
         }
         if collectionView.tag == 1 {
-            self.selectedAdId = userAds[indexPath.row].id
-            self.loadData()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AdVC") as! AdVC
+            vc.selectedAdId = userAds[indexPath.row].id
+            navigationController?.pushViewController(vc, animated: true)
         }
         if collectionView.tag == 2 {
-            self.selectedAdId = similarAds[indexPath.row].id
-            self.loadData()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AdVC") as! AdVC
+            vc.selectedAdId = similarAds[indexPath.row].id
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

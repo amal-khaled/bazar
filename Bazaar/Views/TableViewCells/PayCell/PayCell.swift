@@ -22,6 +22,7 @@ class PayCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        radioBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
     }
     
     @IBAction func radioBtnPressed(_ sender: Any) {

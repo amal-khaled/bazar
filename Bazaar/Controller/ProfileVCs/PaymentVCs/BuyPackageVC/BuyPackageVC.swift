@@ -25,7 +25,8 @@ class BuyPackageVC: UIViewController {
     
     //Variables
     var packages = [Package]()
-    
+    var packageId: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -87,33 +88,38 @@ extension BuyPackageVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var parameters = [String: Any]()
-        if MOLHLanguage.currentAppleLanguage() == "ar" {
-            parameters = [
-                "PackageId" : packages[indexPath.row].PackageId,
-               "Lang": "ar",
-               ]
-        } else {
-            parameters = [
-                "PackageId" : packages[indexPath.row].PackageId,
-               "Lang": "en",
-               ]
-        }
-        
-        Alamofire.request(PAY_PACKAGE_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseString { (response) in
-            if response.result.error == nil {
-                let value = response.result.value
-                let json = JSON(value as Any)
-                if let url = json.string {
-                    var ur: String = ""
-                    ur = url
-                    ur.removeFirst()
-                    ur.removeLast()
-                    UIApplication.shared.open(URL(string: ur.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!, options: [:], completionHandler: nil)
-                }
-            } else {
-                debugPrint(response.result.error as Any)
-            }
-        }
+        let packagePaymentMethodsVC = PackagePaymentMethodsVC()
+        packagePaymentMethodsVC.modalPresentationStyle = .custom
+        packagePaymentMethodsVC.modalTransitionStyle = .crossDissolve
+        packagePaymentMethodsVC.packageId = packages[indexPath.row].PackageId
+        self.present(packagePaymentMethodsVC, animated: true, completion: nil)
+//        var parameters = [String: Any]()
+//        if MOLHLanguage.currentAppleLanguage() == "ar" {
+//            parameters = [
+//                "PackageId" : packages[indexPath.row].PackageId,
+//               "Lang": "ar",
+//               ]
+//        } else {
+//            parameters = [
+//                "PackageId" : packages[indexPath.row].PackageId,
+//               "Lang": "en",
+//               ]
+//        }
+//
+//        Alamofire.request(PAY_PACKAGE_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseString { (response) in
+//            if response.result.error == nil {
+//                let value = response.result.value
+//                let json = JSON(value as Any)
+//                if let url = json.string {
+//                    var ur: String = ""
+//                    ur = url
+//                    ur.removeFirst()
+//                    ur.removeLast()
+//                    UIApplication.shared.open(URL(string: ur.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!, options: [:], completionHandler: nil)
+//                }
+//            } else {
+//                debugPrint(response.result.error as Any)
+//            }
+//        }
     }
 }

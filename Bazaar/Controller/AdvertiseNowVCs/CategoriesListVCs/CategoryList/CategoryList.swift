@@ -15,6 +15,7 @@ class CategoryList: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var categoriesLbl: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
     
     //Variables
     var categories = [Category]()
@@ -51,6 +52,11 @@ class CategoryList: UIViewController {
             }
         }
     }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension CategoryList: UITableViewDelegate, UITableViewDataSource {

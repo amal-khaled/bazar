@@ -137,7 +137,7 @@ extension SearchResultVC: UICollectionViewDelegate,UICollectionViewDelegateFlowL
             } else {
                 let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
                 self?.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 3
+                let when = DispatchTime.now() + 2
                 DispatchQueue.main.asyncAfter(deadline: when){
                     alert.dismiss(animated: true, completion: nil)
                 }

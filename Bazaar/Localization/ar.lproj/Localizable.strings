@@ -28,12 +28,19 @@
 "Log In" = "تسجيل الدخول";
 "Log Out" = "تسجيل الخروج";
 "Download the app from this link: " = "قم بتحميل التطبيق من خلال هذا الرابط: ";
+"Are you sure you want to sign out?" = "هل تريد الخروج؟";
+"Yes" = "نعم";
+"No" = "لا";
+"Check A3lanate Website: " = "شاهد موقع اعلاناتكم: ";
 
 //LoginVC
 "Please make sure that the email and the password is correct" = "برجاء ادخال بريد الكتروني ورقم سري صحيح";
 
 //RegisterVC
 "Please make sure that the user name and the password is correct" = "برجاء ادخال اسم مستخدم ورقم سري صحيح";
+"Please make sure you entered a correct phone number" = "برجاء التاكد من انك ادخلت رقم هاتف صحيح";
+"This number or the email is already registered" = "هذا الهاتف او البريد الالكتروني مسجل من قبل";
+"You have to agree to our terms and conditions first" = "يجب ان تقوم بالموافقة علي الشروط والاحكام اولاً";
 
 //PayActionSheet
 "Your Ad got uploaded successfully, to activate features please pay" = "لقد تم رفع اعلانك بنجاح، ولكن يجب الدفع حتي يتم تمييز اعلانك";

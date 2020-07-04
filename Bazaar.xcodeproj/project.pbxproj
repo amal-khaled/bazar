@@ -90,6 +90,12 @@
 		0B780FF423DF19E6004304DC /* LanguageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B780FF323DF19E6004304DC /* LanguageVC.swift */; };
 		0B780FFA23DF298A004304DC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B780FFC23DF298A004304DC /* Localizable.strings */; };
 		0B780FFF23DF2A06004304DC /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B780FFE23DF2A06004304DC /* StringExt.swift */; };
+		0B88B6BD24A3DF2F00A51A6B /* PaymentMethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B88B6BB24A3DF2F00A51A6B /* PaymentMethodsVC.swift */; };
+		0B88B6BE24A3DF2F00A51A6B /* PaymentMethodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B88B6BC24A3DF2F00A51A6B /* PaymentMethodsVC.xib */; };
+		0B88B6C024A3E11A00A51A6B /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B88B6BF24A3E11A00A51A6B /* PaymentMethod.swift */; };
+		0B88B6C224A3E18700A51A6B /* PaymentMethodService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B88B6C124A3E18700A51A6B /* PaymentMethodService.swift */; };
+		0B88B6C724A51DFD00A51A6B /* PackagePaymentMethodsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B88B6C524A51DFD00A51A6B /* PackagePaymentMethodsVC.swift */; };
+		0B88B6C824A51DFD00A51A6B /* PackagePaymentMethodsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B88B6C624A51DFD00A51A6B /* PackagePaymentMethodsVC.xib */; };
 		0BF4487323F03E760044B88B /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4487123F03E760044B88B /* AdCell.swift */; };
 		0BF4487423F03E760044B88B /* AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4487223F03E760044B88B /* AdCell.xib */; };
 		0BF4487623F04D840044B88B /* FollowUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4487523F04D840044B88B /* FollowUpVC.swift */; };
@@ -225,6 +231,12 @@
 		0B780FFB23DF298A004304DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B780FFD23DF298D004304DC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B780FFE23DF2A06004304DC /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		0B88B6BB24A3DF2F00A51A6B /* PaymentMethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodsVC.swift; sourceTree = "<group>"; };
+		0B88B6BC24A3DF2F00A51A6B /* PaymentMethodsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentMethodsVC.xib; sourceTree = "<group>"; };
+		0B88B6BF24A3E11A00A51A6B /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		0B88B6C124A3E18700A51A6B /* PaymentMethodService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodService.swift; sourceTree = "<group>"; };
+		0B88B6C524A51DFD00A51A6B /* PackagePaymentMethodsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackagePaymentMethodsVC.swift; sourceTree = "<group>"; };
+		0B88B6C624A51DFD00A51A6B /* PackagePaymentMethodsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackagePaymentMethodsVC.xib; sourceTree = "<group>"; };
 		0BF4487123F03E760044B88B /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
 		0BF4487223F03E760044B88B /* AdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCell.xib; sourceTree = "<group>"; };
 		0BF4487523F04D840044B88B /* FollowUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowUpVC.swift; sourceTree = "<group>"; };
@@ -333,6 +345,7 @@
 				0BFA81EB23F00B3900BC5A07 /* FeaturesVC.swift */,
 				0B02B0B32406A40800A17F02 /* CategoriesListVCs */,
 				0BFA81F723F0144800BC5A07 /* OnlineActionSheet */,
+				0B88B6BA24A3DF0600A51A6B /* PaymentMethods */,
 				0BFA81F223F0106200BC5A07 /* PayActionSheet */,
 				0B1199462426496A00932931 /* CountryListVC */,
 			);
@@ -677,6 +690,24 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		0B88B6BA24A3DF0600A51A6B /* PaymentMethods */ = {
+			isa = PBXGroup;
+			children = (
+				0B88B6BB24A3DF2F00A51A6B /* PaymentMethodsVC.swift */,
+				0B88B6BC24A3DF2F00A51A6B /* PaymentMethodsVC.xib */,
+			);
+			path = PaymentMethods;
+			sourceTree = "<group>";
+		};
+		0B88B6C424A51DE600A51A6B /* PackagePaymentMethodsVC */ = {
+			isa = PBXGroup;
+			children = (
+				0B88B6C524A51DFD00A51A6B /* PackagePaymentMethodsVC.swift */,
+				0B88B6C624A51DFD00A51A6B /* PackagePaymentMethodsVC.xib */,
+			);
+			path = PackagePaymentMethodsVC;
+			sourceTree = "<group>";
+		};
 		0BF4487023F03E5B0044B88B /* AdCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +737,7 @@
 				0BFD757C240A838A00800340 /* Package.swift */,
 				0B554DE424237F5C002BD69D /* Question.swift */,
 				0B11995A2427CCA200932931 /* NotificationN.swift */,
+				0B88B6BF24A3E11A00A51A6B /* PaymentMethod.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -730,6 +762,7 @@
 				0BFD757E240A83D800800340 /* PackagesService.swift */,
 				0B554DE6242380CF002BD69D /* QuestionService.swift */,
 				0B1199582427CC2000932931 /* NotificationService.swift */,
+				0B88B6C124A3E18700A51A6B /* PaymentMethodService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -785,6 +818,7 @@
 			isa = PBXGroup;
 			children = (
 				0BFDB5FC23EC035700695A5A /* PaymentVC.swift */,
+				0B88B6C424A51DE600A51A6B /* PackagePaymentMethodsVC */,
 				0BFD7588240AA0EE00800340 /* BuyPackageVC */,
 			);
 			path = PaymentVCs;
@@ -918,6 +952,8 @@
 			files = (
 				0BFA820023F01D5100BC5A07 /* MyAdsCell.xib in Resources */,
 				0B11ABFF23F9997600CA56D2 /* CategoryCell.xib in Resources */,
+				0B88B6BE24A3DF2F00A51A6B /* PaymentMethodsVC.xib in Resources */,
+				0B88B6C824A51DFD00A51A6B /* PackagePaymentMethodsVC.xib in Resources */,
 				0B11316323D9C93E007FDC6D /* LaunchScreen.storyboard in Resources */,
 				0B1F78AE23E9DA8B006BDFBA /* QuestionCell.xib in Resources */,
 				0B11998C242A31CD00932931 /* ImageDisplayVC.xib in Resources */,
@@ -1003,6 +1039,7 @@
 				0B18782E24040131003B7C0B /* ImageCell.swift in Sources */,
 				0B1199592427CC2000932931 /* NotificationService.swift in Sources */,
 				0B1199492426499800932931 /* CountryListVC.swift in Sources */,
+				0B88B6C224A3E18700A51A6B /* PaymentMethodService.swift in Sources */,
 				0BF4487623F04D840044B88B /* FollowUpVC.swift in Sources */,
 				0B02B0B224068CE700A17F02 /* FeaturesService.swift in Sources */,
 				0B0AA14A23ED8609003971A2 /* SubSubCategoryVC.swift in Sources */,
@@ -1048,11 +1085,14 @@
 				0B33E55C241EAC2800A2E695 /* SearchResultVC.swift in Sources */,
 				0B02B0B024068C6B00A17F02 /* Feature.swift in Sources */,
 				0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */,
+				0B88B6C724A51DFD00A51A6B /* PackagePaymentMethodsVC.swift in Sources */,
+				0B88B6BD24A3DF2F00A51A6B /* PaymentMethodsVC.swift in Sources */,
 				0B02B0C72406D9B900A17F02 /* SubSubCategoryList.swift in Sources */,
 				0B0AA15123ED8A35003971A2 /* SubCategoryVC.swift in Sources */,
 				0B780FF423DF19E6004304DC /* LanguageVC.swift in Sources */,
 				0BFDB5F923EC032000695A5A /* MyAdsVC.swift in Sources */,
 				0BFA81FA23F0147E00BC5A07 /* OnlineActionSheet.swift in Sources */,
+				0B88B6C024A3E11A00A51A6B /* PaymentMethod.swift in Sources */,
 				0BFD757F240A83D800800340 /* PackagesService.swift in Sources */,
 				0B19086623F70D220050AE73 /* HomeService.swift in Sources */,
 				0B1F78A423E70CDB006BDFBA /* RegisterVC.swift in Sources */,
@@ -1341,7 +1381,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bazaar/Bazaar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = Bazaar/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1363,7 +1403,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Bazaar/Bazaar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4W85KLPQDW;
 				INFOPLIST_FILE = Bazaar/Configurations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

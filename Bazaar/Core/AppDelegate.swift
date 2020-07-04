@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
         MOLH.setLanguageTo("ar")
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)]  , for: .selected)
         return true
     }
     

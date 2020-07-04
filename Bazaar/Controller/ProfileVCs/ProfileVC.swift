@@ -41,7 +41,7 @@ class ProfileVC: UIViewController {
         if NetworkHelper.getToken() == nil {
             let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 3
+            let when = DispatchTime.now() + 2
             DispatchQueue.main.asyncAfter(deadline: when){
                 alert.dismiss(animated: true) {
                     self.performSegue(withIdentifier: "toLoginVC", sender: self)
@@ -75,6 +75,8 @@ class ProfileVC: UIViewController {
             switch response.result {
             case .failure(let error):
                 print(error)
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             case .success(let value):
                 let json = JSON(value)
                 if let name = json["Name"].string {
@@ -86,12 +88,12 @@ class ProfileVC: UIViewController {
                             DispatchQueue.main.async {
                                 self.profileImg.image = image
                                 self.profileImg.contentMode = .scaleAspectFill
-                                self.indicator.stopAnimating()
-                                self.indicator.isHidden = true
                             }
                         }
                     }
                 }
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
         
@@ -111,7 +113,11 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func balanceBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toBalanceVC", sender: self)
+//        performSegue(withIdentifier: "toBalanceVC", sender: self)
+        let buyPackageVC = BuyPackageVC()
+        buyPackageVC.modalPresentationStyle = .custom
+        buyPackageVC.modalTransitionStyle = .crossDissolve
+        present(buyPackageVC, animated: true, completion: nil)
     }
     
     @IBAction func paymentBtnPressed(_ sender: Any) {

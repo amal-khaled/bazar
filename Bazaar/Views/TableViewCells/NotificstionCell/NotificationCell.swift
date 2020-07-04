@@ -13,9 +13,7 @@ class NotificationCell: UITableViewCell {
     //Outlets
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var actionLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
-    @IBOutlet weak var notifImg: UIImageView!
     
 
     override func awakeFromNib() {
@@ -24,7 +22,5 @@ class NotificationCell: UITableViewCell {
     }
     
     func setupView() {
-        notifImg.addCornerRadius(cornerRadius: 28)
-        actionLbl.isHidden = true
     }
 }

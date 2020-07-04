@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SubCategoryList" customModule="Bazaar" customModuleProvider="target">
             <connections>
+                <outlet property="backBtn" destination="AZR-Ja-eGr" id="Fph-iV-q4t"/>
                 <outlet property="subCategoryLbl" destination="6n7-Fb-AJj" id="ddL-Kv-AX4"/>
                 <outlet property="tableView" destination="MiJ-5a-CSO" id="jRd-Bc-kq2"/>
                 <outlet property="upperView" destination="a4w-i4-ZuJ" id="eF8-lB-0re"/>
@@ -30,12 +31,21 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZR-Ja-eGr" customClass="LocalizedButton" customModule="Bazaar" customModuleProvider="target">
+                            <rect key="frame" x="32" y="5.5" width="29" height="29"/>
+                            <state key="normal" image="backW"/>
+                            <connections>
+                                <action selector="backBtnPressed:" destination="-1" eventType="touchUpInside" id="KaL-ec-VeF"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Ldk-yT-aBR"/>
                         <constraint firstItem="6n7-Fb-AJj" firstAttribute="centerY" secondItem="a4w-i4-ZuJ" secondAttribute="centerY" id="MBa-U6-9n9"/>
                         <constraint firstItem="6n7-Fb-AJj" firstAttribute="centerX" secondItem="a4w-i4-ZuJ" secondAttribute="centerX" id="PAq-4Q-LiO"/>
+                        <constraint firstItem="AZR-Ja-eGr" firstAttribute="centerY" secondItem="a4w-i4-ZuJ" secondAttribute="centerY" id="Tma-Qq-ldW"/>
+                        <constraint firstItem="AZR-Ja-eGr" firstAttribute="leading" secondItem="a4w-i4-ZuJ" secondAttribute="leading" constant="32" id="W7a-oH-H7G"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MiJ-5a-CSO">
@@ -57,4 +67,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
         </view>
     </objects>
+    <resources>
+        <image name="backW" width="28.5" height="28.5"/>
+    </resources>
 </document>

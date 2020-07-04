@@ -15,6 +15,7 @@ class SubCategoryList: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var subCategoryLbl: UILabel!
+    @IBOutlet weak var backBtn: UIButton!
     
     //Variables
     var selectedCatId: Int = 0
@@ -63,6 +64,11 @@ class SubCategoryList: UIViewController {
             }
         }
     }
+    
+    @IBAction func backBtnPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension SubCategoryList: UITableViewDelegate, UITableViewDataSource {

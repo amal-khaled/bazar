@@ -28,11 +28,13 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var passwordEyeBtn: UIButton!
     @IBOutlet weak var confirmPassEyeBtn: UIButton!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
+    @IBOutlet weak var termsBtn: UIButton!
     
     //Variable
     var passeyeClick = true
     var confpasseyeClick = true
-
+    var termsChecked = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator.isHidden = true
@@ -58,10 +60,18 @@ class RegisterVC: UIViewController {
             emailView.layer.maskedCorners = [.layerMinXMinYCorner]
             confirmPassView.layer.maskedCorners = [.layerMinXMaxYCorner]
             loginView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+            emailTxtField.textAlignment = .right
+            phoneTxtField.textAlignment = .right
+            passTxtField.textAlignment = .right
+            confirmPassTxtField.textAlignment = .right
         } else {
             emailView.layer.maskedCorners = [.layerMaxXMinYCorner]
             confirmPassView.layer.maskedCorners = [.layerMaxXMaxYCorner]
             loginView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
+            emailTxtField.textAlignment = .left
+            phoneTxtField.textAlignment = .left
+            passTxtField.textAlignment = .left
+            confirmPassTxtField.textAlignment = .left
         }
     }
     
@@ -89,31 +99,67 @@ class RegisterVC: UIViewController {
         confpasseyeClick = !confpasseyeClick
     }
     
+    @IBAction func termsBtnPressed(_ sender: Any) {
+        if termsChecked == false {
+            self.termsChecked = true
+            self.termsBtn.setBackgroundImage(UIImage(named: "checked_rectangle"), for: .normal)
+        } else {
+            self.termsChecked = false
+            self.termsBtn.setBackgroundImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+        }
+    }
+    
+    
     @IBAction func loginBtnPressed(_ sender: Any) {
         
         guard let phoneNumber = phoneTxtField.text, phoneTxtField.text != "" else {return}
         guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
         guard let password = passTxtField.text, passTxtField.text != "" else {return}
         guard let confirmpassword = confirmPassTxtField.text, confirmPassTxtField.text != "" else {return}
-        self.indicator.isHidden = false
-        self.indicator.startAnimating()
-        AuthService.instance.registerUser(email: email, password: password, confirmpassword: confirmpassword, PhoneNumber: phoneNumber) { (success) in
-            if success {
-                self.phoneBtn.isHidden = false
-                AuthService.instance.loginUser(username: email, password: password) { (success) in
+        if self.termsChecked == true {
+            if phoneNumber.isPhoneNumber {
+                self.indicator.isHidden = false
+                self.indicator.startAnimating()
+                AuthService.instance.registerUser(email: email, password: password, confirmpassword: confirmpassword, PhoneNumber: phoneNumber) { (success) in
                     if success {
-                        if NetworkHelper.getToken() == nil {
-                            let alert = UIAlertController(title: "", message: "Please make sure that the user name and the password is correct".localized, preferredStyle: .alert)
+                        self.phoneBtn.isHidden = false
+                        if NetworkHelper.getMessage() == nil {
+                            AuthService.instance.loginUser(username: email, password: password) { (success) in
+                                if success {
+                                }
+                                self.indicator.stopAnimating()
+                                self.indicator.isHidden = true
+                            }
+                        } else {
+                            self.indicator.stopAnimating()
+                            self.indicator.isHidden = true
+                            NetworkHelper.removeMessage()
+                            let alert = UIAlertController(title: "", message: "This number or the email is already registered".localized, preferredStyle: .alert)
                             self.present(alert, animated: true, completion: nil)
-                            let when = DispatchTime.now() + 3
+                            let when = DispatchTime.now() + 2
                             DispatchQueue.main.asyncAfter(deadline: when){
                                 alert.dismiss(animated: true, completion: nil)
                             }
                         }
-                        self.indicator.stopAnimating()
-                        self.indicator.isHidden = true
+
                     }
                 }
+            } else {
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
+                let alert = UIAlertController(title: "", message: "Please make sure you entered a correct phone number".localized, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 2
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true, completion: nil)
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "", message: "You have to agree to our terms and conditions first".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
             }
         }
     }

@@ -113,8 +113,13 @@ extension FeaturesVC: UITableViewDelegate, UITableViewDataSource {
         cell.currencyLbl.text = "KWD".localized
         cell.featurePriceLbl.text = "\(features[indexPath.row].FeaturePrice)"
         cell.btnPressed = { [weak self] in
-            cell.radioBtn.setImage(UIImage(named: "checked_rectangle"), for: .normal)
-            self?.featuresIds.append(["FeatureId" : (self?.features[indexPath.row].FeatureId)!])
+            if cell.radioBtn.image(for: .normal) == UIImage(named: "unchecked_rectangle") {
+                cell.radioBtn.setImage(UIImage(named: "checked_rectangle"), for: .normal)
+                self?.featuresIds.append(["FeatureId" : (self?.features[indexPath.row].FeatureId)!])
+            } else {
+                cell.radioBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                self?.featuresIds.removeLast()
+            }
         }
 
         return cell
@@ -122,7 +127,12 @@ extension FeaturesVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! PayCell
-        cell.radioBtn.setImage(UIImage(named: "checked_rectangle"), for: .normal)
-        self.featuresIds.append(["FeatureId" : features[indexPath.row].FeatureId])
+        if cell.radioBtn.image(for: .normal) == UIImage(named: "unchecked_rectangle") {
+            cell.radioBtn.setImage(UIImage(named: "checked_rectangle"), for: .normal)
+            self.featuresIds.append(["FeatureId" : (self.features[indexPath.row].FeatureId)])
+        } else {
+            cell.radioBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+            self.featuresIds.removeLast()
+        }
     }
 }

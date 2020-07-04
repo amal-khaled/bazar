@@ -48,10 +48,14 @@ class LoginVC: UIViewController {
             emailView.layer.maskedCorners = [.layerMinXMinYCorner]
             passwordView.layer.maskedCorners = [.layerMinXMaxYCorner]
             registerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+            emailTxtField.textAlignment = .right
+            passwordTxtField.textAlignment = .right
         } else {
             emailView.layer.maskedCorners = [.layerMaxXMinYCorner]
             passwordView.layer.maskedCorners = [.layerMaxXMaxYCorner]
             registerView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
+            emailTxtField.textAlignment = .left
+            passwordTxtField.textAlignment = .left
         }
     }
     
@@ -71,7 +75,7 @@ class LoginVC: UIViewController {
                     self.indicator.isHidden = true
                     let alert = UIAlertController(title: "", message: "Please make sure that the email and the password is correct".localized, preferredStyle: .alert)
                     self.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 3
+                    let when = DispatchTime.now() + 2
                     DispatchQueue.main.asyncAfter(deadline: when){
                         alert.dismiss(animated: true, completion: nil)
                     }

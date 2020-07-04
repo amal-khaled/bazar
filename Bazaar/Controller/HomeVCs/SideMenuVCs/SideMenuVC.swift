@@ -141,8 +141,18 @@ class SideMenuVC: UIViewController {
         if NetworkHelper.getToken() == nil {
             performSegue(withIdentifier: "toLoginVC", sender: self)
         } else {
-            NetworkHelper.removeToken()
-        }
+            let alert = UIAlertController(title: "Log Out".localized, message: "Are you sure you want to sign out?".localized , preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Yes".localized, style: .default , handler:{ (UIAlertAction)in
+                NetworkHelper.removeToken()
+            }))
+            
+            alert.addAction(UIAlertAction(title: "No".localized, style: .cancel, handler:{ (UIAlertAction)in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            addActionSheetForiPad(actionSheet: alert)
+            self.present(alert, animated: true, completion: {
+            })        }
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {

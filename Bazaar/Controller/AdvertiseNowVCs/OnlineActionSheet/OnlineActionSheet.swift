@@ -92,7 +92,12 @@ class OnlineActionSheet: UIViewController {
     }
     
     @IBAction func payBtnPressed(_ sender: Any) {
-        pay()
+//        pay()
+        let paymentMethodsVC = PaymentMethodsVC()
+        paymentMethodsVC.modalPresentationStyle = .custom
+        paymentMethodsVC.modalTransitionStyle = .crossDissolve
+        paymentMethodsVC.adId = self.adId
+        self.present(paymentMethodsVC, animated: true, completion: nil)
     }
     
     @IBAction func cancelBtnPressed(_ sender: Any) {

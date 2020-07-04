@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryList" customModule="Bazaar" customModuleProvider="target">
             <connections>
+                <outlet property="backBtn" destination="CYh-g8-ag3" id="91k-7j-Pvt"/>
                 <outlet property="categoriesLbl" destination="dzI-TS-vAR" id="QpD-cQ-SCy"/>
                 <outlet property="tableView" destination="irp-lw-Hnj" id="y89-CQ-wWj"/>
                 <outlet property="upperView" destination="c9b-CC-3qx" id="059-Vd-J53"/>
@@ -34,10 +35,19 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYh-g8-ag3" customClass="LocalizedButton" customModule="Bazaar" customModuleProvider="target">
+                            <rect key="frame" x="32" y="6" width="28.5" height="28.5"/>
+                            <state key="normal" image="backW"/>
+                            <connections>
+                                <action selector="backBtnPressed:" destination="-1" eventType="touchUpInside" id="aVh-Zk-PBm"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="CYh-g8-ag3" firstAttribute="centerY" secondItem="c9b-CC-3qx" secondAttribute="centerY" id="1z2-kN-zQY"/>
                         <constraint firstAttribute="height" constant="40" id="74H-br-jDt"/>
+                        <constraint firstItem="CYh-g8-ag3" firstAttribute="leading" secondItem="c9b-CC-3qx" secondAttribute="leading" constant="32" id="fXy-H6-esN"/>
                         <constraint firstItem="dzI-TS-vAR" firstAttribute="centerY" secondItem="c9b-CC-3qx" secondAttribute="centerY" id="i1i-78-Aff"/>
                         <constraint firstItem="dzI-TS-vAR" firstAttribute="centerX" secondItem="c9b-CC-3qx" secondAttribute="centerX" id="uAT-Tn-RBD"/>
                     </constraints>
@@ -57,4 +67,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
         </view>
     </objects>
+    <resources>
+        <image name="backW" width="28.5" height="28.5"/>
+    </resources>
 </document>

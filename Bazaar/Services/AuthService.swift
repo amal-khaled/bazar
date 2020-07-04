@@ -41,6 +41,9 @@ class AuthService {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                if let message = json["Message"].string {
+                    NetworkHelper.saveMessage(message: message)
+                }
                 self.isLoggedIN = true
                 completion(true)
             case .failure(let error):
@@ -66,6 +69,9 @@ class AuthService {
                 let json = JSON(value)
                 if let token  = json["access_token"].string {
                     NetworkHelper.saveToken(token: token)
+                }
+                if let email  = json["userName"].string {
+                    NetworkHelper.saveEmail(email: email)
                 }
                 self.isLoggedIN = true
                 completion(true)

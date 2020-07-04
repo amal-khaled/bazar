@@ -87,7 +87,7 @@ class ContactUsVC: UIViewController {
                     _ = JSON(value)
                     let alert = UIAlertController(title: "", message: "Your Messege have successfully sent".localized, preferredStyle: .alert)
                     self.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 3
+                    let when = DispatchTime.now() + 2
                     DispatchQueue.main.asyncAfter(deadline: when){
                         alert.dismiss(animated: true) {
                             self.emailTxtField.text = ""
@@ -104,7 +104,7 @@ class ContactUsVC: UIViewController {
         } else {
         let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
-        let when = DispatchTime.now() + 3
+        let when = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: when){
             alert.dismiss(animated: true, completion: nil)
         }

@@ -28,12 +28,19 @@
 "Log In" = "Log In";
 "Log Out" = "Log Out";
 "Download the app from this link: " = "Download the app from this link: ";
+"Are you sure you want to sign out?" = "Are you sure you want to sign out?";
+"Yes" = "Yes";
+"No" = "No";
+"Check A3lanate Website: " = "Check A3lanate Website: ";
 
 //LoginVC
 "Please make sure that the email and the password is correct" = "Please make sure that the email and the password is correct";
 
 //RegisterVC
 "Please make sure that the user name and the password is correct" = "Please make sure that the user name and the password is correct";
+"Please make sure you entered a correct phone number" = "Please make sure you entered a correct phone number";
+"This number or the email is already registered" = "This number or the email is already registered";
+"You have to agree to our terms and conditions first" = "You have to agree to our terms and conditions first";
 
 //PayActionSheet
 "Your Ad got uploaded successfully, to activate features please pay" = "Your Ad got uploaded successfully, to activate features please pay";
