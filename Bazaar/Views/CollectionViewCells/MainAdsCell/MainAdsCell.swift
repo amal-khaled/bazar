@@ -17,9 +17,11 @@ class MainAdsCell: UICollectionViewCell {
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var currencyLbl: UILabel!
-    @IBOutlet weak var likeImg: UIImageView!
-    @IBOutlet weak var likeBtn: UIButton!
-    
+//    @IBOutlet weak var likeImg: UIImageView!
+//    @IBOutlet weak var likeBtn: UIButton!
+    @IBOutlet weak var governrateLbl: UILabel!
+
+    @IBOutlet weak var isfeaturesIcon: UIImageView!
     //Variables
     var btnPressed: (() -> ())?
 
@@ -29,10 +31,11 @@ class MainAdsCell: UICollectionViewCell {
     }
     
     func setupView() {
-        imgView.addCornerRadius(cornerRadius: 20)
-        moreDetailsBtn.addCornerRadius(cornerRadius: 7)
+//        imgView.addCornerRadius(cornerRadius: 20)
+//        moreDetailsBtn.addCornerRadius(cornerRadius: 7)
     }
     
+  
     @IBAction func moreDetailsBtnPressed(_ sender: Any) {
     }
 

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "screen-bazar.png",
+      "filename" : "splash@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "screen-bazar-1.png",
+      "filename" : "splash@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "screen-bazar-2.png",
+      "filename" : "splash@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -83,22 +83,29 @@ extension AllOffersVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayo
         }
         if MOLHLanguage.currentAppleLanguage() == "ar" {
             cell.typeLbl.text = allAdsArr[indexPath.row].titleAr
+            cell.currencyLbl.text = allAdsArr[indexPath.row].cur
+            cell.governrateLbl.text = allAdsArr[indexPath.row].governrateAR
+
         } else {
             cell.typeLbl.text = allAdsArr[indexPath.row].titleEn
+            cell.currencyLbl.text = allAdsArr[indexPath.row].curEn
+            cell.governrateLbl.text = allAdsArr[indexPath.row].governrateEN
+
+
         }
         cell.priceLbl.text = "\(allAdsArr[indexPath.row].price)"
-        if allAdsArr[indexPath.row].isLoved == true {
-             cell.likeImg.image = UIImage(named: "likeR")
-         }
+//        if allAdsArr[indexPath.row].isLoved == true {
+//             cell.likeImg.image = UIImage(named: "likeR")
+//         }
         cell.btnPressed = { [weak self] in
             if NetworkHelper.getToken() != nil {
                 AdsService.instance.favoriteAdById(Id: (self?.allAdsArr[indexPath.row].id)!) { (success) in
                     if success {
-                        if cell.likeImg.image == UIImage(named: "likeR") {
-                            cell.likeImg.image = UIImage(named: "likeG")
-                        } else {
-                        cell.likeImg.image = UIImage(named: "likeR")
-                        }
+//                        if cell.likeImg.image == UIImage(named: "likeR") {
+//                            cell.likeImg.image = UIImage(named: "likeG")
+//                        } else {
+//                        cell.likeImg.image = UIImage(named: "likeR")
+//                        }
 
                     }
                 }

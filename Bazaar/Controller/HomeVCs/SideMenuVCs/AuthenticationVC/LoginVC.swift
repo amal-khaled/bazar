@@ -11,102 +11,52 @@ import MOLH
 import NVActivityIndicatorView
 
 class LoginVC: UIViewController {
-    
-    //Outlets
     @IBOutlet weak var closeBtn: UIButton!
-    @IBOutlet weak var emailView: UIView!
-    @IBOutlet weak var emailTxtField: UITextField!
-    @IBOutlet weak var passwordView: UIView!
-    @IBOutlet weak var passwordTxtField: UITextField!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var forgotPassBtn: UIButton!
-    @IBOutlet weak var registerView: UIView!
-    @IBOutlet weak var registerBtn: UIButton!
-    @IBOutlet weak var passwordEyeBtn: UIButton!
-    @IBOutlet weak var indicator: NVActivityIndicatorView!
+    @IBOutlet weak var emailUnderView: UIView!
+    @IBOutlet weak var phoneUnderView: UIView!
     
-    //Variable
-    var eyeClick = true
+    @IBOutlet weak var phoneContainer: UIView!
+    @IBOutlet weak var emailContainer: UIView!
     
+    @IBOutlet weak var phoneBtn: UIButton!
+    @IBOutlet weak var emailBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        indicator.isHidden = true
-        setupView()
+     
     }
     
-    func setupView() {
-        emailView.addCornerRadius(cornerRadius: 45)
-        emailView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
-        passwordView.addCornerRadius(cornerRadius: 45)
-        passwordView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
-        loginBtn.addCornerRadius(cornerRadius: 40)
-        registerView.addCornerRadius(cornerRadius: 40)
-        registerView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
-        emailTxtField.delegate = self
-        passwordTxtField.delegate = self
-        if MOLHLanguage.currentAppleLanguage() == "ar" {
-            emailView.layer.maskedCorners = [.layerMinXMinYCorner]
-            passwordView.layer.maskedCorners = [.layerMinXMaxYCorner]
-            registerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
-            emailTxtField.textAlignment = .right
-            passwordTxtField.textAlignment = .right
-        } else {
-            emailView.layer.maskedCorners = [.layerMaxXMinYCorner]
-            passwordView.layer.maskedCorners = [.layerMaxXMaxYCorner]
-            registerView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
-            emailTxtField.textAlignment = .left
-            passwordTxtField.textAlignment = .left
-        }
+    @IBAction func emailAction(_ sender: UIButton) {
+        emailBtn.setTitleColor(#colorLiteral(red: 0, green: 0.1060060635, blue: 0.4046606719, alpha: 1), for: .normal)
+        emailUnderView.backgroundColor = #colorLiteral(red: 0, green: 0.1060060635, blue: 0.4046606719, alpha: 1)
+        phoneBtn.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
+        phoneUnderView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        emailContainer.isHidden = false
+        phoneContainer.isHidden = true
     }
     
+    @IBAction func phoneAction(_ sender: UIButton) {
+        phoneBtn.setTitleColor(#colorLiteral(red: 0, green: 0.1060060635, blue: 0.4046606719, alpha: 1), for: .normal)
+        phoneUnderView.backgroundColor = #colorLiteral(red: 0, green: 0.1060060635, blue: 0.4046606719, alpha: 1)
+        emailBtn.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
+        emailUnderView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        emailContainer.isHidden = true
+        phoneContainer.isHidden = false
+    }
     @IBAction func closeBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toMain", sender: self)
     }
     
-    @IBAction func loginBtnPressed(_ sender: Any) {
-        guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
-        guard let pass = passwordTxtField.text, passwordTxtField.text != "" else {return}
-        indicator.isHidden = false
-        indicator.startAnimating()
-        AuthService.instance.loginUser(username: email, password: pass) { (success) in
-            if success {
-                if NetworkHelper.getToken() == nil {
-                    self.indicator.stopAnimating()
-                    self.indicator.isHidden = true
-                    let alert = UIAlertController(title: "", message: "Please make sure that the email and the password is correct".localized, preferredStyle: .alert)
-                    self.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 2
-                    DispatchQueue.main.asyncAfter(deadline: when){
-                        alert.dismiss(animated: true, completion: nil)
-                    }
-                }
-                self.indicator.stopAnimating()
-                self.indicator.isHidden = true
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "login_phone" {
+            if let childVC = segue.destination as? LoginWithPhoneViewController {
+                //Some property on ChildVC that needs to be set
+                //            childVC.dataSource = self
             }
         }
     }
     
-    @IBAction func forgotPassBtnPressed(_ sender: Any) {
-    }
-    
-    @IBAction func registerBtnPressed(_ sender: Any) {
-    }
-    
-    @IBAction func passwordEyeBtnPressed(_ sender: Any) {
-        if(eyeClick == true) {
-            passwordTxtField.isSecureTextEntry = false
-        } else {
-            passwordTxtField.isSecureTextEntry = true
-        }
-
-        eyeClick = !eyeClick
-    }
-    
 }
 
-extension LoginVC: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}

@@ -15,8 +15,11 @@ class NotificationN: NSObject {
     var Body: String = ""
     var BodyEN: String = ""
     var AdId: Int = 0
+    var CommericalAdId: Int = 0
+
     var DeviceTaken: String = ""
     var Id: String = ""
     var Date: String = ""
+    var type: Int = 3
 
 }

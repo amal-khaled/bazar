@@ -130,7 +130,8 @@ class SideMenuVC: UIViewController {
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
-        let text = "Download the app from this link: ".localized + "https://apple.co/3beivtw"
+        
+        let text = "Download the app from this link: ".localized + "http://itunes.apple.com/app/id1511596620"
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view

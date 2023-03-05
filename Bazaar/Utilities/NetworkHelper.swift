@@ -47,6 +47,15 @@ class NetworkHelper: NSObject {
     class func saveToken(token: String) {
         let def = UserDefaults.standard
         def.setValue(token, forKey: "token")
+         HEADER_AUTH["Authorization"] = "bearer \(token)"
+        
+         HEADER_BOTH["Authorization"] = "bearer \(token)"
+        
+         HEADER_JSON["Authorization"] = "bearer \(token)"
+
+        
+        
+        
         def.synchronize()
         restartApp()
     }

@@ -33,7 +33,7 @@ class PayActionSheet: UIViewController {
     
     //Variables
     var featureVC = FeaturesVC()
-
+var features = [Feature]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -66,6 +66,7 @@ class PayActionSheet: UIViewController {
         
         Alamofire.request(PAY_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
             if response.result.error == nil {
+                print(response.result.value)
                 if let json = response.result.value as? Dictionary<String,Any> {
                     if let status = json["Status"] as? Int {
                         if status == 1 {
@@ -99,6 +100,16 @@ class PayActionSheet: UIViewController {
                             let when = DispatchTime.now() + 2
                             DispatchQueue.main.asyncAfter(deadline: when){
                                 alert.dismiss(animated: true, completion: nil)
+                            }
+                            if let featuresArray = json["AdFeatures"] as? NSArray{
+                                for i in 0..<featuresArray.count{
+                                     let featureObject = featuresArray[i] as! NSDictionary
+                                    let feature = Feature()
+                                    feature.FeatureNameAR = featureObject["FeatureNameAR"] as! String
+                                    feature.FeatureNameEN = featureObject["FeatureNameEN"] as! String
+                                    self.features.append(feature)
+                                    
+                                }
                             }
                         }
                     }
@@ -144,6 +155,8 @@ class PayActionSheet: UIViewController {
         onlineActionSheet.UnPayedTotal = self.UnPayedTotal
         onlineActionSheet.FreeBalance = self.FreeBalance
         onlineActionSheet.UserBlance = self.UserBlance
+        onlineActionSheet.features = self.features
+
         onlineActionSheet.modalPresentationStyle = .custom
         present(onlineActionSheet, animated: true, completion: nil)
     }

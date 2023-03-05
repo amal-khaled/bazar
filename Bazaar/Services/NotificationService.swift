@@ -16,6 +16,7 @@ class NotificationService {
     
     func getNotifications(completion: @escaping (_ error: Error?, _ notifications: [NotificationN]?) -> Void){
         Alamofire.request(NOTIFICATION_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            print(response.result.value)
             switch response.result {
             case .failure(let error):
                 completion(error, nil)
@@ -33,9 +34,14 @@ class NotificationService {
                         notification.Body = item["Body"]?.string ?? ""
                         notification.BodyEN = item["BodyEN"]?.string ?? ""
                         notification.AdId = item["AdId"]?.int ?? 0
+                        notification.CommericalAdId = item["CommericalAdId"]?.int ?? 0
+
                         notification.DeviceTaken = item["DeviceTaken"]?.string ?? ""
                         notification.Id = item["Id"]?.string ?? ""
                         notification.Date = item["Date"]?.string ?? ""
+                        notification.type =  (item["Type"]?.int) ?? 3
+                        
+
                         notifications.append(notification)
                     }
                 }

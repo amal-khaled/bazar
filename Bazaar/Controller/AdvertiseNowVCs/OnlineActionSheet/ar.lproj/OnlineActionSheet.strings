@@ -3,7 +3,7 @@
 "2pO-0U-s7U.normalTitle" = "الدفع";
 
 /* Class = "UILabel"; text = "Total"; ObjectID = "APA-AZ-6Xp"; */
-"APA-AZ-6Xp.text" = "اجمالي التكلفة";
+"APA-AZ-6Xp.text" = "المطلوب دفعه";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "fOI-yO-2SJ"; */
 "fOI-yO-2SJ.text" = "المبلغ الغير مدفوع";
@@ -17,3 +17,4 @@
 
 /* Class = "UILabel"; text = "Ad Price"; ObjectID = "zNk-bU-xSU"; */
 "zNk-bU-xSU.text" = "تكلفة الاعلان";
+"fbz-XI-vvh.text" = "يحتوي اعلانك علي";

@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import MOLH
 
 class CountryVC: UIViewController {
     
@@ -44,16 +45,14 @@ class CountryVC: UIViewController {
 }
 
 extension CountryVC: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return AppDelegate.countries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryCellId, for: indexPath) as! CountryCell
+        cell.countryBtn.setTitle(MOLHLanguage.currentAppleLanguage() == "ar" ? AppDelegate.countries[indexPath.row].nameAr : AppDelegate.countries[indexPath.row].nameEn, for: .normal)
         return cell
     }
     

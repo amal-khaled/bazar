@@ -18,6 +18,7 @@ import NVActivityIndicatorView
 class AdvertiseNowVC: UIViewController {
     
     //Outlets
+    @IBOutlet weak var codeLbl: UILabel!
     @IBOutlet weak var uploadImgView: UIView!
     @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var addImagesBtn: UIButton!
@@ -45,11 +46,29 @@ class AdvertiseNowVC: UIViewController {
     @IBOutlet weak var catListBtn: UIButton!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var countryListBtn: UIButton!
+    @IBOutlet weak var governListBtn: UIButton!
+    @IBOutlet weak var AreaListBtn: UIButton!
+    
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     
+    @IBOutlet weak var phoneStackView: UIStackView!
     
     //Constants
     fileprivate let ImageCellId = "ImageCell"
+    
+    
+    @IBOutlet weak var categoryManLbl: UILabel!
+    @IBOutlet weak var countryManLbl: UILabel!
+    
+    @IBOutlet weak var governerateManLbl: UILabel!
+    @IBOutlet weak var areaManLbl: UILabel!
+    
+    @IBOutlet weak var titleArabicManLbl: UILabel!
+    
+    @IBOutlet weak var phoneManLbl: UILabel!
+    
+    @IBOutlet weak var priceManLbl: UILabel!
+    
     
     //Variables
     var images = [UIImage]()
@@ -68,35 +87,59 @@ class AdvertiseNowVC: UIViewController {
     static var subSubCatTitleAr: String = ""
     static var subSubCatTitleEn: String = ""
     static var selectedCountry : String = ""
-//    var picker_Image: UIImage? {
-//        didSet {
-//            guard let image = picker_Image else { return }
-//            self.images.append(image)
-//            self.mainImg.image = images.first
-//            self.collectionView.reloadData()
-//            self.collectionViewHight.constant = 150
-//            self.collectionView.isHidden = false
-//        }
-//    }
-    
+    //    var picker_Image: UIImage? {
+    //        didSet {
+    //            guard let image = picker_Image else { return }
+    //            self.images.append(image)
+    //            self.mainImg.image = images.first
+    //            self.collectionView.reloadData()
+    //            self.collectionViewHight.constant = 150
+    //            self.collectionView.isHidden = false
+    //        }
+    //    }
+    var goverList = [Governerate]()
+    var areaList = [Area]()
+    var selectedCountryId = -1
+    var selectedGove = -1
+    var selectedArea = -1
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator.isHidden = true
         setupView()
         setupCollectionView()
+        self.phoneTxtField.textAlignment = NSTextAlignment.left
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if MOLHLanguage.currentAppleLanguage() == "ar" {
-        self.catListBtn.setTitle("\(AdvertiseNowVC.catTitleAr) - \(AdvertiseNowVC.subCatTitleAr) - \(AdvertiseNowVC.subSubCatTitleAr)", for: .normal)
+            self.catListBtn.setTitle("\(AdvertiseNowVC.catTitleAr) - \(AdvertiseNowVC.subCatTitleAr) - \(AdvertiseNowVC.subSubCatTitleAr)", for: .normal)
         } else {
-        self.catListBtn.setTitle("\(AdvertiseNowVC.catTitleEn) - \(AdvertiseNowVC.subCatTitleEn) - \(AdvertiseNowVC.subSubCatTitleEn)", for: .normal)
+            self.catListBtn.setTitle("\(AdvertiseNowVC.catTitleEn) - \(AdvertiseNowVC.subCatTitleEn) - \(AdvertiseNowVC.subSubCatTitleEn)", for: .normal)
         }
-        self.countryListBtn.setTitle("\(AdvertiseNowVC.selectedCountry)", for: .normal)
+        //        self.countryListBtn.setTitle("\(AdvertiseNowVC.selectedCountry)", for: .normal)
+        
+        if AppDelegate.defaults.string(forKey: "userCity") != nil{
+            
+            let cityId = Int(AppDelegate.defaults.string(forKey: "userCity") ?? "0")!
+            self.selectedCountryId = cityId
+            getGovernerate()
+            var index = AppDelegate.countries.firstIndex(where: {$0.id == cityId}) ?? 0
+            countryListBtn.setTitle(MOLHLanguage.currentAppleLanguage() == "ar" ? AppDelegate.countries[index].nameAr : AppDelegate.countries[index].nameEn, for: .normal)
+            codeLbl.text = AppDelegate.countries[index].code
+        }else{
+            self.selectedCountryId = 1
+            codeLbl.text = "+965"
+            
+            countryListBtn.setTitle("Kuwait".localized, for: .normal)
+            
+        }
     }
     
     func setupView() {
+        
         self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
         self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
         self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
@@ -130,10 +173,12 @@ class AdvertiseNowVC: UIViewController {
         englishTxtView.delegate = self
         catListBtn.addCornerRadius(cornerRadius: 20)
         catListBtn.addBorder()
-        englishTxtView.text = " "
         titleEnTextField.text = " "
         countryListBtn.addCornerRadius(cornerRadius: 20)
         countryListBtn.addBorder()
+        phoneView.semanticContentAttribute = .forceLeftToRight
+        phoneStackView.semanticContentAttribute = .forceLeftToRight
+        phoneTxtField.semanticContentAttribute = .forceLeftToRight
     }
     
     func setupCollectionView() {
@@ -144,104 +189,155 @@ class AdvertiseNowVC: UIViewController {
     }
     
     func UPLOD(completion: @escaping CompletionHandler) {
-        if (phoneTxtField.text?.isPhoneNumber)! {
-            guard let titleAr = titleArTextField.text, titleArTextField.text != "" else {
-                let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 2
-                DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
-                }
-                return
+        
+        if AdvertiseNowVC.catId == 0 {
+            catListBtn.borderColor = .red
+            indicator.stopAnimating()
+            
+            categoryManLbl.textColor = .red
+            return
+        }
+        catListBtn.borderColor = #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
+        
+        categoryManLbl.textColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
+        //        if (phoneTxtField.text?.isPhoneNumber)! {
+        guard let titleAr = titleArTextField.text, titleArTextField.text != "" else {
+            let alert = UIAlertController(title: "", message: "Please enter the arabic title".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
             }
-            let titleEn = titleEnTextField.text
-            guard let price = priceTxtField.text, priceTxtField.text != "" else {
-                let alert = UIAlertController(title: "", message: "Please enter the price".localized, preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 2
-                DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
-                }
-                return}
-            guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {
-                let alert = UIAlertController(title: "", message: "Please enter the phone number".localized, preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 2
-                DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
-                }
-                return}
-            let englishDesc = englishTxtView.text
-            guard let arabicDesc = arabicTxtView.text, arabicTxtView.text != "" else {
-                let alert = UIAlertController(title: "", message: "Please enter the arabic description".localized, preferredStyle: .alert)
-                self.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 2
-                DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
-                }
-                return}
-            var parameters = [String:String]()
-            if AdvertiseNowVC.subCatId == 0 {
-                parameters = [
-                   "CategoryId" : "\(AdvertiseNowVC.catId)",
-                   "SubCategoryId": "",
-                   "SubSubCategoryId": "",
-                   "Title": titleAr,
-                   "TitleEN": titleEn ?? " ",
-                   "DescriptionEN": englishDesc ?? " ",
-                   "Description": arabicDesc,
-                   "PhoneNumber": phone,
-                   "AllowMessage": AllowMessage,
-                   "AllowCall": AllowCall,
-                   "AdWithoutPhone": AdWithoutPhone,
-                   "AutomaticRepublish": AutomaticRepublish,
-                   "AdPrice": price,
-                   "CityId": "1",
-                   ]
+            titleArTextField.borderColor = .red
+            indicator.stopAnimating()
+            
+            
+            titleArabicManLbl.textColor = .red
+            return
+        }
+        titleArTextField.borderColor = #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
+        
+        titleArabicManLbl.textColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
+        
+        let titleEn = titleEnTextField.text
+        guard let price = priceTxtField.text, priceTxtField.text != "" else {
+            let alert = UIAlertController(title: "", message: "Please enter the price".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
+                
             }
-                else if AdvertiseNowVC.subSubCatId == 0 {
-                 parameters = [
-                    "CategoryId" : "\(AdvertiseNowVC.catId)",
-                    "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
-                    "SubSubCategoryId": "",
-                    "Title": titleAr,
-                    "TitleEN": titleEn ?? " ",
-                    "DescriptionEN": englishDesc ?? " ",
-                    "Description": arabicDesc,
-                    "PhoneNumber": phone,
-                    "AllowMessage": AllowMessage,
-                    "AllowCall": AllowCall,
-                    "AdWithoutPhone": AdWithoutPhone,
-                    "AutomaticRepublish": AutomaticRepublish,
-                    "AdPrice": price,
-                    "CityId": "1",
-                    ]
+            priceManLbl.textColor = .red
+            priceTxtField.borderColor = .red
+            indicator.stopAnimating()
+            return}
+        priceManLbl.textColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
+        priceTxtField.borderColor = #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
+        guard let phone = phoneTxtField.text, phoneTxtField.text != "" && checkValidPhonNumber(Phone: "\(self.codeLbl.text!)\(phone)")
+        else {
+            let alert = UIAlertController(title: "", message: "Please enter the phone number".localized, preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            let when = DispatchTime.now() + 2
+            DispatchQueue.main.asyncAfter(deadline: when){
+                alert.dismiss(animated: true, completion: nil)
             }
-            else {
-             parameters = [
+            phoneManLbl.textColor = .red
+            phoneView.borderColor = .red
+            indicator.stopAnimating()
+            
+            return
+            
+        }
+        phoneManLbl.textColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
+        phoneView.borderColor = #colorLiteral(red: 1, green: 0.8, blue: 0, alpha: 1)
+        
+        let englishDesc = englishTxtView.text
+        let arabicDesc = arabicTxtView.text
+        
+        
+        
+        //            guard let arabicDesc = arabicTxtView.text, arabicTxtView.text != "" else {
+        //                let alert = UIAlertController(title: "", message: "Please enter the arabic description".localized, preferredStyle: .alert)
+        //                self.present(alert, animated: true, completion: nil)
+        //                let when = DispatchTime.now() + 2
+        //                DispatchQueue.main.asyncAfter(deadline: when){
+        //                    alert.dismiss(animated: true, completion: nil)
+        //                }
+        //
+        //                return}
+        var parameters = [String:String]()
+        let cityId = AppDelegate.defaults.string(forKey: "userCity") ?? "1"
+        if AdvertiseNowVC.subCatId == 0 {
+            parameters = [
                 "CategoryId" : "\(AdvertiseNowVC.catId)",
-                "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
-                "SubSubCategoryId": "\(AdvertiseNowVC.subSubCatId)",
+                "SubCategoryId": "",
+                "SubSubCategoryId": "",
                 "Title": titleAr,
                 "TitleEN": titleEn ?? " ",
                 "DescriptionEN": englishDesc ?? " ",
-                "Description": arabicDesc,
+                "Description": arabicDesc ?? " ",
                 "PhoneNumber": phone,
                 "AllowMessage": AllowMessage,
                 "AllowCall": AllowCall,
                 "AdWithoutPhone": AdWithoutPhone,
                 "AutomaticRepublish": AutomaticRepublish,
                 "AdPrice": price,
-                "CityId": "1",
-                ] }
-            Alamofire.upload(
-                multipartFormData: { MultipartFormData in
-                    for (key, value) in parameters {
-                        MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-                    }
-                    for i in 0..<self.images.count {
-                        MultipartFormData.append(self.images[i].jpegData(compressionQuality: 1)!, withName: "photo [\(i)]", fileName: "file\(i).jpeg", mimeType: "image/jpeg")
-                    }
+                "CityId": cityId,
+                
+            ]
+        }
+        else if AdvertiseNowVC.subSubCatId == 0 {
+            parameters = [
+                "CategoryId" : "\(AdvertiseNowVC.catId)",
+                "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
+                "SubSubCategoryId": "",
+                "Title": titleAr,
+                "TitleEN": titleEn ?? " ",
+                "DescriptionEN": englishDesc ?? " ",
+                "Description": arabicDesc ?? " ",
+                "PhoneNumber": phone,
+                "AllowMessage": AllowMessage,
+                "AllowCall": AllowCall,
+                "AdWithoutPhone": AdWithoutPhone,
+                "AutomaticRepublish": AutomaticRepublish,
+                "AdPrice": price,
+                "CityId": cityId,
+            ]
+        }
+        else {
+            parameters = [
+                "CategoryId" : "\(AdvertiseNowVC.catId)",
+                "SubCategoryId": "\(AdvertiseNowVC.subCatId)",
+                "SubSubCategoryId": "\(AdvertiseNowVC.subSubCatId)",
+                "Title": titleAr,
+                "TitleEN": titleEn ?? " ",
+                "DescriptionEN": englishDesc ?? " ",
+                "Description": arabicDesc ?? " ",
+                "PhoneNumber": phone,
+                "AllowMessage": AllowMessage,
+                "AllowCall": AllowCall,
+                "AdWithoutPhone": AdWithoutPhone,
+                "AutomaticRepublish": AutomaticRepublish,
+                "AdPrice": price,
+                "CityId": cityId,
+            ] }
+        
+        if selectedGove != -1{
+            parameters["GovernerateId"] = "\(selectedGove)"
+        }
+        if selectedArea != -1{
+            parameters["AreaId"] = "\(selectedArea)"
+            
+        }
+        Alamofire.upload(
+            multipartFormData: { MultipartFormData in
+                for (key, value) in parameters {
+                    MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                }
+                for i in 0..<self.images.count {
+                    MultipartFormData.append(self.images[i].jpegData(compressionQuality: 0.1)!, withName: "photo [\(i)]", fileName: "file\(i).jpeg", mimeType: "image/jpeg")
+                }
             }, to: UPLOAD_AD_URL, method: .post, headers: HEADER_BOTH) { (result) in
                 switch result {
                 case .success(let upload, _, _):
@@ -259,14 +355,15 @@ class AdvertiseNowVC: UIViewController {
                     break
                 }
             }
-        } else {
-            let alert = UIAlertController(title: "", message: "Please enter a correct number".localized, preferredStyle: .alert)
-            self.present(alert, animated: true, completion: nil)
-            let when = DispatchTime.now() + 2
-            DispatchQueue.main.asyncAfter(deadline: when){
-                alert.dismiss(animated: true, completion: nil)
-            }
-        }
+        //        }
+        //    else {
+        //            let alert = UIAlertController(title: "", message: "Please enter a correct number".localized, preferredStyle: .alert)
+        //            self.present(alert, animated: true, completion: nil)
+        //            let when = DispatchTime.now() + 2
+        //            DispatchQueue.main.asyncAfter(deadline: when){
+        //                alert.dismiss(animated: true, completion: nil)
+        //            }
+        //        }
     }
     
     
@@ -289,39 +386,60 @@ class AdvertiseNowVC: UIViewController {
         opalPicker()
     }
     
+    @IBAction func areaAction(_ sender: Any)
+    {
+        if selectedCountryId != -1{
+            if areaList.count == 0{
+                getArea(show: true)
+            }else{
+                showAreaList()
+            }
+        }
+    }
+    @IBAction func governAction(_ sender: Any)
+    {
+        if selectedCountryId != -1{
+            
+            if goverList.count == 0{
+                getGovernerate(show: true)
+            }else{
+                showGovernList()
+            }
+        }
+    }
     func opalPicker() {
         let imagePicker = OpalImagePickerController()
-         imagePicker.selectionTintColor = UIColor.white.withAlphaComponent(0.7)
-         imagePicker.selectionImageTintColor = UIColor.black
-         imagePicker.maximumSelectionsAllowed = 8
-         imagePicker.allowedMediaTypes = Set([.image])
-         let configuration = OpalImagePickerConfiguration()
-         configuration.maximumSelectionsAllowedMessage = NSLocalizedString("You can only select 8 images!".localized, comment: "")
-         imagePicker.configuration = configuration
-         presentOpalImagePickerController(imagePicker, animated: true,
-             select: { (assets) in
-                 //Select Assets
-                 for i in 0..<assets.count {
-                     if self.images.count < 8 {
-                         self.images.append(self.getAsset(asset: assets[i]))
-                     } else {
-                         imagePicker.dismiss(animated: true, completion: nil)
-                         let alert = UIAlertController(title: "", message: "You can only select 8 images!".localized, preferredStyle: .alert)
-                         self.present(alert, animated: true, completion: nil)
-                         let when = DispatchTime.now() + 2
-                         DispatchQueue.main.asyncAfter(deadline: when){
-                             alert.dismiss(animated: true, completion: nil)
-                         }
-                     }
-                 }
-                 self.mainImg.image = self.images.first
-                 self.collectionView.reloadData()
-                 self.collectionViewHight.constant = 150
-                 self.collectionView.isHidden = false
-                 imagePicker.dismiss(animated: true, completion: nil)
-             }, cancel: {
-                 imagePicker.dismiss(animated: true, completion: nil)
-             })
+        imagePicker.selectionTintColor = UIColor.white.withAlphaComponent(0.7)
+        imagePicker.selectionImageTintColor = UIColor.black
+        imagePicker.maximumSelectionsAllowed = 8
+        imagePicker.allowedMediaTypes = Set([.image])
+        let configuration = OpalImagePickerConfiguration()
+        configuration.maximumSelectionsAllowedMessage = NSLocalizedString("You can only select 8 images!".localized, comment: "")
+        imagePicker.configuration = configuration
+        presentOpalImagePickerController(imagePicker, animated: true,
+                                         select: { (assets) in
+            //Select Assets
+            for i in 0..<assets.count {
+                if self.images.count < 8 {
+                    self.images.append(self.getAsset(asset: assets[i]))
+                } else {
+                    imagePicker.dismiss(animated: true, completion: nil)
+                    let alert = UIAlertController(title: "", message: "You can only select 8 images!".localized, preferredStyle: .alert)
+                    self.present(alert, animated: true, completion: nil)
+                    let when = DispatchTime.now() + 2
+                    DispatchQueue.main.asyncAfter(deadline: when){
+                        alert.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+            self.mainImg.image = self.images.first
+            self.collectionView.reloadData()
+            self.collectionViewHight.constant = 150
+            self.collectionView.isHidden = false
+            imagePicker.dismiss(animated: true, completion: nil)
+        }, cancel: {
+            imagePicker.dismiss(animated: true, completion: nil)
+        })
     }
     
     @IBAction func englishBtnPressed(_ sender: Any) {
@@ -335,17 +453,17 @@ class AdvertiseNowVC: UIViewController {
     }
     
     @IBAction func catListBtnPressed(_ sender: Any) {
-            let categoryList = CategoryList()
-            categoryList.modalPresentationStyle = .fullScreen
-            categoryList.modalTransitionStyle = .crossDissolve
-            present(categoryList, animated: true, completion: nil)
-        }
+        let categoryList = CategoryList()
+        categoryList.modalPresentationStyle = .fullScreen
+        categoryList.modalTransitionStyle = .crossDissolve
+        present(categoryList, animated: true, completion: nil)
+    }
     
     @IBAction func countryListBtnPressed(_ sender: Any) {
-        let countryList = CountryListVC()
-        countryList.modalPresentationStyle = .fullScreen
-        countryList.modalTransitionStyle = .crossDissolve
-        present(countryList, animated: true, completion: nil)
+        //        let countryList = CountryListVC()
+        //        countryList.modalPresentationStyle = .fullScreen
+        //        countryList.modalTransitionStyle = .crossDissolve
+        //        present(countryList, animated: true, completion: nil)
     }
     
     
@@ -409,31 +527,31 @@ class AdvertiseNowVC: UIViewController {
                         self.indicator.isHidden = true
                         self.performSegue(withIdentifier: "toPayVC", sender: self)
                     }
-//                    self.mainImg.image = UIImage()
-//                    self.images.removeAll()
-//                    self.collectionView.reloadData()
-//                    self.collectionView.isHidden = true
-//                    self.collectionViewHight.constant = 0
-//                    AdvertiseNowVC.catId = 0
-//                    AdvertiseNowVC.catTitleAr = ""
-//                    AdvertiseNowVC.catTitleEn = ""
-//                    AdvertiseNowVC.subCatId = 0
-//                    AdvertiseNowVC.subCatTitleAr = ""
-//                    AdvertiseNowVC.subCatTitleEn = ""
-//                    AdvertiseNowVC.subSubCatId = 0
-//                    AdvertiseNowVC.subSubCatTitleAr = ""
-//                    AdvertiseNowVC.subSubCatTitleEn = ""
-//                    self.catListBtn.setTitle("", for: .normal)
-//                    self.titleEnTextField.text = ""
-//                    self.titleArTextField.text = ""
-//                    self.arabicTxtView.text = ""
-//                    self.englishTxtView.text = ""
-//                    self.phoneTxtField.text = ""
-//                    self.priceTxtField.text = ""
-//                    self.allowDMBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
-//                    self.allowCallsBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
-//                    self.hidePhoneBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
-//                    self.republishBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                    //                    self.mainImg.image = UIImage()
+                    //                    self.images.removeAll()
+                    //                    self.collectionView.reloadData()
+                    //                    self.collectionView.isHidden = true
+                    //                    self.collectionViewHight.constant = 0
+                    //                    AdvertiseNowVC.catId = 0
+                    //                    AdvertiseNowVC.catTitleAr = ""
+                    //                    AdvertiseNowVC.catTitleEn = ""
+                    //                    AdvertiseNowVC.subCatId = 0
+                    //                    AdvertiseNowVC.subCatTitleAr = ""
+                    //                    AdvertiseNowVC.subCatTitleEn = ""
+                    //                    AdvertiseNowVC.subSubCatId = 0
+                    //                    AdvertiseNowVC.subSubCatTitleAr = ""
+                    //                    AdvertiseNowVC.subSubCatTitleEn = ""
+                    //                    self.catListBtn.setTitle("", for: .normal)
+                    //                    self.titleEnTextField.text = ""
+                    //                    self.titleArTextField.text = ""
+                    //                    self.arabicTxtView.text = ""
+                    //                    self.englishTxtView.text = ""
+                    //                    self.phoneTxtField.text = ""
+                    //                    self.priceTxtField.text = ""
+                    //                    self.allowDMBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                    //                    self.allowCallsBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                    //                    self.hidePhoneBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
+                    //                    self.republishBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
                 }
             }
         } else {
@@ -482,7 +600,6 @@ extension AdvertiseNowVC: UICollectionViewDelegateFlowLayout, UICollectionViewDe
         }))
         
         alert.addAction(UIAlertAction(title: "Dismiss".localized, style: .cancel, handler:{ (UIAlertAction)in
-            self.dismiss(animated: true, completion: nil)
         }))
         addActionSheetForiPad(actionSheet: alert)
         self.present(alert, animated: true, completion: {
@@ -523,11 +640,96 @@ extension AdvertiseNowVC: UITextViewDelegate {
 }
 
 extension UIViewController {
-  public func addActionSheetForiPad(actionSheet: UIAlertController) {
-    if let popoverPresentationController = actionSheet.popoverPresentationController {
-      popoverPresentationController.sourceView = self.view
-      popoverPresentationController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-      popoverPresentationController.permittedArrowDirections = []
+    public func addActionSheetForiPad(actionSheet: UIAlertController) {
+        if let popoverPresentationController = actionSheet.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
     }
-  }
+}
+extension AdvertiseNowVC{
+    func showGovernList(){
+        let alertController = UIAlertController(title: "Choose Governrate".localized, message: "", preferredStyle: .actionSheet)
+        
+        for item in goverList{
+            let superbutton = UIAlertAction(title: MOLHLanguage.currentAppleLanguage() == "ar" ? item.GovernerateAR : item.GovernerateEN , style: .default, handler: { (action) in
+                //                self.codeTF.text = item.code
+                //                self.selectedCountry = item
+                //                self.countryBtn.setTitle(MOLHLanguage.currentAppleLanguage() == "ar" ? item.nameAr : item.nameEn , for: .normal)
+                //                AppDelegate.cityId = item.id
+                //
+                //                AppDelegate.defaults.setValue(AppDelegate.cityId, forKey: "cityId")
+                //                self.loadData()
+                self.governListBtn.setTitle(MOLHLanguage.currentAppleLanguage() == "ar" ? item.GovernerateAR : item.GovernerateEN, for: .normal)
+                self.selectedGove = item.GovernerateId!
+                self.AreaListBtn.setTitle("", for: .normal)
+                self.selectedArea = -1
+                self.getArea()
+                
+            })
+            
+            alertController.addAction(superbutton)
+        }
+        let cancel = UIAlertAction(title: "Cancel".localized , style: .cancel, handler: { (action) in
+            
+            
+        })
+        alertController.addAction(cancel)
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.view //to set the source of your alert
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0) // you can set this as per your requirement.
+            popoverController.permittedArrowDirections = [] //to hide the arrow of any particular direction
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    func getGovernerate(show: Bool = false){
+        if selectedCountryId != -1 {
+            UtilitiesService.instance.getGovernrate(completion: {
+                check, gover in
+                self.goverList = gover
+                if show{
+                    self.showGovernList()
+                }
+            }, countryId: self.selectedCountryId)
+        }
+    }
+    
+    func showAreaList(){
+        let alertController = UIAlertController(title: "Choose Area".localized, message: "", preferredStyle: .actionSheet)
+        
+        for item in areaList{
+            let superbutton = UIAlertAction(title: MOLHLanguage.currentAppleLanguage() == "ar" ? item.AreaAR : item.AreaEN , style: .default, handler: { (action) in
+                
+                self.AreaListBtn.setTitle(MOLHLanguage.currentAppleLanguage() == "ar" ? item.AreaAR : item.AreaEN, for: .normal)
+                self.selectedArea = item.AreaId!
+                
+                
+            })
+            
+            alertController.addAction(superbutton)
+        }
+        let cancel = UIAlertAction(title: "Cancel".localized , style: .cancel, handler: { (action) in
+            
+            
+        })
+        alertController.addAction(cancel)
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = self.view //to set the source of your alert
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0) // you can set this as per your requirement.
+            popoverController.permittedArrowDirections = [] //to hide the arrow of any particular direction
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+    func getArea(show: Bool = false){
+        if selectedCountryId != -1 {
+            UtilitiesService.instance.getArea(completion: {
+                check, area in
+                self.areaList = area
+                if show{
+                    self.showAreaList()
+                }
+            }, goverId: self.selectedGove)
+        }
+    }
 }

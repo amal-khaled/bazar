@@ -10,12 +10,16 @@ import UIKit
 import Alamofire
 import MOLH
 import NVActivityIndicatorView
+import ImageSlideshow
 
 class AdVC: UIViewController {
+    @IBOutlet weak var imageSlider: ImageSlideshow!
     
     //Outlets
-    @IBOutlet weak var adImg: UIImageView!
     @IBOutlet weak var adPriceLbl: UILabel!
+    var sliderAlamoSource = [AlamofireSource]()
+    var ad = Ad()
+    @IBOutlet weak var viewesLbl: UILabel!
     @IBOutlet weak var adViewsLbl: UILabel!
     @IBOutlet weak var adTitleLbl: UILabel!
     @IBOutlet weak var addTreeLbl: UILabel!
@@ -24,24 +28,24 @@ class AdVC: UIViewController {
     @IBOutlet weak var callBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
     @IBOutlet weak var followUpBtn: UIButton!
-    @IBOutlet weak var imagesCollection: UICollectionView!
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var usernameLbl: UILabel!
-    @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var sameUserAdsCollection: UICollectionView!
     @IBOutlet weak var similarAdsCollection: UICollectionView!
     @IBOutlet weak var featuredAdLbl: UILabel!
-    @IBOutlet weak var mainImgBtn: UIButton!
     @IBOutlet weak var reportBtn: LocalizedButton!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
-    @IBOutlet weak var adByUserViewHight: NSLayoutConstraint!
+//    @IBOutlet weak var adByUserViewHight: NSLayoutConstraint!
     @IBOutlet weak var adByUserTitleHight: NSLayoutConstraint!
     @IBOutlet weak var adByUserCollectionHight: NSLayoutConstraint!
-    
+    var isAdOwner = false
     //Constants
     let ImageCellId = "ImageCell"
     
+    @IBOutlet weak var editRemoveView: UIStackView!
+    @IBOutlet weak var removeAdBtn: UIButton!
+
     //Variables
     var selectedAdId: Int = 0
     var images = [String]()
@@ -50,19 +54,87 @@ class AdVC: UIViewController {
     var similarAds = [Ad]()
     var adPhone: String = ""
     var shareLink: String = ""
-    
+    var isRemoveAdHidden = -1
+var stringImages = [ImageUpdate]()
+    @IBOutlet weak var editRemoveHeight: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator.startAnimating()
         setupCollectionView()
-        setupView()
+        setupAllSliders()
+//        setupView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
         loadData()
+        setupView()
+        
+        if isAdOwner{
+            editRemoveHeight.constant = 50
+            editRemoveView.isHidden = false
+            if isRemoveAdHidden == 0{
+                removeAdBtn.isHidden = false
+                
+                removeAdBtn.setTitle("Remove ad".localized, for: .normal)
+            }else if isRemoveAdHidden == 1{
+                removeAdBtn.isHidden = false
+                removeAdBtn.setTitle("Republish".localized, for: .normal)
+            }
+            else if isRemoveAdHidden == 2 {
+                
+                removeAdBtn.isHidden = false
+                removeAdBtn.setTitle("Pay Now".localized, for: .normal)
+                
+            }
+            else{
+                removeAdBtn.isHidden = true
+                
+            }
+        }else{
+            editRemoveView.isHidden = true
+
+            editRemoveHeight.constant = 0
+
+        }
+        
+    }
+    func setupAllSliders(){
+        imageSlider.activityIndicator = DefaultActivityIndicator()
+
+        imageSlider.slideshowInterval = 3.0
+        imageSlider.contentScaleMode = .scaleToFill
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        imageSlider.addGestureRecognizer(gestureRecognizer)
+    }
+    func setupImageSlider(){
+        var updatedSliderAd = images
+        sliderAlamoSource.removeAll()
+        for i in 0..<images.count {
+            if images[i] != "" {
+           
+            self.sliderAlamoSource.append(AlamofireSource(urlString: String(describing: images[i]))!)
+                updatedSliderAd.append(images[i])
+            }
+        }
+        images = updatedSliderAd
+        imageSlider.setImageInputs(self.sliderAlamoSource)
+      
+    }
+    @objc func didTap() {
+        if images.count > 0 {
+            let imageDisplayVC = ImageDisplayVC()
+            imageDisplayVC.imgUrl = images[imageSlider.currentPage]
+            imageDisplayVC.modalPresentationStyle = .custom
+            imageDisplayVC.modalTransitionStyle = .crossDissolve
+            present(imageDisplayVC, animated: true, completion: nil)
+          
+        }
     }
     
     func setupCollectionView() {
-        imagesCollection.dataSource = self
-        imagesCollection.delegate = self
-        imagesCollection.register(UINib(nibName: ImageCellId, bundle: nil), forCellWithReuseIdentifier: ImageCellId)
+      
         sameUserAdsCollection.dataSource = self
         sameUserAdsCollection.delegate = self
         sameUserAdsCollection.register(UINib(nibName: ImageCellId, bundle: nil), forCellWithReuseIdentifier: ImageCellId)
@@ -73,22 +145,30 @@ class AdVC: UIViewController {
     
     func setupView() {
         featuredAdLbl.isHidden = true
-        followUpBtn.isHidden = true
+//        followUpBtn.isHidden = true
+        
+    
+
     }
     
     func loadData() {
-        AdsService.instance.getAdById(id: selectedAdId) { (error, ad, images, features, userAds, similarAds) in
+        AdsService.instance.getAdById(id: selectedAdId) { (error, ad, images,imageUpdate, features, userAds, similarAds) in
             if let ad = ad {
-                self.adPriceLbl.text = "\(ad.price)" + " " + "KWD".localized
-                self.adViewsLbl.text = "\(ad.AdViews)" + " " + "Views".localized
+                self.ad = ad
+                ad.id = self.selectedAdId
+                self.viewesLbl.text = "\(ad.AdViews)" + " " + "Views".localized
                 if MOLHLanguage.currentAppleLanguage() == "ar" {
                     self.adTitleLbl.text = ad.titleAr
                     self.addTreeLbl.text = ad.CategoryNameAR + "-" + ad.SubCategoryNameAR + "-" + ad.SubSubCategoryNameAR
                     self.descLbl.text = ad.Description
+                    self.adPriceLbl.text = "\(ad.price)" + " " + ad.cur
+
                 } else {
                     self.adTitleLbl.text = ad.titleEn
                     self.addTreeLbl.text = ad.CategoryNameEN + "-" + ad.SubCategoryNameEN + "-" + ad.SubSubCategoryNameEN
                     self.descLbl.text = ad.DescriptionEN
+                    self.adPriceLbl.text = "\(ad.price)" + " " + ad.curEn
+
 
                 }
                 Alamofire.request(ad.CreatedByImageURL).responseImage { (response) in
@@ -100,7 +180,7 @@ class AdVC: UIViewController {
                     }
                 }
                 self.usernameLbl.text = ad.CreatedByName
-                self.dateLbl.text = ad.StartDate
+//                self.dateLbl.text = ad.CreatedByEmail
                 if ad.AdWithoutPhone == false {
                     self.adPhone = ad.PhoneNumber
                 }
@@ -108,23 +188,17 @@ class AdVC: UIViewController {
                 if ad.Featured == true {
                     self.featuredAdLbl.isHidden = false
                 }
-                if ad.CreatedByEmail == NetworkHelper.getEmail() {
-                    self.followUpBtn.isHidden = false
-                }
+//                if ad.CreatedByEmail == NetworkHelper.getEmail() {
+//                    self.followUpBtn.isHidden = false
+//                }
             }
             if let images = images {
+                self.stringImages = imageUpdate!
+                print(self.stringImages.count)
                 self.images = images
-                if images.count != 0 {
-                    Alamofire.request(images[0]).responseImage { (response) in
-                        if let image = response.result.value {
-                            DispatchQueue.main.async {
-                                self.adImg.image = image
-                                self.adImg.contentMode = .scaleToFill
-                            }
-                        }
-                    }
-                }
-                self.imagesCollection.reloadData()
+                
+                self.setupImageSlider()
+//                self.imagesCollection.reloadData()
             }
             if let features = features {
                 self.features = features
@@ -133,7 +207,7 @@ class AdVC: UIViewController {
                 self.userAds = userAds
                 self.sameUserAdsCollection.reloadData()
                 if userAds.count == 0 {
-                    self.adByUserViewHight.constant = 0
+//                    self.adByUserViewHight.constant = 0
                     self.adByUserTitleHight.constant = 0
                     self.adByUserCollectionHight.constant = 0
                 }
@@ -141,10 +215,11 @@ class AdVC: UIViewController {
             if let similarAds = similarAds {
                 self.similarAds = similarAds
                 self.similarAdsCollection.reloadData()
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
             }
         }
-        indicator.stopAnimating()
-        indicator.isHidden = true
+
     }
     
     @IBAction func whatsAppBtnPressed(_ sender: Any) {
@@ -157,7 +232,9 @@ class AdVC: UIViewController {
             }
         }
         else {
-            let urlWhats = "https://wa.me/\("+965" + adPhone)"
+            var index = AppDelegate.countries.firstIndex(where: {$0.id == AppDelegate.cityId}) ?? 0
+           
+            let urlWhats = "https://wa.me/\("\(AppDelegate.countries[index].code ?? "965")" + adPhone)"
             if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed){
                 if let whatsappURL = URL(string: urlString) {
                     if UIApplication.shared.canOpenURL(whatsappURL){
@@ -198,6 +275,46 @@ class AdVC: UIViewController {
         }
     }
     
+    @IBAction func deleteAdAction(_ sender: Any) {
+        
+        if isRemoveAdHidden == 0{
+            let alert = UIAlertController(title: "Delete!".localized, message: "Are you sure?".localized, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK".localized, style: UIAlertAction.Style.default) {
+                UIAlertAction in
+                AdsService.instance.removeAdd(completion: {
+                    check in
+                    
+                    if check {
+                        self.isRemoveAdHidden = 1
+                        
+                        self.removeAdBtn.setTitle("Republish".localized, for: .normal)
+                    }
+                    
+                }, adID: self.selectedAdId)        }
+            let cancelAction = UIAlertAction(title: "Cancel".localized, style: UIAlertAction.Style.cancel) {
+                UIAlertAction in
+            }
+            
+            // Add the actions
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            let payActionSheet = PayActionSheet()
+            payActionSheet.adId = self.selectedAdId
+            payActionSheet.modalPresentationStyle = .custom
+            present(payActionSheet, animated: true, completion: nil)
+        }
+        
+    }
+    @IBAction func updateAdAction(_ sender: Any) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UpdateAdvertiseNowVC") as! UpdateAdViewController
+        vc.ad = self.ad
+        vc.stringImages = self.stringImages
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     @IBAction func callBtnPressed(_ sender: Any) {
         if adPhone == "" {
             let alert = UIAlertController(title: "", message: "There is no number for this ad".localized, preferredStyle: .alert)
@@ -215,12 +332,20 @@ class AdVC: UIViewController {
     }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
-        let text = "Check this ad: ".localized + "\(shareLink)\n" + "Download the app from this link: ".localized + "https://apple.co/3beivtw"
+        print(shareLink)
+        let text = "Check this ad: ".localized + "\(shareLink)\n" + "Download the app from this link: ".localized + "http://itunes.apple.com/app/id1511596620"
         let textToShare = [ text ]
         let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
-        self.present(activityViewController, animated: true, completion: nil)
-    }
+    
+        if let popoverController = activityViewController.popoverPresentationController {
+            popoverController.sourceView = self.view //to set the source of your alert
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.maxY, width: 0, height: 0) // you can set this as per your requirement.
+            popoverController.permittedArrowDirections = [] //to hide the arrow of any particular direction
+        }
+        
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        self.present(activityViewController, animated: true, completion: nil)    }
     
     @IBAction func followUpBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toFollowUpVC", sender: self)

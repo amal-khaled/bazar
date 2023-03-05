@@ -2,11 +2,13 @@
 "acW-dT-cKf.title" = "الرئيسية";
 "XtD-p6-jHQ.title" = "الرئيسية";
 "5FU-9J-tNo.title" = "الرئيسية";
-"MaS-Z9-dM5.text" = "اعلانات سابقة";
+"MaS-Z9-dM5.text" = "الاكثر مشاهدة";
 "dbW-DN-GnV.text" = "اعلانات مميزة";
-"uWj-ln-z93.text" = "الاكثر عرض";
+"uWj-ln-z93.text" = "احدث الاعلانات";
 "6Nz-cZ-zPb.text" = "الفئات";
 "HEt-S5-B34.normalTitle" = "الكل";
+"qC3-60-CJ0.normalTitle" = "الاعلانات التجارية";
+"Eb9-we-iYs.normalTitle" = "اعلانات مبوبة";
 
 //FavoriteVC
 "XfS-Ng-uT8.title" = "المفضلة";
@@ -68,7 +70,7 @@
 
 //FeaturesVC
 "V8a-Ps-yhc.text" = "قم بتمييز اعلانك :";
-"xkO-4J-nTG.normalTitle" = "التالي";
+"xkO-4J-nTG.normalTitle" = "تخطي";
 
 //AllOffersVC
 "LXZ-yR-NLO.text" = "الكل";
@@ -88,6 +90,7 @@
 "qYc-F9-Cdc.placeholder" = "تأكيد الرقم السري";
 "mGu-i6-PEm.text" = "اوافق علي جميع الشروط والاحكام";
 "IoO-tG-Q1W.normalTitle" = "تسجيل الدخول";
+"HZI-sv-1Iq.normalTitle" = "اوافق علي جميع الشروط والاحكام";
 
 //ForgetPassVC
 "jyLd-F7-nWy.text" = "نسيت كلمة المرور؟";
@@ -100,7 +103,8 @@
 "xzV-gt-lfI.text" = "تم النشر بواسطة:";
 "Kyt-bU-T47.text" = "الوصف";
 "NvO-PX-fUs.text" = "اعلانات من نفس الشخص";
-"abA-RC-lq1.text" = "اعلانات مشابهة";
+"abA-RC-lq1.text" = "اعلانات موصي بيها";
+"PER-LS-Vh7.text" = "بناء علي تفاصيل هذا الإعلان";
 "RF6-Qo-WOt.text" = "اعلان مميز";
 
 //FollowUpVC
@@ -154,7 +158,8 @@
 
 //CountryVC
 "R89-ai-bOU.title" = "االدولة";
-"bgc-Av-M3E.text" = "قم باختيار الدولة";
+"bgc-Av-M3E.text" = "ملاحظة: اختيار الدولة يجعلك تشاهد وتقوم بنشر الاعلانات التابعة لها";
+"lGA-dN-oTV.text" = "تعديل الحساب الشخصي";
 
 //ContactUsVC
 "7SC-Hp-ma4.title" = "تواصل معنا";
@@ -183,3 +188,131 @@
 "qbo-g7-uE0.text" = "السؤال بالعربي";
 "RY6-M6-0Yf.text" = "السؤال بالانجليزي";
 "6tA-Fe-ZLq.normalTitle" = "ارسل";
+
+//ResetPasswordVC
+"5wt-GI-ff7.text" = "اعادة تعيين كلمة المرور";
+"mjS-zE-qif.normalTitle" = "احفظ";
+"Xxu-6C-EFm.placeholder" = "رقم سري جديد";
+"tWm-gX-pdl.placeholder" = "الكود المرسل";
+"ag5-5b-FgH.normalTitle" = "عرض المزيد";
+"ABv-KV-UdW.normalTitle" = "عرض المزيد";
+"Qcw-dK-ESa.normalTitle" = "عرض المزيد";
+"ius-uN-Rk0.normalTitle" = "الذهاب لحساب العميل";
+"hcM-12-C5z.normalTitle" = "تخطي";
+"V7r-uf-V6Y.placeholder" = "الكود";
+"bRY-KN-Fbz.text" = "اختار الدولة";
+"rBB-tV-Q8I.text" = "طلباتي";
+"B4y-CR-dWC.text" = "الدولة";
+"b3m-Ns-Kbu.text" = "المحافظة";
+"Rng-65-QMe.text" = "المنطقة";
+"5wt-GI-ff7.text" = "اعادة تعيين كلمة المرور";
+"mjS-zE-qif.normalTitle" = "احفظ";
+"Xxu-6C-EFm.placeholder" = "رقم سري جديد";
+"tWm-gX-pdl.placeholder" = "الكود المرسل";
+
+"rUE-wR-Ate.normalTitle" = "البريد الالكتروني";
+"sHb-kc-hJ9.normalTitle" = "رقم الهاتف";
+"gi7-u8-GJi.text" = "تسجيل الدخول باستخدام";
+"HLl-je-d04.placeholder" = "البريد الالكتروني";
+
+"nhQ-hM-Rex.placeholder" = "كلمة المرور";
+"umj-hV-vhn.normalTitle" = "نسيت كلمة المرور ؟";
+"p8N-4O-s7k.normalTitle" = "تسجيل جديد";
+"Oo4-sB-rjz.placeholder" = "الكود";
+"aZB-Fz-rZO.placeholder" = "رقم الجوال";
+"iJE-AE-IuT.placeholder" = "كلمة المرور";
+"cNT-rI-J1c.normalTitle" = "نسيت كلمة المرور";
+"IFN-Mw-Zqf.normalTitle" = "تسجيل جديد";
+"wi9-QY-Mhe.text" = "نسيت كلمة المرور";
+"SEi-TA-dan.placeholder" = "البريد الالكتروني";
+"iJd-uZ-NiV.normalTitle" = "ارسال";
+"zCW-Ed-owW.text" = "ادخل البريد الالكتروني وانتظر رسالة التاكيد";
+"Pnt-Vh-DzK.text" = "نسيت كلمة المرور";
+"3QU-ol-Nin.placeholder" = "الكود";
+"rfm-w5-Wn0.placeholder" = "رقم الجوال";
+"6vQ-3j-t1o.normalTitle" = "ارسال";
+
+"0fK-Ev-m6U.text" = "ادخل رقم الجوال وانتظر رسالة التاكيد";
+"DEb-GH-P5p.text" = "اعاده تعيين كلمة المرور";
+"rrj-Ix-Nny.placeholder" = "كلمة المرور";
+"2ST-sj-eQD.placeholder" = "الكود";
+"b6B-Zh-6cJ.normalTitle" = "حفظ";
+
+"pTa-om-ydf.text" = "اعاده تعيين كلمة المرور";
+"uqK-gP-j2j.placeholder" = "كلمة المرور";
+"6gM-vW-tXb.placeholder" = "الكود";
+"NoO-Lr-ckO.normalTitle" = "حفظ";
+
+"pkQ-zh-J9n.text" = "تسجيل جديد";
+"9BS-HL-7Cg.normalTitle" = "البريد الالكتروني";
+"5r0-Pn-Wv0.normalTitle" = "رقم الجوال";
+
+"kiK-3m-1Cy.placeholder" = "البريد الالكتروني";
+"QdR-rb-EdB.placeholder" = "الكود";
+"uis-82-vEP.placeholder" = "رقم الجوال";
+"KN9-Jr-h2e.placeholder" = "كلمة المرور";
+"pef-NI-7GF.placeholder" = "تاكيد كلمة المرور";
+"xH8-Ia-hjP.normalTitle" = "اوافق علي الشروط والاحكام";
+"Rn6-BW-7oq.normalTitle" = "دخول";
+
+"zo4-Bc-cwo.placeholder" = "الكود";
+"33j-5l-BbE.placeholder" = "رقم الجوال";
+"Ex2-KZ-11j.placeholder" = "كلمة المرور";
+"kc7-dL-rLX.normalTitle" = "اوافق علي الشروط والاحكام";
+"9KB-Hl-tKD.normalTitle" = "دخول";
+
+"Cp6-gQ-ewO.text" = "تأكيد رقم الجوال";
+"vOX-hN-Rfa.placeholder" = "الكود";
+"HaL-8F-LeC.normalTitle" = "تأكيد";
+"ETp-hq-Vqo.text" = "المشاهدات";
+"YWe-HZ-is9.text" = "الاعجاب";
+"UUh-UQ-acp.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]" = "الوصف باللغه الانجليزية";
+"a7I-Vw-jQb.ibExternalUserDefinedRuntimeAttributesLocalizableStrings[0]" = "الوصف باللغة العربية";
+"ibZ-sF-On6.text" = "اختياري";
+"jym-52-o2z.text" = "لابد من اضافته";
+"fkV-wk-pFK.text" = "لابد من اضافته";
+"f5d-Gr-NJS.text" = "لابد من اضافته";
+"rbX-4o-LmZ.text" = "لابد من اضافته";
+"M9F-0Q-2ut.text" = "لابد من اضافته";
+"M4J-rD-cg0.text" = "لابد من اضافته";
+"SAc-tg-cBR.text" = "لابد من اضافته";
+"Cpx-rn-eR6.text" = "لابد من اضافته";
+"S8x-Ox-Yfp.text" = "عنوان اعلانك (انجليزي)";
+"17F-ww-xBp.text" = "عنوان اعلانك (عربي)";
+"mXX-Q9-Oci.normalTitle" = "اتصل الان";
+"tx0-kV-1LQ.normalTitle" = "الإبلاغ عن اساءه";
+"Sv5-AP-B1r.text" = "تواصل مع البائع";
+"0kB-f6-SWR.text" = "اتصل الان";
+"ybJ-q1-GG9.text" = "إرسل رسالة واتساب";
+"8Xt-rd-piY.normalTitle" = "اتصال";
+"hzH-Ba-eMi.normalTitle" = "إرسال";
+"1lV-eC-F3J.normalTitle" = "إغلاق";
+"3zf-hI-9TO.normalTitle" = "شارك في السحب";
+
+"a2b-J8-MnC.title" = "تعديل اعلان";
+"0CA-NG-jv4.text" = "تعديل اعلان";
+"9Xo-vG-4cv.text" = "اضف بحد  اقصى ٨ صور";
+"L4s-f0-Q3l.normalTitle" = "انجليزي";
+"cV8-nB-dFd.normalTitle" = "عربي";
+"N1d-Bz-wgN.text"  =  "اختياري" ;
+"sbR-Ma-aup.text" = "االفئة";
+"S7C-TB-YXZ.text" = " المدينة";
+"Pzg-JW-kag.text" = "المحافظة";
+"Tyr-8Z-orh.text" = "المنطقة";
+"96Y-fW-CqN.text" = "العنوان (عربي)";
+"68T-kE-bj5.text" = "لابد من اضافته";
+"bFB-3c-YeT.text" = "لابد من اضافته";
+"1zp-pz-zfu.text" = "العنوان (انجليزي)";
+"rCX-fn-eVu.text" = "السعر";
+"oog-M0-e07.text" = "لابد من اضافته";
+"bKZ-sW-2P7.text" = "رقم الهاتف";
+"9fp-0k-ez2.text" = "الاعدادات";
+"c3F-iG-MRQ.normalTitle" = "اسمح بالرسائل المباشرو";
+"lp8-3Q-ncL.normalTitle" = "اسمح بالاتصال عبر الانترنت";
+"ECS-fm-c9k.normalTitle" = "قم باخفاء الهاتف";
+"oJk-iM-hoq.normalTitle" = "اعر النشر تلقائي";
+"UQw-dg-YNm.normalTitle" = "التالي";
+"dzC-dL-71Z.normalTitle" = "تخطي";
+"QUq-JD-4yl.text" = "قم بتمييز اعلانك:";
+"EFA-2a-AI0.normalTitle" = "تعديل";
+"eTy-mh-TUI.normalTitle" = "حذف";

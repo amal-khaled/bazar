@@ -18,6 +18,8 @@ class forgotPassVC: UIViewController {
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     
+    //Variables
+    var mail: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,16 @@ class forgotPassVC: UIViewController {
         emailView.addCornerRadius(cornerRadius: 35)
         sendBtn.addCornerRadius(cornerRadius: 20)
         emailTxtField.delegate = self
+
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResetPassVC" {
+            let destVC = segue.destination as! ResetPassVC
+            destVC.mail = self.mail
+        }
+    }
+    
     
     @IBAction func exitBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -40,8 +51,9 @@ class forgotPassVC: UIViewController {
         guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
         self.indicator.isHidden = false
         self.indicator.startAnimating()
-        AuthService.instance.forgetPassword(email: email) { (success) in
+        AuthService.instance.forgetPassword(email: email) { (success, msg) in
             if success {
+                self.mail = email
                 self.indicator.stopAnimating()
                 self.indicator.isHidden = true
                 self.emailTxtField.text = ""
@@ -50,7 +62,19 @@ class forgotPassVC: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 let when = DispatchTime.now() + 2
                 DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
+                    alert.dismiss(animated: true) {
+                        self.performSegue(withIdentifier: "toResetPassVC", sender: self)
+                    }
+                }
+            }else{
+                self.indicator.stopAnimating()
+
+                let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
+                let when = DispatchTime.now() + 2
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    alert.dismiss(animated: true) {
+                    }
                 }
             }
         }

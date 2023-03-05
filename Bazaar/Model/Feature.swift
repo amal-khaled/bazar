@@ -15,4 +15,6 @@ class Feature: NSObject {
     var FeatureDescription: String = ""
     var FeatureDescriptionEN: String = ""
     var FeaturePrice: Double = 0.0
+    var currencyEn = ""
+    var currencyAr = ""
 }

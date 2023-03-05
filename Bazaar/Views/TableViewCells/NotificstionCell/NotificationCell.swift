@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import WebKit
+import MOLH
 class NotificationCell: UITableViewCell {
     
     //Outlets
@@ -15,12 +16,14 @@ class NotificationCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var dateLbl: UILabel!
     
-
+    @IBOutlet weak var bodyWebview: UITextView!
+    //    @IBOutlet weak var bodyLbl: UILabel!
+    @IBOutlet weak var notiImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
     }
-    
-    func setupView() {
-    }
+   
+
+   
 }

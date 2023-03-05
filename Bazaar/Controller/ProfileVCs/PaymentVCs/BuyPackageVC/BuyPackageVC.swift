@@ -15,10 +15,12 @@ class BuyPackageVC: UIViewController {
     
     //Outlets
     @IBOutlet weak var upperView: UIView!
+    @IBOutlet weak var freeCurrencyLbl: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var creditLbl: UILabel!
     @IBOutlet weak var freeCreditLbl: UILabel!
+    @IBOutlet weak var creditCurrencyLbl: UILabel!
     
     //Constants
     let PackageCellId = "PackageCell"
@@ -64,6 +66,14 @@ class BuyPackageVC: UIViewController {
                 }
                 if let freePackageBalance = json["FreePackageBalance"].double {
                     self.freeCreditLbl.text = "\(freePackageBalance)"
+                }
+                if let city = json["City"].dictionary {
+                    let Currency = city["Currency"]?.string
+                    let CurrencyEN = city["CurrencyEN"]?.string
+                    self.creditCurrencyLbl.text =  MOLHLanguage.currentAppleLanguage() == "ar" ? Currency : CurrencyEN
+                    self.freeCurrencyLbl.text =  MOLHLanguage.currentAppleLanguage() == "ar" ? Currency : CurrencyEN
+                    
+                  
                 }
             }
         }

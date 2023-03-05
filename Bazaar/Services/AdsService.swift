@@ -16,7 +16,7 @@ class AdsService {
     static let instance = AdsService()
     
     func getAll(completion: @escaping (_ error: Error?, _ allAds: [Ad]?) -> Void){
-        Alamofire.request(ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request(ADS_URL + "/\(AppDelegate.cityId)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 completion(error, nil)
@@ -34,6 +34,114 @@ class AdsService {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
+                        all.append(ad)
+                    }
+                }
+                completion(nil,all)
+            }
+        }
+    }
+    func getLatestAds(page: Int = 1,completion: @escaping (_ error: Error?, _ allAds: [Ad]?) -> Void){
+        Alamofire.request(Latest_ADS_URL+"/\(page)/\(AppDelegate.cityId)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.isDefalut = item["DefautAd"]?.bool ?? true
+
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
+                        all.append(ad)
+                    }
+                }
+                completion(nil,all)
+            }
+        }
+    }
+    func getmostViewedAds(page: Int = 1,completion: @escaping (_ error: Error?, _ allAds: [Ad]?) -> Void){
+        Alamofire.request(MOST_VIEWED_ADS_URL+"/\(page)/\(AppDelegate.cityId)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.isDefalut = item["DefautAd"]?.bool ?? true
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
+                        all.append(ad)
+                    }
+                }
+                completion(nil,all)
+            }
+        }
+    }
+    func getTopAds(page: Int = 1,completion: @escaping (_ error: Error?, _ allAds: [Ad]?) -> Void){
+        Alamofire.request(TOP_ADS_URL+"/\(page)/\(AppDelegate.cityId)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                print(value)
+                let json = JSON(value)
+                var all = [Ad]()
+                if let allArr = json.array {
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let ad = Ad()
+                        ad.id = item["AdId"]?.int ?? 0
+                        ad.isDefalut = item["DefautAd"]?.bool ?? true
+
+                        ad.titleAr = item["Title"]?.string ?? ""
+                        ad.titleEn = item["TitleEN"]?.string ?? ""
+                        ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
+                        ad.price = item["AdPrice"]?.double ?? 0.0
+                        ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
                         all.append(ad)
                     }
                 }
@@ -42,11 +150,11 @@ class AdsService {
         }
     }
     
-    func getAdById(id: Int,completion: @escaping (_ error: Error?, _ ad: Ad?, _ images: [String]?, _ features: [Feature]?, _ userAds: [Ad]?, _ similarAds: [Ad]?) -> Void){
+    func getAdById(id: Int,completion: @escaping (_ error: Error?, _ ad: Ad?, _ images: [String]?, _ imagesUpdate: [ImageUpdate]?, _ features: [Feature]?, _ userAds: [Ad]?, _ similarAds: [Ad]?) -> Void){
         Alamofire.request("\(AD_DETAIL_BY_ID_URL)\(id)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
-                completion(error, nil, nil, nil, nil, nil)
+                completion(error, nil,nil,  nil, nil, nil, nil)
                 print(error)
             case .success(let value):
                 let json = JSON(value)
@@ -82,15 +190,30 @@ class AdsService {
                     ad.AllowCall = add["AllowCall"]?.bool ?? false
                     ad.AdWithoutPhone = add["AdWithoutPhone"]?.bool ?? false
                     ad.AutomaticRepublish = add["AutomaticRepublish"]?.bool ?? false
+                    ad.governrateAR = add["GovernerateAR"]?.string ?? ""
+                    ad.governrateEN = add["GovernerateEN"]?.string ?? ""
                     ad.Featured = add["Featured"]?.bool ?? false
+                    if let _cur = add["Currency"]?.string{
+                                                ad.cur = _cur
+                                                ad.curEn = (add["CurrencyEN"]?.string) ?? ""
+                                            }
                     var images = [String]()
+                    var imagesUpdate = [ImageUpdate]()
+
                     if let imagesArr = add["FileBanks"]?.array {
                         for item in imagesArr {
                             guard let item = item.dictionary else {return}
                             let image = item["FileURL"]?.string ?? ""
                             images.append(image)
+                            imagesUpdate.append(ImageUpdate(image: UIImage(),imageString: image, isNew: false, id: item["FileBankId"]?.int ?? 0))
+
                         }
+                        
                     }
+                    
+                    print(images)
+                    print(imagesUpdate)
+
                     var features = [Feature]()
                     if let featuresArr = add["Features"]?.array {
                         for item in featuresArr {
@@ -116,6 +239,12 @@ class AdsService {
                             ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                             ad.price = item["AdPrice"]?.double ?? 0.0
                             ad.isLoved = item["IsLoved"]?.bool ?? false
+                            ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                            ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                            if let _cur = item["Currency"]?.string{
+                                ad.cur = _cur
+                                ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                            }
                             userAds.append(ad)
                         }
                     }
@@ -130,10 +259,16 @@ class AdsService {
                             ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                             ad.price = item["AdPrice"]?.double ?? 0.0
                             ad.isLoved = item["IsLoved"]?.bool ?? false
+                            ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                            ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                            if let _cur = item["Currency"]?.string{
+                                ad.cur = _cur
+                                ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                            }
                             similarAds.append(ad)
                         }
                     }
-                    completion(nil,ad,images,features,userAds,similarAds)
+                    completion(nil,ad,images, imagesUpdate,features,userAds,similarAds)
                 }
             }
         }
@@ -160,6 +295,12 @@ class AdsService {
                         ad.isLoved = item["IsLoved"]?.bool ?? false
                         ad.Description = item["Description"]?.string ?? ""
                         ad.DescriptionEN = item["DescriptionEN"]?.string ?? ""
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
                         all.append(ad)
                     }
                 }
@@ -198,6 +339,12 @@ class AdsService {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.StatusId = item["StatusId"]?.int ?? 0
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
                         all.append(ad)
                     }
                 }
@@ -225,6 +372,12 @@ class AdsService {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.StatusId = item["StatusId"]?.int ?? 0
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
                         all.append(ad)
                     }
                 }
@@ -252,6 +405,12 @@ class AdsService {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.StatusId = item["StatusId"]?.int ?? 0
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
                         all.append(ad)
                     }
                 }
@@ -260,5 +419,37 @@ class AdsService {
         }
     }
     
-    
+    func removeAdd(completion: @escaping (Bool) -> Void, adID: Int){
+      
+        print(REMOVE_AD + "\(adID)")
+        Alamofire.request(REMOVE_AD + "\(adID)", method: .post, parameters: [:], encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            print(response.result.value)
+            switch response.result {
+            case .failure(let error):
+                print(error)
+                completion(false)
+                
+            case .success(let value):
+                
+                completion(true)
+                
+            }
+        }
+    }
+    func removeAddImage(completion: @escaping (Bool) -> Void, adID: Int){
+      
+        print(REMOVE_AD + "\(adID)")
+        Alamofire.request(REMOVE_AD_IMAGE + "\(adID)", method: .post, parameters: [:], encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
+            switch response.result {
+            case .failure(let error):
+                print(error)
+                completion(false)
+                
+            case .success(let value):
+                
+                completion(true)
+                
+            }
+        }
+    }
 }

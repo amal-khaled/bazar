@@ -66,3 +66,19 @@ extension UIView {
         layer.addSublayer(border)
     }
 }
+extension UIViewController{
+    func basicNavigation(storyName: String, segueId: String){
+        
+        let vc = UIStoryboard(name: storyName, bundle: nil).instantiateViewController(withIdentifier: segueId)
+        self.navigationController?.pushViewController(vc, animated: true)
+        //        self.present(vc, animated: true, completion: nil)
+    }
+    func basicPresentation(storyName: String, segueId: String){
+        
+        let vc = UIStoryboard(name: storyName, bundle: nil).instantiateViewController(withIdentifier: segueId)
+        vc.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+
+//        self.navigationController?.pushViewController(vc, animated: true)
+                self.present(vc, animated: true, completion: nil)
+    }
+}

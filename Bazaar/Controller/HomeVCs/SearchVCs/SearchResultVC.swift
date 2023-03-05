@@ -27,7 +27,7 @@ class SearchResultVC: UIViewController {
     var priceFrom: String = " "
     var priceTo: String = " "
     var selectedAdId: Int = 0
-
+    
     
     //Constants
     let MainAdsCellID = "MainAdsCell"
@@ -58,7 +58,12 @@ class SearchResultVC: UIViewController {
             "PriceTo": priceTo
         ]
         
+        print(parameters)
+        print(SEARCH_URL)
+
         Alamofire.request(SEARCH_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+            print(response.result.value)
+
             switch response.result {
             case .failure(let error):
                 print(error)
@@ -75,6 +80,12 @@ class SearchResultVC: UIViewController {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.StatusId = item["StatusId"]?.int ?? 0
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        if let _cur = item["Currency"]?.string{
+                            ad.cur = _cur
+                            ad.curEn = (item["CurrencyEN"]?.string) ?? ""
+                        }
                         all.append(ad)
                     }
                 }
@@ -115,25 +126,32 @@ extension SearchResultVC: UICollectionViewDelegate,UICollectionViewDelegateFlowL
         }
         if MOLHLanguage.currentAppleLanguage() == "ar" {
             cell.typeLbl.text = ads[indexPath.row].titleAr
+            cell.currencyLbl.text = ads[indexPath.row].cur
+            cell.governrateLbl.text = ads[indexPath.row].governrateAR
+
         } else {
             cell.typeLbl.text = ads[indexPath.row].titleEn
+            cell.currencyLbl.text = ads[indexPath.row].curEn
+            cell.governrateLbl.text = ads[indexPath.row].governrateEN
+
+
         }
         cell.priceLbl.text = "\(ads[indexPath.row].price)"
-        if ads[indexPath.row].isLoved == true {
-             cell.likeImg.image = UIImage(named: "likeR")
-         }
+//        if ads[indexPath.row].isLoved == true {
+//            cell.likeImg.image = UIImage(named: "likeR")
+//        }
         cell.btnPressed = { [weak self] in
             if NetworkHelper.getToken() != nil {
-            AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
-                if success {
-                    if cell.likeImg.image == UIImage(named: "likeR") {
-                        cell.likeImg.image = UIImage(named: "likeG")
-                    } else {
-                    cell.likeImg.image = UIImage(named: "likeR")
+                AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
+                    if success {
+//                        if cell.likeImg.image == UIImage(named: "likeR") {
+//                            cell.likeImg.image = UIImage(named: "likeG")
+//                        } else {
+//                            cell.likeImg.image = UIImage(named: "likeR")
+//                        }
+                        
                     }
-
                 }
-            }
             } else {
                 let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
                 self?.present(alert, animated: true, completion: nil)
@@ -147,7 +165,17 @@ extension SearchResultVC: UICollectionViewDelegate,UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 220)
+        var size: CGFloat = 220
+        if StaticFunctions.getCurrentDevice() == "iPad"{
+            size = (self.collectionView.bounds.width / 3) - 10
+            return CGSize(width: size, height: 280)
+
+
+        }else{
+         size = (self.collectionView.bounds.width / 2) - 10
+            return CGSize(width: size, height: 220)
+
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -14,9 +14,12 @@ import SwiftyJSON
 class CategoriesService {
     
     static let instance = CategoriesService()
+
     
-    func getAllCategoriesWithSubCategoriesAndSomeAds(completion: @escaping (_ error: Error?, _ allCategories: [Category]?) -> Void) {
-        Alamofire.request(ALLCATEGORIES_SUB_ADS_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+    func getAllCategoriesWithSubCategoriesAndSomeAds(page: Int = 1,completion: @escaping (_ error: Error?, _ allCategories: [Category]?) -> Void) {
+        print(ALLCATEGORIES_SUB_ADS_URL + "?cityid=\(AppDelegate.cityId)" + "&PageIndex=\(page)")
+
+        Alamofire.request(ALLCATEGORIES_SUB_ADS_URL + "/\(AppDelegate.cityId)" + "?PageIndex=\(page)", method: .get, parameters: nil, headers: HEADER).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 completion(error, nil)
@@ -42,6 +45,8 @@ class CategoriesService {
                                 ad.titleEn = item["TitleEN"]?.string ?? ""
                                 ad.price = item["AdPrice"]?.double ?? 0.0
                                 ad.isLoved = item["IsLoved"]?.bool ?? false
+                                ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                                ad.governrateEN = item["GovernerateEN"]?.string ?? ""
                                 var imgArr = [String]()
                                 if item["FileBanks"]?.array?.count == 0 {
                                     imgArr.append("")
@@ -86,9 +91,39 @@ class CategoriesService {
         }
         
     }
-    
+    func getMainCategories(completion: @escaping (_ error: Error?, _ allCategories: [Category]?) -> Void) {
+        print(ALLCATEGORIES_URL )
+        Alamofire.request(ALLCATEGORIES_URL, method: .get, parameters: nil, headers: HEADER).responseJSON { (response) in
+            print(response.result.value)
+            switch response.result {
+            case .failure(let error):
+                completion(error, nil)
+                print(error)
+            case .success(let value):
+                let json = JSON(value)
+                var all = [Category]()
+                
+                if let allobject = json.dictionary {
+                    
+                    if let allArr = allobject["data"]?.array{
+                    for item in allArr {
+                        guard let item = item.dictionary else {return}
+                        let category = Category()
+                        category.id = item["Id"]?.int ?? 0
+                        category.nameAr = item["TitleAr"]?.string ?? ""
+                        category.nameEn = item["TitleEn"]?.string ?? ""
+                        category.subCount = item["SubCategoriesCount"]?.int ?? 0
+                        all.append(category)
+                    }
+                }
+                }
+                completion(nil,all)
+            }
+        }
+        
+    }
     func getSubCategoriesAndAdsById(id: Int,completion: @escaping (_ error: Error?, _ CategoryId: Int, _ CategoryNameAR: String, _ CategoryNameEN: String, _ SubCategories: [SubCategory]?, _ Ads: [Ad]?) -> Void) {
-        Alamofire.request("\(SUB_SUBCATEGORY_ADS_BY_ID_URL)\(id)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request("\(SUB_SUBCATEGORY_ADS_BY_ID_URL)\(id)/\(AppDelegate.cityId)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 completion(error, 0, "", "", nil, nil)
@@ -122,6 +157,9 @@ class CategoriesService {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ad.Featured = item["IsFeature"]?.bool ?? false
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
                         ads.append(ad)
                     }
                 }
@@ -153,6 +191,10 @@ class CategoriesService {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.isLoved = item["IsLoved"]?.bool ?? false
+                        print(item["IsFeature"])
+                        ad.Featured = item["IsFeature"]?.bool ?? false
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
                         ads.append(ad)
                     }
                 }
@@ -162,7 +204,7 @@ class CategoriesService {
     }
     
     func getSubCategoriesById(id: Int,completion: @escaping (_ error: Error?, _ SubCategories: [SubCategory]?) -> Void) {
-        Alamofire.request("\(CAT_SUBCATEGORY_ADS_BY_ID_URL)\(id)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request("\(CAT_SUBCATEGORY_ADS_BY_ID_URL)\(id)/\(AppDelegate.cityId)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 completion(error, nil)
@@ -185,14 +227,17 @@ class CategoriesService {
         }
     }
     
+   
+    
     func getCategoriesSubAndAdsById(id: Int,completion: @escaping (_ error: Error?, _ CategoryId: Int, _ CategoryNameAR: String, _ CategoryNameEN: String, _ SubCategories: [SubCategory]?, _ Ads: [Ad]?) -> Void) {
-        Alamofire.request("\(CAT_SUBCATEGORY_ADS_BY_ID_URL)\(id)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request("\(CAT_SUBCATEGORY_ADS_BY_ID_URL)\(id)/\(AppDelegate.cityId)", method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 completion(error, 0, "", "", nil, nil)
                 print(error)
             case .success(let value):
                 let json = JSON(value)
+                print(value)
                 let categoryId = json["CategoryId"].int ?? 0
                 let categoryNameAr = json["CategoryNameAR"].string ?? ""
                 let categoryNameEn = json["CategoryNameEN"].string ?? ""
@@ -220,6 +265,9 @@ class CategoriesService {
                         ad.imgUrl = item["FileBank"]?["FileURL"].string ?? ""
                         ad.price = item["AdPrice"]?.double ?? 0.0
                         ad.isLoved = item["IsLoved"]?.bool ?? false
+                        ad.governrateAR = item["GovernerateAR"]?.string ?? ""
+                        ad.governrateEN = item["GovernerateEN"]?.string ?? ""
+                        ad.Featured = item["IsFeature"]?.bool ?? false
                         ads.append(ad)
                     }
                 }

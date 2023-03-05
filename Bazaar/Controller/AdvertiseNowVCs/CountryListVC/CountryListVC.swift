@@ -16,7 +16,6 @@ class CountryListVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //Variables
-    var countries: [String] = ["Kuwait".localized]
     
     //Constants
     let CountryCellId = "CountryCell"
@@ -44,15 +43,18 @@ class CountryListVC: UIViewController {
 
 extension CountryListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return AppDelegate.countries.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CountryCellId, for: indexPath) as! CountryCell
-            cell.countryBtn.setTitle(countries[indexPath.row], for: .normal)
+        cell.countryBtn.setTitle(MOLHLanguage.currentAppleLanguage() == "ar" ? AppDelegate.countries[indexPath.row].nameAr : AppDelegate.countries[indexPath.row].nameEn, for: .normal)
         cell.btnPressed = { [weak self] in
             cell.countryBtn.setImage(UIImage(named: "checked_rectangle"), for: .normal)
-            AdvertiseNowVC.selectedCountry = (self?.countries[indexPath.row])!
+//            AdvertiseNowVC.selectedCountry = (AppDelegate.countries[indexPath.row])!
+            AppDelegate.cityId = AppDelegate.countries[indexPath.row].id
+            
+            AppDelegate.defaults.setValue(AppDelegate.cityId, forKey: "cityId")
             self?.dismiss(animated: true, completion: nil)
         }
         return cell
@@ -65,7 +67,10 @@ extension CountryListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! CountryCell
         cell.countryBtn.setImage(UIImage(named: "checked_rectangle"), for: .normal)
-        AdvertiseNowVC.selectedCountry = countries[indexPath.row]
+//        AdvertiseNowVC.selectedCountry = countries[indexPath.row]
+        AppDelegate.cityId = AppDelegate.countries[indexPath.row].id
+        
+        AppDelegate.defaults.setValue(AppDelegate.cityId, forKey: "cityId")
         self.dismiss(animated: true, completion: nil)
     }
 }

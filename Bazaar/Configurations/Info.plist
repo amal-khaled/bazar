@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -21,9 +25,11 @@
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.617142674451-asq0p2gccufs5ikukrj6scicrd83bedk</string>
+				<string>com.googleusercontent.apps.614970312694-6d3of4lakpaiiq1e1jqltdaqpla1gm1t</string>
 			</array>
 		</dict>
 	</array>
@@ -64,6 +70,11 @@
 	<string>App need to access your gallery to save an image into it</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App need to access your gallery to let you choose an image so you can upload it to the ad</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Tajawal-Regular.ttf</string>
+		<string>Tajawal-Bold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -86,6 +97,7 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>
+		<string>processing</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

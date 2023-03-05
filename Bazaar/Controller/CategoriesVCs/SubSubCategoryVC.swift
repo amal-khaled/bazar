@@ -88,22 +88,37 @@ extension SubSubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlo
         }
         if MOLHLanguage.currentAppleLanguage() == "ar" {
             cell.typeLbl.text = ads[indexPath.row].titleAr
+            cell.currencyLbl.text = ads[indexPath.row].cur
+            cell.governrateLbl.text = ads[indexPath.row].governrateAR
+
+
         } else {
             cell.typeLbl.text = ads[indexPath.row].titleEn
+            cell.currencyLbl.text = ads[indexPath.row].curEn
+            cell.governrateLbl.text = ads[indexPath.row].governrateEN
+
+
         }
         cell.priceLbl.text = "\(ads[indexPath.row].price)"
-        if ads[indexPath.row].isLoved == true {
-            cell.likeImg.image = UIImage(named: "likeR")
+//        if ads[indexPath.row].isLoved == true {
+//            cell.likeImg.image = UIImage(named: "likeR")
+//        }
+        if ads[indexPath.row].Featured{
+            cell.isfeaturesIcon.isHidden = false
+        }
+        else{
+            cell.isfeaturesIcon.isHidden = true
+            
         }
         cell.btnPressed = { [weak self] in
             if NetworkHelper.getToken() != nil {
             AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
                 if success {
-                    if cell.likeImg.image == UIImage(named: "likeR") {
-                        cell.likeImg.image = UIImage(named: "likeG")
-                    } else {
-                    cell.likeImg.image = UIImage(named: "likeR")
-                    }
+//                    if cell.likeImg.image == UIImage(named: "likeR") {
+//                        cell.likeImg.image = UIImage(named: "likeG")
+//                    } else {
+//                    cell.likeImg.image = UIImage(named: "likeR")
+//                    }
                 }
             }
             } else {
@@ -119,8 +134,17 @@ extension SubSubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 220)
+        var size: CGFloat = 220
+        if StaticFunctions.getCurrentDevice() == "iPad"{
+            size = (self.collectionView.bounds.width / 3) - 10
+            return CGSize(width: size, height: 280)
 
+
+        }else{
+         size = (self.collectionView.bounds.width / 2) - 10
+            return CGSize(width: size, height: 220)
+
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

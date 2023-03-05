@@ -40,7 +40,7 @@ class SearchCategoryList: UIViewController {
     }
     
     func loadData() {
-        CategoriesService.instance.getAllCategoriesWithSubCategoriesAndSomeAds { (error, categories) in
+        CategoriesService.instance.getMainCategories { (error, categories) in
             if let categories = categories {
                 self.categories = categories
                 self.tableView.reloadData()

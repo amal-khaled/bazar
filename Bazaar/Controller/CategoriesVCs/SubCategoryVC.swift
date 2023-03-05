@@ -129,22 +129,37 @@ extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLa
             }
             if MOLHLanguage.currentAppleLanguage() == "ar" {
                 cell.typeLbl.text = ads[indexPath.row].titleAr
+                cell.currencyLbl.text = ads[indexPath.row].cur
+                cell.governrateLbl.text = ads[indexPath.row].governrateAR
+
+
             } else {
                 cell.typeLbl.text = ads[indexPath.row].titleEn
+                cell.currencyLbl.text = ads[indexPath.row].curEn
+                cell.governrateLbl.text = ads[indexPath.row].governrateEN
+
+
+            }
+            if ads[indexPath.row].Featured{
+                cell.isfeaturesIcon.isHidden = false
+            }
+            else{
+                cell.isfeaturesIcon.isHidden = true
+                
             }
             cell.priceLbl.text = "\(ads[indexPath.row].price)"
-            if ads[indexPath.row].isLoved == true {
-                cell.likeImg.image = UIImage(named: "likeR")
-            }
+//            if ads[indexPath.row].isLoved == true {
+//                cell.likeImg.image = UIImage(named: "likeR")
+//            }
             cell.btnPressed = { [weak self] in
                 if NetworkHelper.getToken() != nil {
                 AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
                     if success {
-                        if cell.likeImg.image == UIImage(named: "likeR") {
-                            cell.likeImg.image = UIImage(named: "likeG")
-                        } else {
-                        cell.likeImg.image = UIImage(named: "likeR")
-                        }
+//                        if cell.likeImg.image == UIImage(named: "likeR") {
+//                            cell.likeImg.image = UIImage(named: "likeG")
+//                        } else {
+//                        cell.likeImg.image = UIImage(named: "likeR")
+//                        }
                     }
                 }
                     } else {
@@ -169,10 +184,30 @@ extension SubCategoryVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLa
             return CGSize(width: 170, height: 60)
         }
         if collectionView.tag == 2 {
-            return CGSize(width: 180, height: 220)
+            var size: CGFloat = 220
+            if StaticFunctions.getCurrentDevice() == "iPad"{
+                size = (self.subCategoryCollection.bounds.width / 3) - 10
+                return CGSize(width: size, height: 280)
+
+
+            }else{
+             size = (self.subCategoryCollection.bounds.width / 2) - 10
+                return CGSize(width: size, height: 220)
+
+            }
         }
         else {
-            return CGSize(width: 180, height: 220)
+            var size: CGFloat = 220
+            if StaticFunctions.getCurrentDevice() == "iPad"{
+                size = (self.subSubCategoryCollection.bounds.width / 3) - 10
+                return CGSize(width: size, height: 280)
+
+
+            }else{
+             size = (self.subSubCategoryCollection.bounds.width / 2) - 10
+                return CGSize(width: size, height: 220)
+
+            }
         }
     }
 

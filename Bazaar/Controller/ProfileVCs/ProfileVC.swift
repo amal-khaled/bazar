@@ -54,6 +54,9 @@ class ProfileVC: UIViewController {
         }
     }
     
+    @IBAction func EditProfile(_ sender: Any) {
+        performSegue(withIdentifier: "toEditProfileVC", sender: self)
+    }
     
     
     func setupView() {
@@ -69,8 +72,12 @@ class ProfileVC: UIViewController {
         notifImg.addCornerRadius(cornerRadius: 35)
         favoriteImg.addCornerRadius(cornerRadius: 35)
     }
+    @IBAction func ordersBtnAction(_ sender: Any) {
+        basicNavigation(storyName: "Store", segueId: "myorders")
+    }
     
     func loadProfile() {
+        print(HEADER_AUTH)
         Alamofire.request(PROFILE_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_AUTH).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
@@ -79,6 +86,7 @@ class ProfileVC: UIViewController {
                 self.indicator.isHidden = true
             case .success(let value):
                 let json = JSON(value)
+                print(json)
                 if let name = json["Name"].string {
                     self.nameBtn.setTitle(name, for: .normal)
                 }
@@ -92,6 +100,11 @@ class ProfileVC: UIViewController {
                         }
                     }
                 }
+                if let city = json["City"].dictionary {
+                    AppDelegate.defaults.setValue(city["CityId"]?.int ?? 0, forKey: "userCity")
+
+                }
+               
                 self.indicator.stopAnimating()
                 self.indicator.isHidden = true
             }

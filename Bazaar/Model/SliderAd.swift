@@ -11,4 +11,6 @@ import UIKit
 class SliderAd: NSObject {
     var adId: Int = 0
     var imgUrl: String = ""
+    
 }
+

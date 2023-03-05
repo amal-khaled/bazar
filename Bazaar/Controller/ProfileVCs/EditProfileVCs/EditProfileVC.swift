@@ -25,8 +25,10 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var addressTxtField: UITextField!
     @IBOutlet weak var phoneTxtField: UITextField!
+    @IBOutlet weak var codeTF: UITextField!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
-    
+    var cityId = 0
+    var cityCount = 0
     //Variables
     var pickerImage: UIImage? {
         didSet {
@@ -39,6 +41,8 @@ class EditProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        self.codeTF.textAlignment = NSTextAlignment.left
+        self.phoneTxtField.textAlignment = NSTextAlignment.left
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +72,7 @@ class EditProfileVC: UIViewController {
                 print(error)
             case .success(let value):
                 let json = JSON(value)
+                print(value)
                 if let name = json["Name"].string {
                     self.nameTxtField.text = name
                 }
@@ -79,6 +84,12 @@ class EditProfileVC: UIViewController {
                 }
                 if let PhoneNumber = json["PhoneNumber"].string {
                     self.phoneTxtField.text = PhoneNumber
+                }
+                if let city = json["City"].dictionary {
+//                    self..text = PhoneNumber
+                    self.codeTF.text = city["Code"]?.string
+                    self.cityId = city["CityId"]?.int ?? 0
+                    self.cityCount = city["PhoneNumberNo"]?.int ?? 0
                 }
                 if let image = json["ImageURL"].string {
                     Alamofire.request(image).responseImage { (response) in
@@ -142,9 +153,11 @@ class EditProfileVC: UIViewController {
         guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
         guard let address = addressTxtField.text, addressTxtField.text != "" else {return}
         guard let phone = phoneTxtField.text, phoneTxtField.text != "" else {return}
+        guard phone != "" && phone.count == cityCount else {return}
+
         self.indicator.isHidden = false
         self.indicator.startAnimating()
-        AuthService.instance.editUserInfo(name: name, address: address, phoneNumber: phone, email: email) { (success) in
+        AuthService.instance.editUserInfo(name: name, address: address, phoneNumber: phone, email: email, cityID: cityId) { (success) in
             if success {
                 self.nameTxtField.text = name
                 self.addressTxtField.text = address
@@ -187,6 +200,12 @@ extension EditProfileVC: UIImagePickerControllerDelegate, UINavigationController
 extension EditProfileVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        return true
+    }
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == codeTF{
+            return false
+        }
         return true
     }
 }

@@ -29,7 +29,7 @@ class MainCatVC: UIViewController {
     var selectedSubCatId: Int = 0
     var selectedAdId: Int = 0
     var selectedMainCatId: Int = 0
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,22 +57,22 @@ class MainCatVC: UIViewController {
     }
     
     func loadData() {
-            CategoriesService.instance.getCategoriesSubAndAdsById(id: selectedMainCatId) { (error, catId, catNameAr, catNameEn, subcategories, ads) in
-                if MOLHLanguage.currentAppleLanguage() == "ar" {
-                        self.title = catNameAr
-                    } else {
-                        self.title = catNameEn
-                    }
-                    if let subcategories = subcategories {
-                        print(subcategories)
-                        self.subCategories = subcategories
-                        self.subSubCategoryCollection.reloadData()
-                    }
-                    if let ads = ads {
-                        self.ads = ads
-                        self.subCategoryCollection.reloadData()
-                    }
-                }
+        CategoriesService.instance.getCategoriesSubAndAdsById(id: selectedMainCatId) { (error, catId, catNameAr, catNameEn, subcategories, ads) in
+            if MOLHLanguage.currentAppleLanguage() == "ar" {
+                self.title = catNameAr
+            } else {
+                self.title = catNameEn
+            }
+            if let subcategories = subcategories {
+                print(subcategories)
+                self.subCategories = subcategories
+                self.subSubCategoryCollection.reloadData()
+            }
+            if let ads = ads {
+                self.ads = ads
+                self.subCategoryCollection.reloadData()
+            }
+        }
         indicator.stopAnimating()
         indicator.isHidden = true
     }
@@ -95,7 +95,7 @@ extension MainCatVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
             return subCategories.count
@@ -107,7 +107,7 @@ extension MainCatVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
             return 1
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SubSubCategoryCellId, for: indexPath) as! SubSubCategoryCell
@@ -129,32 +129,48 @@ extension MainCatVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
             }
             if MOLHLanguage.currentAppleLanguage() == "ar" {
                 cell.typeLbl.text = ads[indexPath.row].titleAr
+                cell.currencyLbl.text = ads[indexPath.row].cur
+                cell.governrateLbl.text = ads[indexPath.row].governrateAR
+
+                
             } else {
                 cell.typeLbl.text = ads[indexPath.row].titleEn
+                cell.currencyLbl.text = ads[indexPath.row].curEn
+                cell.governrateLbl.text = ads[indexPath.row].governrateEN
+
+                
+            }
+            if ads[indexPath.row].Featured{
+                cell.isfeaturesIcon.isHidden = false
+            }
+            else{
+                cell.isfeaturesIcon.isHidden = true
+                
             }
             cell.priceLbl.text = "\(ads[indexPath.row].price)"
-            if ads[indexPath.row].isLoved == true {
-                cell.likeImg.image = UIImage(named: "likeR")
-            }
+//            if ads[indexPath.row].isLoved == true {
+//                cell.likeImg.image = UIImage(named: "likeR")
+//            }
+            
             cell.btnPressed = { [weak self] in
                 if NetworkHelper.getToken() != nil {
-                AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
-                    if success {
-                        if cell.likeImg.image == UIImage(named: "likeR") {
-                            cell.likeImg.image = UIImage(named: "likeG")
-                        } else {
-                        cell.likeImg.image = UIImage(named: "likeR")
+                    AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
+                        if success {
+//                            if cell.likeImg.image == UIImage(named: "likeR") {
+//                                cell.likeImg.image = UIImage(named: "likeG")
+//                            } else {
+//                                cell.likeImg.image = UIImage(named: "likeR")
+//                            }
                         }
+                    }
+                } else {
+                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+                    self?.present(alert, animated: true, completion: nil)
+                    let when = DispatchTime.now() + 2
+                    DispatchQueue.main.asyncAfter(deadline: when){
+                        alert.dismiss(animated: true, completion: nil)
                     }
                 }
-                    } else {
-                        let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
-                        self?.present(alert, animated: true, completion: nil)
-                        let when = DispatchTime.now() + 2
-                        DispatchQueue.main.asyncAfter(deadline: when){
-                            alert.dismiss(animated: true, completion: nil)
-                        }
-                    }
             }
             return cell
         }
@@ -163,19 +179,39 @@ extension MainCatVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout
             return cell
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 1 {
             return CGSize(width: 170, height: 60)
         }
         if collectionView.tag == 2 {
-            return CGSize(width: 180, height: 220)
+            var size: CGFloat = 220
+            if StaticFunctions.getCurrentDevice() == "iPad"{
+                size = (collectionView.bounds.width / 3) - 10
+                return CGSize(width: size, height: 280)
+
+
+            }else{
+             size = (collectionView.bounds.width / 2) - 10
+                return CGSize(width: size, height: 220)
+
+            }
         }
         else {
-            return CGSize(width: 180, height: 220)
+            var size: CGFloat = 220
+            if StaticFunctions.getCurrentDevice() == "iPad"{
+                size = (collectionView.bounds.width / 3) - 10
+                return CGSize(width: size, height: 280)
+
+
+            }else{
+             size = (collectionView.bounds.width / 2) - 10
+                return CGSize(width: size, height: 220)
+
+            }
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
             self.selectedSubCatId = subCategories[indexPath.row].id

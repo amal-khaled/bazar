@@ -16,13 +16,14 @@ class PackagesService {
     static let instance = PackagesService()
     
     func getPackages(completion: @escaping (_ error: Error?, _ packages: [Package]?) -> Void){
-        Alamofire.request(PACKAGES_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request(PACKAGES_URL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER_BOTH).responseJSON { (response) in
             switch response.result {
             case .failure(let error):
                 completion(error, nil)
                 print(error)
             case .success(let value):
                 let json = JSON(value)
+                print(value)
                 var packages = [Package]()
                 if let packagesArr = json.array {
                     for item in packagesArr {

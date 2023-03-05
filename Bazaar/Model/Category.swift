@@ -13,6 +13,8 @@ class Category: NSObject {
     var nameAr: String = ""
     var nameEn: String = ""
     var imgUrl: String = ""
+    var subCount: Int = 0
+
     var Ads = [Ad]()
     var subCategories = [SubCategory]()
 }

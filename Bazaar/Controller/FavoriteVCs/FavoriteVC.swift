@@ -80,7 +80,7 @@ class FavoriteVC: UIViewController {
         if let tabItems = tabBarController?.tabBar.items {
             let tabItem = tabItems[3]
             tabItem.badgeValue = "\(favAds.count)"
-            tabItem.badgeColor = #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1)
+            tabItem.badgeColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
         }
     }
     
@@ -106,11 +106,14 @@ extension FavoriteVC: UITableViewDelegate, UITableViewDataSource {
         if MOLHLanguage.currentAppleLanguage() == "ar" {
             cell.titleLbl.text = favAds[indexPath.row].titleAr
             cell.deskLbl.text = favAds[indexPath.row].Description
+            cell.priceLbl.text = "\(favAds[indexPath.row].price)" + " " + favAds[indexPath.row].cur
+
         } else {
             cell.titleLbl.text = favAds[indexPath.row].titleEn
             cell.deskLbl.text = favAds[indexPath.row].DescriptionEN
+            cell.priceLbl.text = "\(favAds[indexPath.row].price)" + " " + favAds[indexPath.row].curEn
+
         }
-        cell.priceLbl.text = "\(favAds[indexPath.row].price)" + " " + "KWD".localized
         Alamofire.request(favAds[indexPath.row].imgUrl).responseImage { (response) in
             if let image = response.result.value {
                 DispatchQueue.main.async {

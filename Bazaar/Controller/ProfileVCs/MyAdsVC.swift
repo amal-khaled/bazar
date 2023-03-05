@@ -23,7 +23,8 @@ class MyAdsVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lineViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
-    
+    var isOpening = 0
+
     //Constants
     let MyAdsCellId = "MyAdsCell"
     
@@ -64,11 +65,15 @@ class MyAdsVC: UIViewController {
         if segue.identifier == "toAdVC" {
             let destVC = segue.destination as! AdVC
             destVC.selectedAdId = self.selectedAdId
+            destVC.isRemoveAdHidden = isOpening
+            destVC.isAdOwner = true
         }
     }
     
     @IBAction func openedBtnPressed(_ sender: Any) {
         lineViewConstraint.constant = 0
+        self.isOpening = 0
+
         indicator.isHidden = false
         indicator.startAnimating()
         AdsService.instance.getOpenedAds { (error, openedAds) in
@@ -82,6 +87,8 @@ class MyAdsVC: UIViewController {
     }
     
     @IBAction func closedBtnPressed(_ sender: Any) {
+        self.isOpening = 1
+
         if MOLHLanguage.isArabic() {
         lineViewConstraint.constant = -lineView.frame.width
         } else {
@@ -100,6 +107,7 @@ class MyAdsVC: UIViewController {
     }
     
     @IBAction func thirdBtnPressed(_ sender: Any) {
+        self.isOpening = 2
         if MOLHLanguage.isArabic() {
         lineViewConstraint.constant = -lineView.frame.width * 2
         } else {
@@ -127,10 +135,13 @@ extension MyAdsVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyAdsCellId, for: indexPath) as! MyAdsCell
         if MOLHLanguage.isArabic() {
             cell.adName.text = ads[indexPath.row].titleAr
+            cell.adPrice.text = "\(ads[indexPath.row].price)" + " " + ads[indexPath.row].cur
+
         } else {
             cell.adName.text = ads[indexPath.row].titleEn
+            cell.adPrice.text = "\(ads[indexPath.row].price)" + " " + ads[indexPath.row].curEn
+
         }
-        cell.adPrice.text = "\(ads[indexPath.row].price)" + " " + "KWD".localized
         Alamofire.request(ads[indexPath.row].imgUrl).responseImage { (response) in
             if let image = response.result.value {
                 DispatchQueue.main.async {

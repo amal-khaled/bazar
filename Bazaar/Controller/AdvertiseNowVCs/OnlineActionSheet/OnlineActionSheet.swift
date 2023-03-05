@@ -13,8 +13,10 @@ import SwiftyJSON
 import SafariServices
 
 class OnlineActionSheet: UIViewController {
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     //Outlets
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var actionSheetView: UIView!
     @IBOutlet weak var payBtn: UIButton!
@@ -33,11 +35,19 @@ class OnlineActionSheet: UIViewController {
     var UnPayedTotal: Double = 0.0
     var FreeBalance: Double = 0.0
     var UserBlance: Double = 0.0
-
+    var features = [Feature]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(featuresTableViewCell.self, forCellReuseIdentifier: "cell")
+
         setupView()
         loadRecipt()
+        tableView.reloadData()
+        tableViewHeight.constant = CGFloat(features.count * 60) + 20
+        tableView.layoutIfNeeded()
+        
+        updateViewConstraints()
     }
     
     func setupView() {
@@ -52,7 +62,7 @@ class OnlineActionSheet: UIViewController {
         self.priceLbl.text = "\(adPrice)"
         self.featureLbl.text = "\(Total - adPrice)"
         self.balanceLbl.text = "\(UserBlance)"
-        self.totalLbl.text = "\(Total)"
+        self.totalLbl.text = "\(UnPayedTotal)"
         self.unpayedLbl.text = "\(UnPayedTotal)"
     }
     
@@ -60,19 +70,20 @@ class OnlineActionSheet: UIViewController {
         var parameters = [String: Any]()
         if MOLHLanguage.currentAppleLanguage() == "ar" {
             parameters = [
-               "AdId" : adId,
-               "Lang": "ar",
-               ]
+                "AdId" : adId,
+                "Lang": "ar",
+            ]
         } else {
             parameters = [
-               "AdId" : adId,
-               "Lang": "en",
-               ]
+                "AdId" : adId,
+                "Lang": "en",
+            ]
         }
         
         Alamofire.request(PAY_ONLINE_URL, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: HEADER_BOTH).responseString { (response) in
             if response.result.error == nil {
                 let value = response.result.value
+                
                 let json = JSON(value as Any)
                 if let url = json.string {
                     var ur: String = ""
@@ -92,7 +103,7 @@ class OnlineActionSheet: UIViewController {
     }
     
     @IBAction func payBtnPressed(_ sender: Any) {
-//        pay()
+        //        pay()
         let paymentMethodsVC = PaymentMethodsVC()
         paymentMethodsVC.modalPresentationStyle = .custom
         paymentMethodsVC.modalTransitionStyle = .crossDissolve
@@ -102,5 +113,22 @@ class OnlineActionSheet: UIViewController {
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension OnlineActionSheet: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return features.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! featuresTableViewCell
+        if MOLHLanguage.currentAppleLanguage() == "ar"{
+            cell.textLabel?.text = "- " + features[indexPath.row].FeatureNameAR
+        }else{
+            cell.textLabel?.text  = "- " + features[indexPath.row].FeatureNameEN
+
+        }
+        cell.textLabel?.numberOfLines = 3
+        return cell
     }
 }

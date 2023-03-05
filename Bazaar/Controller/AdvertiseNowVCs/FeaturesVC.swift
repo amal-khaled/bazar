@@ -15,9 +15,10 @@ import NVActivityIndicatorView
 
 class FeaturesVC: UIViewController {
     
+    @IBOutlet weak var nextBtn: UIButton!
     //Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nextBtn: UIButton!
+//    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Constants
@@ -63,6 +64,12 @@ class FeaturesVC: UIViewController {
     
     func addFeatures(completion: @escaping CompletionHandler) {
         if featuresIds.count == 0 {
+            self.indicator.stopAnimating()
+            self.indicator.isHidden = true
+            let payActionSheet = PayActionSheet()
+            payActionSheet.adId = self.adId
+            payActionSheet.modalPresentationStyle = .custom
+            self.present(payActionSheet, animated: true, completion: nil)
             return
         } else {
         let parameters : [String : Any] = [
@@ -73,7 +80,10 @@ class FeaturesVC: UIViewController {
             print(parameters)
         Alamofire.request(ADD_FEATURES_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: HEADER_JSON).responseString { (response) in
             if response.result.error == nil {
+                completion(true)
             } else {
+                completion(false)
+
                 debugPrint(response.result.error as Any)
             }
         }
@@ -85,14 +95,15 @@ class FeaturesVC: UIViewController {
         indicator.startAnimating()
         addFeatures { (success) in
             if success {
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
+                let payActionSheet = PayActionSheet()
+                payActionSheet.adId = self.adId
+                payActionSheet.modalPresentationStyle = .custom
+                self.present(payActionSheet, animated: true, completion: nil)
             }
         }
-        indicator.stopAnimating()
-        indicator.isHidden = true
-        let payActionSheet = PayActionSheet()
-        payActionSheet.adId = self.adId
-        payActionSheet.modalPresentationStyle = .custom
-        present(payActionSheet, animated: true, completion: nil)
+       
     }
 }
 
@@ -106,11 +117,14 @@ extension FeaturesVC: UITableViewDelegate, UITableViewDataSource {
         if MOLHLanguage.currentAppleLanguage() == "ar" {
             cell.featureTitleLbl.text = features[indexPath.row].FeatureNameAR
             cell.featureDescLbl.text = features[indexPath.row].FeatureDescription
+            cell.currencyLbl.text = features[indexPath.row].currencyAr
+
         } else {
             cell.featureTitleLbl.text = features[indexPath.row].FeatureNameEN
             cell.featureDescLbl.text = features[indexPath.row].FeatureDescriptionEN
+            cell.currencyLbl.text = features[indexPath.row].currencyEn
+
         }
-        cell.currencyLbl.text = "KWD".localized
         cell.featurePriceLbl.text = "\(features[indexPath.row].FeaturePrice)"
         cell.btnPressed = { [weak self] in
             if cell.radioBtn.image(for: .normal) == UIImage(named: "unchecked_rectangle") {
@@ -119,6 +133,12 @@ extension FeaturesVC: UITableViewDelegate, UITableViewDataSource {
             } else {
                 cell.radioBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
                 self?.featuresIds.removeLast()
+            }
+            if self?.featuresIds.count == 0{
+                self?.nextBtn.setTitle("Skip".localized, for: .normal)
+            }else{
+                self?.nextBtn.setTitle("Next".localized, for: .normal)
+
             }
         }
 
@@ -133,6 +153,12 @@ extension FeaturesVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.radioBtn.setImage(UIImage(named: "unchecked_rectangle"), for: .normal)
             self.featuresIds.removeLast()
+        }
+        if featuresIds.count == 0{
+            nextBtn.setTitle("Skip".localized, for: .normal)
+        }else{
+            nextBtn.setTitle("Next".localized, for: .normal)
+
         }
     }
 }

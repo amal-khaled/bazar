@@ -18,4 +18,6 @@ class PaymentMethod: NSObject {
     var TotalAmount: Double = 0.0
     var CurrencyIso: String = ""
     var ImageUrl: String = ""
+    
+    
 }

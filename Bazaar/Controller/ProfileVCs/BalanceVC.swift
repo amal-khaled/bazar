@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MOLH
 
 class BalanceVC: UIViewController {
     
@@ -16,7 +17,9 @@ class BalanceVC: UIViewController {
     @IBOutlet weak var creditLbl: UILabel!
     @IBOutlet weak var freeCreditLbl: UILabel!
     
-
+    @IBOutlet weak var creditCurreny: UILabel!
+    @IBOutlet weak var freCreCurrency: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -34,6 +37,15 @@ class BalanceVC: UIViewController {
                 }
                 if let freePackageBalance = json["FreePackageBalance"].double {
                     self.freeCreditLbl.text = "\(freePackageBalance)"
+                }
+                
+                if let city = json["City"].dictionary {
+                    let Currency = city["Currency"]?.string
+                    let CurrencyEN = city["CurrencyEN"]?.string
+                    self.creditCurreny.text =  MOLHLanguage.currentAppleLanguage() == "ar" ? Currency : CurrencyEN
+                    self.freeCreditLbl.text =  MOLHLanguage.currentAppleLanguage() == "ar" ? Currency : CurrencyEN
+                    
+                  
                 }
             }
         }

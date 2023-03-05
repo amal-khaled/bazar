@@ -24,17 +24,21 @@ class CategoriesVC: UIViewController {
     var categories = [Category]()
     var selectedAdId: Int = 0
     var selectedCatId: Int = 0
+    var isTheLast = false
+    var page = 1
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        indicator.startAnimating()
+        loadData()
+        setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        indicator.startAnimating()
-        loadData()
-        setupTableView()
+
     }
     
     func setupView() {
@@ -51,9 +55,22 @@ class CategoriesVC: UIViewController {
     }
     
     func loadData() {
-        CategoriesService.instance.getAllCategoriesWithSubCategoriesAndSomeAds { (error, categories) in
+        CategoriesService.instance.getAllCategoriesWithSubCategoriesAndSomeAds(page: page) { (error, categories) in
             if let categories = categories {
-                self.categories = categories
+               
+              
+                
+                if categories.count == 0{
+                    self.isTheLast = true
+                    self.page = self.page - 1
+                }
+                else if self.page == 1 && categories.count != 0{
+                    self.categories = categories
+                }
+                else{
+                    self.categories.append(contentsOf: categories)
+                }
+                
                 self.tableView.reloadData()
                 self.indicator.stopAnimating()
                 self.indicator.isHidden = true
@@ -90,5 +107,17 @@ extension CategoriesVC: UITableViewDelegate, UITableViewDataSource {
             cell.catNameLbl.text = categories[indexPath.row].nameEn
         }
         return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+            let lastElement = categories.count - 1
+            if !isTheLast{
+                print(indexPath.row  )
+                print(categories.count-1)
+                if indexPath.row == lastElement {
+                    self.page = page + 1
+                    loadData()
+                }
+            }
+
     }
 }
