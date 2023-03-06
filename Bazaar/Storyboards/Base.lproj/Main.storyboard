@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BHf-hG-ebe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BHf-hG-ebe">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -2253,7 +2253,7 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2Uz-I5-2ij">
-                                                                        <rect key="frame" x="237.66666666666671" y="19.666666666666742" width="126.33333333333334" height="30.666666666666671"/>
+                                                                        <rect key="frame" x="232.33333333333331" y="19.666666666666742" width="131.66666666666669" height="30.666666666666671"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXX-Q9-Oci">
                                                                                 <rect key="frame" x="0.0" y="2.3333333333332575" width="63.333333333333336" height="26"/>
@@ -2280,7 +2280,7 @@
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tx0-kV-1LQ">
-                                                                                <rect key="frame" x="71.333333333333314" y="0.0" width="55" height="30.666666666666668"/>
+                                                                                <rect key="frame" x="71.333333333333371" y="0.0" width="60.333333333333343" height="30.666666666666668"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2391,10 +2391,10 @@
                                                 <rect key="frame" x="15" y="215" width="384" height="0.0"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4fb-0O-zMB">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="211.33333333333334" height="0.0"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFA-2a-AI0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="105" height="0.0"/>
                                                                 <color key="tintColor" red="0.23475748299999999" green="0.51428681610000004" blue="0.1449854672" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Update Ad"/>
@@ -2403,7 +2403,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-mh-TUI">
-                                                                <rect key="frame" x="100.66666666666669" y="0.0" width="87" height="0.0"/>
+                                                                <rect key="frame" x="113" y="0.0" width="98.333333333333314" height="0.0"/>
                                                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Delete Ad"/>
@@ -5117,16 +5117,16 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="NJT-vE-6Xp">
-                                                <rect key="frame" x="0.0" y="39.666666666666629" width="394" height="31"/>
+                                                <rect key="frame" x="0.0" y="37.666666666666629" width="394" height="34.333333333333343"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-f6-SWR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="34.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xt-rd-piY">
-                                                        <rect key="frame" x="279" y="0.0" width="115" height="31"/>
+                                                        <rect key="frame" x="279" y="0.0" width="115" height="34.333333333333336"/>
                                                         <color key="backgroundColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="115" id="ew2-yC-TBU"/>
@@ -5155,23 +5155,23 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cis-G0-0nx">
-                                                <rect key="frame" x="0.0" y="99.333333333333371" width="394" height="1"/>
+                                                <rect key="frame" x="0.0" y="98.666666666666629" width="394" height="1"/>
                                                 <color key="backgroundColor" red="0.08235294118" green="0.086274509799999996" blue="0.4039215686" alpha="0.47628379973354718" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="XKB-RR-AjS"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="azF-6v-yHr">
-                                                <rect key="frame" x="0.0" y="129.33333333333337" width="394" height="31"/>
+                                                <rect key="frame" x="0.0" y="126.66666666666661" width="394" height="34.333333333333329"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send Whatsapp Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybJ-q1-GG9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="194" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="194" height="34.333333333333336"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzH-Ba-eMi">
-                                                        <rect key="frame" x="279" y="0.0" width="115" height="31"/>
+                                                        <rect key="frame" x="279" y="0.0" width="115" height="34.333333333333336"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="115" id="dFo-DS-FTg"/>
@@ -5200,14 +5200,14 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnG-4B-rdW">
-                                                <rect key="frame" x="0.0" y="189" width="394" height="1"/>
+                                                <rect key="frame" x="0.0" y="187.66666666666663" width="394" height="1"/>
                                                 <color key="backgroundColor" red="0.08235294118" green="0.086274509799999996" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="59v-M8-BOF"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lV-eC-F3J">
-                                                <rect key="frame" x="0.0" y="219" width="394" height="31"/>
+                                                <rect key="frame" x="0.0" y="215.66666666666663" width="394" height="34.333333333333343"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system" title="Close"/>
@@ -9970,7 +9970,7 @@
         <segue reference="OJH-Qx-oHK"/>
         <segue reference="RPk-10-C1Q"/>
         <segue reference="ILo-qZ-IMa"/>
-        <segue reference="FmN-hw-Tt0"/>
+        <segue reference="lHx-ZI-weU"/>
         <segue reference="4Hm-0e-AcE"/>
         <segue reference="EI8-Cx-d1d"/>
         <segue reference="Dta-Dd-sjG"/>
@@ -9999,11 +9999,11 @@
         <image name="edit" width="29" height="29"/>
         <image name="email" width="29" height="20"/>
         <image name="exit" width="159.33332824707031" height="159.33332824707031"/>
-        <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
         <image name="fb" width="29" height="29"/>
         <image name="flag" width="29" height="34.333332061767578"/>
         <image name="flag.fill" catalog="system" width="128" height="121"/>
-        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
+        <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
         <image name="help" width="29" height="28.666666030883789"/>
         <image name="home" width="29" height="29"/>
         <image name="instagram" width="29" height="29"/>
@@ -10015,9 +10015,9 @@
         <image name="lock" width="94.333335876464844" height="94.333335876464844"/>
         <image name="logout" width="29" height="47.666667938232422"/>
         <image name="menu" width="29" height="29"/>
-        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="message" catalog="system" width="128" height="116"/>
         <image name="money" width="29" height="29"/>
-        <image name="network" catalog="system" width="128" height="121"/>
+        <image name="network" catalog="system" width="128" height="123"/>
         <image name="notification" width="29" height="29"/>
         <image name="payment" width="29" height="29"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>

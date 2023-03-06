@@ -14,11 +14,17 @@ pod 'SwiftyJSON'
 pod 'ImageSlideshow', '~> 1.8.1'
 pod "ImageSlideshow/Alamofire"
 pod 'iOSDropDown'
-pod 'NVActivityIndicatorView'
+pod 'NVActivityIndicatorView/Extended'
 pod 'MyFatoorah'
 pod 'Firebase/Analytics'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
+pod 'Firebase/Auth'
 pod 'OpalImagePicker'
+pod 'SDWebImage', '~> 5.0'
+pod 'UITextView+Placeholder'
+pod 'MSPeekCollectionViewDelegateImplementation'
+pod 'PhoneNumberKit'
+pod 'SimpleImageViewer', '~> 1.1.1'
 
 end
