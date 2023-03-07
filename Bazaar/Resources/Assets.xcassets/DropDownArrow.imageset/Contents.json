@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "LockImage.png",
+      "filename" : "dropDownArrow.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "LockImage@2x.png",
+      "filename" : "dropDownArrow@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "LockImage@3x.png",
+      "filename" : "dropDownArrow@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
