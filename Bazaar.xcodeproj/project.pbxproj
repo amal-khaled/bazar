@@ -190,6 +190,7 @@
 		65FFCE6225DEF6850044AD8D /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCE6125DEF6850044AD8D /* Cart.swift */; };
 		65FFCEA625DF1F330044AD8D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA525DF1F330044AD8D /* CartTableViewCell.swift */; };
 		65FFCEAA25DF24560044AD8D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA925DF24560044AD8D /* CartViewController.swift */; };
+		C815020629B7EC35001B3537 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C815020529B7EC35001B3537 /* UILabelPadding.swift */; };
 		ECEEC6E7EA83ECF703A3C749 /* Pods_Bazaar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */; };
 /* End PBXBuildFile section */
 
@@ -399,6 +400,7 @@
 		8A8EBF2C0E5D915F2A5C4A20 /* Pods-A3lanate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A3lanate.release.xcconfig"; path = "Target Support Files/Pods-A3lanate/Pods-A3lanate.release.xcconfig"; sourceTree = "<group>"; };
 		91F569B05DD0DDE935DF6637 /* Pods-Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bazaar.release.xcconfig"; path = "Target Support Files/Pods-Bazaar/Pods-Bazaar.release.xcconfig"; sourceTree = "<group>"; };
 		C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bazaar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C815020529B7EC35001B3537 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -907,6 +909,7 @@
 		0BF4487D23F173330044B88B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C815020529B7EC35001B3537 /* UILabelPadding.swift */,
 				656FC8902601846300F8C7F4 /* GeneralUIExtenstions.swift */,
 				656FC8922601846500F8C7F4 /* KeyboardLayoutConstraint.swift */,
 				656FC8912601846400F8C7F4 /* NetworkHelper.swift */,
@@ -1424,6 +1427,7 @@
 				658C04EA262FA27C00472394 /* RegisterWithEmailViewController.swift in Sources */,
 				0B19086E23F737230050AE73 /* AdsService.swift in Sources */,
 				656FC8962601846600F8C7F4 /* NetworkHelper.swift in Sources */,
+				C815020629B7EC35001B3537 /* UILabelPadding.swift in Sources */,
 				0B02C4FD23DCAC9700766776 /* MainAdsCell.swift in Sources */,
 				0B1F78AD23E9DA8B006BDFBA /* QuestionCell.swift in Sources */,
 				0BFDB5F723EC030000695A5A /* EditProfileVC.swift in Sources */,
