@@ -27,6 +27,8 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailContnetView.isHidden = true
+        phoneeContentView.isHidden = false
     }
     
  
