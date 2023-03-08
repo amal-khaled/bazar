@@ -12,13 +12,30 @@ import NVActivityIndicatorView
 import FirebaseAuth
 
 class RegisterWithPhoneViewController: UIViewController {
+   
     
+    @IBOutlet weak var fullNameView: UIView!
+    @IBOutlet weak var fullNameTF: UITextField!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    
+    
+    @IBOutlet weak var countryView: UIView!
+    @IBOutlet weak var countryTF: UITextField!
+    @IBOutlet weak var countryLabel: UILabel!
+    
+    
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var emailView: UIView!
+    @IBOutlet weak var emailLabel: UILabel!
     
     @IBOutlet weak var codeTF: UITextField!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var phoneTxtField: UITextField!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     @IBOutlet weak var passView: UIView!
     @IBOutlet weak var passTxtField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
     
     @IBOutlet weak var phoneBtn: UIButton!
     @IBOutlet weak var loginView: UIView!
@@ -46,26 +63,31 @@ class RegisterWithPhoneViewController: UIViewController {
     
     func setupView() {
         
-        phoneView.addCornerRadius(cornerRadius: 45)
-        phoneView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
-        passView.addCornerRadius(cornerRadius: 45)
-        passView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
-        phoneBtn.addCornerRadius(cornerRadius: 35)
-        loginView.addCornerRadius(cornerRadius: 40)
+        
+        
+       // phoneView.addCornerRadius(cornerRadius: 45)
+        phoneView.addBorder(borderWidth: 1, borderColor:  #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 1))
+        emailView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 1))
+        fullNameView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 1))
+        countryView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 1))
+       // passView.addCornerRadius(cornerRadius: 45)
+        passView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 1))
+       // phoneBtn.addCornerRadius(cornerRadius: 35)
+      //  loginView.addCornerRadius(cornerRadius: 40)
         loginView.addBorder(borderWidth: 1, borderColor: UIColor.gray.cgColor)
         //        phoneBtn.isHidden = true
         phoneTxtField.delegate = self
         passTxtField.delegate = self
         if MOLHLanguage.currentAppleLanguage() == "ar" {
-            phoneView.layer.maskedCorners = [.layerMinXMinYCorner]
-            passView.layer.maskedCorners = [.layerMinXMaxYCorner]
-            loginView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+         //   phoneView.layer.maskedCorners = [.layerMinXMinYCorner]
+         //   passView.layer.maskedCorners = [.layerMinXMaxYCorner]
+         //   loginView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
             phoneTxtField.textAlignment = .right
             passTxtField.textAlignment = .right
         } else {
-            phoneView.layer.maskedCorners = [.layerMaxXMinYCorner]
-            passView.layer.maskedCorners = [.layerMaxXMaxYCorner]
-            loginView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
+//            phoneView.layer.maskedCorners = [.layerMaxXMinYCorner]
+//            passView.layer.maskedCorners = [.layerMaxXMaxYCorner]
+//            loginView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
             phoneTxtField.textAlignment = .left
             passTxtField.textAlignment = .left
         }

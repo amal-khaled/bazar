@@ -212,8 +212,12 @@
 
 "rUE-wR-Ate.normalTitle" = "البريد الالكتروني";
 "sHb-kc-hJ9.normalTitle" = "رقم الهاتف";
-"gi7-u8-GJi.text" = "تسجيل الدخول باستخدام";
+"oTv-kw-Z6U.text" = "رقم الهاتف";
+"N4l-eA-b2P.text" = "كلمة المرور";
+"KBP-YG-fGD.normalTitle" = "دخول";
+"gi7-u8-GJi.text" = "مرحبا بكم في بازار";
 "HLl-je-d04.placeholder" = "البريد الالكتروني";
+"v1A-n6-5Pe.text" = " ليس لديك حساب؟";
 
 "nhQ-hM-Rex.placeholder" = "كلمة المرور";
 "umj-hV-vhn.normalTitle" = "نسيت كلمة المرور ؟";
@@ -222,7 +226,7 @@
 "aZB-Fz-rZO.placeholder" = "رقم الجوال";
 "iJE-AE-IuT.placeholder" = "كلمة المرور";
 "cNT-rI-J1c.normalTitle" = "نسيت كلمة المرور";
-"IFN-Mw-Zqf.normalTitle" = "تسجيل جديد";
+"IFN-Mw-Zqf.normalTitle" = "سجل الأن";
 "wi9-QY-Mhe.text" = "نسيت كلمة المرور";
 "SEi-TA-dan.placeholder" = "البريد الالكتروني";
 "iJd-uZ-NiV.normalTitle" = "ارسال";
@@ -243,7 +247,7 @@
 "6gM-vW-tXb.placeholder" = "الكود";
 "NoO-Lr-ckO.normalTitle" = "حفظ";
 
-"pkQ-zh-J9n.text" = "تسجيل جديد";
+"pkQ-zh-J9n.text" = "تسجيل حساب";
 "9BS-HL-7Cg.normalTitle" = "البريد الالكتروني";
 "5r0-Pn-Wv0.normalTitle" = "رقم الجوال";
 

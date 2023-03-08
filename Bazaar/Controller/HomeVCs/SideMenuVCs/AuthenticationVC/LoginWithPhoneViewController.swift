@@ -34,29 +34,31 @@ class LoginWithPhoneViewController: UIViewController {
 
          indicator.isHidden = true
          setupView()
-         // Do any additional setup after loading the view.
+
      }
      
      func setupView() {
-         phoneView.addCornerRadius(cornerRadius: 45)
+        // phoneView.addCornerRadius(cornerRadius: 45)
          phoneView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
-         passwordView.addCornerRadius(cornerRadius: 45)
+         passwordView.layer.cornerRadius = 10.0
+         phoneView.layer.cornerRadius = 10.0
+         passwordView.clipsToBounds = true
          passwordView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
-         loginBtn.addCornerRadius(cornerRadius: 40)
-         registerView.addCornerRadius(cornerRadius: 40)
+       //  loginBtn.addCornerRadius(cornerRadius: 40)
+     //    registerView.addCornerRadius(cornerRadius: 40)
          registerView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
          phoneTF.delegate = self
          passwordTxtField.delegate = self
          if MOLHLanguage.currentAppleLanguage() == "ar" {
-             phoneView.layer.maskedCorners = [.layerMinXMinYCorner]
-             passwordView.layer.maskedCorners = [.layerMinXMaxYCorner]
-             registerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
+//             phoneView.layer.maskedCorners = [.layerMinXMinYCorner]
+//             passwordView.layer.maskedCorners = [.layerMinXMaxYCorner]
+//             registerView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
              phoneTF.textAlignment = .right
              passwordTxtField.textAlignment = .right
          } else {
-             phoneView.layer.maskedCorners = [.layerMaxXMinYCorner]
-             passwordView.layer.maskedCorners = [.layerMaxXMaxYCorner]
-             registerView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
+//             phoneView.layer.maskedCorners = [.layerMaxXMinYCorner]
+//             passwordView.layer.maskedCorners = [.layerMaxXMaxYCorner]
+//             registerView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMaxXMinYCorner]
              phoneTF.textAlignment = .left
              passwordTxtField.textAlignment = .left
          }
