@@ -14,6 +14,9 @@ class LoginWithPhoneViewController: UIViewController {
     
     @IBOutlet weak var phoneTF: UITextField!
     @IBOutlet weak var codeTF: UITextField!
+    
+    @IBOutlet weak var phoneImage: UIImageView!
+    
     @IBOutlet weak var phoneView: UIView!
      @IBOutlet weak var passwordView: UIView!
      @IBOutlet weak var passwordTxtField: UITextField!
@@ -48,6 +51,7 @@ class LoginWithPhoneViewController: UIViewController {
      //    registerView.addCornerRadius(cornerRadius: 40)
          registerView.addBorder(borderWidth: 0.6, borderColor: UIColor.gray.cgColor)
          phoneTF.delegate = self
+         codeTF.delegate = self
          passwordTxtField.delegate = self
          if MOLHLanguage.currentAppleLanguage() == "ar" {
 //             phoneView.layer.maskedCorners = [.layerMinXMinYCorner]
@@ -109,15 +113,7 @@ class LoginWithPhoneViewController: UIViewController {
 
          eyeClick = !eyeClick
      }
-     /*
-     // MARK: - Navigation
-
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+     
 
  }
 
@@ -145,6 +141,7 @@ extension LoginWithPhoneViewController{
         
         for item in countryList{
             let superbutton = UIAlertAction(title: MOLHLanguage.currentAppleLanguage() == "ar" ? item.nameAr : item.nameEn , style: .default, handler: { (action) in
+                self.phoneImage.isHidden = true
                 self.codeTF.text = item.code
                 self.selectedCountry = item
             })

@@ -10,6 +10,7 @@ import UIKit
 import MOLH
 import NVActivityIndicatorView
 import FirebaseAuth
+import iOSDropDown
 
 class RegisterWithPhoneViewController: UIViewController {
    
@@ -20,7 +21,8 @@ class RegisterWithPhoneViewController: UIViewController {
     
     
     @IBOutlet weak var countryView: UIView!
-    @IBOutlet weak var countryTF: UITextField!
+   
+    @IBOutlet weak var CountryDropDwon: DropDown!
     @IBOutlet weak var countryLabel: UILabel!
     
     
@@ -29,6 +31,8 @@ class RegisterWithPhoneViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     @IBOutlet weak var codeTF: UITextField!
+    
+    @IBOutlet weak var codeDropDown: DropDown!
     @IBOutlet weak var phoneView: UIView!
     @IBOutlet weak var phoneTxtField: UITextField!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -38,11 +42,17 @@ class RegisterWithPhoneViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     
     @IBOutlet weak var phoneBtn: UIButton!
-    @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var passwordEyeBtn: UIButton!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     @IBOutlet weak var termsBtn: UIButton!
+    
+    // DropDown
+    
+    
+    @IBOutlet weak var regionDropDown: DropDown!
+    
+    @IBOutlet weak var cityDropDown: DropDown!
     
     //Variable
     var passeyeClick = true
@@ -62,8 +72,40 @@ class RegisterWithPhoneViewController: UIViewController {
     }
     
     func setupView() {
-        
-        
+        codeDropDown.text = ""
+        codeDropDown.optionArray = ["+20","+965"]
+        codeDropDown.optionIds = [20,65]
+//        phoneCodeDropDwon.optionImageArray = ["kuwaitFlag","kuwaitFlag"]
+
+        codeDropDown.didSelect{(selectedText , index ,id) in
+            print("Selected String: \(selectedText) \n index: \(index)")
+            self.codeTF.text = "\(selectedText)"
+        }
+        CountryDropDwon.text = "choose Country"
+        CountryDropDwon.optionArray = ["Option 1", "Option 2", "Option 3","Option 4", "Option 5","Option 6", "Option 7","Option 8", "Option 9"]
+        CountryDropDwon.optionIds = [1,23,54,22]
+        CountryDropDwon.optionImageArray = ["location","location","location","location"]
+
+        CountryDropDwon.didSelect{(selectedText , index ,id) in
+            print("Selected String: \(selectedText) \n index: \(index)")
+            self.CountryDropDwon.text = "\(selectedText)"
+        }
+        regionDropDown.text = "Region"
+        regionDropDown.optionArray = ["Option 1", "Option 2", "Option 3","Option 4", "Option 5","Option 6", "Option 7","Option 8", "Option 9"]
+        regionDropDown.optionIds = [1,23,54,22]
+
+        regionDropDown.didSelect{(selectedText , index ,id) in
+            print("Selected String: \(selectedText) \n index: \(index)")
+            self.regionDropDown.text = "\(selectedText)"
+        }
+        cityDropDown.text = "City"
+        cityDropDown.optionArray = ["Option 1", "Option 2", "Option 3","Option 4", "Option 5","Option 6", "Option 7","Option 8", "Option 9", "Option 10","Option 11", "Option 12","Option 13", "Option 14"]
+        cityDropDown.optionIds = [1,23,54,22]
+
+        cityDropDown.didSelect{(selectedText , index ,id) in
+            print("Selected String: \(selectedText) \n index: \(index)")
+            self.cityDropDown.text = "\(selectedText)"
+        }
         
        // phoneView.addCornerRadius(cornerRadius: 45)
         phoneView.addBorder(borderWidth: 1, borderColor:  #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 1))
@@ -73,15 +115,12 @@ class RegisterWithPhoneViewController: UIViewController {
        // passView.addCornerRadius(cornerRadius: 45)
         passView.addBorder(borderWidth: 1, borderColor: #colorLiteral(red: 0.6431372549, green: 0.6431372549, blue: 0.6431372549, alpha: 1))
        // phoneBtn.addCornerRadius(cornerRadius: 35)
-      //  loginView.addCornerRadius(cornerRadius: 40)
-        loginView.addBorder(borderWidth: 1, borderColor: UIColor.gray.cgColor)
         //        phoneBtn.isHidden = true
         phoneTxtField.delegate = self
         passTxtField.delegate = self
         if MOLHLanguage.currentAppleLanguage() == "ar" {
          //   phoneView.layer.maskedCorners = [.layerMinXMinYCorner]
          //   passView.layer.maskedCorners = [.layerMinXMaxYCorner]
-         //   loginView.layer.maskedCorners = [.layerMinXMinYCorner,.layerMinXMaxYCorner]
             phoneTxtField.textAlignment = .right
             passTxtField.textAlignment = .right
         } else {
@@ -227,16 +266,17 @@ extension RegisterWithPhoneViewController: UITextFieldDelegate {
         return true
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if codeTF == textField {
-            if countryList.count > 0{
-                self.showCountryList()
-            }else{
-                self.getCountryList(show: true)
-            }
-            return false
-        }else{
-            return true
-        }
+//        if codeTF == textField {
+//            if countryList.count > 0{
+//                self.showCountryList()
+//            }else{
+//                self.getCountryList(show: true)
+//            }
+//            return false
+//        }else{
+//            return true
+//        }
+        return true
     }
 }
 extension RegisterWithPhoneViewController{
@@ -245,7 +285,7 @@ extension RegisterWithPhoneViewController{
         
         for item in countryList{
             let superbutton = UIAlertAction(title: MOLHLanguage.currentAppleLanguage() == "ar" ? item.nameAr : item.nameEn , style: .default, handler: { (action) in
-                self.codeTF.text = item.code
+//                self.codeTF.text = item.code
                 self.selectedCountry = item
             })
             
