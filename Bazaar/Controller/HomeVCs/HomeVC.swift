@@ -34,9 +34,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var mostViewdCollection: FSPagerView!
     @IBOutlet weak var allBtn: UIButton!
-    @IBOutlet weak var featuredCollectionHight: NSLayoutConstraint!
-    @IBOutlet weak var recentCollectionHight: NSLayoutConstraint!
-    @IBOutlet weak var mostViewdCollectionHight: NSLayoutConstraint!
+  
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     @IBOutlet weak var mostViewedSlider: ImageSlideshow!
@@ -50,7 +48,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var cCategoriesCollection: UICollectionView!
     @IBOutlet weak var commericalCollection: UICollectionView!
     @IBOutlet weak var cAdBtn: UIButton!
-    @IBOutlet weak var adBtn: UIButton!
+//    @IBOutlet weak var adBtn: UIButton!
     @IBOutlet weak var adsView: UIScrollView!
     
     @IBOutlet weak var commericalAdsBtn: UIButton!
@@ -589,11 +587,11 @@ class HomeVC: UIViewController {
         mostViewdCollection.register(UINib(nibName: MainAdsCellID, bundle: Bundle.main), forCellWithReuseIdentifier: MainAdsCellID)
         cCategoriesCollection.register(UINib(nibName: MainCategoriesCellID, bundle: nil), forCellWithReuseIdentifier: MainCategoriesCellID)
         
-        recentCollection.itemSize = CGSize(width: 0.85*recentCollection.frame.width, height: 178)
-        recentCollection.transformer = FSPagerViewTransformer(type: .linear)
-        mostViewdCollection.itemSize = CGSize(width: 0.85*mostViewdCollection.frame.width, height: 178)
+        recentCollection.itemSize = CGSize(width: 0.75*recentCollection.frame.width, height: 178)
+//        recentCollection.transformer = FSPagerViewTransformer(type: .)
+        mostViewdCollection.itemSize = CGSize(width: 0.75*mostViewdCollection.frame.width, height: 178)
         mostViewdCollection.transformer = FSPagerViewTransformer(type: .linear)
-        featuredCollection.itemSize = CGSize(width: 0.85*featuredCollection.frame.width, height: 178)
+        featuredCollection.itemSize = CGSize(width: 0.75*featuredCollection.frame.width, height: 178)
         featuredCollection.transformer = FSPagerViewTransformer(type: .linear)
         
         
