@@ -83,14 +83,26 @@
 "Oje-go-8Ua.normalTitle" = "نسيت كلمة المرور؟";
 
 //RegisterVC
+"rfa-8p-eVS.text" = " الأسم كامل";
+"dMn-oz-a7a.placeholder" = " الأسم كامل";
+"1R9-eM-zAJ.text" = " الدولة";
+"YBB-dd-4b2.placeholder" = " الدولة";
+"jhD-3g-UZy.text" = "المنطقة";
+"aBL-ZI-b7W.text"="المحافظة";
+"LTL-Zu-laH.text" = "رقم الهاتف";
+"33j-5l-BbE.placeholder" = "رقم الهاتف";
 "D9K-pT-Mi6.text" = "تسجيل";
-"IZM-FQ-8gv.placeholder" = "البريد الالكتروني";
+"VSp-Z9-faf.placeholder" = "البريد الالكتروني";
 "7Tx-iz-PfM.placeholder" = "الهاتف";
+"OKA-k3-9dP.text" = "البريد الالكتروني";
+"KaB-It-rbJ.text" = "الرقم السري";
 "tIf-or-RK1.placeholder" = "الرقم السري";
 "qYc-F9-Cdc.placeholder" = "تأكيد الرقم السري";
 "mGu-i6-PEm.text" = "اوافق علي جميع الشروط والاحكام";
 "IoO-tG-Q1W.normalTitle" = "تسجيل الدخول";
-"HZI-sv-1Iq.normalTitle" = "اوافق علي جميع الشروط والاحكام";
+"4Vz-v6-OIS.normalTitle" = "تسجيل";
+"kc7-dL-rLX.normalTitle" = "الموافقة علي";
+"J4C-KZ-ACy.normalTitle" = "الشروط والأحكام";
 
 //ForgetPassVC
 "jyLd-F7-nWy.text" = "نسيت كلمة المرور؟";
@@ -262,7 +274,8 @@
 "zo4-Bc-cwo.placeholder" = "الكود";
 "33j-5l-BbE.placeholder" = "رقم الجوال";
 "Ex2-KZ-11j.placeholder" = "كلمة المرور";
-"kc7-dL-rLX.normalTitle" = "اوافق علي الشروط والاحكام";
+"kc7-dL-rLX.normalTitle" = "اوافق علي";
+"ElU-Eu-lUV.text" = "هل لديك حساب بالفعل؟";
 "9KB-Hl-tKD.normalTitle" = "دخول";
 
 "Cp6-gQ-ewO.text" = "تأكيد رقم الجوال";
