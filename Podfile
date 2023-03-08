@@ -26,5 +26,7 @@ pod 'UITextView+Placeholder'
 pod 'MSPeekCollectionViewDelegateImplementation'
 pod 'PhoneNumberKit'
 pod 'SimpleImageViewer', '~> 1.1.1'
+pod 'FSPagerView'
+
 
 end

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,36 +29,37 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOR-dt-hUw">
-                                <rect key="frame" x="30" y="150" width="110" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Q5W-Yf-R8D"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="160" y="10" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EOR-dt-hUw" firstAttribute="leading" secondItem="wdl-qO-3Pj" secondAttribute="leading" constant="30" id="2l2-iC-an7"/>
                             <constraint firstAttribute="trailing" secondItem="deg-Ua-2if" secondAttribute="trailing" id="7fO-Hu-Fv0"/>
-                            <constraint firstAttribute="trailing" secondItem="EOR-dt-hUw" secondAttribute="trailing" constant="30" id="IRc-yQ-2t2"/>
+                            <constraint firstAttribute="trailing" secondItem="EOR-dt-hUw" secondAttribute="trailing" constant="10" id="Pde-i8-Qso"/>
                             <constraint firstItem="deg-Ua-2if" firstAttribute="top" secondItem="wdl-qO-3Pj" secondAttribute="top" id="Twn-my-eCI"/>
                             <constraint firstAttribute="bottom" secondItem="deg-Ua-2if" secondAttribute="bottom" id="ajo-Px-OPN"/>
-                            <constraint firstAttribute="bottom" secondItem="EOR-dt-hUw" secondAttribute="bottom" id="giB-BC-TVa"/>
+                            <constraint firstItem="EOR-dt-hUw" firstAttribute="top" secondItem="wdl-qO-3Pj" secondAttribute="top" constant="10" id="oHU-Pv-sBg"/>
                             <constraint firstItem="deg-Ua-2if" firstAttribute="leading" secondItem="wdl-qO-3Pj" secondAttribute="leading" id="qsT-Y3-1dp"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="wdl-qO-3Pj" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="71F-yG-i95"/>
                 <constraint firstAttribute="trailing" secondItem="wdl-qO-3Pj" secondAttribute="trailing" id="F4A-lB-Yhy"/>
                 <constraint firstItem="wdl-qO-3Pj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="UdU-6R-1EY"/>
                 <constraint firstAttribute="bottom" secondItem="wdl-qO-3Pj" secondAttribute="bottom" id="sId-5t-C8w"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="bgImg" destination="deg-Ua-2if" id="tFh-37-gYF"/>
                 <outlet property="bgView" destination="wdl-qO-3Pj" id="8Mq-jY-sf3"/>
@@ -66,4 +68,9 @@
             <point key="canvasLocation" x="139" y="131"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

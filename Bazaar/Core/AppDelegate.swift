@@ -81,7 +81,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1) , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1) , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)]  , for: .selected)
         Thread.sleep(forTimeInterval: 2.0)
-        
+//        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+//            if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
+//                statusBar.backgroundColor = UIColor(named: "main_color")
+//            }
+//
+//        if #available(iOS 13.0, *) {
+//                 let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+//                 // Reference - https://stackoverflow.com/a/57899013/7316675
+//                 let statusBar = UIView(frame: window?.windowScene?.statusBarManager?.statusBarFrame ?? CGRect.zero)
+//                 statusBar.backgroundColor = UIColor(named: "main_color")
+//                 window?.addSubview(statusBar)
+//          }
         Messaging.messaging().subscribe(toTopic: "/topics/all_users") { error in
             print("Subscribed to weather topic")
         }

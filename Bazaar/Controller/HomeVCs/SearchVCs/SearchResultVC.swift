@@ -125,42 +125,42 @@ extension SearchResultVC: UICollectionViewDelegate,UICollectionViewDelegateFlowL
             }
         }
         if MOLHLanguage.currentAppleLanguage() == "ar" {
-            cell.typeLbl.text = ads[indexPath.row].titleAr
-            cell.currencyLbl.text = ads[indexPath.row].cur
-            cell.governrateLbl.text = ads[indexPath.row].governrateAR
+            cell.titleLbl.text = ads[indexPath.row].titleAr
+//            cell.currencyLbl.text = ads[indexPath.row].cur
+            cell.contentLbl.text = ads[indexPath.row].governrateAR
 
         } else {
-            cell.typeLbl.text = ads[indexPath.row].titleEn
-            cell.currencyLbl.text = ads[indexPath.row].curEn
-            cell.governrateLbl.text = ads[indexPath.row].governrateEN
+            cell.titleLbl.text = ads[indexPath.row].titleEn
+//            cell.currencyLbl.text = ads[indexPath.row].curEn
+            cell.contentLbl.text = ads[indexPath.row].governrateEN
 
 
         }
-        cell.priceLbl.text = "\(ads[indexPath.row].price)"
+//        cell.priceLbl.text = "\(ads[indexPath.row].price)"
 //        if ads[indexPath.row].isLoved == true {
 //            cell.likeImg.image = UIImage(named: "likeR")
 //        }
-        cell.btnPressed = { [weak self] in
-            if NetworkHelper.getToken() != nil {
-                AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
-                    if success {
-//                        if cell.likeImg.image == UIImage(named: "likeR") {
-//                            cell.likeImg.image = UIImage(named: "likeG")
-//                        } else {
-//                            cell.likeImg.image = UIImage(named: "likeR")
-//                        }
-                        
-                    }
-                }
-            } else {
-                let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
-                self?.present(alert, animated: true, completion: nil)
-                let when = DispatchTime.now() + 2
-                DispatchQueue.main.asyncAfter(deadline: when){
-                    alert.dismiss(animated: true, completion: nil)
-                }
-            }
-        }
+//        cell.btnPressed = { [weak self] in
+//            if NetworkHelper.getToken() != nil {
+//                AdsService.instance.favoriteAdById(Id: (self?.ads[indexPath.row].id)!) { (success) in
+//                    if success {
+////                        if cell.likeImg.image == UIImage(named: "likeR") {
+////                            cell.likeImg.image = UIImage(named: "likeG")
+////                        } else {
+////                            cell.likeImg.image = UIImage(named: "likeR")
+////                        }
+//                        
+//                    }
+//                }
+//            } else {
+//                let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+//                self?.present(alert, animated: true, completion: nil)
+//                let when = DispatchTime.now() + 2
+//                DispatchQueue.main.asyncAfter(deadline: when){
+//                    alert.dismiss(animated: true, completion: nil)
+//                }
+//            }
+//        }
         return cell
     }
     

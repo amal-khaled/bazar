@@ -13,6 +13,7 @@ import MOLH
 import Alamofire
 import AlamofireImage
 import NVActivityIndicatorView
+import FSPagerView
 
 class HomeVC: UIViewController {
     
@@ -23,14 +24,17 @@ class HomeVC: UIViewController {
     @IBOutlet weak var imageSlideshowContainer: UIView!
     @IBOutlet weak var imageSlideshow: ImageSlideshow!
     @IBOutlet weak var categoriesCollection: UICollectionView!
-    @IBOutlet weak var featuredCollection: UICollectionView!
-    @IBOutlet weak var recentCollection: UICollectionView!
+    @IBOutlet weak var featuredCollection: FSPagerView!
+    @IBOutlet weak var recentCollection: FSPagerView!
+    //    {
+    //        didSet {
+    //                   self.recentCollection.register(FSPagerViewCell.self, forCellWithReuseIdentifier: MainAdsCellID)
+    //               }
+    //    }
     @IBOutlet weak var searchBtn: UIButton!
-    @IBOutlet weak var mostViewdCollection: UICollectionView!
+    @IBOutlet weak var mostViewdCollection: FSPagerView!
     @IBOutlet weak var allBtn: UIButton!
-    @IBOutlet weak var featuredCollectionHight: NSLayoutConstraint!
-    @IBOutlet weak var recentCollectionHight: NSLayoutConstraint!
-    @IBOutlet weak var mostViewdCollectionHight: NSLayoutConstraint!
+  
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     @IBOutlet weak var mostViewedSlider: ImageSlideshow!
@@ -38,13 +42,13 @@ class HomeVC: UIViewController {
     @IBOutlet weak var featuredSlider: ImageSlideshow!
     
     let button =  UIButton(type: .custom)
-
-
+    
+    
     @IBOutlet weak var commericalView: UIView!
     @IBOutlet weak var cCategoriesCollection: UICollectionView!
     @IBOutlet weak var commericalCollection: UICollectionView!
     @IBOutlet weak var cAdBtn: UIButton!
-    @IBOutlet weak var adBtn: UIButton!
+//    @IBOutlet weak var adBtn: UIButton!
     @IBOutlet weak var adsView: UIScrollView!
     
     @IBOutlet weak var commericalAdsBtn: UIButton!
@@ -72,7 +76,7 @@ class HomeVC: UIViewController {
     var seelectedFeature = Ad()
     var seelectedreeceent = Ad()
     var seelectedmostViewed = Ad()
-
+    
     var CcategoriesArr = [Category]()
     var commericalAds = [Ad]()
     var page = 1
@@ -84,30 +88,31 @@ class HomeVC: UIViewController {
         setupAllSliders()
         setupCollectionView()
         //        changeLanguage()
-       
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.openAd(_:)), name: NSNotification.Name(rawValue: "openAd"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.openComAd(_:)), name: NSNotification.Name(rawValue: "openCom"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.openBalance(_:)), name: NSNotification.Name(rawValue: "opeenBalance"), object: nil)
+        //
         
-       
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.navigationController?.setStatusBar(backgroundColor: UIColor(named: "main_color") ?? .white )
         
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
-//        button.tintColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
-        button.setTitleColor(#colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1), for: .normal) 
+        //        button.tintColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
+        button.setTitleColor(#colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1), for: .normal)
         button.backgroundColor = .none
         button.addTarget(self, action: #selector(changeCountry), for: .touchUpInside)
-     
+        
         
         indicator.startAnimating()
         sliderAlamoSource.removeAll()
         recentsliderAlamoSource.removeAll()
         mostViewedsliderAlamoSource.removeAll()
-
+        
         var index = AppDelegate.countries.firstIndex(where: {$0.id == AppDelegate.cityId}) ?? 0
         
         if AppDelegate.countries.count == 0{
@@ -123,17 +128,17 @@ class HomeVC: UIViewController {
                         let index = AppDelegate.countries.firstIndex(where: {$0.nameEn == "Kuwait"}) ?? 0
                         AppDelegate.cityId = AppDelegate.countries[index].id
                         AppDelegate.defaults.setValue(AppDelegate.cityId, forKey: "cityId")
-
+                        
                     }
                     self.button.setTitle( MOLHLanguage.currentAppleLanguage() == "ar" ? AppDelegate.countries[index].nameAr : AppDelegate.countries[index].nameEn, for: .normal)
                     
                 }
             })
         }else{
-        
-     
+            
+            
             button.setTitle( MOLHLanguage.currentAppleLanguage() == "ar" ? AppDelegate.countries[index].nameAr : AppDelegate.countries[index].nameEn, for: .normal)
-
+            
             navigationItem.titleView = button
             
         }
@@ -146,14 +151,14 @@ class HomeVC: UIViewController {
         
         
         performSegue(withIdentifier: "toAdVC", sender: self)
-   
-       
+        
+        
         
     }
     @objc func openComAd(_ notification: NSNotification){
         selectedAdId = notification.userInfo!["adId"] as! Int
         self.performSegue(withIdentifier: "commerical_ads", sender: self)
-
+        
         
     }
     @objc func openBalance(_ notification: NSNotification){
@@ -180,7 +185,7 @@ class HomeVC: UIViewController {
         adsBtn.backgroundColor =  #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
         cAdBtn.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         cAdBtn.setTitleColor(#colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1), for: .normal)
-
+        
         adsView.isHidden = false
         commericalView.isHidden = true
     }
@@ -194,14 +199,14 @@ class HomeVC: UIViewController {
         
         for item in AppDelegate.countries{
             let superbutton = UIAlertAction(title: MOLHLanguage.currentAppleLanguage() == "ar" ? item.nameAr : item.nameEn , style: .default, handler: { (action) in
-//                self.codeTF.text = item.code
-//                self.selectedCountry = item
+                //                self.codeTF.text = item.code
+                //                self.selectedCountry = item
                 self.button.setTitle( MOLHLanguage.currentAppleLanguage() == "ar" ? item.nameAr : item.nameEn , for: .normal)
                 AppDelegate.cityId = item.id
                 
                 AppDelegate.defaults.setValue(AppDelegate.cityId, forKey: "cityId")
                 self.loadData()
-
+                
             })
             
             alertController.addAction(superbutton)
@@ -291,7 +296,7 @@ class HomeVC: UIViewController {
         self.cAdBtn.layer.borderColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 0.6992143037)
         self.adsBtn.layer.borderWidth = 1
         self.adsBtn.layer.borderColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 0.6989716789)
-//        self.cAdBtn.layer.addSpecificBorder(edge: .bottom, color: <#T##UIColor#>, thickness: <#T##CGFloat#>)()
+        //        self.cAdBtn.layer.addSpecificBorder(edge: .bottom, color: <#T##UIColor#>, thickness: <#T##CGFloat#>)()
     }
     
     func getSliderBetweenAds(){
@@ -339,13 +344,14 @@ class HomeVC: UIViewController {
                 self.categoriesCollection.reloadData()
             }
             if let topAds = topAds {
+                print(topAds.count)
                 self.topArr = topAds
                 self.featuredCollection.reloadData()
                 //                let screenSize = UIScreen.main.bounds
                 //                let screenWidth = screenSize.width
                 //                let width = Int(screenWidth) / 180
-//                let hight = (self.topArr.count / width) * 230
-//                self.featuredCollectionHight.constant = CGFloat(hight)
+                //                let hight = (self.topArr.count / width) * 230
+                //                self.featuredCollectionHight.constant = CGFloat(hight)
                 //                if UIDevice.current.userInterfaceIdiom == .pad {
                 //                    let hight = (self.topArr.count / width) * 230
                 //                    self.featuredCollectionHight.constant = CGFloat(hight)
@@ -353,51 +359,53 @@ class HomeVC: UIViewController {
                 //                    let hight = (self.topArr.count / width) * 230
                 //                    self.featuredCollectionHight.constant = CGFloat(hight)
                 //                }
-               
-                var hight = 0
-                if self.self.topArr.count == 1{
-                    hight = 230
-                    self.featuredCollectionHight.constant = CGFloat(hight)
-
-                }
-                else if self.self.topArr.count%2 !=  0{
-                    hight = ((self.topArr.count+1) / width) * 230
-                    self.featuredCollectionHight.constant = CGFloat(hight)
-
-                }
                 
-                else{
-                  
-                 hight = (self.topArr.count / width) * 230
-                    self.featuredCollectionHight.constant = CGFloat(hight)
-
-                }
+//                var hight = 0
+//                if self.self.topArr.count == 1{
+//                    hight = 230
+//                    self.featuredCollectionHight.constant = CGFloat(hight)
+//
+//                }
+//                else if self.self.topArr.count%2 !=  0{
+//                    hight = ((self.topArr.count+1) / width) * 230
+//                    self.featuredCollectionHight.constant = CGFloat(hight)
+//
+//                }
+//
+//                else{
+//
+//                    hight = (self.topArr.count / width) * 230
+//                    self.featuredCollectionHight.constant = CGFloat(hight)
+//
+//                }
                 
             }
             if let mostAds = mostViewedAds {
                 self.mostViewdArr = mostAds
-                self.mostViewdCollection.reloadData()
+                //                self.mostViewdCollection.reloadData()
+                self.recentCollection.reloadData()
+                
                 //                let screenSize = UIScreen.main.bounds
                 //                let screenWidth = screenSize.width
                 //                let width = Int(screenWidth) / 180
-                var hight = 0
-                if self.mostViewdArr.count == 1{
-                     hight = 230
-                    self.mostViewdCollectionHight.constant = CGFloat(hight)
-
-                } else if self.self.mostViewdArr.count%2 !=  0{
-                    hight = ((self.mostViewdArr.count+1) / width) * 230
-                    self.mostViewdCollectionHight.constant = CGFloat(hight)
-
-                }
-                
-                else{
-                    print(self.mostViewdArr.count)
-                    print((self.mostViewdArr.count / width))
-                     hight = (self.mostViewdArr.count / width) * 230
-                    self.mostViewdCollectionHight.constant = CGFloat(hight)
-
-                }
+                //                var hight = 0
+                //                if self.mostViewdArr.count == 1{
+                //                     hight = 230
+                //                    self.mostViewdCollectionHight.constant = CGFloat(hight)
+                //
+                //                } else if self.self.mostViewdArr.count%2 !=  0{
+                //                    hight = ((self.mostViewdArr.count+1) / width) * 230
+                //                    self.mostViewdCollectionHight.constant = CGFloat(hight)
+                //
+                //                }
+                //
+                //                else{
+                //                    print(self.mostViewdArr.count)
+                //                    print((self.mostViewdArr.count / width))
+                //                     hight = (self.mostViewdArr.count / width) * 230
+                //                    self.mostViewdCollectionHight.constant = CGFloat(hight)
+                //
+                //                }
                 //                if UIDevice.current.userInterfaceIdiom == .pad {
                 //                    let hight = (self.mostViewdArr.count / 4) * 185
                 //                    self.mostViewdCollectionHight.constant = CGFloat(hight)
@@ -408,27 +416,27 @@ class HomeVC: UIViewController {
             }
             if let latestAds = latestAds {
                 self.latestArr = latestAds
-                self.recentCollection.reloadData()
-                var hight = 0
-                if self.latestArr.count == 1{
-                     hight = 230
-                    self.recentCollectionHight.constant = CGFloat(hight)
-
-                }else if self.self.latestArr.count%2 !=  0{
-                    hight = ((self.latestArr.count+1) / width) * 230
-                    self.recentCollectionHight.constant = CGFloat(hight)
-
-                }
+                self.mostViewdCollection.reloadData()
+                //                var hight = 0
+                //                if self.latestArr.count == 1{
+                //                     hight = 230
+                //                    self.recentCollectionHight.constant = CGFloat(hight)
+                //
+                //                }else if self.self.latestArr.count%2 !=  0{
+                //                    hight = ((self.latestArr.count+1) / width) * 230
+                //                    self.recentCollectionHight.constant = CGFloat(hight)
+                //
+                //                }
                 
                 
-                else{
-                    print(self.latestArr.count)
-                    print((self.latestArr.count / width))
-                     hight = (self.latestArr.count / width) * 230
-                    self.recentCollectionHight.constant = CGFloat(hight)
-
-
-                }
+                //                else{
+                ////                    print(self.latestArr.count)
+                ////                    print((self.latestArr.count / width))
+                ////                     hight = (self.latestArr.count / width) * 230
+                ////                    self.recentCollectionHight.constant = CGFloat(hight)
+                //
+                //
+                //                }
                 //                if UIDevice.current.userInterfaceIdiom == .pad {
                 //                    let hight = (self.latestArr.count / 4) * 185
                 //                    self.recentCollectionHight.constant = CGFloat(hight)
@@ -445,11 +453,11 @@ class HomeVC: UIViewController {
     
     func slideShowSetup() {
         var updatedSliderAd = sliderAds
-
+        
         for i in 0..<sliderAds.count {
             if sliderAds[i].imgUrl != "" {
-           
-            self.sliderAlamoSource.append(AlamofireSource(urlString: String(describing: sliderAds[i].imgUrl))!)
+                
+                self.sliderAlamoSource.append(AlamofireSource(urlString: String(describing: sliderAds[i].imgUrl))!)
                 updatedSliderAd.append(sliderAds[i])
             }
         }
@@ -467,21 +475,21 @@ class HomeVC: UIViewController {
     }
     func setupAllSliders(){
         featuredSlider.activityIndicator = DefaultActivityIndicator()
-
+        
         featuredSlider.slideshowInterval = 3.0
         featuredSlider.contentScaleMode = .scaleToFill
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.featureDidTap))
         featuredSlider.addGestureRecognizer(gestureRecognizer)
         
         recentSlider.activityIndicator = DefaultActivityIndicator()
-
+        
         recentSlider.slideshowInterval = 3.0
         recentSlider.contentScaleMode = .scaleToFill
         let gestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(self.recentDidTap))
         recentSlider.addGestureRecognizer(gestureRecognizer1)
         
         mostViewedSlider.activityIndicator = DefaultActivityIndicator()
-
+        
         mostViewedSlider.slideshowInterval = 3.0
         mostViewedSlider.contentScaleMode = .scaleToFill
         let gestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(self.mostviewedDidTap))
@@ -490,50 +498,50 @@ class HomeVC: UIViewController {
     func featureslideShowSetup() {
         var updatedSliderAd = featureSliderArray
         var imags = [AnyObject]()
-
+        
         for i in 0..<featureSliderArray.count {
             if featureSliderArray[i].imgUrl != "" {
-           
+                
                 
                 imags.append(AlamofireSource(urlString:featureSliderArray[i].imgUrl )!)
-
+                
                 updatedSliderAd.append(featureSliderArray[i])
             }
         }
         featureSliderArray = updatedSliderAd
-
+        
         featuredSlider.setImageInputs(imags as! [InputSource])
-       
+        
     }
     func recentslideShowSetup() {
         var updatedSliderAd = reecentSliderArray
-
+        
         for i in 0..<reecentSliderArray.count {
             if reecentSliderArray[i].imgUrl != "" {
-           
-            self.recentsliderAlamoSource.append(AlamofireSource(urlString: String(describing: reecentSliderArray[i].imgUrl))!)
+                
+                self.recentsliderAlamoSource.append(AlamofireSource(urlString: String(describing: reecentSliderArray[i].imgUrl))!)
                 updatedSliderAd.append(reecentSliderArray[i])
             }
         }
         reecentSliderArray = updatedSliderAd
         recentSlider.setImageInputs(self.recentsliderAlamoSource)
-      
+        
     }
     func mostviewedslideShowSetup() {
         var updatedSliderAd = mostViewSliderArray
-
+        
         for i in 0..<mostViewSliderArray.count {
             if mostViewSliderArray[i].imgUrl != "" {
-           
-            self.mostViewedsliderAlamoSource.append(AlamofireSource(urlString: String(describing: mostViewSliderArray[i].imgUrl))!)
+                
+                self.mostViewedsliderAlamoSource.append(AlamofireSource(urlString: String(describing: mostViewSliderArray[i].imgUrl))!)
                 updatedSliderAd.append(mostViewSliderArray[i])
             }
         }
         mostViewSliderArray = updatedSliderAd
         mostViewedSlider.setImageInputs(self.mostViewedsliderAlamoSource)
-       
+        
     }
-   
+    
     
     @objc func didTap() {
         if sliderAds.count > 0 {
@@ -567,15 +575,25 @@ class HomeVC: UIViewController {
         featuredCollection.dataSource = self
         recentCollection.delegate = self
         recentCollection.dataSource = self
+        //        recentCollection.dataSource = self
+        //        recentCollection.delegate = self
         mostViewdCollection.delegate = self
         mostViewdCollection.dataSource = self
         cCategoriesCollection.delegate = self
         cCategoriesCollection.dataSource = self
         categoriesCollection.register(UINib(nibName: MainCategoriesCellID, bundle: nil), forCellWithReuseIdentifier: MainCategoriesCellID)
         featuredCollection.register(UINib(nibName: MainAdsCellID, bundle: nil), forCellWithReuseIdentifier: MainAdsCellID)
-        recentCollection.register(UINib(nibName: MainAdsCellID, bundle: nil), forCellWithReuseIdentifier: MainAdsCellID)
-        mostViewdCollection.register(UINib(nibName: MainAdsCellID, bundle: nil), forCellWithReuseIdentifier: MainAdsCellID)
+        recentCollection.register(UINib(nibName: MainAdsCellID, bundle: Bundle.main), forCellWithReuseIdentifier: MainAdsCellID)
+        mostViewdCollection.register(UINib(nibName: MainAdsCellID, bundle: Bundle.main), forCellWithReuseIdentifier: MainAdsCellID)
         cCategoriesCollection.register(UINib(nibName: MainCategoriesCellID, bundle: nil), forCellWithReuseIdentifier: MainCategoriesCellID)
+        
+        recentCollection.itemSize = CGSize(width: 0.75*recentCollection.frame.width, height: 178)
+//        recentCollection.transformer = FSPagerViewTransformer(type: .)
+        mostViewdCollection.itemSize = CGSize(width: 0.75*mostViewdCollection.frame.width, height: 178)
+        mostViewdCollection.transformer = FSPagerViewTransformer(type: .linear)
+        featuredCollection.itemSize = CGSize(width: 0.75*featuredCollection.frame.width, height: 178)
+        featuredCollection.transformer = FSPagerViewTransformer(type: .linear)
+        
         
     }
     
@@ -610,13 +628,56 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func allBtnPressed(_ sender: Any) {
-//        performSegue(withIdentifier: "toAllOffersVC", sender: self)
-//        self.basicNavigation(storyName: "Main", segueId: "CategoriesVC")
+        //        performSegue(withIdentifier: "toAllOffersVC", sender: self)
+        //        self.basicNavigation(storyName: "Main", segueId: "CategoriesVC")
         self.tabBarController?.selectedIndex = 1
-
+        
     }
 }
-
+extension HomeVC: FSPagerViewDelegate, FSPagerViewDataSource{
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        if pagerView.tag == 2 {
+            return topArr.count
+        }
+        else if pagerView.tag == 3 {
+            print(mostViewdArr.count)
+            return mostViewdArr.count
+        }
+        else if pagerView.tag == 4 {
+            return latestArr.count
+        }
+        else
+        {
+            return 0
+        }
+    }
+    public func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        if pagerView.tag == 2 {
+            let cell = pagerView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, at: index) as! MainAdsCell
+            
+            
+            cell.setData(ad: topArr[index])
+            return cell
+        }
+        else if pagerView.tag == 3 {
+            let cell = pagerView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, at: index) as! MainAdsCell
+            print("llllll")
+            print(mostViewdArr[index].imgUrl)
+            
+            cell.setData(ad: mostViewdArr[index])
+            
+            return cell
+        }
+        else {
+            let cell = pagerView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, at: index) as! MainAdsCell
+            
+            
+            cell.setData(ad: latestArr[index])
+            
+            return cell
+        }
+    }
+}
 extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -629,15 +690,13 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
         else if collectionView == cCategoriesCollection {
             return CcategoriesArr.count
         }
-        if collectionView.tag == 2 {
-            return topArr.count
-        }
-        if collectionView.tag == 3 {
-            return mostViewdArr.count
-        }
-        if collectionView.tag == 4 {
-            return latestArr.count
-        }
+        
+        //        if collectionView.tag == 3 {
+        //            return mostViewdArr.count
+        //        }
+        //        if collectionView.tag == 4 {
+        //            return latestArr.count
+        //        }
         if collectionView.tag == 5 {
             print(commericalAds.count)
             return commericalAds.count
@@ -656,6 +715,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             } else {
                 cell.titleLbl.text = categoriesArr[indexPath.row].nameEn
             }
+            print(categoriesArr[indexPath.row].imgUrl)
             
             cell.imgView.sd_setImage(with: URL(string: categoriesArr[indexPath.row].imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
             
@@ -671,153 +731,31 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             if indexPath.row == 0{
                 cell.imgView.image = #imageLiteral(resourceName: "learning")
             }else{
-                
                 cell.imgView.sd_setImage(with: URL(string: CcategoriesArr[indexPath.row].imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
             }
             return cell
         }
-        if collectionView.tag == 2 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
-            
-            
-            cell.imgView.sd_setImage(with: URL(string: topArr[indexPath.row].imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
-            
-            if MOLHLanguage.currentAppleLanguage() == "ar" {
-                cell.typeLbl.text = topArr[indexPath.row].titleAr
-                cell.currencyLbl.text = topArr[indexPath.row].cur
-
-                cell.governrateLbl.text = topArr[indexPath.row].governrateAR
-
-
-            } else {
-                cell.typeLbl.text = topArr[indexPath.row].titleEn
-                
-                cell.currencyLbl.text = topArr[indexPath.row].curEn
-                cell.governrateLbl.text = topArr[indexPath.row].governrateEN
-
-
-            }
-            cell.priceLbl.text = "\(topArr[indexPath.row].price)"
-            cell.priceLbl.textColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
-//            if topArr[indexPath.row].isLoved == true {
-//                cell.likeImg.image = UIImage(named: "likeR")
-//            }
-            cell.btnPressed = { [weak self] in
-                if NetworkHelper.getToken() != nil {
-                    AdsService.instance.favoriteAdById(Id: (self?.topArr[indexPath.row].id)!) { (success) in
-                        if success {
-//                            if cell.likeImg.image == UIImage(named: "likeR") {
-//                                cell.likeImg.image = UIImage(named: "likeG")
-//                            } else {
-//                                cell.likeImg.image = UIImage(named: "likeR")
-//                            }
-                        }
-                    }
-                } else {
-                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
-                    self?.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 2
-                    DispatchQueue.main.asyncAfter(deadline: when){
-                        alert.dismiss(animated: true, completion: nil)
-                    }
-                }
-            }
-            return cell
-        }
-        if collectionView.tag == 3 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
-            
-            cell.imgView.sd_setImage(with: URL(string: mostViewdArr[indexPath.row].imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
-            if MOLHLanguage.currentAppleLanguage() == "ar" {
-                cell.typeLbl.text = mostViewdArr[indexPath.row].titleAr
-                cell.priceLbl.text = "\(mostViewdArr[indexPath.row].price)"
-                cell.currencyLbl.text = mostViewdArr[indexPath.row].cur
-                cell.governrateLbl.text = mostViewdArr[indexPath.row].governrateAR
-
-
-            } else {
-                cell.typeLbl.text = mostViewdArr[indexPath.row].titleEn
-                cell.priceLbl.text = "\(mostViewdArr[indexPath.row].price)"
-                cell.currencyLbl.text = mostViewdArr[indexPath.row].curEn
-                cell.governrateLbl.text = mostViewdArr[indexPath.row].governrateEN
-
-
-            }
-            cell.priceLbl.textColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
-//            if mostViewdArr[indexPath.row].isLoved == true {
-//                cell.likeImg.image = UIImage(named: "likeR")
-//            }
-            cell.btnPressed = { [weak self] in
-                if NetworkHelper.getToken() != nil {
-                    AdsService.instance.favoriteAdById(Id: (self?.mostViewdArr[indexPath.row].id)!) { (success) in
-                        if success {
-//                            if cell.likeImg.image == UIImage(named: "likeR") {
-//                                cell.likeImg.image = UIImage(named: "likeG")
-//                            } else {
-//                                cell.likeImg.image = UIImage(named: "likeR")
-//                            }
-                            
-                        }
-                    }
-                } else {
-                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
-                    self?.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 2
-                    DispatchQueue.main.asyncAfter(deadline: when){
-                        alert.dismiss(animated: true, completion: nil)
-                    }
-                }
-            }
-            return cell
-        }
-        if collectionView.tag == 4 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
-            
-            cell.imgView.sd_setImage(with: URL(string: latestArr[indexPath.row].imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
-            
-            if MOLHLanguage.currentAppleLanguage() == "ar" {
-                cell.typeLbl.text = latestArr[indexPath.row].titleAr
-                cell.priceLbl.text = "\(latestArr[indexPath.row].price)"
-                cell.currencyLbl.text = latestArr[indexPath.row].cur
-                cell.governrateLbl.text = latestArr[indexPath.row].governrateAR
-
-
-            } else {
-                cell.typeLbl.text = latestArr[indexPath.row].titleEn
-                cell.priceLbl.text = "\(latestArr[indexPath.row].price)"
-                cell.currencyLbl.text = latestArr[indexPath.row].curEn
-                cell.governrateLbl.text = latestArr[indexPath.row].governrateEN
-
-
-            }
-            cell.priceLbl.text = "\(latestArr[indexPath.row].price)" 
-            cell.priceLbl.textColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
-            
-//            if latestArr[indexPath.row].isLoved == true {
-//                cell.likeImg.image = UIImage(named: "likeR")
-//            }
-            cell.btnPressed = { [weak self] in
-                if NetworkHelper.getToken() != nil {
-                    AdsService.instance.favoriteAdById(Id: (self?.latestArr[indexPath.row].id)!) { (success) in
-                        if success {
-//                            if cell.likeImg.image == UIImage(named: "likeR") {
-//                                cell.likeImg.image = UIImage(named: "likeG")
-//                            } else {
-//                                cell.likeImg.image = UIImage(named: "likeR")
-//                            }
-                        }
-                    }
-                } else {
-                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
-                    self?.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 2
-                    DispatchQueue.main.asyncAfter(deadline: when){
-                        alert.dismiss(animated: true, completion: nil)
-                    }
-                }
-            }
-            return cell
-        }
+        //        if collectionView.tag == 2 {
+        //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
+        //
+        //
+        //            cell.setData(ad: topArr[indexPath.row])
+        //            return cell
+        //        }
+        //        if collectionView.tag == 3 {
+        //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
+        //            cell.setData(ad: mostViewdArr[indexPath.row])
+        //
+        //            return cell
+        //        }
+        //        if collectionView.tag == 4 {
+        //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainAdsCellID, for: indexPath) as! MainAdsCell
+        //
+        //
+        //            cell.setData(ad: latestArr[indexPath.row])
+        //
+        //            return cell
+        //        }
         if collectionView.tag == 5 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! commericalCollectionViewCell
             
@@ -834,46 +772,46 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView.tag == 1 || collectionView == cCategoriesCollection{
-            return CGSize(width: 90, height: 90)
+            return CGSize(width: 90, height: 100)
         }
         if collectionView.tag == 2 {
             var size: CGFloat = 220
             if StaticFunctions.getCurrentDevice() == "iPad"{
                 size = (self.featuredCollection.bounds.width / 3) - 10
-                return CGSize(width: size, height: 280)
-
-
+                return CGSize(width: size, height: 178)
+                
+                
             }else{
-             size = (self.featuredCollection.bounds.width / 2) - 10
-                return CGSize(width: size, height: 220)
-
+                size = (self.featuredCollection.bounds.width / 2) - 10
+                return CGSize(width: size, height: 178)
+                
             }
         }
         if collectionView.tag == 3 {
             var size: CGFloat = 220
-            if StaticFunctions.getCurrentDevice() == "iPad"{
-                size = (self.featuredCollection.bounds.width / 3) - 10
-                return CGSize(width: size, height: 280)
-
-
-            }else{
-             size = (self.featuredCollection.bounds.width / 2) - 10
-                return CGSize(width: size, height: 220)
-
-            }
+            //            if StaticFunctions.getCurrentDevice() == "iPad"{
+            size = self.featuredCollection.bounds.width - 130
+            return CGSize(width: size, height: 178)
+            
+            
+            //            }else{
+            //             size = (self.featuredCollection.bounds.width / 2) - 10
+            //                return CGSize(width: size, height: 178)
+            
+            //            }
         }
         if collectionView.tag == 4 {
             var size: CGFloat = 220
-            if StaticFunctions.getCurrentDevice() == "iPad"{
-                size = (self.featuredCollection.bounds.width / 3) - 10
-                return CGSize(width: size, height: 280)
-
-
-            }else{
-             size = (self.featuredCollection.bounds.width / 2) - 10
-                return CGSize(width: size, height: 220)
-
-            }
+            //            if StaticFunctions.getCurrentDevice() == "iPad"{
+            size = self.featuredCollection.bounds.width - 130
+            return CGSize(width: size, height: 178)
+            
+            
+            //            }else{
+            //             size = (self.featuredCollection.bounds.width / 2) - 10
+            //                return CGSize(width: size, height: 178)
+            //
+            //            }
         }
         if collectionView.tag == 5 {
             
@@ -893,7 +831,7 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
         }
         else {
             let size = (self.featuredCollection.bounds.width / 2) - 10
-            return CGSize(width: size, height: 220)
+            return CGSize(width: size, height: 178)
         }
     }
     
@@ -902,15 +840,15 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
             let cell = collectionView.cellForItem(at: indexPath)
             UIView.animate(withDuration: 0.2,
                            animations: {
-                            cell?.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-                           },
+                cell?.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            },
                            completion: { _ in
-                            UIView.animate(withDuration: 0.2) {
-                                cell?.transform = CGAffineTransform.identity
-                            }
-                            self.selectedMainCatId = self.categoriesArr[indexPath.row].id
-                            self.performSegue(withIdentifier: "toMainCatVC", sender: self)
-                           })
+                UIView.animate(withDuration: 0.2) {
+                    cell?.transform = CGAffineTransform.identity
+                }
+                self.selectedMainCatId = self.categoriesArr[indexPath.row].id
+                self.performSegue(withIdentifier: "toMainCatVC", sender: self)
+            })
             
         }
         else if collectionView == cCategoriesCollection{
@@ -953,29 +891,29 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, U
     }
 }
 extension CALayer {
-
-  func addSpecificBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
-
-    let border = CALayer()
-
-    switch edge {
-    case UIRectEdge.top:
-        border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness)
-
-    case UIRectEdge.bottom:
-        border.frame = CGRect(x:0, y: frame.height - thickness, width: frame.width, height:thickness)
-
-    case UIRectEdge.left:
-        border.frame = CGRect(x:0, y:0, width: thickness, height: frame.height)
-
-    case UIRectEdge.right:
-        border.frame = CGRect(x: frame.width - thickness, y: 0, width: thickness, height: frame.height)
-
-    default: do {}
+    
+    func addSpecificBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+        
+        let border = CALayer()
+        
+        switch edge {
+        case UIRectEdge.top:
+            border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness)
+            
+        case UIRectEdge.bottom:
+            border.frame = CGRect(x:0, y: frame.height - thickness, width: frame.width, height:thickness)
+            
+        case UIRectEdge.left:
+            border.frame = CGRect(x:0, y:0, width: thickness, height: frame.height)
+            
+        case UIRectEdge.right:
+            border.frame = CGRect(x: frame.width - thickness, y: 0, width: thickness, height: frame.height)
+            
+        default: do {}
+        }
+        
+        border.backgroundColor = color.cgColor
+        
+        addSublayer(border)
     }
-
-    border.backgroundColor = color.cgColor
-
-    addSublayer(border)
- }
 }
