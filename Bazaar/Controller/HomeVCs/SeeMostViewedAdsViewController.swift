@@ -109,43 +109,43 @@ extension SeeMostViewedAdsViewController: UICollectionViewDelegate,UICollectionV
             
             cell.imgView.sd_setImage(with: URL(string: allAdsArr[indexPath.row].imgUrl), placeholderImage: #imageLiteral(resourceName: "learning"))
             if MOLHLanguage.currentAppleLanguage() == "ar" {
-                cell.typeLbl.text = allAdsArr[indexPath.row].titleAr
-                cell.currencyLbl.text = allAdsArr[indexPath.row].cur
-                cell.governrateLbl.text = allAdsArr[indexPath.row].governrateAR
+                cell.titleLbl.text = allAdsArr[indexPath.row].titleAr
+//                cell.currencyLbl.text = allAdsArr[indexPath.row].cur
+                cell.contentLbl.text = allAdsArr[indexPath.row].governrateAR
                 
                 
             } else {
-                cell.typeLbl.text = allAdsArr[indexPath.row].titleEn
-                cell.currencyLbl.text = allAdsArr[indexPath.row].curEn
-                cell.governrateLbl.text = allAdsArr[indexPath.row].governrateEN
+                cell.titleLbl.text = allAdsArr[indexPath.row].titleEn
+//                cell.currencyLbl.text = allAdsArr[indexPath.row].curEn
+                cell.contentLbl.text = allAdsArr[indexPath.row].governrateEN
                 
                 
             }
-            cell.priceLbl.text = "\(allAdsArr[indexPath.row].price)"
-            //        if allAdsArr[indexPath.row].isLoved == true {
-            //             cell.likeImg.image = UIImage(named: "likeR")
-            //         }
-            cell.btnPressed = { [weak self] in
-                if NetworkHelper.getToken() != nil {
-                    AdsService.instance.favoriteAdById(Id: (self?.allAdsArr[indexPath.row].id)!) { (success) in
-                        if success {
-                            //                        if cell.likeImg.image == UIImage(named: "likeR") {
-                            //                            cell.likeImg.image = UIImage(named: "likeG")
-                            //                        } else {
-                            //                        cell.likeImg.image = UIImage(named: "likeR")
-                            //                        }
-                            
-                        }
-                    }
-                } else {
-                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
-                    self?.present(alert, animated: true, completion: nil)
-                    let when = DispatchTime.now() + 2
-                    DispatchQueue.main.asyncAfter(deadline: when){
-                        alert.dismiss(animated: true, completion: nil)
-                    }
-                }
-            }
+//            cell.priceLbl.text = "\(allAdsArr[indexPath.row].price)"
+//            //        if allAdsArr[indexPath.row].isLoved == true {
+//            //             cell.likeImg.image = UIImage(named: "likeR")
+//            //         }
+//            cell.btnPressed = { [weak self] in
+//                if NetworkHelper.getToken() != nil {
+//                    AdsService.instance.favoriteAdById(Id: (self?.allAdsArr[indexPath.row].id)!) { (success) in
+//                        if success {
+//                            //                        if cell.likeImg.image == UIImage(named: "likeR") {
+//                            //                            cell.likeImg.image = UIImage(named: "likeG")
+//                            //                        } else {
+//                            //                        cell.likeImg.image = UIImage(named: "likeR")
+//                            //                        }
+//                            
+//                        }
+//                    }
+//                } else {
+//                    let alert = UIAlertController(title: "", message: "You Should login first".localized, preferredStyle: .alert)
+//                    self?.present(alert, animated: true, completion: nil)
+//                    let when = DispatchTime.now() + 2
+//                    DispatchQueue.main.asyncAfter(deadline: when){
+//                        alert.dismiss(animated: true, completion: nil)
+//                    }
+//                }
+//            }
             return cell
         }
         else{

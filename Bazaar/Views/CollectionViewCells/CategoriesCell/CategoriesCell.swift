@@ -18,12 +18,7 @@ class CategoriesCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupView()
     }
     
-    func setupView() {
-        titleLbl.addCornerRadius(cornerRadius: 15)
-        bgView.addCornerRadius(cornerRadius: 15)
-        bgImg.addCornerRadius(cornerRadius: 15)
-    }
+   
 }

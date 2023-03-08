@@ -7,39 +7,42 @@
 //
 
 import UIKit
+import MOLH
+import FSPagerView
 
-class MainAdsCell: UICollectionViewCell {
+class MainAdsCell: FSPagerViewCell {
     
     //Outlets
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var moreDetailsBtn: UIButton!
-    @IBOutlet weak var typeLbl: UILabel!
-    @IBOutlet weak var priceLbl: UILabel!
-    @IBOutlet weak var currencyLbl: UILabel!
-//    @IBOutlet weak var likeImg: UIImageView!
-//    @IBOutlet weak var likeBtn: UIButton!
-    @IBOutlet weak var governrateLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
+   
 
-    @IBOutlet weak var isfeaturesIcon: UIImageView!
-    //Variables
-    var btnPressed: (() -> ())?
+    @IBOutlet weak var contentLbl: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupView()
+
+//
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
+    
+    func setData(ad: Ad){
+       imgView.sd_setImage(with: URL(string: ad.imgUrl), placeholderImage: UIImage(named: "placeholder.png"))
+       
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+         titleLbl.text = ad.titleAr
+
+         contentLbl.text = ad.governrateAR
+
+
+        } else {
+           titleLbl.text = ad.titleEn
+            
+          contentLbl.text = ad.governrateEN
+
+
+        }
     }
     
-    func setupView() {
-//        imgView.addCornerRadius(cornerRadius: 20)
-//        moreDetailsBtn.addCornerRadius(cornerRadius: 7)
-    }
-    
-  
-    @IBAction func moreDetailsBtnPressed(_ sender: Any) {
-    }
 
-    @IBAction func likeBtnPressed(_ sender: Any) {
-        btnPressed?()
-    }
 }
