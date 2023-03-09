@@ -191,6 +191,7 @@
 		65FFCEA625DF1F330044AD8D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA525DF1F330044AD8D /* CartTableViewCell.swift */; };
 		65FFCEAA25DF24560044AD8D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA925DF24560044AD8D /* CartViewController.swift */; };
 		C815020629B7EC35001B3537 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C815020529B7EC35001B3537 /* UILabelPadding.swift */; };
+		C86A311C29BA56F10077266A /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86A311B29BA56F10077266A /* UITextFieldExt.swift */; };
 		ECEEC6E7EA83ECF703A3C749 /* Pods_Bazaar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */; };
 /* End PBXBuildFile section */
 
@@ -401,6 +402,7 @@
 		91F569B05DD0DDE935DF6637 /* Pods-Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bazaar.release.xcconfig"; path = "Target Support Files/Pods-Bazaar/Pods-Bazaar.release.xcconfig"; sourceTree = "<group>"; };
 		C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bazaar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C815020529B7EC35001B3537 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
+		C86A311B29BA56F10077266A /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -622,6 +624,7 @@
 				0B187832240444E9003B7C0B /* LocalizedImage.swift */,
 				0B780FFE23DF2A06004304DC /* StringExt.swift */,
 				0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */,
+				C86A311B29BA56F10077266A /* UITextFieldExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1376,6 +1379,7 @@
 				6523579B24DA991D004CA54A /* CommericalAdDetailsViewController.swift in Sources */,
 				0B11315923D9C93C007FDC6D /* HomeVC.swift in Sources */,
 				0B04832B23DA1FDB003C49C0 /* ProfileVC.swift in Sources */,
+				C86A311C29BA56F10077266A /* UITextFieldExt.swift in Sources */,
 				0B0AA14E23ED88BE003971A2 /* SubCategoryCell.swift in Sources */,
 				0BFDB5FD23EC035700695A5A /* PaymentVC.swift in Sources */,
 				0B11995B2427CCA200932931 /* NotificationN.swift in Sources */,
