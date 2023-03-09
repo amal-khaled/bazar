@@ -29,7 +29,7 @@ class forgotPassVC: UIViewController {
     
     func setupView() {
         emailView.addBorder()
-        emailView.addCornerRadius(cornerRadius: 35)
+//        emailView.addCornerRadius(cornerRadius: 35)
         sendBtn.addCornerRadius(cornerRadius: 20)
         emailTxtField.delegate = self
 
