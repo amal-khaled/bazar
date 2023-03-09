@@ -21,7 +21,8 @@ class ForgetPasswordWithPhoneViewController: UIViewController {
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     var veerificationId = ""
 
-    @IBOutlet weak var codeTF: UITextField!
+    @IBOutlet weak var countryFlagImageView: UIImageView!
+    @IBOutlet weak var codeLabel: UILabel!
     //Variables
     var phone: String = ""
     var countryList = [country]()
@@ -36,8 +37,8 @@ class ForgetPasswordWithPhoneViewController: UIViewController {
     }
     
     func setupView() {
-        phoneView.addBorder()
-        phoneView.addCornerRadius(cornerRadius: 35)
+        phoneView.addBorder(borderWidth: 1.0, borderColor: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
+//        phoneView.addCornerRadius(cornerRadius: 35)
         sendBtn.addCornerRadius(cornerRadius: 20)
         phoneTxtField.delegate = self
 
@@ -117,18 +118,18 @@ extension ForgetPasswordWithPhoneViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if codeTF == textField {
-            if countryList.count > 0{
-                self.showCountryList()
-            }else{
-                self.getCountryList(show: true)
-            }
-            return false
-        }else{
-            return true
-        }
-    }
+//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+//        if codeLabel == textField {
+//            if countryList.count > 0{
+//                self.showCountryList()
+//            }else{
+//                self.getCountryList(show: true)
+//            }
+//            return false
+//        }else{
+//            return true
+//        }
+//    }
 }
 extension ForgetPasswordWithPhoneViewController{
     func showCountryList(){
@@ -136,7 +137,7 @@ extension ForgetPasswordWithPhoneViewController{
         
         for item in countryList{
             let superbutton = UIAlertAction(title: MOLHLanguage.currentAppleLanguage() == "ar" ? item.nameAr : item.nameEn , style: .default, handler: { (action) in
-                self.codeTF.text = item.code
+                self.codeLabel.text = item.code
                 self.selectedCountry = item
             })
             
