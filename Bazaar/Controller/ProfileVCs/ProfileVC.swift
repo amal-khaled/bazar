@@ -21,6 +21,9 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var balanceBtn: UIButton!
     @IBOutlet weak var paymentBtn: UIButton!
     @IBOutlet weak var notificationBtn: UIButton!
+    
+    @IBOutlet weak var loginOrRegisterBtn: UIButton!
+    @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var myAdsImg: LocalizedImage!
     @IBOutlet weak var balanceImg: LocalizedImage!
     @IBOutlet weak var paymentImg: LocalizedImage!
@@ -30,7 +33,9 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var notifCountLbl: UILabel!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     
-
+    
+    @IBOutlet weak var profileView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,17 +65,22 @@ class ProfileVC: UIViewController {
     
     
     func setupView() {
-        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
-        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+        
+//        profileView.addBorder(toSide: .Bottom, withColor: #colorLiteral(red: 0.07843137255, green: 0.2705882353, blue: 0.4588235294, alpha: 1), andThickness: 1.0)
+//        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
+//        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+//        self.navigationController?.navigationBar.isHidden = true
+        
         self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
-        profileImg.addCornerRadius(cornerRadius: 65)
-        myAdsImg.addCornerRadius(cornerRadius: 35)
-        balanceImg.addCornerRadius(cornerRadius: 35)
-        paymentImg.addCornerRadius(cornerRadius: 35)
-        notifImg.addCornerRadius(cornerRadius: 35)
-        favoriteImg.addCornerRadius(cornerRadius: 35)
+        
+        profileImg.addBorder(borderWidth: 2, borderColor:#colorLiteral(red: 0.07843137255, green: 0.2705882353, blue: 0.4588235294, alpha: 1) )
+        profileImg.addCornerRadius(cornerRadius: 45)
+//        myAdsImg.addCornerRadius(cornerRadius: 35)
+//        balanceImg.addCornerRadius(cornerRadius: 35)
+//        paymentImg.addCornerRadius(cornerRadius: 35)
+//        notifImg.addCornerRadius(cornerRadius: 35)
+//        favoriteImg.addCornerRadius(cornerRadius: 35)
     }
     @IBAction func ordersBtnAction(_ sender: Any) {
         basicNavigation(storyName: "Store", segueId: "myorders")
