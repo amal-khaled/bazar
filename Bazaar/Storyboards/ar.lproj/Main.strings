@@ -28,13 +28,25 @@
 "0hN-Q6-1Gv.normalTitle" = "إحفظ";
 
 //ProfileVC
-"uH4-59-Yg0.title" = "الصفحة الشخصية";
-"oca-vb-Mm5.title" = "الصفحة الشخصية";
-"pnI-pV-fPR.text" = "اعلاناتي";
-"eV3-kF-qGI.text" = "الرصيد";
-"6Ka-H3-0GP.text" = "الدفع";
-"jCM-Ta-re0.text" = "الاشعارات";
-"wtw-5w-idO.text" = "المفضلة";
+"zit-CT-6x5.text" = "زائر";
+"Ef7-eV-9u4.normalTitle" = "دخول / انشاء حساب";
+"tX8-at-xSp.text" = "ملفي الشخصي";
+"GOm-rn-RKm.text" = "أشحن رصيد";
+"ZFL-o8-KFA.text" = "إعلاناتي";
+"cd0-s0-PKN.text" = "طلباتي";
+"Tde-O5-FbC.text" = "مفضلتي";
+"ryC-Uo-dIH.text" = "الاشعارات";
+"Fsh-6h-6IE.text" = "تغيير اللغة";
+"xei-eE-E12.text" = "تسجيل خروج";
+
+//"uH4-59-Yg0.title" = "الصفحة الشخصية";
+//"oca-vb-Mm5.title" = "الصفحة الشخصية";
+//"pnI-pV-fPR.text" = "اعلاناتي";
+//"eV3-kF-qGI.text" = "الرصيد";
+//"6Ka-H3-0GP.text" = "الدفع";
+//"jCM-Ta-re0.text" = "الاشعارات";
+//"wtw-5w-idO.text" = "المفضلة";
+
 
 //SearchVC
 "6yh-o6-5Al.normalTitle" = "إبحث";
