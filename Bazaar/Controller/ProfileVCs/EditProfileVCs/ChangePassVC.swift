@@ -20,6 +20,8 @@ class ChangePassVC: UIViewController {
     @IBOutlet weak var changeBtn: UIButton!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     
+    @IBOutlet weak var newPasswordTF: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +30,13 @@ class ChangePassVC: UIViewController {
     }
     
     func setupView() {
-        mainView.addCornerRadius(cornerRadius: 30)
-        mainView.addBorder()
-        changeBtn.addCornerRadius(cornerRadius: 15)
+        
+        changeBtn.addCornerRadius(cornerRadius: 10)
         currentPassTxtField.delegate = self
         newPassTxtField.delegate = self
         confirmPassTxtField.delegate = self
+        newPassTxtField.enablePasswordToggle()
+        confirmPassTxtField.enablePasswordToggle()
     }
     
     @IBAction func exitBtnPressed(_ sender: Any) {

@@ -16,20 +16,20 @@ class forgotPassVC: UIViewController {
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var sendBtn: UIButton!
-    @IBOutlet weak var indicator: NVActivityIndicatorView!
+ //   @IBOutlet weak var indicator: NVActivityIndicatorView!
     
     //Variables
     var mail: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        indicator.isHidden = true
+       // indicator.isHidden = true
         setupView()
     }
     
     func setupView() {
         emailView.addBorder()
-        emailView.addCornerRadius(cornerRadius: 35)
+//        emailView.addCornerRadius(cornerRadius: 35)
         sendBtn.addCornerRadius(cornerRadius: 20)
         emailTxtField.delegate = self
 
@@ -49,13 +49,13 @@ class forgotPassVC: UIViewController {
     
     @IBAction func sendBtnPressed(_ sender: Any) {
         guard let email = emailTxtField.text, emailTxtField.text != "" else {return}
-        self.indicator.isHidden = false
-        self.indicator.startAnimating()
+       // self.indicator.isHidden = false
+        //self.indicator.startAnimating()
         AuthService.instance.forgetPassword(email: email) { (success, msg) in
             if success {
                 self.mail = email
-                self.indicator.stopAnimating()
-                self.indicator.isHidden = true
+//                self.indicator.stopAnimating()
+//                self.indicator.isHidden = true
                 self.emailTxtField.text = ""
                 self.emailTxtField.placeholder = "Email".localized
                 let alert = UIAlertController(title: "", message: "Please check your Email.".localized, preferredStyle: .alert)
@@ -67,7 +67,7 @@ class forgotPassVC: UIViewController {
                     }
                 }
             }else{
-                self.indicator.stopAnimating()
+//                self.indicator.stopAnimating()
 
                 let alert = UIAlertController(title: "", message: msg, preferredStyle: .alert)
                 self.present(alert, animated: true, completion: nil)
