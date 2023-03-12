@@ -30,23 +30,26 @@ class CategoriesVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+//        setupView()
         indicator.startAnimating()
         loadData()
         setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setStatusBar(backgroundColor: UIColor(named: "main_color") ?? .white )
+
         super.viewWillAppear(true)
 
     }
     
-    func setupView() {
-        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
-        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-        self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
-        self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
-    }
+//    func setupView() {
+//
+//        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
+//        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+//        self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
+//        self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+//    }
     
     func setupTableView() {
         tableView.delegate = self

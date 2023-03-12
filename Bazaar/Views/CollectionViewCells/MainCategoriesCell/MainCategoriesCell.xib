@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FH1-H7-96N" firstAttribute="top" secondItem="gG9-4d-gha" secondAttribute="top" id="2ZL-fh-x3T"/>
                             <constraint firstItem="FH1-H7-96N" firstAttribute="centerX" secondItem="gG9-4d-gha" secondAttribute="centerX" id="99e-bb-njt"/>
@@ -55,6 +54,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="gG9-4d-gha" secondAttribute="trailing" id="Cy3-UF-b4J"/>
                 <constraint firstAttribute="bottom" secondItem="gG9-4d-gha" secondAttribute="bottom" id="Ds5-6e-cbQ"/>
@@ -70,9 +70,4 @@
             <point key="canvasLocation" x="160.86956521739131" y="130.58035714285714"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

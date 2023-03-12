@@ -78,8 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MOLHResetable {
         application.registerForRemoteNotifications()
         //        MOLH.setLanguageTo("ar")
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1) , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1) , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)]  , for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.9803921569, green: 0.7333333333, blue: 0.3176470588, alpha: 1) , NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)]  , for: .selected)
         Thread.sleep(forTimeInterval: 2.0)
 //        let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
 //            if statusBar.responds(to: #selector(setter: UIView.backgroundColor)) {
