@@ -32,10 +32,17 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var favoriteImg: LocalizedImage!
     @IBOutlet weak var notifCountLbl: UILabel!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
-    
-    
     @IBOutlet weak var profileView: UIView!
+    @IBOutlet weak var notificationOnBtn: UIButton!
+    @IBOutlet weak var notificationOffBtn: UIButton!
+    @IBOutlet weak var englishBtn: UIButton!
     
+    @IBOutlet weak var arabicBtn: UIButton!
+    
+    
+    // Variables
+    private var notificationState = false
+   private var englishOrArabicStata = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,8 +71,64 @@ class ProfileVC: UIViewController {
     }
     
     
-    func setupView() {
+    @IBAction func onOrOffNotificationButtonClicked(_ sender: UIButton) {
         
+        if notificationState == false
+          {
+            setupNotOn()
+            notificationState = true
+        }else {
+            setupNotOff()
+            notificationState = false
+        }
+    }
+    
+    @IBAction func enOrArButtonClicked(_ sender: UIButton) {
+        if englishOrArabicStata == false
+          {
+            setupArabicLanguage()
+            englishOrArabicStata = true
+        }else {
+            setupEnglishLanguage()
+            englishOrArabicStata = false
+        }
+        
+    }
+    
+    private func setupNotOn(){
+        notificationOnBtn.backgroundColor = .white
+        notificationOnBtn.setTitleColor( #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1), for: .normal)
+        notificationOffBtn.backgroundColor =  #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1)
+        notificationOffBtn.setTitleColor(.white, for: .normal)
+        // give action to switch on notification.
+    }
+    private func setupNotOff(){
+        notificationOnBtn.backgroundColor =  #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1)
+        notificationOnBtn.setTitleColor(.white, for: .normal)
+        notificationOffBtn.backgroundColor = .white
+        notificationOffBtn.setTitleColor( #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1), for: .normal)
+        // give action to switch on notification.
+    }
+   
+    private func setupArabicLanguage(){
+        arabicBtn.backgroundColor = .white
+        arabicBtn.setTitleColor( #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1), for: .normal)
+        englishBtn.backgroundColor =  #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1)
+        englishBtn.setTitleColor(.white, for: .normal)
+        // give action to switch on notification.
+    }
+    private func setupEnglishLanguage(){
+        arabicBtn.backgroundColor =  #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1)
+        arabicBtn.setTitleColor(.white, for: .normal)
+        englishBtn.backgroundColor = .white
+        englishBtn.setTitleColor( #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1), for: .normal)
+        // give action to switch on notification.
+    }
+   
+    
+    func setupView() {
+        setupNotOff()
+        setupEnglishLanguage()
 //        profileView.addBorder(toSide: .Bottom, withColor: #colorLiteral(red: 0.07843137255, green: 0.2705882353, blue: 0.4588235294, alpha: 1), andThickness: 1.0)
 //        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
 //        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
@@ -126,7 +189,7 @@ class ProfileVC: UIViewController {
             }
         }
     }
-    
+   
     @IBAction func nameBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toEditProfileVC", sender: self)
     }
