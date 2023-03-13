@@ -131,6 +131,8 @@
 		652357A024DA9DFB004CA54A /* commericalAdDetialsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523579D24DA9DF9004CA54A /* commericalAdDetialsCollectionViewCell.swift */; };
 		652357A124DA9DFB004CA54A /* CommericalSliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523579E24DA9DFA004CA54A /* CommericalSliderCollectionViewCell.swift */; };
 		652357A224DA9DFB004CA54A /* commericalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523579F24DA9DFA004CA54A /* commericalCollectionViewCell.swift */; };
+		652BE5BD29BE530200C1230C /* SideCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BE5BC29BE530200C1230C /* SideCategoryCollectionViewCell.swift */; };
+		652BE5BF29BE531800C1230C /* SubCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652BE5BE29BE531700C1230C /* SubCategoryCollectionViewCell.swift */; };
 		653E71FB25DF4512002D70D3 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E71FA25DF4512002D70D3 /* CheckoutViewController.swift */; };
 		653E71FF25DF4847002D70D3 /* OrderServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E71FE25DF4847002D70D3 /* OrderServices.swift */; };
 		653E720225DF48B7002D70D3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653E720125DF48B7002D70D3 /* Order.swift */; };
@@ -338,6 +340,8 @@
 		6523579D24DA9DF9004CA54A /* commericalAdDetialsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commericalAdDetialsCollectionViewCell.swift; sourceTree = "<group>"; };
 		6523579E24DA9DFA004CA54A /* CommericalSliderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommericalSliderCollectionViewCell.swift; sourceTree = "<group>"; };
 		6523579F24DA9DFA004CA54A /* commericalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = commericalCollectionViewCell.swift; sourceTree = "<group>"; };
+		652BE5BC29BE530200C1230C /* SideCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		652BE5BE29BE531700C1230C /* SubCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		653E71FA25DF4512002D70D3 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		653E71FE25DF4847002D70D3 /* OrderServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderServices.swift; sourceTree = "<group>"; };
 		653E720125DF48B7002D70D3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -526,6 +530,8 @@
 				65FFCE4225D881240044AD8D /* storeCollectionViewCell.swift */,
 				65FD6A49273D977B00F21C5C /* CustomSliderAdCollectionViewCell.swift */,
 				65FD6A4A273D977B00F21C5C /* CustomSliderAdCollectionViewCell.xib */,
+				652BE5BC29BE530200C1230C /* SideCategoryCollectionViewCell.swift */,
+				652BE5BE29BE531700C1230C /* SubCategoryCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -1325,6 +1331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65DF0D3425E324D200D2D018 /* MyOrderDetailsViewController.swift in Sources */,
+				652BE5BD29BE530200C1230C /* SideCategoryCollectionViewCell.swift in Sources */,
 				65FFCE4C25D888A80044AD8D /* APIConnection.swift in Sources */,
 				0B18782E24040131003B7C0B /* ImageCell.swift in Sources */,
 				0B1199592427CC2000932931 /* NotificationService.swift in Sources */,
@@ -1415,6 +1422,7 @@
 				655DB2CC275A9AAA00653D10 /* UpdateFeatureViewController.swift in Sources */,
 				0B88B6C024A3E11A00A51A6B /* PaymentMethod.swift in Sources */,
 				653E71FB25DF4512002D70D3 /* CheckoutViewController.swift in Sources */,
+				652BE5BF29BE531800C1230C /* SubCategoryCollectionViewCell.swift in Sources */,
 				0BFD757F240A83D800800340 /* PackagesService.swift in Sources */,
 				0B19086623F70D220050AE73 /* HomeService.swift in Sources */,
 				653E720225DF48B7002D70D3 /* Order.swift in Sources */,
