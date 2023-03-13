@@ -17,6 +17,7 @@ import FSPagerView
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var headerExtensionView: UIView!
     //Outlets
     @IBOutlet weak var sliderHieght: NSLayoutConstraint!
     @IBOutlet weak var countryBtn: UIButton!
@@ -103,10 +104,10 @@ class HomeVC: UIViewController {
         
         button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
         //        button.tintColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1)
-        button.setTitleColor(#colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 1), for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.setImage(UIImage(named: "drop-down-1"), for: .normal)
         button.backgroundColor = .none
         button.addTarget(self, action: #selector(changeCountry), for: .touchUpInside)
-        
         
         indicator.startAnimating()
         sliderAlamoSource.removeAll()
@@ -288,10 +289,10 @@ class HomeVC: UIViewController {
     }
     func setupView() {
         imageSlideshowContainer.addCornerRadius(cornerRadius: 30)
-        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
-        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-        self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
-        self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        self.headerExtensionView.addCornerRadius(cornerRadius: 25)
+        self.headerExtensionView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+//        self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
+//        self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         self.cAdBtn.layer.borderWidth = 1
         self.cAdBtn.layer.borderColor = #colorLiteral(red: 0.001686832751, green: 0.1439712048, blue: 0.4857619405, alpha: 0.6992143037)
         self.adsBtn.layer.borderWidth = 1
@@ -383,6 +384,8 @@ class HomeVC: UIViewController {
             if let mostAds = mostViewedAds {
                 self.mostViewdArr = mostAds
                 //                self.mostViewdCollection.reloadData()
+                self.topArr = mostAds
+
                 self.recentCollection.reloadData()
                 
                 //                let screenSize = UIScreen.main.bounds
@@ -590,7 +593,7 @@ class HomeVC: UIViewController {
         recentCollection.itemSize = CGSize(width: 0.75*recentCollection.frame.width, height: 178)
 //        recentCollection.transformer = FSPagerViewTransformer(type: .)
         mostViewdCollection.itemSize = CGSize(width: 0.75*mostViewdCollection.frame.width, height: 178)
-        mostViewdCollection.transformer = FSPagerViewTransformer(type: .linear)
+//        mostViewdCollection.transformer = FSPagerViewTransformer(type: .linear)
         featuredCollection.itemSize = CGSize(width: 0.75*featuredCollection.frame.width, height: 178)
         featuredCollection.transformer = FSPagerViewTransformer(type: .linear)
         

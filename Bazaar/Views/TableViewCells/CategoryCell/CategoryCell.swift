@@ -136,26 +136,6 @@ extension CategoryCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLa
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView.tag == 1 {
-            let cell = collectionView.cellForItem(at: indexPath)
-            
-            UIView.animate(withDuration: 0.2,
-                           animations: {
-                            cell?.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-            },
-                           completion: { _ in
-                            UIView.animate(withDuration: 0.2) {
-                                cell?.transform = CGAffineTransform.identity
-                            }
-                            self.parent?.selectedCatId = self.subCategories[indexPath.row].id
-                            self.parent?.performSegue(withIdentifier: "toSubCategoryVC", sender: self)
-            })
-        }
-        if collectionView.tag == 2 {
-            parent?.selectedAdId = ads[indexPath.row].id
-            parent?.performSegue(withIdentifier: "toAdVC", sender: self)
-        }
-    }
+    
     
 }

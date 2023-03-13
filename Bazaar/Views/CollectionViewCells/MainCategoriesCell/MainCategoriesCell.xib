@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -29,19 +28,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="rl3-nx-LE5">
-                                <rect key="frame" x="80" y="10" width="0.0" height="0.0"/>
+                                <rect key="frame" x="10" y="10" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="FH1-H7-96N" firstAttribute="top" secondItem="gG9-4d-gha" secondAttribute="top" id="2ZL-fh-x3T"/>
                             <constraint firstItem="FH1-H7-96N" firstAttribute="centerX" secondItem="gG9-4d-gha" secondAttribute="centerX" id="99e-bb-njt"/>
-                            <constraint firstAttribute="trailing" secondItem="rl3-nx-LE5" secondAttribute="trailing" constant="10" id="KG4-DB-h1B"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rl3-nx-LE5" secondAttribute="trailing" constant="10" id="KG4-DB-h1B"/>
                             <constraint firstAttribute="bottom" secondItem="FH1-H7-96N" secondAttribute="bottom" id="X9J-2X-oZe"/>
-                            <constraint firstItem="rl3-nx-LE5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gG9-4d-gha" secondAttribute="leading" constant="10" id="cbr-vc-rQf"/>
+                            <constraint firstItem="rl3-nx-LE5" firstAttribute="leading" secondItem="gG9-4d-gha" secondAttribute="leading" constant="10" id="cbr-vc-rQf"/>
                             <constraint firstItem="rl3-nx-LE5" firstAttribute="top" secondItem="FH1-H7-96N" secondAttribute="top" constant="10" id="g3g-11-a5Y"/>
                             <constraint firstAttribute="trailing" secondItem="FH1-H7-96N" secondAttribute="trailing" id="ugh-Ph-YQe"/>
                             <constraint firstItem="FH1-H7-96N" firstAttribute="leading" secondItem="gG9-4d-gha" secondAttribute="leading" id="xc0-mC-gyQ"/>
@@ -55,6 +54,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="gG9-4d-gha" secondAttribute="trailing" id="Cy3-UF-b4J"/>
                 <constraint firstAttribute="bottom" secondItem="gG9-4d-gha" secondAttribute="bottom" id="Ds5-6e-cbQ"/>
@@ -70,9 +70,4 @@
             <point key="canvasLocation" x="160.86956521739131" y="130.58035714285714"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
