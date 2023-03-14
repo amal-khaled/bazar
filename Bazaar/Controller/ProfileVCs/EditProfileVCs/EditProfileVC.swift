@@ -41,7 +41,7 @@ class EditProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        self.codeTF.textAlignment = NSTextAlignment.left
+//        self.codeTF.textAlignment = NSTextAlignment.left
         self.phoneTxtField.textAlignment = NSTextAlignment.left
     }
     
@@ -53,10 +53,10 @@ class EditProfileVC: UIViewController {
     
     func setupView() {
         profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
-        profileImg.addCornerRadius(cornerRadius: 65)
-        cameraImg.addCornerRadius(cornerRadius: 15)
-        mainView.addBorder()
-        mainView.addCornerRadius(cornerRadius: 30)
+        profileImg.addCornerRadius(cornerRadius: 50)
+       // cameraImg.addCornerRadius(cornerRadius: 15)
+      //  mainView.addBorder()
+      //  mainView.addCornerRadius(cornerRadius: 30)
         editBtn.addCornerRadius(cornerRadius: 15)
         changePassBtn.addCornerRadius(cornerRadius: 15)
         nameTxtField.delegate = self
@@ -87,7 +87,7 @@ class EditProfileVC: UIViewController {
                 }
                 if let city = json["City"].dictionary {
 //                    self..text = PhoneNumber
-                    self.codeTF.text = city["Code"]?.string
+                   // self.codeTF.text = city["Code"]?.string
                     self.cityId = city["CityId"]?.int ?? 0
                     self.cityCount = city["PhoneNumberNo"]?.int ?? 0
                 }
