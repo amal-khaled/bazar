@@ -11,6 +11,7 @@ import AlamofireImage
 import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
+import MOLH
 
 class ProfileVC: UIViewController {
     
@@ -30,7 +31,6 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var notifImg: LocalizedImage!
     @IBOutlet weak var FavoriteBtn: UIButton!
     @IBOutlet weak var favoriteImg: LocalizedImage!
-    @IBOutlet weak var notifCountLbl: UILabel!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var notificationOnBtn: UIButton!
@@ -42,7 +42,7 @@ class ProfileVC: UIViewController {
     
     // Variables
     private var notificationState = false
-   private var englishOrArabicStata = false
+   private var isArabicLanguage = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,13 +84,34 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func enOrArButtonClicked(_ sender: UIButton) {
-        if englishOrArabicStata == false
+        if isArabicLanguage == false
           {
             setupArabicLanguage()
-            englishOrArabicStata = true
+            isArabicLanguage = true
         }else {
             setupEnglishLanguage()
-            englishOrArabicStata = false
+            isArabicLanguage = false
+        }
+        
+        if englishBtn.backgroundColor == .white {
+            MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "en")
+            if #available(iOS 13.0, *) {
+                    let delegate = UIApplication.shared.delegate as? AppDelegate
+                    delegate!.swichRoot()
+            } else {
+                   // Fallback on earlier versions
+                   MOLH.reset()
+            }
+            
+        } else {
+            MOLH.setLanguageTo(MOLHLanguage.currentAppleLanguage() == "en" ? "ar" : "ar")
+                    if #available(iOS 13.0, *) {
+                    let delegate = UIApplication.shared.delegate as? AppDelegate
+                    delegate!.swichRoot()
+            } else {
+                   // Fallback on earlier versions
+                   MOLH.reset()
+            }
         }
         
     }
@@ -127,8 +148,13 @@ class ProfileVC: UIViewController {
    
     
     func setupView() {
+        if MOLHLanguage.currentAppleLanguage() == "ar" {
+            setupArabicLanguage()
+            isArabicLanguage = true
+        }else{
+            setupEnglishLanguage()
+        }
         setupNotOff()
-        setupEnglishLanguage()
 //        profileView.addBorder(toSide: .Bottom, withColor: #colorLiteral(red: 0.07843137255, green: 0.2705882353, blue: 0.4588235294, alpha: 1), andThickness: 1.0)
 //        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
 //        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
@@ -185,7 +211,7 @@ class ProfileVC: UIViewController {
         
         NotificationService.instance.getNotifications { (error, notifications) in
             if let notifications = notifications {
-                self.notifCountLbl.text = "\(notifications.count)"
+//                self.notifCountLbl.text = "\(notifications.count)"
             }
         }
     }
