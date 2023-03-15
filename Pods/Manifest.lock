@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.9.1)
   - AlamofireImage (3.6.0):
     - Alamofire (~> 4.9)
+  - DLRadioButton (1.4.12)
   - Firebase/Analytics (10.6.0):
     - Firebase/Core
   - Firebase/Auth (10.6.0):
@@ -140,6 +141,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - DLRadioButton
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Core
@@ -164,6 +166,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
+    - DLRadioButton
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -195,6 +198,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
+  DLRadioButton: d7c4e225ed0e8013cef7be61455230c7557ad7c1
   Firebase: f13680471b021937f2230ea8503c7809d8c29806
   FirebaseAnalytics: 9f382605c5ee412b039212f054bf7a403d9850c1
   FirebaseAuth: 743e5cd568af59d6d99a91ea9300843672515cf7
@@ -223,6 +227,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 623ce46420e7755aa6b699360e9f089c1111fa7b
+PODFILE CHECKSUM: c20c0f0491e0c829ee2c92c0772f03de5dffe97e
 
 COCOAPODS: 1.11.3

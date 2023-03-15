@@ -166,6 +166,7 @@
 		658C04EE262FA27C00472394 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C04E3262FA27C00472394 /* ConfirmViewController.swift */; };
 		658E46F825F2D4EC001A431F /* StaticFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E46F725F2D4EC001A431F /* StaticFunctions.swift */; };
 		658E46FB25F2D4FA001A431F /* UIViewControllerExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658E46FA25F2D4FA001A431F /* UIViewControllerExtenstions.swift */; };
+		6598D14929C0CD48009E97EB /* CategoryProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6598D14829C0CD48009E97EB /* CategoryProductTableViewCell.swift */; };
 		65A0254227221DA5009EB650 /* AddingCutomsFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A0254127221DA5009EB650 /* AddingCutomsFont.swift */; };
 		65A4134C263452B1001AE710 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65A41347263452B0001AE710 /* Localizable.strings */; };
 		65A4134D263452B1001AE710 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65A4134A263452B0001AE710 /* Localizable.strings */; };
@@ -375,6 +376,7 @@
 		658C04E3262FA27C00472394 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		658E46F725F2D4EC001A431F /* StaticFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticFunctions.swift; sourceTree = "<group>"; };
 		658E46FA25F2D4FA001A431F /* UIViewControllerExtenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtenstions.swift; sourceTree = "<group>"; };
+		6598D14829C0CD48009E97EB /* CategoryProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryProductTableViewCell.swift; sourceTree = "<group>"; };
 		65A0254127221DA5009EB650 /* AddingCutomsFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingCutomsFont.swift; sourceTree = "<group>"; };
 		65A41348263452B0001AE710 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = Localizable.strings; sourceTree = "<group>"; };
 		65A4134B263452B0001AE710 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -779,6 +781,7 @@
 				0B1F78B423EA21F6006BDFBA /* CountryCell */,
 				0B1F78AF23E9E505006BDFBA /* NotificstionCell */,
 				0B1F78A823E9DA33006BDFBA /* QuestionsCell */,
+				6598D14829C0CD48009E97EB /* CategoryProductTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -1433,6 +1436,7 @@
 				0BFD7586240A912A00800340 /* PackageCell.swift in Sources */,
 				0B04832723DA1F87003C49C0 /* CategoriesVC.swift in Sources */,
 				658C04E6262FA27C00472394 /* RegisterWithPhoneViewController.swift in Sources */,
+				6598D14929C0CD48009E97EB /* CategoryProductTableViewCell.swift in Sources */,
 				0BF4487A23F04DF80044B88B /* FollowUpCell.swift in Sources */,
 				65FD6A4B273D977B00F21C5C /* CustomSliderAdCollectionViewCell.swift in Sources */,
 				651B945D25C8743200C8D886 /* OneDayAdViewController.swift in Sources */,
