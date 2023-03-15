@@ -11,6 +11,7 @@ import AlamofireImage
 import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
+import iOSDropDown
 
 class EditProfileVC: UIViewController {
     
@@ -20,13 +21,21 @@ class EditProfileVC: UIViewController {
     @IBOutlet weak var profileImgBtn: UIButton!
     @IBOutlet weak var cameraImg: UIImageView!
     @IBOutlet weak var editBtn: UIButton!
-    @IBOutlet weak var changePassBtn: UIButton!
     @IBOutlet weak var nameTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var addressTxtField: UITextField!
     @IBOutlet weak var phoneTxtField: UITextField!
-    @IBOutlet weak var codeTF: UITextField!
     @IBOutlet weak var indicator: NVActivityIndicatorView!
+    
+    @IBOutlet weak var countryDropDwon: DropDown!
+    
+    @IBOutlet weak var regionDropDwon: DropDown!
+    @IBOutlet weak var cityDropDwon: DropDown!
+    
+    @IBOutlet weak var bioTextView: UITextView!
+    
+    
+    
     var cityId = 0
     var cityCount = 0
     //Variables
@@ -52,17 +61,44 @@ class EditProfileVC: UIViewController {
     }
     
     func setupView() {
-        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
+        profileImg.addBorder(borderWidth: 4, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
         profileImg.addCornerRadius(cornerRadius: 50)
-       // cameraImg.addCornerRadius(cornerRadius: 15)
-      //  mainView.addBorder()
-      //  mainView.addCornerRadius(cornerRadius: 30)
+        // cameraImg.addCornerRadius(cornerRadius: 15)
+        //  mainView.addBorder()
+        //  mainView.addCornerRadius(cornerRadius: 30)
         editBtn.addCornerRadius(cornerRadius: 15)
-        changePassBtn.addCornerRadius(cornerRadius: 15)
         nameTxtField.delegate = self
         emailTxtField.delegate = self
         addressTxtField.delegate = self
         phoneTxtField.delegate = self
+        
+        countryDropDwon.text = "choose Country"
+        countryDropDwon.optionArray = ["Option 1", "Option 2", "Option 3","Option 4", "Option 5","Option 6", "Option 7","Option 8", "Option 9"]
+        countryDropDwon.optionIds = [1,23,54,22]
+        countryDropDwon.optionImageArray = ["location","location","location","location"]
+
+        countryDropDwon.didSelect{(selectedText , index ,id) in
+            print("Selected String: \(selectedText) \n index: \(index)")
+            self.countryDropDwon.text = "\(selectedText)"
+        }
+        regionDropDwon.text = "Region"
+        regionDropDwon.optionArray = ["Option 1", "Option 2", "Option 3","Option 4", "Option 5","Option 6", "Option 7","Option 8", "Option 9"]
+        regionDropDwon.optionIds = [1,23,54,22]
+
+        regionDropDwon.didSelect{(selectedText , index ,id) in
+            print("Selected String: \(selectedText) \n index: \(index)")
+            self.regionDropDwon.text = "\(selectedText)"
+        }
+        cityDropDwon.text = "City"
+        cityDropDwon.optionArray = ["Option 1", "Option 2", "Option 3","Option 4", "Option 5","Option 6", "Option 7","Option 8", "Option 9", "Option 10","Option 11", "Option 12","Option 13", "Option 14"]
+        cityDropDwon.optionIds = [1,23,54,22,12,14,6,6,9,8,8,51,31,65,95]
+
+        cityDropDwon.didSelect{(selectedText , index ,id) in
+            print("Selected String: \(selectedText) \n index: \(index)")
+            self.cityDropDwon.text = "\(selectedText)"
+        }
+        
+        
     }
     
     func loadProfile() {
@@ -175,6 +211,11 @@ class EditProfileVC: UIViewController {
             }
         }
 
+    }
+    
+    
+    @IBAction func changeMobileBtnPressed(_ sender: UIButton) {
+        
     }
     
     @IBAction func changePassBtnPressed(_ sender: Any) {
