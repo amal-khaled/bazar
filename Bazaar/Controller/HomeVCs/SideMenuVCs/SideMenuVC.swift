@@ -14,30 +14,12 @@ import SwiftyJSON
 class SideMenuVC: UIViewController {
     
     //Outlets
-    @IBOutlet weak var languageBtn: UIButton!
-    @IBOutlet weak var aboutUsBtn: UIButton!
-    @IBOutlet weak var contactUsBtn: UIButton!
-    @IBOutlet weak var countryBtn: UIButton!
-    @IBOutlet weak var notificationBtn: UIButton!
-    @IBOutlet weak var termsBtn: UIButton!
-    @IBOutlet weak var supportBtn: UIButton!
-    @IBOutlet weak var shareBtn: UIButton!
-    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var exitBtn: UIButton!
-    @IBOutlet weak var profileImg: UIImageView!
-    @IBOutlet weak var usernameLbl: UILabel!
-    @IBOutlet weak var countryLbl: UILabel!
-    @IBOutlet weak var notificationLbl: UILabel!
-    @IBOutlet weak var languageLbl: UILabel!
-    @IBOutlet weak var termsLbl: UILabel!
-    @IBOutlet weak var supportLbl: UILabel!
-    @IBOutlet weak var contactUsLbl: UILabel!
-    @IBOutlet weak var shareLbl: UILabel!
-    @IBOutlet weak var aboutUsLbl: UILabel!
-    @IBOutlet weak var loginLbl: UILabel!
-    @IBOutlet weak var notifCountLbl: UILabel!
-    
-    
+    @IBOutlet weak var englishBtn: UIButton!
+    @IBOutlet weak var arabicBtn: UIButton!
+    @IBOutlet weak var notOnBtn: UIButton!
+    @IBOutlet weak var notOffBtn: UIButton!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -45,27 +27,27 @@ class SideMenuVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if NetworkHelper.getToken() == nil {
-            loginLbl.text = "Log In".localized
-        } else {
-            loadProfile()
-            loginLbl.text = "Log Out".localized
-        }
+//        if NetworkHelper.getToken() == nil {
+//            loginLbl.text = "Log In".localized
+//        } else {
+//            loadProfile()
+//            loginLbl.text = "Log Out".localized
+//        }
         
     }
     
     func setupView() {
-        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
-        profileImg.addCornerRadius(cornerRadius: 75)
-        countryLbl.addCornerRadius(cornerRadius: 15)
-        notificationLbl.addCornerRadius(cornerRadius: 15)
-        languageLbl.addCornerRadius(cornerRadius: 15)
-        termsLbl.addCornerRadius(cornerRadius: 15)
-        supportLbl.addCornerRadius(cornerRadius: 15)
-        contactUsLbl.addCornerRadius(cornerRadius: 15)
-        shareLbl.addCornerRadius(cornerRadius: 15)
-        aboutUsLbl.addCornerRadius(cornerRadius: 15)
-        loginLbl.addCornerRadius(cornerRadius: 15)
+//        profileImg.addBorder(borderWidth: 2, borderColor: #colorLiteral(red: 0.932130754, green: 0.6688258052, blue: 0, alpha: 1))
+//        profileImg.addCornerRadius(cornerRadius: 75)
+//        countryLbl.addCornerRadius(cornerRadius: 15)
+//        notificationLbl.addCornerRadius(cornerRadius: 15)
+//        languageLbl.addCornerRadius(cornerRadius: 15)
+//        termsLbl.addCornerRadius(cornerRadius: 15)
+//        supportLbl.addCornerRadius(cornerRadius: 15)
+//        contactUsLbl.addCornerRadius(cornerRadius: 15)
+//        shareLbl.addCornerRadius(cornerRadius: 15)
+//        aboutUsLbl.addCornerRadius(cornerRadius: 15)
+//        loginLbl.addCornerRadius(cornerRadius: 15)
     }
     
     func loadProfile() {
@@ -75,15 +57,14 @@ class SideMenuVC: UIViewController {
                 print(error)
             case .success(let value):
                 let json = JSON(value)
-                if let name = json["Name"].string {
-                    self.usernameLbl.text = name
-                }
+//                if let name = json["Name"].string {
+//                    self.usernameLbl.text = name
+//                }
                 if let image = json["ImageURL"].string {
                     Alamofire.request(image).responseImage { (response) in
                         if let image = response.result.value {
                             DispatchQueue.main.async {
-                                self.profileImg.image = image
-                                self.profileImg.contentMode = .scaleAspectFill
+                               // self.profileImg.contentMode = .scaleAspectFill
                             }
                         }
                     }
@@ -92,9 +73,9 @@ class SideMenuVC: UIViewController {
         }
         
         NotificationService.instance.getNotifications { (error, notifications) in
-            if let notifications = notifications {
-                self.notifCountLbl.text = "\(notifications.count)"
-            }
+//            if let notifications = notifications {
+//                self.notifCountLbl.text = "\(notifications.count)"
+//            }
         }
     }
     

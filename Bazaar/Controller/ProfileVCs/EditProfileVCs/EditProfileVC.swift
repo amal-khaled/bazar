@@ -51,7 +51,7 @@ class EditProfileVC: UIViewController {
         super.viewDidLoad()
         setupView()
 //        self.codeTF.textAlignment = NSTextAlignment.left
-        self.phoneTxtField.textAlignment = NSTextAlignment.left
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -244,9 +244,9 @@ extension EditProfileVC: UITextFieldDelegate {
         return true
     }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if textField == codeTF{
-            return false
-        }
+//        if textField == codeTF{
+//            return false
+//        }
         return true
     }
 }
