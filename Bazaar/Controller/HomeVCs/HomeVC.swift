@@ -606,7 +606,7 @@ class HomeVC: UIViewController {
             destVC.selectedAdId = self.selectedAdId
         }
         if segue.identifier == "toMainCatVC" {
-            let destVC = segue.destination as! MainCatVC
+            let destVC = segue.destination as! SubCategoryVC
             destVC.selectedMainCatId = self.selectedMainCatId
         }
         if segue.identifier == "commerical_ads"{

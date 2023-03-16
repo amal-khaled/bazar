@@ -26,6 +26,7 @@ class CategoriesVC: UIViewController {
     var subcategories = [SubCategory]()
     var selectedsubCatId: Int = 0
     var selectedCatId: Int = 0
+    var selectedSubIndex = 0
     
     
     override func viewDidLoad() {
@@ -89,6 +90,14 @@ class CategoriesVC: UIViewController {
     //            destVC.selectedAdId = self.selectedAdId
     //        }
     //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        if segue.identifier == "toMainCatVC" {
+            let destVC = segue.destination as! SubCategoryVC
+            destVC.selectedMainCatId = self.selectedCatId
+            destVC.selectedCategoryIndex = selectedSubIndex
+        }
+    }
 }
 
 //extension CategoriesVC: UITableViewDelegate, UITableViewDataSource {
@@ -165,9 +174,16 @@ extension CategoriesVC : UICollectionViewDelegate,UICollectionViewDelegateFlowLa
     //
     //    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedCatId = categories[indexPath.row].id
-        
-        loadSubData()
+        if collectionView == categoryColection{
+            self.selectedCatId = categories[indexPath.row].id
+            
+            loadSubData()
+        }else{
+            self.selectedsubCatId = subcategories[indexPath.row].id
+            self.selectedSubIndex = indexPath.row
+            self.performSegue(withIdentifier: "toMainCatVC", sender: self)
+
+        }
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
