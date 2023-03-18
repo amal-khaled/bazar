@@ -194,6 +194,8 @@
 		65FFCEA625DF1F330044AD8D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA525DF1F330044AD8D /* CartTableViewCell.swift */; };
 		65FFCEAA25DF24560044AD8D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA925DF24560044AD8D /* CartViewController.swift */; };
 		C815020629B7EC35001B3537 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C815020529B7EC35001B3537 /* UILabelPadding.swift */; };
+		C818334F29C60793007402D6 /* ProfileDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818334E29C60793007402D6 /* ProfileDetailsVC.swift */; };
+		C818335129C60973007402D6 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818335029C60973007402D6 /* UIViewControllerExt.swift */; };
 		C86A311C29BA56F10077266A /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86A311B29BA56F10077266A /* UITextFieldExt.swift */; };
 		ECEEC6E7EA83ECF703A3C749 /* Pods_Bazaar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */; };
 /* End PBXBuildFile section */
@@ -408,6 +410,8 @@
 		91F569B05DD0DDE935DF6637 /* Pods-Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bazaar.release.xcconfig"; path = "Target Support Files/Pods-Bazaar/Pods-Bazaar.release.xcconfig"; sourceTree = "<group>"; };
 		C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bazaar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C815020529B7EC35001B3537 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
+		C818334E29C60793007402D6 /* ProfileDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsVC.swift; sourceTree = "<group>"; };
+		C818335029C60973007402D6 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		C86A311B29BA56F10077266A /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -503,6 +507,7 @@
 				0BFDB5F823EC032000695A5A /* MyAdsVC.swift */,
 				0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */,
 				0BFD7580240A8F4500800340 /* PaymentVCs */,
+				C818334E29C60793007402D6 /* ProfileDetailsVC.swift */,
 			);
 			path = ProfileVCs;
 			sourceTree = "<group>";
@@ -633,6 +638,7 @@
 				0B780FFE23DF2A06004304DC /* StringExt.swift */,
 				0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */,
 				C86A311B29BA56F10077266A /* UITextFieldExt.swift */,
+				C818335029C60973007402D6 /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1409,9 +1415,11 @@
 				0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */,
 				658C04E7262FA27C00472394 /* LoginWithPhoneViewController.swift in Sources */,
 				65FFCE3F25D87FFD0044AD8D /* StoreViewController.swift in Sources */,
+				C818334F29C60793007402D6 /* ProfileDetailsVC.swift in Sources */,
 				65FFCEAA25DF24560044AD8D /* CartViewController.swift in Sources */,
 				0B88B6C724A51DFD00A51A6B /* PackagePaymentMethodsVC.swift in Sources */,
 				65FC8BC1259874D900FB9AEB /* SeeMoreLatestAdsViewController.swift in Sources */,
+				C818335129C60973007402D6 /* UIViewControllerExt.swift in Sources */,
 				0B88B6BD24A3DF2F00A51A6B /* PaymentMethodsVC.swift in Sources */,
 				0B02B0C72406D9B900A17F02 /* SubSubCategoryList.swift in Sources */,
 				65FFCE5025D8915C0044AD8D /* StoreServices.swift in Sources */,

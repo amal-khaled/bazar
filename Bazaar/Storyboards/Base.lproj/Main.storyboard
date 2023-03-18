@@ -4000,10 +4000,10 @@
             </objects>
             <point key="canvasLocation" x="2425" y="4032"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile DetailsVC-->
         <scene sceneID="kQb-DQ-eaU">
             <objects>
-                <viewController id="pP3-Yd-tXF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileDetailsVC" modalPresentationStyle="fullScreen" id="pP3-Yd-tXF" customClass="ProfileDetailsVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vF0-Te-HA9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4012,22 +4012,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmf-d0-wPA">
-                                        <rect key="frame" x="180.66666666666666" y="44" width="53" height="21.666666666666671"/>
+                                        <rect key="frame" x="180.66666666666666" y="58.999999999999993" width="53" height="21.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idw-FO-8NT">
-                                        <rect key="frame" x="359" y="37.333333333333336" width="35" height="35.000000000000007"/>
+                                        <rect key="frame" x="359" y="52.333333333333343" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="idw-FO-8NT" secondAttribute="height" multiplier="1:1" id="0U4-zz-XCf"/>
                                             <constraint firstAttribute="width" constant="35" id="IjY-pi-RfH"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="RingIcon"/>
+                                        <connections>
+                                            <action selector="notificationBtnPressed:" destination="pP3-Yd-tXF" eventType="touchUpInside" id="caN-rl-fMb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGv-FU-JTz">
-                                        <rect key="frame" x="20" y="37.333333333333336" width="35" height="35.000000000000007"/>
+                                        <rect key="frame" x="20" y="52.333333333333343" width="35" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SGv-FU-JTz" secondAttribute="height" multiplier="1:1" id="1DS-KJ-gJv"/>
                                             <constraint firstAttribute="width" constant="35" id="hec-oc-DLW"/>
@@ -4036,13 +4039,15 @@
                                         <state key="normal" image="BackButton">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="pP3-Yd-tXF" eventType="touchUpInside" id="Yxi-Uh-vsC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="gmf-d0-wPA" firstAttribute="top" secondItem="P29-Nj-nh1" secondAttribute="top" constant="44" id="9Ob-kJ-xWe"/>
                                     <constraint firstAttribute="trailing" secondItem="idw-FO-8NT" secondAttribute="trailing" constant="20" id="D8W-T8-80E"/>
-                                    <constraint firstItem="gmf-d0-wPA" firstAttribute="centerY" secondItem="P29-Nj-nh1" secondAttribute="centerY" constant="10" id="HEp-Vo-fw8"/>
+                                    <constraint firstItem="gmf-d0-wPA" firstAttribute="centerY" secondItem="P29-Nj-nh1" secondAttribute="centerY" constant="25" id="HEp-Vo-fw8"/>
                                     <constraint firstItem="SGv-FU-JTz" firstAttribute="leading" secondItem="P29-Nj-nh1" secondAttribute="leading" constant="20" id="IXl-Dg-Gn5"/>
                                     <constraint firstItem="gmf-d0-wPA" firstAttribute="centerX" secondItem="P29-Nj-nh1" secondAttribute="centerX" id="h9e-4g-PSR"/>
                                     <constraint firstItem="SGv-FU-JTz" firstAttribute="centerY" secondItem="gmf-d0-wPA" secondAttribute="centerY" id="xtc-94-RHr"/>
@@ -4147,26 +4152,26 @@
                                             <constraint firstItem="Bei-0F-3FB" firstAttribute="centerY" secondItem="ZnH-xD-lpQ" secondAttribute="centerY" id="tCX-3L-kg7"/>
                                         </constraints>
                                     </view>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CtS-ip-9mS">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="CtS-ip-9mS">
                                         <rect key="frame" x="19.999999999999993" y="19.999999999999993" width="99.333333333333314" height="99.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="CtS-ip-9mS" secondAttribute="height" multiplier="1:1" id="cS0-AF-ec0"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company to design Apps and websites " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phz-Ro-qu2">
-                                        <rect key="frame" x="70" y="196" width="291" height="18"/>
+                                        <rect key="frame" x="64.666666666666657" y="196" width="296.33333333333337" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aahmed Mohammed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-Mu-J8y">
-                                        <rect key="frame" x="20" y="134.33333333333331" width="187" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ahmed Mohammed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-Mu-J8y">
+                                        <rect key="frame" x="20" y="134.33333333333331" width="176.33333333333334" height="23"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hawli - Hawli" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t61-OE-EJ1">
-                                        <rect key="frame" x="60" y="162.33333333333331" width="107" height="21.666666666666657"/>
+                                        <rect key="frame" x="54.666666666666657" y="162.33333333333331" width="107" height="21.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <color key="textColor" name="main_color"/>
                                         <nil key="highlightedColor"/>
@@ -4179,6 +4184,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="shareProfileIcon"/>
+                                        <connections>
+                                            <action selector="shareBtnPressed:" destination="pP3-Yd-tXF" eventType="touchUpInside" id="vWh-e7-aLL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4220,6 +4228,9 @@
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="myChatBtnPressed:" destination="pP3-Yd-tXF" eventType="touchUpInside" id="7mc-xS-Frb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx2-8j-NOg">
                                                 <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="45"/>
@@ -4235,6 +4246,9 @@
                                                         <real key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="editProfileBtnPressed:" destination="pP3-Yd-tXF" eventType="touchUpInside" id="Uae-UI-XIq"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -4266,6 +4280,9 @@
                                                 <state key="normal" title="See All">
                                                     <color key="titleColor" name="main_color"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="showAllAdsBtnPressed:" destination="pP3-Yd-tXF" eventType="touchUpInside" id="Gfm-dY-03H"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -4293,6 +4310,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="callIcon"/>
+                                        <connections>
+                                            <action selector="callBtnPressed:" destination="pP3-Yd-tXF" eventType="touchUpInside" id="jkd-9t-tUn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -4328,6 +4348,16 @@
                             <constraint firstItem="P29-Nj-nh1" firstAttribute="height" secondItem="vF0-Te-HA9" secondAttribute="height" multiplier="0.1" id="rF1-3P-QMU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="AdsCountLabel" destination="Mgd-82-Ots" id="o71-jo-HTK"/>
+                        <outlet property="followersCountLabel" destination="AvL-nU-Qgi" id="CIO-0O-b61"/>
+                        <outlet property="followingsCountsLabel" destination="q24-p9-cUG" id="qHk-jY-lSI"/>
+                        <outlet property="tableView" destination="Atm-g0-JOJ" id="kCH-ai-hEf"/>
+                        <outlet property="userBioLabel" destination="phz-Ro-qu2" id="wXY-CR-Kfk"/>
+                        <outlet property="userImage" destination="CtS-ip-9mS" id="P3C-UW-1FP"/>
+                        <outlet property="userLocation" destination="t61-OE-EJ1" id="3JH-qm-v5N"/>
+                        <outlet property="userNameLabel" destination="8Wr-Mu-J8y" id="WVZ-b0-fVl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WF3-YJ-jjz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -12177,10 +12207,10 @@
             <size key="intrinsicContentSize" width="58.333333333333336" height="21"/>
         </designable>
         <designable name="1R9-eM-zAJ">
-            <size key="intrinsicContentSize" width="64.666666666666671" height="21.666666666666668"/>
+            <size key="intrinsicContentSize" width="80.666666666666671" height="21.666666666666668"/>
         </designable>
         <designable name="2qb-jv-hlT">
-            <size key="intrinsicContentSize" width="60" height="23"/>
+            <size key="intrinsicContentSize" width="76" height="23"/>
         </designable>
         <designable name="2sq-xX-irN">
             <size key="intrinsicContentSize" width="550" height="550"/>
@@ -12189,7 +12219,7 @@
             <size key="intrinsicContentSize" width="30" height="22"/>
         </designable>
         <designable name="7wI-ku-tkz">
-            <size key="intrinsicContentSize" width="34.666666666666664" height="23"/>
+            <size key="intrinsicContentSize" width="50.666666666666664" height="23"/>
         </designable>
         <designable name="8xf-vg-lzr">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
@@ -12243,13 +12273,13 @@
             <size key="intrinsicContentSize" width="49" height="36"/>
         </designable>
         <designable name="KaB-It-rbJ">
-            <size key="intrinsicContentSize" width="77.666666666666671" height="21.666666666666668"/>
+            <size key="intrinsicContentSize" width="93.666666666666671" height="21.666666666666668"/>
         </designable>
         <designable name="Kge-cX-w1U">
             <size key="intrinsicContentSize" width="29" height="29"/>
         </designable>
         <designable name="LTL-Zu-laH">
-            <size key="intrinsicContentSize" width="120.66666666666667" height="21.666666666666668"/>
+            <size key="intrinsicContentSize" width="136.66666666666669" height="21.666666666666668"/>
         </designable>
         <designable name="Lbo-Y3-62Q">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
@@ -12264,7 +12294,7 @@
             <size key="intrinsicContentSize" width="94.333333333333329" height="94.333333333333329"/>
         </designable>
         <designable name="OKA-k3-9dP">
-            <size key="intrinsicContentSize" width="43" height="21.666666666666668"/>
+            <size key="intrinsicContentSize" width="59" height="21.666666666666668"/>
         </designable>
         <designable name="PFK-4t-P7N">
             <size key="intrinsicContentSize" width="30" height="48"/>
@@ -12294,7 +12324,7 @@
             <size key="intrinsicContentSize" width="55" height="19.666666666666668"/>
         </designable>
         <designable name="aBL-ZI-b7W">
-            <size key="intrinsicContentSize" width="32" height="21.666666666666668"/>
+            <size key="intrinsicContentSize" width="48" height="21.666666666666668"/>
         </designable>
         <designable name="aEl-ah-hP1">
             <size key="intrinsicContentSize" width="13.666666666666666" height="22.333333333333332"/>
@@ -12321,7 +12351,7 @@
             <size key="intrinsicContentSize" width="550" height="550"/>
         </designable>
         <designable name="jhD-3g-UZy">
-            <size key="intrinsicContentSize" width="55.666666666666664" height="21.666666666666668"/>
+            <size key="intrinsicContentSize" width="71.666666666666657" height="21.666666666666668"/>
         </designable>
         <designable name="kTM-dY-sdw">
             <size key="intrinsicContentSize" width="550" height="550"/>
@@ -12339,7 +12369,7 @@
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
         </designable>
         <designable name="rfa-8p-eVS">
-            <size key="intrinsicContentSize" width="80" height="21.666666666666668"/>
+            <size key="intrinsicContentSize" width="96" height="21.666666666666668"/>
         </designable>
         <designable name="roX-gI-eQG">
             <size key="intrinsicContentSize" width="29" height="28.666666666666668"/>
@@ -12381,8 +12411,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="YIp-tQ-nJw"/>
         <segue reference="OJH-Qx-oHK"/>
-        <segue reference="qHc-gE-VOF"/>
-        <segue reference="hgD-UT-LAS"/>
+        <segue reference="cbJ-ki-YH6"/>
+        <segue reference="ILo-qZ-IMa"/>
         <segue reference="6lK-3U-MTO"/>
         <segue reference="kQ4-Oq-FDH"/>
         <segue reference="DY0-Mt-tzP"/>
