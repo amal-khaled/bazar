@@ -197,6 +197,8 @@
 		C818334F29C60793007402D6 /* ProfileDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818334E29C60793007402D6 /* ProfileDetailsVC.swift */; };
 		C818335129C60973007402D6 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818335029C60973007402D6 /* UIViewControllerExt.swift */; };
 		C86A311C29BA56F10077266A /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86A311B29BA56F10077266A /* UITextFieldExt.swift */; };
+		C8D0FC7529C6DB9E00B56018 /* MyAdvsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0FC7329C6DB9E00B56018 /* MyAdvsCell.swift */; };
+		C8D0FC7629C6DB9E00B56018 /* MyAdvsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8D0FC7429C6DB9E00B56018 /* MyAdvsCell.xib */; };
 		ECEEC6E7EA83ECF703A3C749 /* Pods_Bazaar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */; };
 /* End PBXBuildFile section */
 
@@ -413,6 +415,8 @@
 		C818334E29C60793007402D6 /* ProfileDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsVC.swift; sourceTree = "<group>"; };
 		C818335029C60973007402D6 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		C86A311B29BA56F10077266A /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
+		C8D0FC7329C6DB9E00B56018 /* MyAdvsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdvsCell.swift; sourceTree = "<group>"; };
+		C8D0FC7429C6DB9E00B56018 /* MyAdvsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdvsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -774,6 +778,7 @@
 		0B1F78A723E9DA20006BDFBA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				C8D0FC7229C6DB5700B56018 /* MyAdvsCells */,
 				65DF0D3625E3297900D2D018 /* myorderproducts */,
 				6550118425E30732003208EC /* myOrders */,
 				6550114F25E1CFB8003208EC /* paymentCells */,
@@ -1186,6 +1191,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C8D0FC7229C6DB5700B56018 /* MyAdvsCells */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0FC7329C6DB9E00B56018 /* MyAdvsCell.swift */,
+				C8D0FC7429C6DB9E00B56018 /* MyAdvsCell.xib */,
+			);
+			path = MyAdvsCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1247,6 +1261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D0FC7629C6DB9E00B56018 /* MyAdvsCell.xib in Resources */,
 				0BFA820023F01D5100BC5A07 /* MyAdsCell.xib in Resources */,
 				0B11ABFF23F9997600CA56D2 /* CategoryCell.xib in Resources */,
 				0B88B6BE24A3DF2F00A51A6B /* PaymentMethodsVC.xib in Resources */,
@@ -1406,6 +1421,7 @@
 				0B160343242B96C300DAF2BA /* AdReportVC.swift in Sources */,
 				652357A124DA9DFB004CA54A /* CommericalSliderCollectionViewCell.swift in Sources */,
 				0B11315523D9C93C007FDC6D /* AppDelegate.swift in Sources */,
+				C8D0FC7529C6DB9E00B56018 /* MyAdvsCell.swift in Sources */,
 				0B0CA06123E090C700BC25AC /* ContactUsVC.swift in Sources */,
 				65A0254227221DA5009EB650 /* AddingCutomsFont.swift in Sources */,
 				0BFD758B240AA11100800340 /* BuyPackageVC.swift in Sources */,

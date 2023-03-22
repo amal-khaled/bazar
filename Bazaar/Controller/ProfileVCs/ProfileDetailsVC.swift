@@ -25,7 +25,7 @@ class ProfileDetailsVC: UIViewController {
     //MARK: VC Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.register(UINib(nibName: "MyAdvsCell", bundle: nil), forCellReuseIdentifier: "MyAdvsCell")
     }
     
     
@@ -68,10 +68,14 @@ extension ProfileDetailsVC : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = "hello"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MyAdvsCell", for: indexPath) as! MyAdvsCell
+        cell.adsTitleLabel.text = "Title \(indexPath.row)"
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return tableView.bounds.size.height / 2.5
+//    }
+//    
     
 }
