@@ -2979,7 +2979,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="mh0-ir-Jpv">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="mh0-ir-Jpv" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666657" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="mh0-ir-Jpv" secondAttribute="height" multiplier="1:1" id="PsN-xG-yry"/>
@@ -3032,7 +3032,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-XW-Y1T">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="7gK-XW-Y1T" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666629" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="7gK-XW-Y1T" secondAttribute="height" multiplier="1:1" id="Apz-3u-y6T"/>
@@ -3084,7 +3084,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="ICu-5e-DNC">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="ICu-5e-DNC" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666686" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="0G4-e6-EDr"/>
@@ -3139,7 +3139,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="jXj-4m-EZn">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="jXj-4m-EZn" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666686" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="jXj-4m-EZn" secondAttribute="height" multiplier="1:1" id="Lcc-UV-q0a"/>
@@ -3194,7 +3194,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="lTL-Hi-Qak">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="lTL-Hi-Qak" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666686" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="lTL-Hi-Qak" secondAttribute="height" multiplier="1:1" id="08j-fF-S6X"/>
@@ -3471,7 +3471,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="yea-Ic-8Kd">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="yea-Ic-8Kd" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666742" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="yea-Ic-8Kd" secondAttribute="height" multiplier="1:1" id="BVn-qT-taC"/>
@@ -3554,7 +3554,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef7-eV-9u4">
-                                                        <rect key="frame" x="220" y="32.666666666666657" width="146" height="35"/>
+                                                        <rect key="frame" x="216.33333333333337" y="32.666666666666657" width="149.66666666666663" height="35"/>
                                                         <color key="backgroundColor" name="main_color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="5IB-SE-TAY"/>
@@ -3574,6 +3574,45 @@
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2CQ-OU-E1H">
+                                                        <rect key="frame" x="286" y="17.666666666666671" width="80" height="65"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNt-i6-vV5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="21.666666666666668"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                <color key="textColor" name="dark_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="524-zk-TkN">
+                                                                <rect key="frame" x="0.0" y="21.666666666666664" width="80" height="21.666666666666664"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                <color key="textColor" name="dark_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D.K" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0cB-Xa-K9W">
+                                                                <rect key="frame" x="0.0" y="43.333333333333336" width="80" height="21.666666666666664"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                <color key="textColor" name="dark_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="70" id="aaS-k5-I5w"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="4"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="BorderColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -3582,13 +3621,15 @@
                                                     <constraint firstItem="Gkm-lI-dHS" firstAttribute="centerY" secondItem="CWK-Xp-Sdu" secondAttribute="centerY" id="6Vt-bZ-lG4"/>
                                                     <constraint firstItem="Gkm-lI-dHS" firstAttribute="leading" secondItem="CWK-Xp-Sdu" secondAttribute="leading" constant="5" id="7NH-eY-3oa"/>
                                                     <constraint firstItem="ojf-wC-mgG" firstAttribute="centerX" secondItem="Gkm-lI-dHS" secondAttribute="centerX" id="BVk-lK-EGh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2CQ-OU-E1H" secondAttribute="trailing" constant="8" id="CUX-vZ-y9X"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ef7-eV-9u4" secondAttribute="trailing" constant="8" id="Mx0-XR-zv6"/>
                                                     <constraint firstItem="Ef7-eV-9u4" firstAttribute="centerY" secondItem="CWK-Xp-Sdu" secondAttribute="centerY" id="Wr5-Lr-NAY"/>
                                                     <constraint firstItem="ojf-wC-mgG" firstAttribute="width" secondItem="Gkm-lI-dHS" secondAttribute="width" id="b7z-0l-g4Q"/>
                                                     <constraint firstAttribute="height" constant="100" id="i1U-Vi-wgG"/>
                                                     <constraint firstItem="ojf-wC-mgG" firstAttribute="height" secondItem="Gkm-lI-dHS" secondAttribute="height" id="iZn-wA-jHX"/>
                                                     <constraint firstItem="zit-CT-6x5" firstAttribute="leading" secondItem="Gkm-lI-dHS" secondAttribute="trailing" constant="8" id="kc7-K2-Nf6"/>
-                                                    <constraint firstItem="Ef7-eV-9u4" firstAttribute="width" secondItem="CWK-Xp-Sdu" secondAttribute="width" multiplier="0.39" id="ygg-b2-bVO"/>
+                                                    <constraint firstItem="2CQ-OU-E1H" firstAttribute="centerY" secondItem="Gkm-lI-dHS" secondAttribute="centerY" id="w9D-el-00r"/>
+                                                    <constraint firstItem="Ef7-eV-9u4" firstAttribute="width" secondItem="CWK-Xp-Sdu" secondAttribute="width" multiplier="0.4" id="ygg-b2-bVO"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -3664,6 +3705,7 @@
                         <outlet property="paymentBtn" destination="i1N-21-E1v" id="7jl-7i-Wus"/>
                         <outlet property="profileImg" destination="Gkm-lI-dHS" id="BG3-Je-LNb"/>
                         <outlet property="profileView" destination="g4y-JQ-3FD" id="6FE-Ut-WDp"/>
+                        <outlet property="stockSV" destination="2CQ-OU-E1H" id="c2J-fy-8Me"/>
                         <segue destination="umE-fT-gFq" kind="presentation" identifier="toNotificationVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ILo-qZ-IMa"/>
                         <segue destination="XDB-Qw-EWW" kind="show" identifier="toEditProfileVC" id="Ryn-a4-jZA"/>
                         <segue destination="8cA-I3-8My" kind="show" identifier="toMyAdsVC" id="P8a-9a-XLZ"/>
@@ -5771,7 +5813,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="LCA-xp-WCi">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="LCA-xp-WCi" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666686" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="LCA-xp-WCi" secondAttribute="height" multiplier="1:1" id="YIo-BX-cGg"/>
@@ -5938,7 +5980,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="40v-6p-Cib">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="40v-6p-Cib" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666686" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="Q4o-pX-O0r"/>
@@ -5993,7 +6035,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="aQ7-7t-ZhO">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="aQ7-7t-ZhO" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666629" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="3yP-OJ-JT0"/>
@@ -6048,7 +6090,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="GQe-H6-bHA">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="GQe-H6-bHA" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666686" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GQe-H6-bHA" secondAttribute="height" multiplier="1:1" id="tG0-cH-aYm"/>
@@ -6103,7 +6145,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="JDq-p9-al5">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="JDq-p9-al5" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666629" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="ELA-9Z-z2t"/>
@@ -6158,7 +6200,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="Ert-FR-4X9">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="Ert-FR-4X9" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666742" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Ert-FR-4X9" secondAttribute="height" multiplier="1:1" id="EFq-2y-W4z"/>
@@ -6213,7 +6255,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-LW-YRS">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="4e4-LW-YRS" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666629" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="4e4-LW-YRS" secondAttribute="height" multiplier="1:1" id="SN2-p4-Kay"/>
@@ -6265,7 +6307,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-8I-Cg5">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="Eer-8I-Cg5" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666629" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="cIr-Qd-m1I"/>
@@ -12216,6 +12258,9 @@
         <designable name="2sq-xX-irN">
             <size key="intrinsicContentSize" width="550" height="550"/>
         </designable>
+        <designable name="40v-6p-Cib">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="6sP-pg-nf5">
             <size key="intrinsicContentSize" width="30" height="22"/>
         </designable>
@@ -12410,6 +12455,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="8Qz-Yg-5NM"/>
         <segue reference="YIp-tQ-nJw"/>
         <segue reference="OJH-Qx-oHK"/>
         <segue reference="cbJ-ki-YH6"/>
