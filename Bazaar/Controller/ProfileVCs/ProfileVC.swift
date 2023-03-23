@@ -23,6 +23,7 @@ class ProfileVC: UIViewController {
     @IBOutlet weak var paymentBtn: UIButton!
     @IBOutlet weak var notificationBtn: UIButton!
     
+    @IBOutlet weak var stockSV: UIStackView!
     @IBOutlet weak var loginOrRegisterBtn: UIButton!
     @IBOutlet weak var logoutBtn: UIButton!
     @IBOutlet weak var myAdsImg: LocalizedImage!
@@ -136,14 +137,14 @@ class ProfileVC: UIViewController {
         arabicBtn.setTitleColor( #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1), for: .normal)
         englishBtn.backgroundColor =  #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1)
         englishBtn.setTitleColor(.white, for: .normal)
-        // give action to switch on notification.
     }
-    private func setupEnglishLanguage(){
+    private func
+    
+    setupEnglishLanguage(){
         arabicBtn.backgroundColor =  #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1)
         arabicBtn.setTitleColor(.white, for: .normal)
         englishBtn.backgroundColor = .white
         englishBtn.setTitleColor( #colorLiteral(red: 0.9960784314, green: 0.6, blue: 0.003921568627, alpha: 1), for: .normal)
-        // give action to switch on notification.
     }
    
     
