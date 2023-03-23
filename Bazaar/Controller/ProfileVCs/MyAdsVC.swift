@@ -128,32 +128,33 @@ class MyAdsVC: UIViewController {
 
 extension MyAdsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ads.count
+      //  return ads.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyAdsCellId, for: indexPath) as! MyAdsCell
-        if MOLHLanguage.isArabic() {
-            cell.adName.text = ads[indexPath.row].titleAr
-            cell.adPrice.text = "\(ads[indexPath.row].price)" + " " + ads[indexPath.row].cur
-
-        } else {
-            cell.adName.text = ads[indexPath.row].titleEn
-            cell.adPrice.text = "\(ads[indexPath.row].price)" + " " + ads[indexPath.row].curEn
-
-        }
-        Alamofire.request(ads[indexPath.row].imgUrl).responseImage { (response) in
-            if let image = response.result.value {
-                DispatchQueue.main.async {
-                    cell.adImg.image = image
-                }
-            }
-        }
+//        if MOLHLanguage.isArabic() {
+//            cell.adName.text = ads[indexPath.row].titleAr
+//            cell.adPrice.text = "\(ads[indexPath.row].price)" + " " + ads[indexPath.row].cur
+//
+//        } else {
+//            cell.adName.text = ads[indexPath.row].titleEn
+//            cell.adPrice.text = "\(ads[indexPath.row].price)" + " " + ads[indexPath.row].curEn
+//
+//        }
+//        Alamofire.request(ads[indexPath.row].imgUrl).responseImage { (response) in
+//            if let image = response.result.value {
+//                DispatchQueue.main.async {
+//                    cell.adImg.image = image
+//                }
+//            }
+//        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 201
+        return (tableView.bounds.size.height / 1.8)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
