@@ -15,7 +15,7 @@ class LocalizedImage: UIImageView {
     }
     
     func flipedDirection() {
-        if MOLHLanguage.currentAppleLanguage() == "ar" {
+        if MOLHLanguage.currentAppleLanguage() != "ar" {
             self.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
