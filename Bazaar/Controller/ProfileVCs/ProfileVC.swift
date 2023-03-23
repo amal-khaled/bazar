@@ -217,7 +217,12 @@ class ProfileVC: UIViewController {
     }
    
     @IBAction func nameBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toEditProfileVC", sender: self)
+//        performSegue(withIdentifier: "toEditProfileVC", sender: self)
+        let profile = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileDetailsVC") as! ProfileDetailsVC
+        
+        presentDetail(profile)
+        
+        
     }
     
     @IBAction func myAdsBtnPressed(_ sender: Any) {

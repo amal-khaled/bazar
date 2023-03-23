@@ -194,7 +194,11 @@
 		65FFCEA625DF1F330044AD8D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA525DF1F330044AD8D /* CartTableViewCell.swift */; };
 		65FFCEAA25DF24560044AD8D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA925DF24560044AD8D /* CartViewController.swift */; };
 		C815020629B7EC35001B3537 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C815020529B7EC35001B3537 /* UILabelPadding.swift */; };
+		C818334F29C60793007402D6 /* ProfileDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818334E29C60793007402D6 /* ProfileDetailsVC.swift */; };
+		C818335129C60973007402D6 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818335029C60973007402D6 /* UIViewControllerExt.swift */; };
 		C86A311C29BA56F10077266A /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86A311B29BA56F10077266A /* UITextFieldExt.swift */; };
+		C8D0FC7529C6DB9E00B56018 /* MyAdvsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D0FC7329C6DB9E00B56018 /* MyAdvsCell.swift */; };
+		C8D0FC7629C6DB9E00B56018 /* MyAdvsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8D0FC7429C6DB9E00B56018 /* MyAdvsCell.xib */; };
 		ECEEC6E7EA83ECF703A3C749 /* Pods_Bazaar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */; };
 /* End PBXBuildFile section */
 
@@ -408,7 +412,11 @@
 		91F569B05DD0DDE935DF6637 /* Pods-Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bazaar.release.xcconfig"; path = "Target Support Files/Pods-Bazaar/Pods-Bazaar.release.xcconfig"; sourceTree = "<group>"; };
 		C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bazaar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C815020529B7EC35001B3537 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
+		C818334E29C60793007402D6 /* ProfileDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsVC.swift; sourceTree = "<group>"; };
+		C818335029C60973007402D6 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		C86A311B29BA56F10077266A /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
+		C8D0FC7329C6DB9E00B56018 /* MyAdvsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAdvsCell.swift; sourceTree = "<group>"; };
+		C8D0FC7429C6DB9E00B56018 /* MyAdvsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyAdvsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +511,7 @@
 				0BFDB5F823EC032000695A5A /* MyAdsVC.swift */,
 				0BFDB5FA23EC033D00695A5A /* BalanceVC.swift */,
 				0BFD7580240A8F4500800340 /* PaymentVCs */,
+				C818334E29C60793007402D6 /* ProfileDetailsVC.swift */,
 			);
 			path = ProfileVCs;
 			sourceTree = "<group>";
@@ -633,6 +642,7 @@
 				0B780FFE23DF2A06004304DC /* StringExt.swift */,
 				0B11AC0023F99DED00CA56D2 /* LocalizedCollectionView.swift */,
 				C86A311B29BA56F10077266A /* UITextFieldExt.swift */,
+				C818335029C60973007402D6 /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -768,6 +778,7 @@
 		0B1F78A723E9DA20006BDFBA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				C8D0FC7229C6DB5700B56018 /* MyAdvsCells */,
 				65DF0D3625E3297900D2D018 /* myorderproducts */,
 				6550118425E30732003208EC /* myOrders */,
 				6550114F25E1CFB8003208EC /* paymentCells */,
@@ -1180,6 +1191,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C8D0FC7229C6DB5700B56018 /* MyAdvsCells */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0FC7329C6DB9E00B56018 /* MyAdvsCell.swift */,
+				C8D0FC7429C6DB9E00B56018 /* MyAdvsCell.xib */,
+			);
+			path = MyAdvsCells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1241,6 +1261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8D0FC7629C6DB9E00B56018 /* MyAdvsCell.xib in Resources */,
 				0BFA820023F01D5100BC5A07 /* MyAdsCell.xib in Resources */,
 				0B11ABFF23F9997600CA56D2 /* CategoryCell.xib in Resources */,
 				0B88B6BE24A3DF2F00A51A6B /* PaymentMethodsVC.xib in Resources */,
@@ -1400,6 +1421,7 @@
 				0B160343242B96C300DAF2BA /* AdReportVC.swift in Sources */,
 				652357A124DA9DFB004CA54A /* CommericalSliderCollectionViewCell.swift in Sources */,
 				0B11315523D9C93C007FDC6D /* AppDelegate.swift in Sources */,
+				C8D0FC7529C6DB9E00B56018 /* MyAdvsCell.swift in Sources */,
 				0B0CA06123E090C700BC25AC /* ContactUsVC.swift in Sources */,
 				65A0254227221DA5009EB650 /* AddingCutomsFont.swift in Sources */,
 				0BFD758B240AA11100800340 /* BuyPackageVC.swift in Sources */,
@@ -1409,9 +1431,11 @@
 				0B11AC0123F99DED00CA56D2 /* LocalizedCollectionView.swift in Sources */,
 				658C04E7262FA27C00472394 /* LoginWithPhoneViewController.swift in Sources */,
 				65FFCE3F25D87FFD0044AD8D /* StoreViewController.swift in Sources */,
+				C818334F29C60793007402D6 /* ProfileDetailsVC.swift in Sources */,
 				65FFCEAA25DF24560044AD8D /* CartViewController.swift in Sources */,
 				0B88B6C724A51DFD00A51A6B /* PackagePaymentMethodsVC.swift in Sources */,
 				65FC8BC1259874D900FB9AEB /* SeeMoreLatestAdsViewController.swift in Sources */,
+				C818335129C60973007402D6 /* UIViewControllerExt.swift in Sources */,
 				0B88B6BD24A3DF2F00A51A6B /* PaymentMethodsVC.swift in Sources */,
 				0B02B0C72406D9B900A17F02 /* SubSubCategoryList.swift in Sources */,
 				65FFCE5025D8915C0044AD8D /* StoreServices.swift in Sources */,
