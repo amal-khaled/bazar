@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MOLH
 
 class MyAdvsCell: UITableViewCell {
 
@@ -18,13 +19,26 @@ class MyAdvsCell: UITableViewCell {
     @IBOutlet weak var adsPriceLabel:UILabel!
     @IBOutlet weak var currencyLabel:UILabel!
     @IBOutlet weak var callBtn: UIButton!
+    @IBOutlet weak var chatBtn: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setup()
     }
 
+    private func setup(){
+        guard let callImage = UIImage(named: "callFilledIcon") , let chatImage = UIImage(named: "chatIcon") else {return}
+        forDonationView.addCornerRadius(cornerRadius: 5)
+       if MOLHLanguage.currentAppleLanguage() == "ar" {
+           callBtn.rightIcon(image: callImage)
+           chatBtn.rightIcon(image: chatImage)
+        }else{
+            callBtn.leftIcon(image: callImage)
+            chatBtn.leftIcon(image: chatImage)
+        }
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
