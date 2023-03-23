@@ -12176,11 +12176,20 @@
         <designable name="0Av-gX-nei">
             <size key="intrinsicContentSize" width="58.333333333333336" height="21"/>
         </designable>
+        <designable name="1R9-eM-zAJ">
+            <size key="intrinsicContentSize" width="64.666666666666671" height="21.666666666666668"/>
+        </designable>
+        <designable name="2qb-jv-hlT">
+            <size key="intrinsicContentSize" width="60" height="23"/>
+        </designable>
         <designable name="2sq-xX-irN">
             <size key="intrinsicContentSize" width="550" height="550"/>
         </designable>
         <designable name="6sP-pg-nf5">
             <size key="intrinsicContentSize" width="30" height="22"/>
+        </designable>
+        <designable name="7wI-ku-tkz">
+            <size key="intrinsicContentSize" width="34.666666666666664" height="23"/>
         </designable>
         <designable name="8xf-vg-lzr">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
@@ -12233,8 +12242,14 @@
         <designable name="KBP-YG-fGD">
             <size key="intrinsicContentSize" width="49" height="36"/>
         </designable>
+        <designable name="KaB-It-rbJ">
+            <size key="intrinsicContentSize" width="77.666666666666671" height="21.666666666666668"/>
+        </designable>
         <designable name="Kge-cX-w1U">
             <size key="intrinsicContentSize" width="29" height="29"/>
+        </designable>
+        <designable name="LTL-Zu-laH">
+            <size key="intrinsicContentSize" width="120.66666666666667" height="21.666666666666668"/>
         </designable>
         <designable name="Lbo-Y3-62Q">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
@@ -12247,6 +12262,9 @@
         </designable>
         <designable name="NSm-zg-9uW">
             <size key="intrinsicContentSize" width="94.333333333333329" height="94.333333333333329"/>
+        </designable>
+        <designable name="OKA-k3-9dP">
+            <size key="intrinsicContentSize" width="43" height="21.666666666666668"/>
         </designable>
         <designable name="PFK-4t-P7N">
             <size key="intrinsicContentSize" width="30" height="48"/>
@@ -12275,6 +12293,9 @@
         <designable name="YBB-dd-4b2">
             <size key="intrinsicContentSize" width="55" height="19.666666666666668"/>
         </designable>
+        <designable name="aBL-ZI-b7W">
+            <size key="intrinsicContentSize" width="32" height="21.666666666666668"/>
+        </designable>
         <designable name="aEl-ah-hP1">
             <size key="intrinsicContentSize" width="13.666666666666666" height="22.333333333333332"/>
         </designable>
@@ -12299,6 +12320,9 @@
         <designable name="iXc-U8-46h">
             <size key="intrinsicContentSize" width="550" height="550"/>
         </designable>
+        <designable name="jhD-3g-UZy">
+            <size key="intrinsicContentSize" width="55.666666666666664" height="21.666666666666668"/>
+        </designable>
         <designable name="kTM-dY-sdw">
             <size key="intrinsicContentSize" width="550" height="550"/>
         </designable>
@@ -12313,6 +12337,9 @@
         </designable>
         <designable name="rdD-FL-a1w">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
+        </designable>
+        <designable name="rfa-8p-eVS">
+            <size key="intrinsicContentSize" width="80" height="21.666666666666668"/>
         </designable>
         <designable name="roX-gI-eQG">
             <size key="intrinsicContentSize" width="29" height="28.666666666666668"/>
