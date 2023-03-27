@@ -3488,6 +3488,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCP-7K-b3b">
                                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="logoutBtnPressed:" destination="mCM-5c-whq" eventType="touchUpInside" id="rKJ-Tb-jcY"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -3567,6 +3570,9 @@
                                                                 <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="loginBtnPressed:" destination="mCM-5c-whq" eventType="touchUpInside" id="cL5-AJ-7Pa"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zit-CT-6x5">
                                                         <rect key="frame" x="103" y="39.333333333333343" width="48" height="21.666666666666671"/>
@@ -6424,7 +6430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDi-L2-CUv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126.08695652173914" y="-5879.4642857142853"/>
+            <point key="canvasLocation" x="-223" y="-5883"/>
         </scene>
         <!--Country-->
         <scene sceneID="bYn-dI-jEe">
@@ -12261,8 +12267,14 @@
         <designable name="40v-6p-Cib">
             <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
+        <designable name="4e4-LW-YRS">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="6sP-pg-nf5">
             <size key="intrinsicContentSize" width="30" height="22"/>
+        </designable>
+        <designable name="7gK-XW-Y1T">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
         <designable name="7wI-ku-tkz">
             <size key="intrinsicContentSize" width="34.666666666666664" height="23"/>
@@ -12291,8 +12303,17 @@
         <designable name="EGl-oW-2FN">
             <size key="intrinsicContentSize" width="19" height="22"/>
         </designable>
+        <designable name="Eer-8I-Cg5">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="Eg7-95-R2Y">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
+        </designable>
+        <designable name="Ert-FR-4X9">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
+        <designable name="GQe-H6-bHA">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
         <designable name="GbS-NS-E6t">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
@@ -12303,8 +12324,14 @@
         <designable name="HgS-of-dsV">
             <size key="intrinsicContentSize" width="29" height="29"/>
         </designable>
+        <designable name="ICu-5e-DNC">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="IeO-KH-iOv">
             <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="JDq-p9-al5">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
         <designable name="JGQ-fw-aTe">
             <size key="intrinsicContentSize" width="13.666666666666666" height="22.333333333333332"/>
@@ -12323,6 +12350,9 @@
         </designable>
         <designable name="Kge-cX-w1U">
             <size key="intrinsicContentSize" width="29" height="29"/>
+        </designable>
+        <designable name="LCA-xp-WCi">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
         <designable name="LTL-Zu-laH">
             <size key="intrinsicContentSize" width="120.66666666666667" height="21.666666666666668"/>
@@ -12375,6 +12405,9 @@
         <designable name="aEl-ah-hP1">
             <size key="intrinsicContentSize" width="13.666666666666666" height="22.333333333333332"/>
         </designable>
+        <designable name="aQ7-7t-ZhO">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="aYE-sg-Zm0">
             <size key="intrinsicContentSize" width="29" height="29"/>
         </designable>
@@ -12396,14 +12429,23 @@
         <designable name="iXc-U8-46h">
             <size key="intrinsicContentSize" width="550" height="550"/>
         </designable>
+        <designable name="jXj-4m-EZn">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="jhD-3g-UZy">
             <size key="intrinsicContentSize" width="55.666666666666664" height="21.666666666666668"/>
         </designable>
         <designable name="kTM-dY-sdw">
             <size key="intrinsicContentSize" width="550" height="550"/>
         </designable>
+        <designable name="lTL-Hi-Qak">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="m8D-yF-rwQ">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
+        </designable>
+        <designable name="mh0-ir-Jpv">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
         <designable name="qI2-Tu-hEb">
             <size key="intrinsicContentSize" width="34" height="22.666666666666668"/>
@@ -12444,6 +12486,9 @@
         <designable name="yN2-ls-R0h">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
         </designable>
+        <designable name="yea-Ic-8Kd">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="z9d-eJ-4Jz">
             <size key="intrinsicContentSize" width="29" height="29"/>
         </designable>
@@ -12455,13 +12500,12 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="8Qz-Yg-5NM"/>
         <segue reference="YIp-tQ-nJw"/>
         <segue reference="OJH-Qx-oHK"/>
         <segue reference="cbJ-ki-YH6"/>
         <segue reference="ILo-qZ-IMa"/>
         <segue reference="6lK-3U-MTO"/>
-        <segue reference="kQ4-Oq-FDH"/>
+        <segue reference="lHx-ZI-weU"/>
         <segue reference="DY0-Mt-tzP"/>
         <segue reference="fI3-sk-3dU"/>
         <segue reference="Dta-Dd-sjG"/>

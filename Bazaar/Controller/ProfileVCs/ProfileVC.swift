@@ -67,6 +67,11 @@ class ProfileVC: UIViewController {
         }
     }
     
+    
+    @IBAction func loginBtnPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toLoginVC", sender: self)
+    }
+    
     @IBAction func EditProfile(_ sender: Any) {
         performSegue(withIdentifier: "toEditProfileVC", sender: self)
     }
@@ -156,21 +161,13 @@ class ProfileVC: UIViewController {
             setupEnglishLanguage()
         }
         setupNotOff()
-//        profileView.addBorder(toSide: .Bottom, withColor: #colorLiteral(red: 0.07843137255, green: 0.2705882353, blue: 0.4588235294, alpha: 1), andThickness: 1.0)
-//        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
-//        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-//        self.navigationController?.navigationBar.isHidden = true
         
         self.tabBarController?.tabBar.addCornerRadius(cornerRadius: 25)
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         
         profileImg.addBorder(borderWidth: 2, borderColor:#colorLiteral(red: 0.07843137255, green: 0.2705882353, blue: 0.4588235294, alpha: 1) )
         profileImg.addCornerRadius(cornerRadius: 45)
-//        myAdsImg.addCornerRadius(cornerRadius: 35)
-//        balanceImg.addCornerRadius(cornerRadius: 35)
-//        paymentImg.addCornerRadius(cornerRadius: 35)
-//        notifImg.addCornerRadius(cornerRadius: 35)
-//        favoriteImg.addCornerRadius(cornerRadius: 35)
+
     }
     @IBAction func ordersBtnAction(_ sender: Any) {
         basicNavigation(storyName: "Store", segueId: "myorders")
@@ -219,15 +216,23 @@ class ProfileVC: UIViewController {
    
     @IBAction func nameBtnPressed(_ sender: Any) {
 //        performSegue(withIdentifier: "toEditProfileVC", sender: self)
-        let profile = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileDetailsVC") as! ProfileDetailsVC
-        
-        presentDetail(profile)
+        if NetworkHelper.getToken() == nil {
+            performSegue(withIdentifier: "toLoginVC", sender: self)
+        }else{
+            let profile = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileDetailsVC") as! ProfileDetailsVC
+            
+            presentDetail(profile)
+        }
         
         
     }
     
     @IBAction func myAdsBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toMyAdsVC", sender: self)
+        if NetworkHelper.getToken() == nil {
+            performSegue(withIdentifier: "toLoginVC", sender: self)
+        }else {
+            performSegue(withIdentifier: "toMyAdsVC", sender: self)
+        }
     }
     
     @IBAction func balanceBtnPressed(_ sender: Any) {
@@ -248,6 +253,10 @@ class ProfileVC: UIViewController {
     
     @IBAction func favoriteBtnPressed(_ sender: Any) {
         self.tabBarController?.selectedIndex = 3
+    }
+    
+    @IBAction func logoutBtnPressed(_ sender: UIButton) {
+        
     }
     
 }
