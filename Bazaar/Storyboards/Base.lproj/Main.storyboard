@@ -2205,7 +2205,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mFg-2d-Y2F">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1229"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1278"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oek-v5-mGP">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="750"/>
@@ -2853,7 +2853,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nJ6-rr-nfi">
-                                <rect key="frame" x="0.0" y="118" width="414" height="695"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="744"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -3703,6 +3703,7 @@
                         <outlet property="indicator" destination="xkt-9n-4mn" id="oKO-wW-nRj"/>
                         <outlet property="loginOrRegisterBtn" destination="Ef7-eV-9u4" id="v4v-yj-Bk6"/>
                         <outlet property="logoutBtn" destination="TCP-7K-b3b" id="UnZ-6n-fmW"/>
+                        <outlet property="logoutView" destination="oST-kK-ufw" id="E34-po-xAt"/>
                         <outlet property="myAdsBtn" destination="ewi-V2-VSG" id="LXg-ki-dVH"/>
                         <outlet property="nameBtn" destination="ojf-wC-mgG" id="tC4-04-Y30"/>
                         <outlet property="notificationBtn" destination="V4s-UW-8Nl" id="1E7-Ie-yLp"/>
@@ -3849,11 +3850,11 @@
             <objects>
                 <viewController id="0EM-Cs-oHj" customClass="BalanceVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MVA-2T-gi1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cQI-jA-QrR">
-                                <rect key="frame" x="30" y="108.00000000000001" width="354" height="139.33333333333337"/>
+                                <rect key="frame" x="30" y="64.000000000000014" width="354" height="139.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ub9-hG-0kV">
                                         <rect key="frame" x="83.000000000000014" y="0.0" width="188.33333333333337" height="50"/>
@@ -3935,11 +3936,11 @@
             <objects>
                 <viewController id="QHy-YD-zxc" customClass="PaymentVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZX-Va-UK2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebb-Bu-1rR">
-                                <rect key="frame" x="0.0" y="148" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3947,7 +3948,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c66-As-HHd">
-                                <rect key="frame" x="0.0" y="239" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="195" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3955,14 +3956,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addd" translatesAutoresizingMaskIntoConstraints="NO" id="roX-gI-eQG" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
-                                <rect key="frame" x="334" y="169" width="50" height="50"/>
+                                <rect key="frame" x="334" y="125" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="au4-NA-F0T"/>
                                     <constraint firstAttribute="width" constant="50" id="vcK-oB-yW8"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCr-hL-kUe">
-                                <rect key="frame" x="0.0" y="240" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="196" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3970,14 +3971,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-qT-vku" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
-                                <rect key="frame" x="334" y="261" width="50" height="50"/>
+                                <rect key="frame" x="334" y="217" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="C4L-pd-aIl"/>
                                     <constraint firstAttribute="height" constant="50" id="kHF-qr-b5L"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm2-HT-Dg5">
-                                <rect key="frame" x="0.0" y="331" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="287" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3985,7 +3986,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grP-fF-obq">
-                                <rect key="frame" x="0.0" y="148" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="92"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -3997,7 +3998,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtD-Xu-zwq">
-                                <rect key="frame" x="0.0" y="240" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="196" width="414" height="92"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -4417,11 +4418,11 @@
             <objects>
                 <viewController id="XDB-Qw-EWW" customClass="EditProfileVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1TC-jH-VgT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b20-Yb-LFb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmc-W3-p2w" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1024.3333333333333"/>
@@ -4668,7 +4669,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="luU-tg-fpg">
-                                                                        <rect key="frame" x="0.0" y="40.000000000000057" width="374" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="40" width="374" height="50"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="m8D-yF-rwQ" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="3" width="45" height="44.333333333333336"/>
@@ -5048,7 +5049,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpz-th-SZX">
-                                                <rect key="frame" x="20" y="944.33333333333326" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="944.33333333333337" width="374" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -5702,7 +5703,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Bv-EB-Cvz" userLabel="change Langauge View">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="languageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="evw-La-x4f">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="languageIcon" translatesAutoresizingMaskIntoConstraints="NO" id="evw-La-x4f" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666679" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="evw-La-x4f" secondAttribute="height" multiplier="1:1" id="i5a-9R-C0X"/>
@@ -5714,7 +5715,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="Qte-Js-JDp">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="Qte-Js-JDp" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666671" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="Qte-Js-JDp" secondAttribute="height" multiplier="1:1" id="Xcm-b3-fDm"/>
@@ -5807,7 +5808,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yQ-QM-IyZ" userLabel="Change Country">
                                                         <rect key="frame" x="0.0" y="70.666666666666657" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PersonImage" translatesAutoresizingMaskIntoConstraints="NO" id="FMW-3e-d23">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideChaneCountryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FMW-3e-d23" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666821" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="FMW-3e-d23" secondAttribute="height" multiplier="1:1" id="rDo-iO-Jaq"/>
@@ -5863,7 +5864,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-wL-U6h" userLabel="Notifications View">
                                                         <rect key="frame" x="0.0" y="141.33333333333334" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ejy-FJ-y4i">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ejy-FJ-y4i" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666536" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="ejy-FJ-y4i" secondAttribute="height" multiplier="1:1" id="RLJ-dU-q3q"/>
@@ -5875,7 +5876,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="VY0-a3-tzd">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowIconEn" translatesAutoresizingMaskIntoConstraints="NO" id="VY0-a3-tzd" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="349" y="22.666666666666657" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="VY0-a3-tzd" secondAttribute="height" multiplier="1:1" id="dV6-fI-w2x"/>
@@ -5893,7 +5894,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
-                                                                    <action selector="notificationBtnPressed:" destination="mCM-5c-whq" eventType="touchUpInside" id="tyu-fs-E6Y"/>
+                                                                    <action selector="notificationBtnPressed:" destination="LEq-M8-S3T" eventType="touchUpInside" id="1jP-vG-720"/>
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajX-Qn-0lS">
@@ -5974,7 +5975,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmX-wQ-ruR" userLabel="tech Support View">
                                                         <rect key="frame" x="0.0" y="212" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paymentIcon" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-lR-Q2v">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideTechSupportIcon" translatesAutoresizingMaskIntoConstraints="NO" id="l4l-lR-Q2v" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666821" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="l4l-lR-Q2v" secondAttribute="height" multiplier="1:1" id="4gt-1g-BzE"/>
@@ -6029,14 +6030,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gG9-gl-hqn" userLabel="common questions View">
                                                         <rect key="frame" x="0.0" y="282.66666666666669" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O4L-Tr-t9v">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideASksIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O4L-Tr-t9v" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666252" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="O4L-Tr-t9v" secondAttribute="height" multiplier="1:1" id="geJ-1E-v0r"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Common Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiK-dE-KLw">
-                                                                <rect key="frame" x="78.666666666666671" y="24.333333333333314" width="165.33333333333331" height="21.666666666666671"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Common Asks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiK-dE-KLw">
+                                                                <rect key="frame" x="78.666666666666686" y="24.333333333333314" width="121" height="21.666666666666671"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -6059,7 +6060,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
-                                                                    <action selector="myAdsBtnPressed:" destination="mCM-5c-whq" eventType="touchUpInside" id="3ZV-Z9-8Ee"/>
+                                                                    <action selector="commenAsksBtnPressed:" destination="LEq-M8-S3T" eventType="touchUpInside" id="CtH-3o-bbQ"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -6084,14 +6085,14 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpv-rU-lGB" userLabel="Conditions View">
                                                         <rect key="frame" x="0.0" y="353.33333333333331" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-q3-j6T">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideTermsIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-q3-j6T" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666821" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="XhB-q3-j6T" secondAttribute="height" multiplier="1:1" id="CcO-CZ-eTc"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condisions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-Zu-8TZ" userLabel="Condisions">
-                                                                <rect key="frame" x="78.666666666666657" y="24.333333333333371" width="93.666666666666657" height="21.666666666666671"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zgf-Zu-8TZ" userLabel="Condisions">
+                                                                <rect key="frame" x="78.666666666666686" y="24.333333333333371" width="180" height="21.666666666666671"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -6114,7 +6115,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
-                                                                    <action selector="favoriteBtnPressed:" destination="mCM-5c-whq" eventType="touchUpInside" id="pxF-T7-SLZ"/>
+                                                                    <action selector="termsBtnPressed:" destination="LEq-M8-S3T" eventType="touchUpInside" id="iKe-ic-82k"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -6139,7 +6140,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2y-yJ-i0h" userLabel="Privecy PolicyView">
                                                         <rect key="frame" x="0.0" y="424" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ordersIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XGr-YS-JG8">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SidePrivecyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XGr-YS-JG8" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666252" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="XGr-YS-JG8" secondAttribute="height" multiplier="1:1" id="5K3-NG-ngX"/>
@@ -6169,7 +6170,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
-                                                                    <action selector="ordersBtnAction:" destination="mCM-5c-whq" eventType="touchUpInside" id="LCa-LX-x0S"/>
+                                                                    <action selector="privacyBtnPressed:" destination="LEq-M8-S3T" eventType="touchUpInside" id="CKB-i7-agB"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -6194,7 +6195,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64d-yN-iw1" userLabel="About Bazaar">
                                                         <rect key="frame" x="0.0" y="494.66666666666663" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-6i-ORO">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideAboutBazaarIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O9F-6i-ORO" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666667389" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="O9F-6i-ORO" secondAttribute="height" multiplier="1:1" id="xW9-ma-oAu"/>
@@ -6249,7 +6250,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DpQ-XV-KfA" userLabel="Rate View">
                                                         <rect key="frame" x="0.0" y="565.33333333333337" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="t53-Uq-0Kc">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideRateIcon" translatesAutoresizingMaskIntoConstraints="NO" id="t53-Uq-0Kc" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666252" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="t53-Uq-0Kc" secondAttribute="height" multiplier="1:1" id="DyF-3H-hcp"/>
@@ -6278,6 +6279,9 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhA-eP-aVM">
                                                                 <rect key="frame" x="0.0" y="0.0" width="394" height="70"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="rateAppBtnPressed:" destination="LEq-M8-S3T" eventType="touchUpInside" id="hdT-OS-SQb"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -6301,7 +6305,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HqF-rS-624" userLabel="Share View">
                                                         <rect key="frame" x="0.0" y="636" width="394" height="70"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-31-fcz">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SideShareIcon" translatesAutoresizingMaskIntoConstraints="NO" id="dMW-31-fcz" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                 <rect key="frame" x="9.9999999999999964" y="8.6666666666666252" width="52.666666666666657" height="52.666666666666657"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="dMW-31-fcz" secondAttribute="height" multiplier="1:1" id="huo-CU-cAk"/>
@@ -12505,9 +12509,9 @@
         <segue reference="cbJ-ki-YH6"/>
         <segue reference="ILo-qZ-IMa"/>
         <segue reference="6lK-3U-MTO"/>
-        <segue reference="lHx-ZI-weU"/>
+        <segue reference="FmN-hw-Tt0"/>
         <segue reference="DY0-Mt-tzP"/>
-        <segue reference="fI3-sk-3dU"/>
+        <segue reference="twN-wR-lVk"/>
         <segue reference="Dta-Dd-sjG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBlueColor"/>
@@ -12523,6 +12527,14 @@
         <image name="PhoneImage" width="44.333332061767578" height="44.333332061767578"/>
         <image name="RectangleImage" width="45" height="6"/>
         <image name="RingIcon" width="27.666666030883789" height="30"/>
+        <image name="SideASksIcon" width="67.333335876464844" height="67.333335876464844"/>
+        <image name="SideAboutBazaarIcon" width="67.333335876464844" height="67.333335876464844"/>
+        <image name="SideChaneCountryIcon" width="67.333335876464844" height="67.333335876464844"/>
+        <image name="SidePrivecyIcon" width="67.333335876464844" height="67.333335876464844"/>
+        <image name="SideRateIcon" width="67.333335876464844" height="67.333335876464844"/>
+        <image name="SideShareIcon" width="67.333335876464844" height="67.333335876464844"/>
+        <image name="SideTechSupportIcon" width="67.333335876464844" height="67.333335876464844"/>
+        <image name="SideTermsIcon" width="67.333335876464844" height="67.333335876464844"/>
         <image name="Splash" width="291" height="292"/>
         <image name="adImage" width="128" height="128"/>
         <image name="addd" width="29" height="28.666666030883789"/>
