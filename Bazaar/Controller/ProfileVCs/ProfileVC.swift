@@ -15,7 +15,7 @@ import MOLH
 
 class ProfileVC: UIViewController {
     
-    //Outlets
+    //MARK: Outlets
     @IBOutlet weak var profileImg: UIImageView!
     @IBOutlet weak var nameBtn: UIButton!
     @IBOutlet weak var myAdsBtn: UIButton!
@@ -40,13 +40,17 @@ class ProfileVC: UIViewController {
     
     @IBOutlet weak var arabicBtn: UIButton!
     
+    @IBOutlet weak var logoutView: UIView!
     
-    // Variables
+    //MARK: Properties
     private var notificationState = false
    private var isArabicLanguage = false
+    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +68,17 @@ class ProfileVC: UIViewController {
             indicator.startAnimating()
             loadProfile()
             setupView()
+        }
+    }
+    
+    //MARK: Methods
+    private func configureView(){
+        if NetworkHelper.getToken() == nil {
+            stockSV.isHidden = true
+            logoutView.isHidden = true
+        }else {
+            stockSV.isHidden = false
+            logoutView.isHidden = false
         }
     }
     
