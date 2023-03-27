@@ -79,6 +79,9 @@ class SideMenuVC: UIViewController {
         }
     }
     
+    
+    //MARK: IBActions 
+    
     @IBAction func languageBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toLanguageVC", sender: self)
     }
@@ -102,6 +105,11 @@ class SideMenuVC: UIViewController {
         performSegue(withIdentifier: "toNotificationVC", sender: self)
     }
     
+    
+    @IBAction func commenAsksBtnPressed(_ sender: UIButton) {
+        print("common Button")
+    }
+    
     @IBAction func termsBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toTermsVC", sender: self)
     }
@@ -109,6 +117,18 @@ class SideMenuVC: UIViewController {
     @IBAction func supportBtnPressed(_ sender: Any) {
         performSegue(withIdentifier: "toSupportVC", sender: self)
     }
+    
+    
+    @IBAction func privacyBtnPressed(_ sender: UIButton) {
+        print("privacy Btn Pressed")
+    }
+    
+    
+    @IBAction func rateAppBtnPressed(_ sender: UIButton) {
+        
+        print(" Rate App ")
+    }
+    
     
     @IBAction func shareBtnPressed(_ sender: Any) {
         
