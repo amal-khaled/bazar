@@ -64,7 +64,8 @@ class NotificationVC: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        performSegue(withIdentifier: "toMain", sender: self)
+        dismiss(animated: true)
+//        performSegue(withIdentifier: "toMain", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "advc" {
