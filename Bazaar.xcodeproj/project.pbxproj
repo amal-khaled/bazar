@@ -192,6 +192,10 @@
 		65FFCE6225DEF6850044AD8D /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCE6125DEF6850044AD8D /* Cart.swift */; };
 		65FFCEA625DF1F330044AD8D /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA525DF1F330044AD8D /* CartTableViewCell.swift */; };
 		65FFCEAA25DF24560044AD8D /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFCEA925DF24560044AD8D /* CartViewController.swift */; };
+		C80AEE7029D305520023C420 /* Chats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C80AEE6F29D305520023C420 /* Chats.storyboard */; };
+		C80AEE7529D305C60023C420 /* ChatslListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AEE7429D305C60023C420 /* ChatslListVC.swift */; };
+		C80AEE7A29D30F400023C420 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AEE7829D30F400023C420 /* MessageTableViewCell.swift */; };
+		C80AEE7B29D30F400023C420 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C80AEE7929D30F400023C420 /* MessageTableViewCell.xib */; };
 		C815020629B7EC35001B3537 /* UILabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C815020529B7EC35001B3537 /* UILabelPadding.swift */; };
 		C818334F29C60793007402D6 /* ProfileDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818334E29C60793007402D6 /* ProfileDetailsVC.swift */; };
 		C818335129C60973007402D6 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C818335029C60973007402D6 /* UIViewControllerExt.swift */; };
@@ -411,6 +415,10 @@
 		8A8EBF2C0E5D915F2A5C4A20 /* Pods-A3lanate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A3lanate.release.xcconfig"; path = "Target Support Files/Pods-A3lanate/Pods-A3lanate.release.xcconfig"; sourceTree = "<group>"; };
 		91F569B05DD0DDE935DF6637 /* Pods-Bazaar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bazaar.release.xcconfig"; path = "Target Support Files/Pods-Bazaar/Pods-Bazaar.release.xcconfig"; sourceTree = "<group>"; };
 		C13E3116723FC5C90130AFDE /* Pods_Bazaar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bazaar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C80AEE6F29D305520023C420 /* Chats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chats.storyboard; sourceTree = "<group>"; };
+		C80AEE7429D305C60023C420 /* ChatslListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatslListVC.swift; sourceTree = "<group>"; };
+		C80AEE7829D30F400023C420 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		C80AEE7929D30F400023C420 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		C815020529B7EC35001B3537 /* UILabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelPadding.swift; sourceTree = "<group>"; };
 		C818334E29C60793007402D6 /* ProfileDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsVC.swift; sourceTree = "<group>"; };
 		C818335029C60973007402D6 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -581,6 +589,7 @@
 		0B04832223DA19B8003C49C0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C80AEE7129D305690023C420 /* ChatsVCs */,
 				651B945B25C8741500C8D886 /* oneDayAd */,
 				0B04832C23DA2696003C49C0 /* HomeVCs */,
 				0B02C4E823DCA13500766776 /* CategoriesVCs */,
@@ -598,6 +607,7 @@
 				0B11315C23D9C93C007FDC6D /* Main.storyboard */,
 				6550117B25E2F233003208EC /* Store.storyboard */,
 				0B11316123D9C93E007FDC6D /* LaunchScreen.storyboard */,
+				C80AEE6F29D305520023C420 /* Chats.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -783,6 +793,7 @@
 		0B1F78A723E9DA20006BDFBA /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				C80AEE7629D30ECA0023C420 /* ChatCells */,
 				C8D0FC7229C6DB5700B56018 /* MyAdvsCells */,
 				65DF0D3625E3297900D2D018 /* myorderproducts */,
 				6550118425E30732003208EC /* myOrders */,
@@ -1196,6 +1207,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C80AEE7129D305690023C420 /* ChatsVCs */ = {
+			isa = PBXGroup;
+			children = (
+				C80AEE7429D305C60023C420 /* ChatslListVC.swift */,
+			);
+			path = ChatsVCs;
+			sourceTree = "<group>";
+		};
+		C80AEE7629D30ECA0023C420 /* ChatCells */ = {
+			isa = PBXGroup;
+			children = (
+				C80AEE7729D30EF70023C420 /* MessageCell */,
+			);
+			path = ChatCells;
+			sourceTree = "<group>";
+		};
+		C80AEE7729D30EF70023C420 /* MessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				C80AEE7829D30F400023C420 /* MessageTableViewCell.swift */,
+				C80AEE7929D30F400023C420 /* MessageTableViewCell.xib */,
+			);
+			path = MessageCell;
+			sourceTree = "<group>";
+		};
 		C8D0FC7229C6DB5700B56018 /* MyAdvsCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1320,7 @@
 				65A4134D263452B1001AE710 /* Localizable.strings in Resources */,
 				0B1F78B823EA220F006BDFBA /* CountryCell.xib in Resources */,
 				0B11AC0223F9A09500CA56D2 /* MainAdsCell.xib in Resources */,
+				C80AEE7029D305520023C420 /* Chats.storyboard in Resources */,
 				0B0AA14823ED8100003971A2 /* CategoriesCell.xib in Resources */,
 				0BFDB61023EC4C0F00695A5A /* FavoriteCell.xib in Resources */,
 				0BFD759C240AC7A100800340 /* OnlineActionSheet.xib in Resources */,
@@ -1300,6 +1337,7 @@
 				0B119950242657EA00932931 /* CategoryList.xib in Resources */,
 				0B160345242B98FE00DAF2BA /* AdReportVC.xib in Resources */,
 				0B18782F24040131003B7C0B /* ImageCell.xib in Resources */,
+				C80AEE7B29D30F400023C420 /* MessageTableViewCell.xib in Resources */,
 				0B1BEC352412CC7E00BD64D2 /* ChangePassAlert.xib in Resources */,
 				6559BC3A25900484007D2A8F /* GoogleService-Info.plist in Resources */,
 				0B08C16124051CF6007ED192 /* FollowUpCell.xib in Resources */,
@@ -1494,6 +1532,7 @@
 				65DF0D6D25E3469B00D2D018 /* Area.swift in Sources */,
 				652357A224DA9DFB004CA54A /* commericalCollectionViewCell.swift in Sources */,
 				6550115825E1D2FD003208EC /* PaymentListViewController.swift in Sources */,
+				C80AEE7529D305C60023C420 /* ChatslListVC.swift in Sources */,
 				651B949325C9E2CE00C8D886 /* UtilitiesService.swift in Sources */,
 				0B1F78B223E9E526006BDFBA /* NotificationCell.swift in Sources */,
 				656FC8942601846600F8C7F4 /* UIViewControllerExtenstions.swift in Sources */,
@@ -1505,6 +1544,7 @@
 				0B1F78B723EA220F006BDFBA /* CountryCell.swift in Sources */,
 				656FC8952601846600F8C7F4 /* GeneralUIExtenstions.swift in Sources */,
 				0B554DE7242380CF002BD69D /* QuestionService.swift in Sources */,
+				C80AEE7A29D30F400023C420 /* MessageTableViewCell.swift in Sources */,
 				65E8AD9D2735AAD9003A327A /* SliderAdDetailsViewController.swift in Sources */,
 				0BFD757D240A838A00800340 /* Package.swift in Sources */,
 				0B11998B242A31CD00932931 /* ImageDisplayVC.swift in Sources */,

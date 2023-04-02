@@ -3850,11 +3850,11 @@
             <objects>
                 <viewController id="0EM-Cs-oHj" customClass="BalanceVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MVA-2T-gi1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cQI-jA-QrR">
-                                <rect key="frame" x="30" y="64.000000000000014" width="354" height="139.33333333333337"/>
+                                <rect key="frame" x="30" y="108.00000000000001" width="354" height="139.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ub9-hG-0kV">
                                         <rect key="frame" x="83.000000000000014" y="0.0" width="188.33333333333337" height="50"/>
@@ -3936,11 +3936,11 @@
             <objects>
                 <viewController id="QHy-YD-zxc" customClass="PaymentVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZX-Va-UK2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebb-Bu-1rR">
-                                <rect key="frame" x="0.0" y="104" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3948,7 +3948,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c66-As-HHd">
-                                <rect key="frame" x="0.0" y="195" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="239" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3956,14 +3956,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addd" translatesAutoresizingMaskIntoConstraints="NO" id="roX-gI-eQG" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
-                                <rect key="frame" x="334" y="125" width="50" height="50"/>
+                                <rect key="frame" x="334" y="169" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="au4-NA-F0T"/>
                                     <constraint firstAttribute="width" constant="50" id="vcK-oB-yW8"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCr-hL-kUe">
-                                <rect key="frame" x="0.0" y="196" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="240" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3971,14 +3971,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit" translatesAutoresizingMaskIntoConstraints="NO" id="zOV-qT-vku" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
-                                <rect key="frame" x="334" y="217" width="50" height="50"/>
+                                <rect key="frame" x="334" y="261" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="C4L-pd-aIl"/>
                                     <constraint firstAttribute="height" constant="50" id="kHF-qr-b5L"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vm2-HT-Dg5">
-                                <rect key="frame" x="0.0" y="287" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="331" width="414" height="1"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -3986,7 +3986,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grP-fF-obq">
-                                <rect key="frame" x="0.0" y="104" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="92"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -3998,7 +3998,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtD-Xu-zwq">
-                                <rect key="frame" x="0.0" y="196" width="414" height="92"/>
+                                <rect key="frame" x="0.0" y="240" width="414" height="92"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -4411,18 +4411,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WF3-YJ-jjz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1308.6956521739132" y="2318.9732142857142"/>
+            <point key="canvasLocation" x="-223" y="2148"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="Jvf-62-au9">
             <objects>
                 <viewController id="XDB-Qw-EWW" customClass="EditProfileVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1TC-jH-VgT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b20-Yb-LFb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="798"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xmc-W3-p2w" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1024.3333333333333"/>
@@ -4669,7 +4669,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="luU-tg-fpg">
-                                                                        <rect key="frame" x="0.0" y="40" width="374" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="40.000000000000057" width="374" height="50"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="m8D-yF-rwQ" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="3" width="45" height="44.333333333333336"/>
@@ -5049,7 +5049,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpz-th-SZX">
-                                                <rect key="frame" x="20" y="944.33333333333337" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="944.33333333333326" width="374" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="tintColor" red="0.89274001120000002" green="0.67973828319999996" blue="0.050211288030000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -7446,11 +7446,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m9K-JQ-wq8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99652045970000003" green="0.80767470600000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemYellowColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.04329780489" green="0.14043307299999999" blue="0.46669614320000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -7565,11 +7564,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3o4-TR-DEN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99652045970000003" green="0.80767470600000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" systemColor="systemYellowColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -7781,11 +7778,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AwP-Qb-6b5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99652045970000003" green="0.80767470600000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" systemColor="systemYellowColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -7986,11 +7981,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ahr-xV-6uZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.99652045970000003" green="0.80767470600000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" systemColor="systemYellowColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.043137254899999998" green="0.14117647059999999" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -8879,7 +8872,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="aHk-6E-frM" customClass="RegisterVC" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FnL-Cz-Gx2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="597"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="558"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBN-qN-KKQ">
@@ -8896,7 +8889,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-gl-j6i" userLabel="email">
-                                <rect key="frame" x="0.0" y="205" width="414" height="372"/>
+                                <rect key="frame" x="0.0" y="205" width="414" height="333"/>
                                 <connections>
                                     <segue destination="twX-kg-EH0" kind="embed" identifier="register_email" id="6aQ-9n-boa"/>
                                 </connections>
@@ -8956,7 +8949,7 @@
                                 </constraints>
                             </stackView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fs0-5x-6XN">
-                                <rect key="frame" x="0.0" y="205" width="414" height="372"/>
+                                <rect key="frame" x="0.0" y="205" width="414" height="333"/>
                                 <connections>
                                     <segue destination="Kka-A4-bRH" kind="embed" identifier="register_phone" id="t09-kB-pyE"/>
                                 </connections>
@@ -9047,7 +9040,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SVZ-OW-xnM">
                                                 <rect key="frame" x="14.333333333333343" y="79.666666666666629" width="385.33333333333326" height="90.333333333333314"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcp-mC-KEJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number 545" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcp-mC-KEJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="385.33333333333331" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -9061,7 +9054,7 @@
                                                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" textContentType="tel"/>
                                                             </textField>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DqT-ja-bwt">
                                                                 <rect key="frame" x="310" y="18" width="75.333333333333314" height="34"/>
@@ -9601,7 +9594,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZB-Fz-rZO">
                                                         <rect key="frame" x="55" y="2" width="329" height="46"/>
                                                         <color key="tintColor" red="0.027450980390000001" green="0.54901960780000003" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                                         <userDefinedRuntimeAttributes>
@@ -9671,7 +9664,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJE-AE-IuT">
                                                         <rect key="frame" x="55" y="2" width="329" height="46"/>
                                                         <color key="tintColor" systemColor="systemBlueColor"/>
-                                                        <color key="textColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                         <connections>
@@ -10361,11 +10354,11 @@
             <objects>
                 <viewController id="twX-kg-EH0" customClass="RegisterWithEmailViewController" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iCR-Pw-DZU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="372"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="333"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJD-Rp-OxI" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="182" y="161" width="50" height="50"/>
+                                <rect key="frame" x="182" y="141.66666666666666" width="50" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <constraints>
@@ -10380,7 +10373,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIS-hq-AHe">
-                                <rect key="frame" x="0.0" y="292" width="160" height="80"/>
+                                <rect key="frame" x="0.0" y="253" width="160" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-BW-7oq">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="80"/>
@@ -11352,7 +11345,7 @@
             <objects>
                 <viewController id="gCC-Zv-iNM" customClass="ConfirmViewController" customModule="Bazaar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J4D-B4-Awq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="372"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="333"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2sq-xX-irN" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
@@ -11363,7 +11356,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02" translatesAutoresizingMaskIntoConstraints="NO" id="iXc-U8-46h" customClass="LocalizedImage" customModule="Bazaar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="242" width="180" height="130"/>
+                                <rect key="frame" x="0.0" y="203" width="180" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="9xC-9l-pA7"/>
                                     <constraint firstAttribute="width" constant="180" id="SSv-Ag-D7h"/>
@@ -11414,7 +11407,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGO-jt-Eop" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
-                                <rect key="frame" x="182" y="161" width="50" height="50"/>
+                                <rect key="frame" x="182" y="141.66666666666666" width="50" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" systemColor="systemYellowColor"/>
                                 <constraints>
@@ -12316,6 +12309,9 @@
         <designable name="Ert-FR-4X9">
             <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
+        <designable name="FMW-3e-d23">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
         <designable name="GQe-H6-bHA">
             <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
@@ -12373,6 +12369,12 @@
         <designable name="NSm-zg-9uW">
             <size key="intrinsicContentSize" width="94.333333333333329" height="94.333333333333329"/>
         </designable>
+        <designable name="O4L-Tr-t9v">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
+        <designable name="O9F-6i-ORO">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
         <designable name="OKA-k3-9dP">
             <size key="intrinsicContentSize" width="43" height="21.666666666666668"/>
         </designable>
@@ -12381,6 +12383,9 @@
         </designable>
         <designable name="PKe-rQ-xVR">
             <size key="intrinsicContentSize" width="29" height="29"/>
+        </designable>
+        <designable name="Qte-Js-JDp">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
         </designable>
         <designable name="Rkr-VU-ENX">
             <size key="intrinsicContentSize" width="32" height="34"/>
@@ -12394,11 +12399,20 @@
         <designable name="UQw-dg-YNm">
             <size key="intrinsicContentSize" width="39" height="34"/>
         </designable>
+        <designable name="VY0-a3-tzd">
+            <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
+        </designable>
         <designable name="VeQ-so-d2H">
             <size key="intrinsicContentSize" width="29" height="29"/>
         </designable>
         <designable name="VpR-Ed-vl6">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
+        </designable>
+        <designable name="XGr-YS-JG8">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
+        <designable name="XhB-q3-j6T">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
         </designable>
         <designable name="YBB-dd-4b2">
             <size key="intrinsicContentSize" width="55" height="19.666666666666668"/>
@@ -12424,6 +12438,15 @@
         <designable name="cxx-J7-zw3">
             <size key="intrinsicContentSize" width="44.333333333333336" height="44.333333333333336"/>
         </designable>
+        <designable name="dMW-31-fcz">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
+        <designable name="ejy-FJ-y4i">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
+        <designable name="evw-La-x4f">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
         <designable name="hUC-wm-fQf">
             <size key="intrinsicContentSize" width="29" height="29"/>
         </designable>
@@ -12441,6 +12464,9 @@
         </designable>
         <designable name="kTM-dY-sdw">
             <size key="intrinsicContentSize" width="550" height="550"/>
+        </designable>
+        <designable name="l4l-lR-Q2v">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
         </designable>
         <designable name="lTL-Hi-Qak">
             <size key="intrinsicContentSize" width="8" height="14.333333333333334"/>
@@ -12478,6 +12504,9 @@
         <designable name="snF-5K-XJ5">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="t53-Uq-0Kc">
+            <size key="intrinsicContentSize" width="67.333333333333329" height="67.333333333333329"/>
+        </designable>
         <designable name="vcU-TY-4VB">
             <size key="intrinsicContentSize" width="94.333333333333329" height="94.333333333333329"/>
         </designable>
@@ -12504,13 +12533,13 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="YIp-tQ-nJw"/>
+        <segue reference="ugs-jR-ULi"/>
         <segue reference="OJH-Qx-oHK"/>
         <segue reference="cbJ-ki-YH6"/>
         <segue reference="ILo-qZ-IMa"/>
         <segue reference="6lK-3U-MTO"/>
-        <segue reference="FmN-hw-Tt0"/>
-        <segue reference="DY0-Mt-tzP"/>
+        <segue reference="HKo-bi-NW8"/>
+        <segue reference="T69-dD-jI7"/>
         <segue reference="twN-wR-lVk"/>
         <segue reference="Dta-Dd-sjG"/>
     </inferredMetricsTieBreakers>

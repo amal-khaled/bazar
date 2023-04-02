@@ -118,10 +118,13 @@
 "J4C-KZ-ACy.normalTitle" = "الشروط والأحكام";
 
 //ForgetPassVC
+"Lcp-mC-KEJ.text" =  "رقم الهاتف";
+"SEi-TA-dan.placeholder" = "ادخل رقم الهاتف";
 "jyLd-F7-nWy.text" = "نسيت كلمة المرور؟";
 "CMG-Su-zXd.placeholder" = "البريد الالكتروني";
 "wGT-K3-P1b.normalTitle" = "ارسل";
 "RsO-6Z-ZTF.text" = "ادخل البريد الالكتروني، وقم بانتظار رسالة التأكيد";
+"7mQ-a0-erh.normalTitle" = "ارسال";
 
 //AdVC
 "Xmd-GO-p6L.text" = "المزيد من الصور";
@@ -253,7 +256,6 @@
 "cNT-rI-J1c.normalTitle" = "نسيت كلمة المرور";
 "IFN-Mw-Zqf.normalTitle" = "سجل الأن";
 "wi9-QY-Mhe.text" = "نسيت كلمة المرور";
-"SEi-TA-dan.placeholder" = "البريد الالكتروني";
 "iJd-uZ-NiV.normalTitle" = "ارسال";
 "zCW-Ed-owW.text" = "ادخل البريد الالكتروني وانتظر رسالة التاكيد";
 "Pnt-Vh-DzK.text" = "نسيت كلمة المرور";
@@ -358,3 +360,14 @@
 "G3s-ca-Kkz.text" = "عــــن بـــازار";
 "7N0-2w-cna.text" = "تقييم التطبيق";
 "Wc6-ul-fYg.text" = "مشاركة التطبيق";
+
+//user Profile
+"gmf-d0-wPA.text" = "ملفي الشخصي";
+"una-ke-Lyj.text" = "اعلان";
+"Kvn-Nd-Ppw.text" = "متابعون";
+"X4a-6m-Uhx.text" = "يتابع";
+"jSA-Oz-19b.normalTitle" = "دردشاتي";
+"Rx2-8j-NOg.normalTitle" = "تعديل الحساب ";
+"8QL-LL-YX4.normalTitle" = "مشاهدة الكل";
+"ZuU-UA-Q69.text" = "إعلاناتي";
+

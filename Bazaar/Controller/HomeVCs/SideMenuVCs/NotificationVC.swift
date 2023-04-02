@@ -39,8 +39,8 @@ class NotificationVC: UIViewController {
     }
     
     func setupView() {
-        self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
-        self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+       // self.navigationController?.navigationBar.addCornerRadius(cornerRadius: 25)
+       // self.navigationController?.navigationBar.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
     }
     
     func setupTableView() {
